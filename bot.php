@@ -64,6 +64,23 @@ if (!is_null($events)) {
     $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
+
+    $imageMapUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEqZxvgDbb-NmneU6ym3CTBNmoPKbvVWbKy1IFm6wox3NUbrXB';
+    $replyData = new ImagemapMessageBuilder(
+        $imageMapUrl, // ส่วนของการกำหนด url รูป
+        'This is Imagemap', // ส่วนของการกำหนดหัวเรื่องว่าเกี่ยวกับอะไร
+        new BaseSizeBuilder(699, 1040), // กำหนดขนาดของรูป (สูง,กว้าง)
+        array(
+            new ImagemapMessageActionBuilder(
+                'test image map',
+                new AreaBuilder(0, 0, 520, 699)
+            ),
+            new ImagemapUriActionBuilder(
+                'http://www.ninenik.com',
+                new AreaBuilder(520, 0, 520, 699)
+            )
+        )
+    );
     switch ($typeMessage) {
         case 'text':
             switch ($userMessage) {
@@ -73,38 +90,7 @@ if (!is_null($events)) {
                 case "B":
                     $textReplyMessage = "คุณพิมพ์ B";
                     break;
-                case "t_b":
-                    // กำหนด action 4 ปุ่ม 4 ประเภท
-                    $textReplyMessage = array(
-                        new MessageTemplateActionBuilder(
-                            'Message Template', // ข้อความแสดงในปุ่ม
-                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),
-                        new UriTemplateActionBuilder(
-                            'Uri Template', // ข้อความแสดงในปุ่ม
-                            'https://www.ninenik.com'
-                        ),
-                        new DatetimePickerTemplateActionBuilder(
-                            'Datetime Picker', // ข้อความแสดงในปุ่ม
-                            http_build_query(array(
-                                'action' => 'reservation',
-                                'person' => 5
-                            )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                            'datetime', // date | time | datetime รูปแบบข้อมูลที่จะส่ง ในที่นี้ใช้ datatime
-                            substr_replace(date("Y-m-d H:i"), 'T', 10, 1), // วันที่ เวลา ค่าเริ่มต้นที่ถูกเลือก
-                            substr_replace(date("Y-m-d H:i", strtotime("+5 day")), 'T', 10, 1), //วันที่ เวลา มากสุดที่เลือกได้
-                            substr_replace(date("Y-m-d H:i"), 'T', 10, 1) //วันที่ เวลา น้อยสุดที่เลือกได้
-                        ),
-                        new PostbackTemplateActionBuilder(
-                            'Postback', // ข้อความแสดงในปุ่ม
-                            http_build_query(array(
-                                'action' => 'buy',
-                                'item' => 100
-                            )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                            'Postback Text'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),
-                    );                   
-                    break;
+
                 default:
                     $textReplyMessage = " คุณไม่ได้พิมพ์ A และ B";
                     break;
