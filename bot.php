@@ -98,6 +98,10 @@ if(!is_null($events)){
                                     new MessageTemplateActionBuilder(
                                         'No',
                                         'Text NO'
+                                    ),
+                                    new MessageTemplateActionBuilder(
+                                        'No',
+                                        'Text NO'
                                     )
                                 )
                         )
