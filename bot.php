@@ -85,7 +85,7 @@ if (!is_null($events)) {
                         ),
                         new UriTemplateActionBuilder(
                             'รายละเอียดเพิ่มเติม',
-                            'https://www.ninenik.com'
+                            'https://www.google.com/?hl=th'
                         ),   
                         new MessageTemplateActionBuilder(
                             'อื่นๆ',
