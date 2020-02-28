@@ -77,30 +77,16 @@ if(!is_null($events)){
                     $picFullSize = 'https://www.mywebsite.com/imgsrc/photos/f/simpleflower';
                     $picThumbnail = 'https://www.mywebsite.com/imgsrc/photos/f/simpleflower/240';
                     $replyData = new ImageMessageBuilder($picFullSize,$picThumbnail);
-                    break;
-                case "v":
-                    $picThumbnail = 'https://www.mywebsite.com/imgsrc/photos/f/sampleimage/240';
-                    $videoUrl = "https://www.mywebsite.com/simplevideo.mp4";                
-                    $replyData = new VideoMessageBuilder($videoUrl,$picThumbnail);
-                    break;
-                case "a":
-                    $audioUrl = "https://www.mywebsite.com/simpleaudio.mp3";
-                    $replyData = new AudioMessageBuilder($audioUrl,27000);
-                    break;
+                    break;               
                 case "l":
                     $placeName = "ที่ตั้งร้าน";
                     $placeAddress = "แขวง พลับพลา เขต วังทองหลาง กรุงเทพมหานคร ประเทศไทย";
                     $latitude = 13.780401863217657;
                     $longitude = 100.61141967773438;
                     $replyData = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);              
-                    break;
-                case "s":
-                    $stickerID = 22;
-                    $packageID = 2;
-                    $replyData = new StickerMessageBuilder($packageID,$stickerID);
-                    break;      
+                    break;                   
                 case "im":
-                    $imageMapUrl = 'https://www.mywebsite.com/imgsrc/photos/w/sampleimagemap';
+                    $imageMapUrl = 'https://images.8tracks.com/cover/i/009/563/148/tumblr_npzn8kOTVt1qbbhbqo1_1280-2913.png?rect=60,27,542,542&q=98&fm=jpg&fit=max&w=320&h=320';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'This is Title',
