@@ -3,17 +3,17 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
- 
+
 // include composer autoload
 include 'vendor/autoload.php';
 
- 
+
 // การตั้งเกี่ยวกับ bot
 include 'bot_settings.php';
- 
+
 // กรณีมีการเชื่อมต่อกับฐานข้อมูล
 //require_once("dbconnect.php");
- 
+
 ///////////// ส่วนของการเรียกใช้งาน class ผ่าน namespace
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient;
@@ -30,7 +30,7 @@ use LINE\LINEBot\MessageBuilder\AudioMessageBuilder;
 use LINE\LINEBot\MessageBuilder\VideoMessageBuilder;
 use LINE\LINEBot\ImagemapActionBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder ;
+use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
 use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
 use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
@@ -50,22 +50,21 @@ use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder;
 
 
- 
 // เชื่อมต่อกับ LINE Messaging API
 $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
 $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
- 
+
 // คำสั่งรอรับการส่งค่ามาของ LINE Messaging API
 $content = file_get_contents('php://input');
- 
+
 // แปลงข้อความรูปแบบ JSON  ให้อยู่ในโครงสร้างตัวแปร array
 $events = json_decode($content, true);
-if(!is_null($events)){
+if (!is_null($events)) {
     // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
     $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
-    switch ($typeMessage){
+    switch ($typeMessage) {
         case 'text':
             switch ($userMessage) {
                 case "A":
@@ -74,64 +73,54 @@ if(!is_null($events)){
                 case "B":
                     $textReplyMessage = "คุณพิมพ์ B";
                     break;
-                    case "t_b":
-                        // กำหนด action 4 ปุ่ม 4 ประเภท
-                        $actionBuilder = array(
-                            new MessageTemplateActionBuilder(
-                                'Message Template',// ข้อความแสดงในปุ่ม
-                                'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                            ),
-                            new UriTemplateActionBuilder(
-                                'Uri Template', // ข้อความแสดงในปุ่ม
-                                'https://www.ninenik.com'
-                            ),
-                            new DatetimePickerTemplateActionBuilder(
-                                'Datetime Picker', // ข้อความแสดงในปุ่ม
-                                http_build_query(array(
-                                    'action'=>'reservation',
-                                    'person'=>5
-                                )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                'datetime', // date | time | datetime รูปแบบข้อมูลที่จะส่ง ในที่นี้ใช้ datatime
-                                substr_replace(date("Y-m-d H:i"),'T',10,1), // วันที่ เวลา ค่าเริ่มต้นที่ถูกเลือก
-                                substr_replace(date("Y-m-d H:i",strtotime("+5 day")),'T',10,1), //วันที่ เวลา มากสุดที่เลือกได้
-                                substr_replace(date("Y-m-d H:i"),'T',10,1) //วันที่ เวลา น้อยสุดที่เลือกได้
-                            ),      
-                            new PostbackTemplateActionBuilder(
-                                'Postback', // ข้อความแสดงในปุ่ม
-                                http_build_query(array(
-                                    'action'=>'buy',
-                                    'item'=>100
-                                )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                'Postback Text'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                            ),      
-                        );
-                        $imageUrl = 'https://www.mywebsite.com/imgsrc/photos/w/simpleflower';
-                        $replyData = new TemplateMessageBuilder('Button Template',
-                            new ButtonTemplateBuilder(
-                                    'button template builder', // กำหนดหัวเรื่อง
-                                    'Please select', // กำหนดรายละเอียด
-                                    $imageUrl, // กำหนด url รุปภาพ
-                                    $actionBuilder  // กำหนด action object
-                            )
-                        );              
-                        break;  
+                case "t_b":
+                    // กำหนด action 4 ปุ่ม 4 ประเภท
+                    $textReplyMessage = array(
+                        new MessageTemplateActionBuilder(
+                            'Message Template', // ข้อความแสดงในปุ่ม
+                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new UriTemplateActionBuilder(
+                            'Uri Template', // ข้อความแสดงในปุ่ม
+                            'https://www.ninenik.com'
+                        ),
+                        new DatetimePickerTemplateActionBuilder(
+                            'Datetime Picker', // ข้อความแสดงในปุ่ม
+                            http_build_query(array(
+                                'action' => 'reservation',
+                                'person' => 5
+                            )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
+                            'datetime', // date | time | datetime รูปแบบข้อมูลที่จะส่ง ในที่นี้ใช้ datatime
+                            substr_replace(date("Y-m-d H:i"), 'T', 10, 1), // วันที่ เวลา ค่าเริ่มต้นที่ถูกเลือก
+                            substr_replace(date("Y-m-d H:i", strtotime("+5 day")), 'T', 10, 1), //วันที่ เวลา มากสุดที่เลือกได้
+                            substr_replace(date("Y-m-d H:i"), 'T', 10, 1) //วันที่ เวลา น้อยสุดที่เลือกได้
+                        ),
+                        new PostbackTemplateActionBuilder(
+                            'Postback', // ข้อความแสดงในปุ่ม
+                            http_build_query(array(
+                                'action' => 'buy',
+                                'item' => 100
+                            )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
+                            'Postback Text'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                    );                   
+                    break;
                 default:
                     $textReplyMessage = " คุณไม่ได้พิมพ์ A และ B";
-                    break;                                      
+                    break;
             }
             break;
         default:
             $textReplyMessage = json_encode($events);
-            break;  
+            break;
     }
 }
 
 
 $textMessageBuilder = new TextMessageBuilder($textReplyMessage);
- 
+
 //l ส่วนของคำสั่งตอบกลับข้อความ
-$response = $bot->replyMessage($replyToken,$textMessageBuilder);
- 
+$response = $bot->replyMessage($replyToken, $textMessageBuilder);
+
 // Failed
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-?>
