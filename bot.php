@@ -69,39 +69,23 @@ if(!is_null($events)){
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
-                case "t":
+                case "m":
                     $textReplyMessage = "Bot ตอบกลับคุณเป็นข้อความ";
-                    $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;
-                case "i":
-                    $picFullSize = 'https://www.mywebsite.com/imgsrc/photos/f/simpleflower';
-                    $picThumbnail = 'https://www.mywebsite.com/imgsrc/photos/f/simpleflower/240';
-                    $replyData = new ImageMessageBuilder($picFullSize,$picThumbnail);
-                    break;               
-                case "l":
+                    $textMessage = new TextMessageBuilder($textReplyMessage);                
+                                     
                     $placeName = "ที่ตั้งร้าน";
                     $placeAddress = "แขวง พลับพลา เขต วังทองหลาง กรุงเทพมหานคร ประเทศไทย";
                     $latitude = 13.780401863217657;
                     $longitude = 100.61141967773438;
-                    $replyData = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);              
-                    break;                   
-                case "im":
-                    $imageMapUrl = 'https://images.8tracks.com/cover/i/009/563/148/tumblr_npzn8kOTVt1qbbhbqo1_1280-2913.png?rect=60,27,542,542&q=98&fm=jpg&fit=max&w=320&h=320';
-                    $replyData = new ImagemapMessageBuilder(
-                        $imageMapUrl,
-                        'This is Title',
-                        new BaseSizeBuilder(699,1040),
-                        array(
-                            new ImagemapMessageActionBuilder(
-                                'test image map',
-                                new AreaBuilder(0,0,520,699)
-                                ),
-                            new ImagemapUriActionBuilder(
-                                'http://www.ninenik.com',
-                                new AreaBuilder(520,0,520,699)
-                                )
-                        )); 
-                    break;          
+                    $locationMessage = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);        
+                 
+                    $multiMessage = new MultiMessageBuilder;
+                    $multiMessage->add($textMessage);
+                    $multiMessage->add($imageMessage);
+                    $multiMessage->add($locationMessage);
+                    $replyData = $multiMessage;                                     
+                    break;              
+                               
                 case "tm":
                     $replyData = new TemplateMessageBuilder('Confirm Template',
                         new ConfirmTemplateBuilder(
