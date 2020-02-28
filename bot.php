@@ -83,16 +83,17 @@ if (!is_null($events)) {
                             'ยอดเงินไม่เข้า',
                             'กรอกชื่อผู้ใช้ 2'
                         ),
+                        new UriTemplateActionBuilder(
+                            'รายละเอียดเพิ่มเติม',
+                            'https://www.ninenik.com'
+                        ),   
                         new MessageTemplateActionBuilder(
                             'อื่นๆ',
                             'กรอกชื่อผู้ใช้ 3'
                         ),
-                        new UriTemplateActionBuilder(
-                            'รายละเอียดเพิ่มเติม',
-                            'https://www.ninenik.com'
-                        ),                     
+                                          
                     );
-                    $imageUrl = 'https://www.mywebsite.com/imgsrc/photos/w/simpleflower';
+                    $imageUrl = 'https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1';
                     $replyData = new TemplateMessageBuilder(
                         'แจ้งปัญหา',
                         new ButtonTemplateBuilder(
