@@ -196,17 +196,17 @@ if (!is_null($events)) {
                         new BoxComponentBuilder(
                             "vertical",
                             array(
-                                new SpacerComponentBuilder("xl"),
+                                
                                 new ButtonComponentBuilder(
                                     new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
                                     NULL,NULL,NULL,"primary","primary"
                                 ),
-                                new SpacerComponentBuilder("xl"),
+                                
                                 new ButtonComponentBuilder(
                                     new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
                                     NULL,NULL,NULL,"primary","secondary"
                                 ),
-                                new SpacerComponentBuilder("xl"),
+                                
                                 new ButtonComponentBuilder(
                                     new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
                                     NULL,NULL,NULL,"primary","line"
