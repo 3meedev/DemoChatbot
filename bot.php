@@ -209,11 +209,7 @@ if (!is_null($events)) {
                             ),
                             0,"md"
                         ),                        
-                        new BubbleStylesBuilder( // style ทั้งหมดของ bubble
-                            
-                            new BlockStyleBuilder("#ffffff"), // style สำหรับ body block
-                            
-                        )
+                       
                     );
                     $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                     break;
