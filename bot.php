@@ -188,44 +188,31 @@ if (!is_null($events)) {
                 
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
-                        new BoxComponentBuilder(
-                            "vertical",
-                            array(
-                                new TextComponentBuilder("This is Header")
-                            )
-                        ),
+                        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"                        
                         new ImageComponentBuilder(
-                            "https://www.ninenik.com/images/ninenik_page_logo.png",NULL,NULL,NULL,NULL,"full","20:13","cover"),
+                            "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
                         new BoxComponentBuilder(
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
+                                    new MessageTemplateActionBuilder("ติดต่อที่ 1","รายละเอียด 1"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
+                                    new MessageTemplateActionBuilder("ติดต่อที่ 1","รายละเอียด 2"),
                                     NULL,NULL,NULL,"secondary"
                                 ),          
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Link  style button","http://niik.in"),
+                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
                                     NULL,NULL,NULL,"link"
                                 ),                                  
                             ),
                             0,"md"
-                        ),
-                        new BoxComponentBuilder(
-                            "vertical",
-                            array(
-                                new TextComponentBuilder("This is Footer")
-                            )
-                        ),
+                        ),                        
                         new BubbleStylesBuilder( // style ทั้งหมดของ bubble
-                            new BlockStyleBuilder("#FFC90E"),  // style สำหรับ header block
-                            new BlockStyleBuilder("#EFE4B0"), // style สำหรับ hero block
-                            new BlockStyleBuilder("#B5E61D"), // style สำหรับ body block
-                            new BlockStyleBuilder("#FFF200") // style สำหรับ footer block
+                            
+                            new BlockStyleBuilder("#ffffff"), // style สำหรับ body block
+                            
                         )
                     );
                     $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
