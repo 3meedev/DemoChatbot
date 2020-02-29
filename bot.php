@@ -196,23 +196,21 @@ if (!is_null($events)) {
                         new BoxComponentBuilder(
                             "vertical",
                             array(
-                                
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
-                                    NULL,NULL,NULL,"primary","primary"
+                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
+                                    NULL,NULL,NULL,"primary"
                                 ),
-                                
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
-                                    NULL,NULL,NULL,"primary","secondary"
-                                ),
-                                
+                                    new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
+                                    NULL,NULL,NULL,"secondary"
+                                ),          
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
-                                    NULL,NULL,NULL,"primary","line"
-                                )
-                            )
-                        )           
+                                    new UriTemplateActionBuilder("Link  style button","http://niik.in"),
+                                    NULL,NULL,NULL,"link"
+                                ),                                  
+                            ),
+                            0,"md"
+                        ) 
                     );      
              
             $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
