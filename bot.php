@@ -188,28 +188,44 @@ if (!is_null($events)) {
                 
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"                        
+                        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+                        new BoxComponentBuilder(
+                            "vertical",
+                            array(
+                                new TextComponentBuilder("รายละเอียดการติดต่อ")
+                            )
+                        ),
                         new ImageComponentBuilder(
                             "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
                         new BoxComponentBuilder(
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new MessageTemplateActionBuilder("ติดต่อที่ 1","รายละเอียด 1"),
+                                    new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
-                                    new MessageTemplateActionBuilder("ติดต่อที่ 1","รายละเอียด 2"),
+                                    new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
                                     NULL,NULL,NULL,"secondary"
-                                ),          
+                                )                                                                
+                            ),
+                            0,"md"
+                        ),
+                        new BoxComponentBuilder(
+                            "vertical",
+                            array(
                                 new ButtonComponentBuilder(
                                     new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
                                     NULL,NULL,NULL,"link"
-                                ),                                  
-                            ),
-                            0,"md"
-                        ),                        
-                       
+                                )  
+                            )
+                        ),
+                        new BubbleStylesBuilder( // style ทั้งหมดของ bubble
+                            new BlockStyleBuilder("#ffffff"),  // style สำหรับ header block
+                            new BlockStyleBuilder("#ffffff"), // style สำหรับ hero block
+                            new BlockStyleBuilder("#ffffff"), // style สำหรับ body block
+                            new BlockStyleBuilder("#ffffff") // style สำหรับ footer block
+                        )
                     );
                     $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                     break;
