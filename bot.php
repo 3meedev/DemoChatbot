@@ -188,9 +188,14 @@ if (!is_null($events)) {
                 
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",                        
-                        new ImageComponentBuilder(
-                            "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
+                        "ltr",
+                        new BoxComponentBuilder(
+                            "vertical",
+                            array(
+                                new ImageComponentBuilder(
+                                    "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover")
+                            )
+                        ),                        
                         new BoxComponentBuilder(
                             "vertical",
                             array(
@@ -201,7 +206,7 @@ if (!is_null($events)) {
                                 new ButtonComponentBuilder(
                                     new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
                                     NULL,NULL,NULL,"secondary"
-                                )                                 
+                                )                                
                             ),
                             0,"md"
                         ),
@@ -211,8 +216,14 @@ if (!is_null($events)) {
                                 new ButtonComponentBuilder(
                                     new UriTemplateActionBuilder("Link  style button","http://niik.in"),
                                     NULL,NULL,NULL,"link"
-                                )     
+                                )
                             )
+                        ),
+                        new BubbleStylesBuilder( 
+                            new BlockStyleBuilder("#ffffff"),
+                            new BlockStyleBuilder("#ffffff"), 
+                            new BlockStyleBuilder("#ffffff"), 
+                            new BlockStyleBuilder("#ffffff") 
                         )
                     );
                     $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
