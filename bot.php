@@ -197,11 +197,11 @@ if (!is_null($events)) {
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
+                                    new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
+                                    new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
                                     NULL,NULL,NULL,"secondary"
                                 ),          
                                 new ButtonComponentBuilder(
