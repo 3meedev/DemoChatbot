@@ -190,7 +190,7 @@ if (!is_null($events)) {
                         new BoxComponentBuilder(
                             "vertical",
                             array(
-                                new ImageComponentBuilder("https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:20","cover")                                                                                            
+                                new ImageComponentBuilder("https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover")                                                                                            
                             )
                         ),
                         new BoxComponentBuilder(
@@ -198,8 +198,18 @@ if (!is_null($events)) {
                             array(
                                 new SpacerComponentBuilder("xl"),
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Tap me","http://niik.in"),
-                                    NULL,NULL,NULL,"primary","#0000ff"
+                                    new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
+                                    NULL,NULL,NULL,"primary","primary"
+                                ),
+                                new SpacerComponentBuilder("xl"),
+                                new ButtonComponentBuilder(
+                                    new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
+                                    NULL,NULL,NULL,"primary","secondary"
+                                ),
+                                new SpacerComponentBuilder("xl"),
+                                new ButtonComponentBuilder(
+                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
+                                    NULL,NULL,NULL,"primary","line"
                                 )
                             )
                         )           
