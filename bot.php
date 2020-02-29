@@ -57,14 +57,11 @@ use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\BubbleStylesBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\BlockStyleBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
+
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
+
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ImageComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\FillerComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SeparatorComponentBuilder;
+use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
 
 
@@ -187,40 +184,33 @@ if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
     switch ($typeMessage) {
         case 'text':
-            switch ($userMessage) {
-                
+            switch ($userMessage) {                
                 
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
                         "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+                        NULL,NULL,
                         new BoxComponentBuilder(
                             "vertical",
                             array(
-                                new TextComponentBuilder("This is Header")
-                            )
-                        ),
-                        new ImageComponentBuilder(
-                            "https://www.ninenik.com/images/ninenik_page_logo.png",NULL,NULL,NULL,NULL,"full","20:13","cover"),
-                        new BoxComponentBuilder(
-                            "vertical",
-                            array(
-                                new TextComponentBuilder("This is Body")
-                            )
-                        ),
-                        new BoxComponentBuilder(
-                            "vertical",
-                            array(
-                                new TextComponentBuilder("This is Footer")
-                            )
-                        ),
-                        new BubbleStylesBuilder( // style ทั้งหมดของ bubble
-                            new BlockStyleBuilder("#FFC90E"),  // style สำหรับ header block
-                            new BlockStyleBuilder("#EFE4B0"), // style สำหรับ hero block
-                            new BlockStyleBuilder("#B5E61D"), // style สำหรับ body block
-                            new BlockStyleBuilder("#FFF200") // style สำหรับ footer block
+                                new ButtonComponentBuilder(
+                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
+                                    NULL,NULL,NULL,"primary"
+                                ),
+                                new ButtonComponentBuilder(
+                                    new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
+                                    NULL,NULL,NULL,"secondary"
+                                ),          
+                                new ButtonComponentBuilder(
+                                    new UriTemplateActionBuilder("Link  style button","http://niik.in"),
+                                    NULL,NULL,NULL,"link"
+                                ),                                  
+                            ),
+                            0,"md"
                         )
-                    );
-                    $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+                    );      
+             
+            $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                     break;
                 default:
                     $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
