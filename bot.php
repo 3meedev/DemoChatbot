@@ -189,11 +189,11 @@ if (!is_null($events)) {
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
                         "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
-                        NULL,NULL,
-                        new ImageComponentBuilder(
-                            "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
+                        NULL,NULL,                        
                         new BoxComponentBuilder(
                             "vertical",
+                            new ImageComponentBuilder(
+                                "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
                             array(
                                 new ButtonComponentBuilder(
                                     new MessageTemplateActionBuilder("Primary style button","กรอกชื่อผู้ใช้"),
