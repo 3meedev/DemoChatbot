@@ -194,6 +194,9 @@ if (!is_null($events)) {
                             "vertical",
                             new ImageComponentBuilder(
                                 "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
+                            ),
+                            new BoxComponentBuilder(
+                                "vertical",
                             array(
                                 new ButtonComponentBuilder(
                                     new MessageTemplateActionBuilder("Primary style button","กรอกชื่อผู้ใช้"),
@@ -206,10 +209,12 @@ if (!is_null($events)) {
                                 new ButtonComponentBuilder(
                                     new UriTemplateActionBuilder("Link  style button","http://niik.in"),
                                     NULL,NULL,NULL,"link"
-                                ),                                  
-                            ),
+                                )                        
+                            )
+                                ),
                             0,"md"
-                        )
+                            
+                        
                     );      
              
             $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
