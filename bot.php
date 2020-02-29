@@ -222,11 +222,9 @@ if (!is_null($events)) {
                         NULL,NULL,
                         new BoxComponentBuilder(
                             "vertical",
-                            array(
-                                new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
-                                    NULL,NULL,NULL,"primary"
-                                ),
+                            array(                                
+                                new TextComponentBuilder("Primary style button","http://niik.in"),                                   
+                                
                                 new ButtonComponentBuilder(
                                     new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
                                     NULL,NULL,NULL,"secondary"
@@ -244,7 +242,7 @@ if (!is_null($events)) {
         break;
         case "b":
             $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+                "ltr",
                 NULL,NULL,
                 new BoxComponentBuilder(
                     "vertical",
@@ -301,4 +299,3 @@ $response = $bot->replyMessage($replyToken, $replyData);
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 // ----------------------------------------------------------------------------------------------------------------------------
-?>
