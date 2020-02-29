@@ -258,7 +258,10 @@ if (!is_null($events)) {
                             NULL,NULL,NULL,"secondary"
                         ),         
                     ),
-                    0,"md",
+                    0,"md",                    
+                ),
+                new BoxComponentBuilder(
+                    "vertical",                    
                     array(                         
                         new ButtonComponentBuilder(
                             new UriTemplateActionBuilder("Link  style button","http://niik.in"),
