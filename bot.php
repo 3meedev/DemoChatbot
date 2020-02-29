@@ -192,7 +192,7 @@ if (!is_null($events)) {
                         new BoxComponentBuilder(
                             "vertical",
                             array(
-                                new TextComponentBuilder("รายละเอียดการติดต่อ")
+                                new TextComponentBuilder("This is Header")
                             )
                         ),
                         new ImageComponentBuilder(
@@ -201,23 +201,24 @@ if (!is_null($events)) {
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
+                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
+                                    new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
                                     NULL,NULL,NULL,"secondary"
-                                )                                                                
+                                ),          
+                                new ButtonComponentBuilder(
+                                    new UriTemplateActionBuilder("Link  style button","http://niik.in"),
+                                    NULL,NULL,NULL,"link"
+                                ),                                  
                             ),
                             0,"md"
                         ),
                         new BoxComponentBuilder(
                             "vertical",
                             array(
-                                new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
-                                    NULL,NULL,NULL,"link"
-                                )  
+                                new TextComponentBuilder("This is Footer")
                             )
                         ),
                         new BubbleStylesBuilder( // style ทั้งหมดของ bubble
