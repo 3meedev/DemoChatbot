@@ -194,7 +194,7 @@ if (!is_null($events)) {
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Primary style button","กรอกชื่อผู้ใช้"),
+                                    new MessageTemplateActionBuilder("Primary style button","กรอกชื่อผู้ใช้"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
