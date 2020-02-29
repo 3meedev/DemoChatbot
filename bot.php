@@ -185,7 +185,7 @@ if (!is_null($events)) {
                 
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+                        "ltr",  
                         NULL,NULL,
                         new BoxComponentBuilder(
                             "vertical",
@@ -197,15 +197,15 @@ if (!is_null($events)) {
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
+                                    new UriTemplateActionBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
+                                    new UriTemplateActionBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
                                     NULL,NULL,NULL,"secondary"
                                 ),          
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Link  style button","http://niik.in"),
+                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
                                     NULL,NULL,NULL,"link"
                                 ),                                  
                             ),
