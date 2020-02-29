@@ -189,17 +189,19 @@ if (!is_null($events)) {
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
                         "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
-                        NULL,NULL,                        
                         new BoxComponentBuilder(
                             "vertical",
-                            new ImageComponentBuilder(
-                                "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
-                            ),
-                            new BoxComponentBuilder(
-                                "vertical",
+                            array(
+                                new TextComponentBuilder("This is Header")
+                            )
+                        ),
+                        new ImageComponentBuilder(
+                            "https://www.ninenik.com/images/ninenik_page_logo.png",NULL,NULL,NULL,NULL,"full","20:13","cover"),
+                        new BoxComponentBuilder(
+                            "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new MessageTemplateActionBuilder("Primary style button","กรอกชื่อผู้ใช้"),
+                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
@@ -209,15 +211,24 @@ if (!is_null($events)) {
                                 new ButtonComponentBuilder(
                                     new UriTemplateActionBuilder("Link  style button","http://niik.in"),
                                     NULL,NULL,NULL,"link"
-                                )                        
-                            )
-                                ),
+                                ),                                  
+                            ),
                             0,"md"
-                            
-                        
-                    );      
-             
-            $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+                        ),
+                        new BoxComponentBuilder(
+                            "vertical",
+                            array(
+                                new TextComponentBuilder("This is Footer")
+                            )
+                        ),
+                        new BubbleStylesBuilder( // style ทั้งหมดของ bubble
+                            new BlockStyleBuilder("#FFC90E"),  // style สำหรับ header block
+                            new BlockStyleBuilder("#EFE4B0"), // style สำหรับ hero block
+                            new BlockStyleBuilder("#B5E61D"), // style สำหรับ body block
+                            new BlockStyleBuilder("#FFF200") // style สำหรับ footer block
+                        )
+                    );
+                    $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                     break;
                 default:
                     $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
