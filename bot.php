@@ -190,6 +190,8 @@ if (!is_null($events)) {
                     $textReplyMessage = new BubbleContainerBuilder(
                         "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
                         NULL,NULL,
+                        new ImageComponentBuilder(
+                            "https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover"),
                         new BoxComponentBuilder(
                             "vertical",
                             array(
