@@ -224,11 +224,11 @@ if (!is_null($events)) {
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
+                                    new UriTemplateActionBuilder("Primary style button","http://niik.in"),
                                     NULL,NULL,NULL,"primary"
                                 ),
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
+                                    new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
                                     NULL,NULL,NULL,"secondary"
                                 ),          
                                 new ButtonComponentBuilder(
@@ -242,6 +242,35 @@ if (!is_null($events)) {
              
             $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
         break;
+        case "b":
+            $textReplyMessage = new BubbleContainerBuilder(
+                "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+                NULL,NULL,
+                new BoxComponentBuilder(
+                    "vertical",
+                    array(
+                        new ButtonComponentBuilder(
+                            new TextComponentBuilder("Primary style button","dsfsdfsdf"),
+                            NULL,NULL,NULL,"primary"
+                        ),
+                        new ButtonComponentBuilder(
+                            new TextComponentBuilder("Secondary  style button","sdfsdfsdf"),
+                            NULL,NULL,NULL,"secondary"
+                        ),         
+                    ),
+                    0,"md",
+                    array(                         
+                        new ButtonComponentBuilder(
+                            new UriTemplateActionBuilder("Link  style button","http://niik.in"),
+                            NULL,NULL,NULL,"link"
+                        ),                                  
+                    ),
+                    0,"md"
+                )
+            );      
+     
+    $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+break;
                 default:
                     $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
                     $replyData = new TextMessageBuilder($textReplyMessage);
