@@ -78,7 +78,7 @@ use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
 
 // $events = json_decode($content, true);
 // if (!is_null($events)) {
-    
+
 //     $replyToken = $events['events'][0]['replyToken'];
 //     $typeMessage = $events['events'][0]['message']['type'];
 //     $userMessage = $events['events'][0]['message']['text'];
@@ -174,7 +174,7 @@ $content = file_get_contents('php://input');
 
 $events = json_decode($content, true);
 if (!is_null($events)) {
-    
+
     $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
@@ -182,91 +182,46 @@ if (!is_null($events)) {
 
     switch ($typeMessage) {
         case 'text':
-            switch ($userMessage) {                
-                
+            switch ($userMessage) {
+
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",  
-                        NULL,NULL,                        
+                        "ltr",
+                        NULL,
+                        NULL,
                         new BoxComponentBuilder(
                             "vertical",
                             array(
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 1","รายละเอียดที่ 1"),
-                                    NULL,NULL,NULL,"primary"
+                                    new TextComponentBuilder("ติดต่อที่ 1", "รายละเอียดที่ 1"),
+                                    NULL,
+                                    NULL,
+                                    NULL,
+                                    "primary"
                                 ),
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 2","รายละเอียดที่ 2"),
-                                    NULL,NULL,NULL,"secondary"
-                                ),          
+                                    new TextComponentBuilder("ติดต่อที่ 2", "รายละเอียดที่ 2"),
+                                    NULL,
+                                    NULL,
+                                    NULL,
+                                    "secondary"
+                                ),
                                 new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม","https://www.google.com/"),
-                                    NULL,NULL,NULL,"link"
-                                ),                                  
+                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://www.google.com/"),
+                                    NULL,
+                                    NULL,
+                                    NULL,
+                                    "link"
+                                ),
                             ),
-                            0,"md"
-                        ) 
-                    );      
-             
-            $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+                            0,
+                            "md"
+                        )
+                    );
+
+                    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
                     break;
 
-                case "a":
-                    $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
-                        NULL,NULL,
-                        new BoxComponentBuilder(
-                            "vertical",
-                            array(                                
-                                new TextComponentBuilder("Primary style button","http://niik.in"),                                   
-                                
-                                new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
-                                    NULL,NULL,NULL,"secondary"
-                                ),          
-                                new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("Link  style button","http://niik.in"),
-                                    NULL,NULL,NULL,"link"
-                                ),                                  
-                            ),
-                            0,"md"
-                        )
-                    );      
-             
-            $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
-        break;
-        case "b":
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,NULL,
-                new BoxComponentBuilder(
-                    "vertical",
-                    array(
-                        new ButtonComponentBuilder(
-                            new TextComponentBuilder("Primary style button","dsfsdfsdf"),
-                            NULL,NULL,NULL,"primary"
-                        ),
-                        new ButtonComponentBuilder(
-                            new TextComponentBuilder("Secondary  style button","sdfsdfsdf"),
-                            NULL,NULL,NULL,"secondary"
-                        ),         
-                    ),
-                    0,"md",                    
-                ),
-                new BoxComponentBuilder(
-                    "vertical",                    
-                    array(                         
-                        new ButtonComponentBuilder(
-                            new UriTemplateActionBuilder("Link  style button","http://niik.in"),
-                            NULL,NULL,NULL,"link"
-                        ),                                  
-                    ),
-                    0,"md"
-                )
-            );      
-     
-    $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
-break;
                 default:
                     $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
                     $replyData = new TextMessageBuilder($textReplyMessage);
@@ -274,17 +229,19 @@ break;
             }
             break;
         default:
-        $textReplyMessage = new BubbleContainerBuilder(
-            "ltr",NULL,NULL,
-            new BoxComponentBuilder(
-                "vertical",
-                array(
-                    new TextComponentBuilder("hello"),
-                    new TextComponentBuilder("world")
+            $textReplyMessage = new BubbleContainerBuilder(
+                "ltr",
+                NULL,
+                NULL,
+                new BoxComponentBuilder(
+                    "vertical",
+                    array(
+                        new TextComponentBuilder("hello"),
+                        new TextComponentBuilder("world")
+                    )
                 )
-            )
-        );
-        $replyData = new FlexMessageBuilder("This is a Flex Message",$textReplyMessage);
+            );
+            $replyData = new FlexMessageBuilder("This is a Flex Message", $textReplyMessage);
     }
 }
 
