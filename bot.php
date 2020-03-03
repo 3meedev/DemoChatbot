@@ -86,36 +86,36 @@ if (!is_null($events)) {
     switch ($typeMessage) {
         case 'text':
             switch ($userMessage) {
-                case "แจ้งปัญหา":
-                    $actionBuilder = array(
-                        new MessageTemplateActionBuilder(
-                            'ปัญหาที่ 1',
-                            'รายละเอียดที่ 1'
-                        ),
-                        new MessageTemplateActionBuilder(
-                            'ปัญหาที่ 2',
-                            'รายละเอียดที่ 2'
-                        ),
-                        new MessageTemplateActionBuilder(
-                            'ปัญหาที่ 3',
-                            'รายละเอียดที่ 3'
-                        ),
-                        new UriTemplateActionBuilder(
-                            'รายละเอียดเพิ่มเติม',
-                            'https://www.google.com/?hl=th'
-                        ),
-                    );
-                    $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
-                    $replyData = new TemplateMessageBuilder(
-                        'แจ้งปัญหา',
-                        new ButtonTemplateBuilder(
-                            'แจ้งปัญหา',
-                            'กรุณาเลือกหัวข้อที่ต้องการ',
-                            $imageUrl,
-                            $actionBuilder
-                        )
-                    );
-                    break;
+                // case "แจ้งปัญหา":
+                //     $actionBuilder = array(
+                //         new MessageTemplateActionBuilder(
+                //             'ปัญหาที่ 1',
+                //             'รายละเอียดที่ 1'
+                //         ),
+                //         new MessageTemplateActionBuilder(
+                //             'ปัญหาที่ 2',
+                //             'รายละเอียดที่ 2'
+                //         ),
+                //         new MessageTemplateActionBuilder(
+                //             'ปัญหาที่ 3',
+                //             'รายละเอียดที่ 3'
+                //         ),
+                //         new UriTemplateActionBuilder(
+                //             'รายละเอียดเพิ่มเติม',
+                //             'https://www.google.com/?hl=th'
+                //         ),
+                //     );
+                //     $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
+                //     $replyData = new TemplateMessageBuilder(
+                //         'แจ้งปัญหา',
+                //         new ButtonTemplateBuilder(
+                //             'แจ้งปัญหา',
+                //             'กรุณาเลือกหัวข้อที่ต้องการ',
+                //             $imageUrl,
+                //             $actionBuilder
+                //         )
+                //     );
+                //     break;
                 case "เปิด Account":
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
