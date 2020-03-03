@@ -91,7 +91,7 @@ if (!is_null($events)) {
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
                             'ปัญหาที่ 1',
-                            'รายละเอียดที่ 1'
+                            'รายละเอียด'
                         ),
                         new MessageTemplateActionBuilder(
                             'ปัญหาที่ 2',
@@ -147,7 +147,7 @@ if (!is_null($events)) {
                         )
                     );
                     break;
-                    case "รายละเอียดที่ 1":
+                    case "รายละเอียด":
                         $actionBuilder = array(
                             new MessageTemplateActionBuilder(
                                 'ตัวเลือกที่ 1',
