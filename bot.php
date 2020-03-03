@@ -186,40 +186,27 @@ if (!is_null($events)) {
 
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",
-                        NULL,
-                        NULL,
+                        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+                        NULL,NULL,
                         new BoxComponentBuilder(
-                            "vertical",
+                            "horizontal",
+                            array(
+                                new TextComponentBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua.",NULL,NULL,NULL,NULL,NULL,true)
+                            )
+                        ),
+                        new BoxComponentBuilder(
+                            "horizontal",
                             array(
                                 new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 1", "รายละเอียดที่ 1"),
-                                    NULL,
-                                    NULL,
-                                    NULL,
-                                    "primary"
-                                ),
-                                new ButtonComponentBuilder(
-                                    new TextComponentBuilder("ติดต่อที่ 2", "รายละเอียดที่ 2"),
-                                    NULL,
-                                    NULL,
-                                    NULL,
-                                    "secondary"
-                                ),
-                                new ButtonComponentBuilder(
-                                    new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://www.google.com/"),
-                                    NULL,
-                                    NULL,
-                                    NULL,
-                                    "link"
-                                ),
-                            ),
-                            0,
-                            "md"
+                                    new UriTemplateActionBuilder("GO","http://niik.in"),
+                                    NULL,NULL,NULL,"primary"
+                                )
+                            )
                         )
                     );
-
-                    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+             
+            $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                     break;
 
                 default:
