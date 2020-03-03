@@ -147,6 +147,26 @@ if (!is_null($events)) {
                         )
                     );
                     break;
+                    case "รายละเอียดที่ 1":
+                        $actionBuilder = array(
+                            new MessageTemplateActionBuilder(
+                                'ตัวเลือกที่ 1',
+                                'ข้อมูลที่ 1'
+                            ),
+                            new MessageTemplateActionBuilder(
+                                'ตัวเลือกที่ 2',
+                                'ข้อมูลที่ 2'
+                            )                            
+                        );                        
+                        $replyData = new TemplateMessageBuilder(
+                            'เปิดบัญชี',
+                            new ButtonTemplateBuilder(
+                                'ปัญหาที่ 1',
+                                'ข้อมูลรายละเอียดของปัญหาที่ 1',                                
+                                $actionBuilder
+                            )
+                        );
+                        break;
                 default:
                     // $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
                     // $replyData = new TextMessageBuilder($textReplyMessage);
