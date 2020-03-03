@@ -116,7 +116,7 @@ if (!is_null($events)) {
                 //         )
                 //     );
                 //     break;
-                case "เปิด Account":
+                case "เปิดบัญชี":
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
                             'รายละเอียดที่ 1',
