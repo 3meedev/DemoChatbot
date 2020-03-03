@@ -83,6 +83,27 @@ if (!is_null($events)) {
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
+
+    if(isset($arrayJson['events'][0]['source']['userId'])){
+        $id = $arrayJson['events'][0]['source']['userId'];
+     }
+     else if(isset($arrayJson['events'][0]['source']['groupId'])){
+        $id = $arrayJson['events'][0]['source']['groupId'];
+     }
+     else if(isset($arrayJson['events'][0]['source']['room'])){
+        $id = $arrayJson['events'][0]['source']['room'];
+     };
+
+     if($message == "สวัสดี"){
+        $arrayPostData['to'] = $id;
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "2";
+        $arrayPostData['messages'][1]['stickerId'] = "34";
+        pushMsg($arrayHeader,$arrayPostData);
+     }
+
     switch ($typeMessage) {
         case 'text':
             switch ($userMessage) {
@@ -163,6 +184,21 @@ $response = $bot->replyMessage($replyToken, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+
+function pushMsg($arrayHeader,$arrayPostData){
+    $strUrl = "https://api.line.me/v2/bot/message/push";
+$ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$strUrl);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrayPostData));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $result = curl_exec($ch);
+    curl_close ($ch);
+ }
+exit;
 
 // ----------------------------------------------------------------------------------------------------------------------------
 
