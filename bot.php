@@ -82,28 +82,11 @@ if (!is_null($events)) {
     $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
-    $userMessage = strtolower($userMessage);
-
-    if (isset($arrayJson['events'][0]['source']['userId'])) {
-        $id = $arrayJson['events'][0]['source']['userId'];
-    } else if (isset($arrayJson['events'][0]['source']['groupId'])) {
-        $id = $arrayJson['events'][0]['source']['groupId'];
-    } else if (isset($arrayJson['events'][0]['source']['room'])) {
-        $id = $arrayJson['events'][0]['source']['room'];
-    };
+    $userMessage = strtolower($userMessage);    
 
     switch ($typeMessage) {
         case 'text':
-            switch ($userMessage) {
-                case "สวัสดี":
-                    $arrayPostData['to'] = $id;
-                    $arrayPostData['messages'][0]['type'] = "text";
-                    $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-                    $arrayPostData['messages'][1]['type'] = "sticker";
-                    $arrayPostData['messages'][1]['packageId'] = "2";
-                    $arrayPostData['messages'][1]['stickerId'] = "34";
-                    pushMsg($arrayHeader, $arrayPostData);
-                    break;
+            switch ($userMessage) {          
                 case "แจ้งปัญหา":
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
@@ -177,7 +160,7 @@ if (!is_null($events)) {
     }
 }
 
-$response = $bot->replyMessage($id, $replyData);
+$response = $bot->replyMessage($replyToken, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
