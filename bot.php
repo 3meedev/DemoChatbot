@@ -91,7 +91,7 @@ if (!is_null($events)) {
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
                             'ปัญหาที่ 1',
-                            'รายละเอียด'
+                            'รายละเอียดที่ 1'
                         ),
                         new MessageTemplateActionBuilder(
                             'ปัญหาที่ 2',
@@ -147,31 +147,23 @@ if (!is_null($events)) {
                         )
                     );
                     break;
-                    case "รายละเอียด":
+                    case "รายละเอียดที่ 1":
                         $actionBuilder = array(
                             new MessageTemplateActionBuilder(
-                                'รายละเอียดที่ 1',
-                                'ข้อมูลที่ 1'
+                                'เมนูที่ 1',
+                                'เมนูที่ 1'
                             ),
                             new MessageTemplateActionBuilder(
-                                'รายละเอียดที่ 2',
-                                'ข้อมูลที่ 2'
-                            ),
-                            new MessageTemplateActionBuilder(
-                                'รายละเอียดที่ 3',
-                                'ข้อมูลที่ 3'
-                            ),
-                            new UriTemplateActionBuilder(
-                                'รายละเอียดเพิ่มเติม',
-                                'https://www.google.com/?hl=th'
-                            ),
+                                'เมนูที่ 2',
+                                'เมนูที่ 2'
+                            ),                            
                         );
                         $imageUrl = null;
                         $replyData = new TemplateMessageBuilder(
-                            'เปิดบัญชี',
+                            'รายละเอียดที่ 1',
                             new ButtonTemplateBuilder(
-                                'เปิดบัญชี',
-                                'กรุณาเลือกหัวข้อที่ต้องการ',
+                                'รายละเอียดที่ 1',
+                                'รายละเอียดของรายละเอียดที่ 1',
                                 $imageUrl,
                                 $actionBuilder
                             )
