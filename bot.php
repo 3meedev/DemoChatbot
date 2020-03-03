@@ -98,10 +98,11 @@ if (!is_null($events)) {
                         ),
                         new MessageTemplateActionBuilder(
                             'Message Template',// ข้อความแสดงในปุ่ม
-                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'This is Text', // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'primary'
                         ),
                         new UriTemplateActionBuilder(
-                            'Uri Template', // ข้อความแสดงในปุ่ม
+                            'รายละเอียดเพิ่มเติม', // ข้อความแสดงในปุ่ม
                             'https://www.ninenik.com'
                         ),                   
                     );      
