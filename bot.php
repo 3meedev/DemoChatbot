@@ -82,11 +82,11 @@ if (!is_null($events)) {
     $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
-    $userMessage = strtolower($userMessage);
+    $userMessage = strtolower($userMessage);    
 
     switch ($typeMessage) {
         case 'text':
-            switch ($userMessage) {
+            switch ($userMessage) {          
                 case "แจ้งปัญหา":
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
@@ -147,24 +147,30 @@ if (!is_null($events)) {
                         )
                     );
                     break;
-                case "รายละเอียด":                
-                    $replyData = new TemplateMessageBuilder(
-                        'Confirm Template',
-                        new ConfirmTemplateBuilder(
-                            'Confirm template builder', // ข้อความแนะนำหรือบอกวิธีการ หรือคำอธิบาย
-                            array(
-                                new MessageTemplateActionBuilder(
-                                    'Yes', // ข้อความสำหรับปุ่มแรก
-                                    'YES'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                                ),
-                                new MessageTemplateActionBuilder(
-                                    'No', // ข้อความสำหรับปุ่มแรก
-                                    'NO' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                    case "รายละเอียด":
+                        $textReplyMessage1 = new BubbleContainerBuilder(
+                            "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+                            NULL,NULL,
+                            new BoxComponentBuilder(
+                                "horizontal",
+                                array(
+                                    new TextComponentBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.",NULL,NULL,NULL,NULL,NULL,true)
+                                )
+                            ),
+                            new BoxComponentBuilder(
+                                "horizontal",
+                                array(
+                                    new ButtonComponentBuilder(
+                                        new UriTemplateActionBuilder("GO","http://niik.in"),
+                                        NULL,NULL,NULL,"primary"
+                                    )
                                 )
                             )
-                        )
-                    );
-                    break;
+                        );
+                 
+                $replyData1 = new FlexMessageBuilder("Flex",$textReplyMessage1);
+                        break;
                 default:
                     // $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
                     // $replyData = new TextMessageBuilder($textReplyMessage);
@@ -174,6 +180,18 @@ if (!is_null($events)) {
         default:
             $textReplyMessage = json_encode($events);
             $replyData = new TextMessageBuilder($textReplyMessage);
+
+            $textReplyMessage1 = new BubbleContainerBuilder(
+                "ltr",NULL,NULL,
+                new BoxComponentBuilder(
+                    "vertical",
+                    array(
+                        new TextComponentBuilder("hello"),
+                        new TextComponentBuilder("world")
+                    )
+                )
+            );
+            $replyData1 = new FlexMessageBuilder("This is a Flex Message",$textReplyMessage1);
             break;
     }
 }
