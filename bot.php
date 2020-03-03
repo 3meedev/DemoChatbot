@@ -137,9 +137,9 @@ if (!is_null($events)) {
                     );
                     $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
                     $replyData = new TemplateMessageBuilder(
-                        'เปิด Account',
+                        'เปิดบัญชี',
                         new ButtonTemplateBuilder(
-                            'เปิด Account',
+                            'เปิดบัญชี',
                             'กรุณาเลือกหัวข้อที่ต้องการ',
                             $imageUrl,
                             $actionBuilder
