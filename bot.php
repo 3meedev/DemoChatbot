@@ -86,11 +86,11 @@ if (!is_null($events)) {
     switch ($typeMessage) {
         case 'text':
             switch ($userMessage) {
-                case "แจ้งปัญหา":                   
+                case "แจ้งปัญหา":
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
                             'ปัญหาที่ 1',
-                            'รายละเอียดที่ 1' 
+                            'รายละเอียดที่ 1'
                         ),
                         new MessageTemplateActionBuilder(
                             'ปัญหาที่ 2',
@@ -98,13 +98,13 @@ if (!is_null($events)) {
                         ),
                         new MessageTemplateActionBuilder(
                             'ปัญหาที่ 3',
-                            'รายละเอียดที่ 3'                            
+                            'รายละเอียดที่ 3'
                         ),
                         new UriTemplateActionBuilder(
                             'รายละเอียดเพิ่มเติม',
                             'https://www.google.com/?hl=th'
-                        ),                   
-                    );      
+                        ),
+                    );
                     $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
                     $replyData = new TemplateMessageBuilder(
                         'แจ้งปัญหา',
@@ -112,25 +112,37 @@ if (!is_null($events)) {
                             'แจ้งปัญหา',
                             'กรุณาเลือกหัวข้อที่ต้องการ',
                             $imageUrl,
-                            $actionBuilder 
+                            $actionBuilder
                         )
                     );
                     break;
-                case "ติดต่อ":
+                case "เปิด Account":
+                    $actionBuilder = array(
+                        new MessageTemplateActionBuilder(
+                            'รายละเอียดที่ 1',
+                            'ข้อมูลที่ 1'
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'รายละเอียดที่ 2',
+                            'ข้อมูลที่ 2'
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'รายละเอียดที่ 3',
+                            'ข้อมูลที่ 3'
+                        ),
+                        new UriTemplateActionBuilder(
+                            'รายละเอียดเพิ่มเติม',
+                            'https://www.google.com/?hl=th'
+                        ),
+                    );
+                    $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
                     $replyData = new TemplateMessageBuilder(
-                        'Confirm Template',
-                        new ConfirmTemplateBuilder(
-                            'Confirm template builder',
-                            array(
-                                new MessageTemplateActionBuilder(
-                                    'Yes',
-                                    'Text Yes'
-                                ),
-                                new MessageTemplateActionBuilder(
-                                    'No',
-                                    'Text NO'
-                                )
-                            )
+                        'เปิด Account',
+                        new ButtonTemplateBuilder(
+                            'เปิด Account',
+                            'กรุณาเลือกหัวข้อที่ต้องการ',
+                            $imageUrl,
+                            $actionBuilder
                         )
                     );
                     break;
