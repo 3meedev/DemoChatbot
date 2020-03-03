@@ -89,21 +89,20 @@ if (!is_null($events)) {
                 case "แจ้งปัญหา":                   
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
-                            'Message Template',// ข้อความแสดงในปุ่ม
-                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'ปัญหาที่ 1',
+                            'รายละเอียดที่ 1' 
                         ),
                         new MessageTemplateActionBuilder(
-                            'Message Template',// ข้อความแสดงในปุ่ม
-                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'ปัญหาที่ 2',
+                            'รายละเอียดที่ 2'
                         ),
                         new MessageTemplateActionBuilder(
-                            'Message Template',// ข้อความแสดงในปุ่ม
-                            'This is Text', // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                            'primary'
+                            'ปัญหาที่ 3',
+                            'รายละเอียดที่ 3'                            
                         ),
                         new UriTemplateActionBuilder(
-                            'รายละเอียดเพิ่มเติม', // ข้อความแสดงในปุ่ม
-                            'https://www.ninenik.com'
+                            'รายละเอียดเพิ่มเติม',
+                            'https://www.google.com/?hl=th'
                         ),                   
                     );      
                     $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
