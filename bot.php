@@ -86,34 +86,26 @@ if (!is_null($events)) {
     switch ($typeMessage) {
         case 'text':
             switch ($userMessage) {
-                case "ตอบกลับ":
-                    $textReplyMessage = "Bot ตอบกลับคุณเป็นข้อความ";
-                    $textMessage = new TextMessageBuilder($textReplyMessage);
-                    break;
-                case "โลเคชั่น":
-                    $placeName = "ที่ตั้งร้าน";
-                    $placeAddress = "แขวง พลับพลา เขต วังทองหลาง กรุงเทพมหานคร ประเทศไทย";
-                    $latitude = 13.780401863217657;
-                    $longitude = 100.61141967773438;
-                    $locationMessage = new LocationMessageBuilder($placeName, $placeAddress, $latitude, $longitude);
-                    break;
                 case "แจ้งปัญหา":                   
                     $actionBuilder = array(
-                        new ButtonComponentBuilder(
-                            new UriTemplateActionBuilder("Primary style button","http://niik.in"),
-                            NULL,NULL,NULL,"primary"
+                        new MessageTemplateActionBuilder(
+                            'Message Template',// ข้อความแสดงในปุ่ม
+                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),
-                        new ButtonComponentBuilder(
-                            new UriTemplateActionBuilder("Secondary  style button","http://niik.in"),
-                            NULL,NULL,NULL,"secondary"
-                        ),          
-                        new ButtonComponentBuilder(
-                            new UriTemplateActionBuilder("Link  style button","http://niik.in"),
-                            NULL,NULL,NULL,"link"
-                        ),                                  
-                        0,"md"                        
+                        new MessageTemplateActionBuilder(
+                            'Message Template',// ข้อความแสดงในปุ่ม
+                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'Message Template',// ข้อความแสดงในปุ่ม
+                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new UriTemplateActionBuilder(
+                            'Uri Template', // ข้อความแสดงในปุ่ม
+                            'https://www.ninenik.com'
+                        ),                   
                     );      
-                    $imageUrl = 'https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1';
+                    $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
                     $replyData = new TemplateMessageBuilder(
                         'แจ้งปัญหา',
                         new ButtonTemplateBuilder(
