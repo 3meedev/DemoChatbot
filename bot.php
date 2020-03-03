@@ -148,28 +148,34 @@ if (!is_null($events)) {
                     );
                     break;
                     case "รายละเอียด":
-                        $textReplyMessage1 = new BubbleContainerBuilder(
-                            "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
-                            NULL,NULL,
-                            new BoxComponentBuilder(
-                                "horizontal",
-                                array(
-                                    new TextComponentBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.",NULL,NULL,NULL,NULL,NULL,true)
-                                )
+                        $actionBuilder = array(
+                            new MessageTemplateActionBuilder(
+                                'รายละเอียดที่ 1',
+                                'ข้อมูลที่ 1'
                             ),
-                            new BoxComponentBuilder(
-                                "horizontal",
-                                array(
-                                    new ButtonComponentBuilder(
-                                        new UriTemplateActionBuilder("GO","http://niik.in"),
-                                        NULL,NULL,NULL,"primary"
-                                    )
-                                )
+                            new MessageTemplateActionBuilder(
+                                'รายละเอียดที่ 2',
+                                'ข้อมูลที่ 2'
+                            ),
+                            new MessageTemplateActionBuilder(
+                                'รายละเอียดที่ 3',
+                                'ข้อมูลที่ 3'
+                            ),
+                            new UriTemplateActionBuilder(
+                                'รายละเอียดเพิ่มเติม',
+                                'https://www.google.com/?hl=th'
+                            ),
+                        );
+                        $imageUrl = null;
+                        $replyData = new TemplateMessageBuilder(
+                            'เปิดบัญชี',
+                            new ButtonTemplateBuilder(
+                                'เปิดบัญชี',
+                                'กรุณาเลือกหัวข้อที่ต้องการ',
+                                $imageUrl,
+                                $actionBuilder
                             )
                         );
-                 
-                $replyData1 = new FlexMessageBuilder("Flex",$textReplyMessage1);
                         break;
                 default:
                     // $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
@@ -180,23 +186,11 @@ if (!is_null($events)) {
         default:
             $textReplyMessage = json_encode($events);
             $replyData = new TextMessageBuilder($textReplyMessage);
-
-            $textReplyMessage1 = new BubbleContainerBuilder(
-                "ltr",NULL,NULL,
-                new BoxComponentBuilder(
-                    "vertical",
-                    array(
-                        new TextComponentBuilder("hello"),
-                        new TextComponentBuilder("world")
-                    )
-                )
-            );
-            $replyData1 = new FlexMessageBuilder("This is a Flex Message",$textReplyMessage1);
             break;
     }
 }
 
-$response = $bot->replyMessage($replyToken, $replyData, $replyData1);
+$response = $bot->replyMessage($replyToken, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
