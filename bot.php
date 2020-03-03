@@ -82,11 +82,11 @@ if (!is_null($events)) {
     $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
-    $userMessage = strtolower($userMessage);    
+    $userMessage = strtolower($userMessage);
 
     switch ($typeMessage) {
         case 'text':
-            switch ($userMessage) {          
+            switch ($userMessage) {
                 case "แจ้งปัญหา":
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
@@ -147,26 +147,24 @@ if (!is_null($events)) {
                         )
                     );
                     break;
-                    case "รายละเอียด":
-                        $actionBuilder = array(
-                            new MessageTemplateActionBuilder(
-                                'ตัวเลือกที่ 1',
-                                'ข้อมูลที่ 1'
-                            ),
-                            new MessageTemplateActionBuilder(
-                                'ตัวเลือกที่ 2',
-                                'ข้อมูลที่ 2'
-                            )                            
-                        );                        
-                        $replyData = new TemplateMessageBuilder(
-                            'ปัญหาที่ 1',
-                            new ButtonTemplateBuilder(
-                                'ปัญหาที่ 1',
-                                'ข้อมูลรายละเอียดของปัญหาที่ 1',                                
-                                $actionBuilder
+                case "รายละเอียด":                
+                    $replyData = new TemplateMessageBuilder(
+                        'Confirm Template',
+                        new ConfirmTemplateBuilder(
+                            'Confirm template builder', // ข้อความแนะนำหรือบอกวิธีการ หรือคำอธิบาย
+                            array(
+                                new MessageTemplateActionBuilder(
+                                    'Yes', // ข้อความสำหรับปุ่มแรก
+                                    'YES'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                                ),
+                                new MessageTemplateActionBuilder(
+                                    'No', // ข้อความสำหรับปุ่มแรก
+                                    'NO' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                                )
                             )
-                        );
-                        break;
+                        )
+                    );
+                    break;
                 default:
                     // $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
                     // $replyData = new TextMessageBuilder($textReplyMessage);
