@@ -84,10 +84,10 @@ if (!is_null($events)) {
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
     
-    $findme   = 'บัญชี';
-    $pos = strpos($userMessage, $findme);
+    // $findme   = 'บัญชี';
+    // $pos = strpos($userMessage, "บัญชี");
 
-    if ($pos == true) {
+    if (strpos($userMessage, "บัญชี") == true) {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
                 'รายละเอียดที่ 1',
