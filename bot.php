@@ -179,6 +179,7 @@ if (!is_null($events)) {
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
+
     switch ($typeMessage) {
         case 'text':
             switch ($userMessage) {                
@@ -186,13 +187,7 @@ if (!is_null($events)) {
                 case "ติดต่อ":
                     $textReplyMessage = new BubbleContainerBuilder(
                         "ltr",  
-                        NULL,NULL,
-                        new BoxComponentBuilder(
-                            "vertical",
-                            array(
-                                new ImageComponentBuilder("https://i2.wp.com/sagaming168.com/wp-content/uploads/2018/12/sa-game-casino.jpg?resize=578%2C337&ssl=1",NULL,NULL,NULL,NULL,"full","20:13","cover")                                                                                            
-                            )
-                        ),
+                        NULL,NULL,                        
                         new BoxComponentBuilder(
                             "vertical",
                             array(
