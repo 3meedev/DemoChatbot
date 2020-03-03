@@ -177,7 +177,7 @@ if (!is_null($events)) {
     }
 }
 
-$response = $bot->replyMessage($replyToken, $replyData);
+$response = $bot->replyMessage($id, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
