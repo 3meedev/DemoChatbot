@@ -83,8 +83,11 @@ if (!is_null($events)) {
     $typeMessage = $events['events'][0]['message']['type'];
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
+    
+    $findme   = 'บัญชี';
+    $pos = strpos($userMessage, $findme);
 
-    if ($userMessage == "เปิดบัญชี") {
+    if ($pos == true) {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
                 'รายละเอียดที่ 1',
@@ -116,188 +119,188 @@ if (!is_null($events)) {
     }
 
 
-//     switch ($typeMessage) {
-//         case 'text':
+    //     switch ($typeMessage) {
+    //         case 'text':
 
-//             switch ($userMessage) {
-//                 case "แจ้งปัญหา":
-//                     $actionBuilder = array(
-//                         new MessageTemplateActionBuilder(
-//                             'ปัญหาที่ 1',
-//                             'รายละเอียดที่ 1'
-//                         ),
-//                         new MessageTemplateActionBuilder(
-//                             'ปัญหาที่ 2',
-//                             'รายละเอียดที่ 2'
-//                         ),
-//                         new MessageTemplateActionBuilder(
-//                             'ปัญหาที่ 3',
-//                             'รายละเอียดที่ 3'
-//                         ),
-//                         new UriTemplateActionBuilder(
-//                             'รายละเอียดเพิ่มเติม',
-//                             'https://www.google.com/?hl=th'
-//                         ),
-//                     );
-//                     $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
-//                     $replyData = new TemplateMessageBuilder(
-//                         'แจ้งปัญหา',
-//                         new ButtonTemplateBuilder(
-//                             'แจ้งปัญหา',
-//                             'กรุณาเลือกหัวข้อที่ต้องการ',
-//                             $imageUrl,
-//                             $actionBuilder
-//                         )
-//                     );
-//                     break;
-//                 case "เปิดบัญชี":
-//                     $actionBuilder = array(
-//                         new MessageTemplateActionBuilder(
-//                             'รายละเอียดที่ 1',
-//                             'ข้อมูลที่ 1'
-//                         ),
-//                         new MessageTemplateActionBuilder(
-//                             'รายละเอียดที่ 2',
-//                             'ข้อมูลที่ 2'
-//                         ),
-//                         new MessageTemplateActionBuilder(
-//                             'รายละเอียดที่ 3',
-//                             'ข้อมูลที่ 3'
-//                         ),
-//                         new UriTemplateActionBuilder(
-//                             'รายละเอียดเพิ่มเติม',
-//                             'https://www.google.com/?hl=th'
-//                         ),
-//                     );
-//                     $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
-//                     $replyData = new TemplateMessageBuilder(
-//                         'เปิดบัญชี',
-//                         new ButtonTemplateBuilder(
-//                             'เปิดบัญชี',
-//                             'กรุณาเลือกหัวข้อที่ต้องการ',
-//                             $imageUrl,
-//                             $actionBuilder
-//                         )
-//                     );
-//                     break;
-//                 case "รายละเอียดที่ 1":
-//                     $actionBuilder = array(
-//                         new MessageTemplateActionBuilder(
-//                             'เมนูที่ 1',
-//                             'เมนูที่ 1'
-//                         ),
-//                         new MessageTemplateActionBuilder(
-//                             'เมนูที่ 2',
-//                             'เมนูที่ 2'
-//                         ),
-//                     );
-//                     $imageUrl = null;
-//                     $replyData = new TemplateMessageBuilder(
-//                         'รายละเอียดที่ 1',
-//                         new ButtonTemplateBuilder(
-//                             'รายละเอียดที่ 1',
-//                             'รายละเอียดของรายละเอียดที่ 1',
-//                             $imageUrl,
-//                             $actionBuilder
-//                         )
-//                     );
-//                     break;
-//                 default:
-//                     // $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
-//                     // $replyData = new TextMessageBuilder($textReplyMessage);
-//                     break;
-//             }
-//             break;
-//         default:
-//             $textReplyMessage = json_encode($events);
-//             $replyData = new TextMessageBuilder($textReplyMessage);
-//             break;
-//     }
-// }
+    //             switch ($userMessage) {
+    //                 case "แจ้งปัญหา":
+    //                     $actionBuilder = array(
+    //                         new MessageTemplateActionBuilder(
+    //                             'ปัญหาที่ 1',
+    //                             'รายละเอียดที่ 1'
+    //                         ),
+    //                         new MessageTemplateActionBuilder(
+    //                             'ปัญหาที่ 2',
+    //                             'รายละเอียดที่ 2'
+    //                         ),
+    //                         new MessageTemplateActionBuilder(
+    //                             'ปัญหาที่ 3',
+    //                             'รายละเอียดที่ 3'
+    //                         ),
+    //                         new UriTemplateActionBuilder(
+    //                             'รายละเอียดเพิ่มเติม',
+    //                             'https://www.google.com/?hl=th'
+    //                         ),
+    //                     );
+    //                     $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
+    //                     $replyData = new TemplateMessageBuilder(
+    //                         'แจ้งปัญหา',
+    //                         new ButtonTemplateBuilder(
+    //                             'แจ้งปัญหา',
+    //                             'กรุณาเลือกหัวข้อที่ต้องการ',
+    //                             $imageUrl,
+    //                             $actionBuilder
+    //                         )
+    //                     );
+    //                     break;
+    //                 case "เปิดบัญชี":
+    //                     $actionBuilder = array(
+    //                         new MessageTemplateActionBuilder(
+    //                             'รายละเอียดที่ 1',
+    //                             'ข้อมูลที่ 1'
+    //                         ),
+    //                         new MessageTemplateActionBuilder(
+    //                             'รายละเอียดที่ 2',
+    //                             'ข้อมูลที่ 2'
+    //                         ),
+    //                         new MessageTemplateActionBuilder(
+    //                             'รายละเอียดที่ 3',
+    //                             'ข้อมูลที่ 3'
+    //                         ),
+    //                         new UriTemplateActionBuilder(
+    //                             'รายละเอียดเพิ่มเติม',
+    //                             'https://www.google.com/?hl=th'
+    //                         ),
+    //                     );
+    //                     $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
+    //                     $replyData = new TemplateMessageBuilder(
+    //                         'เปิดบัญชี',
+    //                         new ButtonTemplateBuilder(
+    //                             'เปิดบัญชี',
+    //                             'กรุณาเลือกหัวข้อที่ต้องการ',
+    //                             $imageUrl,
+    //                             $actionBuilder
+    //                         )
+    //                     );
+    //                     break;
+    //                 case "รายละเอียดที่ 1":
+    //                     $actionBuilder = array(
+    //                         new MessageTemplateActionBuilder(
+    //                             'เมนูที่ 1',
+    //                             'เมนูที่ 1'
+    //                         ),
+    //                         new MessageTemplateActionBuilder(
+    //                             'เมนูที่ 2',
+    //                             'เมนูที่ 2'
+    //                         ),
+    //                     );
+    //                     $imageUrl = null;
+    //                     $replyData = new TemplateMessageBuilder(
+    //                         'รายละเอียดที่ 1',
+    //                         new ButtonTemplateBuilder(
+    //                             'รายละเอียดที่ 1',
+    //                             'รายละเอียดของรายละเอียดที่ 1',
+    //                             $imageUrl,
+    //                             $actionBuilder
+    //                         )
+    //                     );
+    //                     break;
+    //                 default:
+    //                     // $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
+    //                     // $replyData = new TextMessageBuilder($textReplyMessage);
+    //                     break;
+    //             }
+    //             break;
+    //         default:
+    //             $textReplyMessage = json_encode($events);
+    //             $replyData = new TextMessageBuilder($textReplyMessage);
+    //             break;
+    //     }
+    // }
 
-$response = $bot->replyMessage($replyToken, $replyData);
-
-
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+    $response = $bot->replyMessage($replyToken, $replyData);
 
 
-
-// ----------------------------------------------------------------------------------------------------------------------------
-
-// -------------------------------------------------------------------------------------------------------------------------- แบบ Flex Message
-
-// $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
-// $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
-
-
-// $content = file_get_contents('php://input');
+    echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
 
-// $events = json_decode($content, true);
-// if (!is_null($events)) {
+    // ----------------------------------------------------------------------------------------------------------------------------
 
-//     $replyToken = $events['events'][0]['replyToken'];
-//     $typeMessage = $events['events'][0]['message']['type'];
-//     $userMessage = $events['events'][0]['message']['text'];
-//     $userMessage = strtolower($userMessage);
+    // -------------------------------------------------------------------------------------------------------------------------- แบบ Flex Message
 
-//     switch ($typeMessage) {
-//         case 'text':
-//             switch ($userMessage) {
-
-//                 case "ติดต่อ":
-//                     $textReplyMessage = new BubbleContainerBuilder(
-//                         "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
-//                         NULL,NULL,
-//                         new BoxComponentBuilder(
-//                             "horizontal",
-//                             array(
-//                                 new TextComponentBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-//                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.",NULL,NULL,NULL,NULL,NULL,true)
-//                             )
-//                         ),
-//                         new BoxComponentBuilder(
-//                             "horizontal",
-//                             array(
-//                                 new ButtonComponentBuilder(
-//                                     new UriTemplateActionBuilder("GO","http://niik.in"),
-//                                     NULL,NULL,NULL,"primary"
-//                                 )
-//                             )
-//                         )
-//                     );
-             
-//             $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
-//                     break;
-
-//                 default:
-//                     $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
-//                     $replyData = new TextMessageBuilder($textReplyMessage);
-//                     break;
-//             }
-//             break;
-//         default:
-//             $textReplyMessage = new BubbleContainerBuilder(
-//                 "ltr",
-//                 NULL,
-//                 NULL,
-//                 new BoxComponentBuilder(
-//                     "vertical",
-//                     array(
-//                         new TextComponentBuilder("hello"),
-//                         new TextComponentBuilder("world")
-//                     )
-//                 )
-//             );
-//             $replyData = new FlexMessageBuilder("This is a Flex Message", $textReplyMessage);
-//     }
-// }
-
-// $response = $bot->replyMessage($replyToken, $replyData);
+    // $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
+    // $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
 
 
-// echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+    // $content = file_get_contents('php://input');
 
-// ----------------------------------------------------------------------------------------------------------------------------
+
+
+    // $events = json_decode($content, true);
+    // if (!is_null($events)) {
+
+    //     $replyToken = $events['events'][0]['replyToken'];
+    //     $typeMessage = $events['events'][0]['message']['type'];
+    //     $userMessage = $events['events'][0]['message']['text'];
+    //     $userMessage = strtolower($userMessage);
+
+    //     switch ($typeMessage) {
+    //         case 'text':
+    //             switch ($userMessage) {
+
+    //                 case "ติดต่อ":
+    //                     $textReplyMessage = new BubbleContainerBuilder(
+    //                         "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+    //                         NULL,NULL,
+    //                         new BoxComponentBuilder(
+    //                             "horizontal",
+    //                             array(
+    //                                 new TextComponentBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+    //                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.",NULL,NULL,NULL,NULL,NULL,true)
+    //                             )
+    //                         ),
+    //                         new BoxComponentBuilder(
+    //                             "horizontal",
+    //                             array(
+    //                                 new ButtonComponentBuilder(
+    //                                     new UriTemplateActionBuilder("GO","http://niik.in"),
+    //                                     NULL,NULL,NULL,"primary"
+    //                                 )
+    //                             )
+    //                         )
+    //                     );
+
+    //             $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+    //                     break;
+
+    //                 default:
+    //                     $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
+    //                     $replyData = new TextMessageBuilder($textReplyMessage);
+    //                     break;
+    //             }
+    //             break;
+    //         default:
+    //             $textReplyMessage = new BubbleContainerBuilder(
+    //                 "ltr",
+    //                 NULL,
+    //                 NULL,
+    //                 new BoxComponentBuilder(
+    //                     "vertical",
+    //                     array(
+    //                         new TextComponentBuilder("hello"),
+    //                         new TextComponentBuilder("world")
+    //                     )
+    //                 )
+    //             );
+    //             $replyData = new FlexMessageBuilder("This is a Flex Message", $textReplyMessage);
+    //     }
+    // }
+
+    // $response = $bot->replyMessage($replyToken, $replyData);
+
+
+    // echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+
+    // ----------------------------------------------------------------------------------------------------------------------------
 }
