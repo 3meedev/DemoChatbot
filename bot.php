@@ -147,7 +147,7 @@ if (!is_null($events)) {
                         NULL,
                         NULL,
                         NULL,
-                        "dark"
+                        "primary"
                     )
                 )
             )
