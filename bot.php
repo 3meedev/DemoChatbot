@@ -148,8 +148,9 @@ if ($userMessage != null) {
             new BoxComponentBuilder(
                 "horizontal",
                 array(
-                    new ButtonComponentBuilder(
-                        new TextComponentBuilder("The quick brown fox jumps over the lazy dog",NULL,NULL,"3xl")
+                    new MessageTemplateActionBuilder(
+                        'เรียกดูโปรโมชั่น',
+                        'เรียกดูโปรโมชั่น'
                     )
                 )
             )
