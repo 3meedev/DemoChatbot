@@ -142,7 +142,7 @@ if (!is_null($events)) {
                 "horizontal",
                 array(
                     new ButtonComponentBuilder(
-                        new UriTemplateActionBuilder("GO", "http://niik.in"),
+                        new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://www.google.com/?hl=th"),
                         NULL,
                         NULL,
                         NULL,
