@@ -143,19 +143,6 @@ if ($userMessage != null) {
                         true
                     )
                 )
-            ),
-
-            new BoxComponentBuilder(
-                "horizontal",
-                array(
-                    new ButtonComponentBuilder(
-                        new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://www.google.com/?hl=th"),
-                        NULL,
-                        NULL,
-                        NULL,
-                        "primary"
-                    )
-                )
             )
         );
 
