@@ -111,8 +111,19 @@ if (!is_null($events)) {
             new BoxComponentBuilder(
                 "horizontal",
                 array(
-                    new TextComponentBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.", NULL, NULL, NULL, NULL, NULL, true)
+                    new TextComponentBuilder(
+                    "
+                    Copa69 สวัสดีครับ
+                    สนใจสมัครสมาชิกขั้นต่ำ 200 บาท รับโบนัส30%จากยอดฝากครั้งแรกสูงสุด 500 บาทครับ หรือจะเลือกรับโปรโมชั่นสุดฮอตจากทางเว็บ เช่น
+                    1.หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร1000 บาท
+                    2.พาวเวอร์แบ๊ง ELOOP E-12  สมัคร1000 บาท
+                    3.ลำโพง BLUETOOTH IRON MAN สมัคร1000 บาท
+                    4.บุหรี่ไฟฟ้า DRAG สมัคร1000 บาท
+                    5.โทรศัพท์จิ๋ว สมัคร 1000 บาท
+                    6.เสื้อบอล EURO สมัคร 500 บาท
+                    7.เสื้อฮูด Nike สมัคร 500 บาท
+                    8.Smart Watch สมัคร500 บาท
+                    ", NULL, NULL, NULL, NULL, NULL, true)
                 )
             ),
             new BoxComponentBuilder(
