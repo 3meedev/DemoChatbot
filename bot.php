@@ -130,20 +130,7 @@ if (!is_null($events)) {
         );
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        
-    $textReplyMessage = new BubbleContainerBuilder(
-        "ltr",
-        NULL,
-        NULL,
-        new BoxComponentBuilder(
-            "vertical",
-            array(
-                new TextComponentBuilder("hello"),
-                new TextComponentBuilder("world")
-            )
-        )
-    );
-    $replyData = new FlexMessageBuilder("This is a Flex Message", $textReplyMessage);
+
     }
 
     
