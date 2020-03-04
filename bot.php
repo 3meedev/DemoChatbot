@@ -130,8 +130,7 @@ if (!is_null($events)) {
         );
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    }
-
+        
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
@@ -145,6 +144,9 @@ if (!is_null($events)) {
         )
     );
     $replyData = new FlexMessageBuilder("This is a Flex Message", $textReplyMessage);
+    }
+
+    
 
 
     // if (strpos($userMessage, "บัญชี") == true) {
