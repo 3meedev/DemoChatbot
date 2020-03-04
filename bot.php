@@ -89,7 +89,7 @@ $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SE
 
 
 $content = file_get_contents('php://input');
-
+$count = 0;
 
 
 $events = json_decode($content, true);
@@ -100,7 +100,7 @@ $events = json_decode($content, true);
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
 
-    
+    if ($count == 0) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -151,8 +151,9 @@ $events = json_decode($content, true);
         );
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        $count + 1;
 
-    if ($userMessage != null) {
+    } else if ($userMessage != null) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
