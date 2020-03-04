@@ -113,7 +113,7 @@ if (!is_null($events)) {
                 "vertical",
                 array(
                     new BoxComponentBuilder(
-                        "baseline",
+                        "vertical",
                         array(
                             new TextComponentBuilder("Copa69 สวัสดีครับ สนใจสมัครสมาชิกขั้นต่ำ 200 บาท รับโบนัส30%จากยอดฝากครั้งแรกสูงสุด 500 บาทครับ หรือจะเลือกรับโปรโมชั่นสุดฮอตจากทางเว็บ เช่น 1.หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร1000 บาท
                             2.พาวเวอร์แบ๊ง ELOOP E-12  สมัคร1000 บาท
