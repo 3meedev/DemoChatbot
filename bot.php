@@ -93,7 +93,7 @@ $content = file_get_contents('php://input');
 
 
 $events = json_decode($content, true);
-if (!is_null($events)) {
+
 
     $replyToken = $events['events'][0]['replyToken'];
     $typeMessage = $events['events'][0]['message']['type'];
@@ -297,4 +297,3 @@ $response = $bot->replyMessage($replyToken, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-}
