@@ -12,15 +12,38 @@ include 'vendor/autoload.php';
 include 'bot_settings.php';
 
 use LINE\LINEBot;
-
+use LINE\LINEBot\HTTPClient;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
-
+//use LINE\LINEBot\Event;
+//use LINE\LINEBot\Event\BaseEvent;
+//use LINE\LINEBot\Event\MessageEvent;
+use LINE\LINEBot\MessageBuilder;
+use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
+use LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
+use LINE\LINEBot\MessageBuilder\LocationMessageBuilder;
+use LINE\LINEBot\MessageBuilder\AudioMessageBuilder;
+use LINE\LINEBot\MessageBuilder\VideoMessageBuilder;
+use LINE\LINEBot\ImagemapActionBuilder;
+use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
+use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder ;
+use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
+use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
+use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
+use LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
+use LINE\LINEBot\TemplateActionBuilder;
+use LINE\LINEBot\TemplateActionBuilder\DatetimePickerTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
-
+use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
-
+use LINE\LINEBot\MessageBuilder\TemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder;
 
 
 // ----------------------------------------------------------------------------------------------------- แบบ Template Message
@@ -45,38 +68,18 @@ if (!is_null($events)) {
     // $pos = strpos($userMessage, "บัญชี");
 
     if (strpos($userMessage, "บัญชี") == true) {
-        $actionBuilder = array(
-            new UriTemplateActionBuilder(
-                'รายละเอียดเพิ่มเติม',
-                'https://www.google.com/?hl=th'
-            )
-        );
-        $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
-        $replyData = new TemplateMessageBuilder(
-            'Copa69',
-            new ButtonTemplateBuilder(
-                'Copa69 สวัสดีครับ',
-                'สนใจสมัครสมาชิกขั้นต่ำ 200 บาท รับโบนัส30%จากยอดฝากครั้งแรกสูงสุด 500 บาทครับ หรือจะเลือกรับโปรโมชั่นสุดฮอตจากทางเว็บ เช่น
-                1.หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร1000 บาท
-                2.พาวเวอร์แบ๊ง ELOOP E-12  สมัคร1000 บาท
-                3.ลำโพง BLUETOOTH IRON MAN สมัคร1000 บาท
-                4.บุหรี่ไฟฟ้า DRAG สมัคร1000 บาท
-                5.โทรศัพท์จิ๋ว สมัคร 1000 บาท
-                6.เสื้อบอล EURO สมัคร 500 บาท
-                7.เสื้อฮูด Nike สมัคร 500 บาท
-                8.Smart Watch สมัคร500 บาท
-                9.ลำโพง Bluetooth Mini สมัคร 500 บาท
-                10.หูฟัง Bluetooth สมัคร 500 บาท
-                11.ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท
-                12.กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท
-                13.Game Handle สมัคร 300 บาท
-                14.สมัครฝาก200 รับโบนัส 30 %
-                เล่นได้ทุกอย่างในยูสเดียว บอล หวย มวย คาสิโน เกม ฝากอัตโนมัติ 30 วินาที ถอนไม่เกิน 1 นาที ทำเทิร์นเดียว 1.5 ก็สามารถถอนได้เลย ขั้นต่ำ 100 บาท',
-                $imageUrl,
-                $actionBuilder
-            )
-        );
+        $replyData = new TemplateMessageBuilder('Confirm Template',
+        new ConfirmTemplateBuilder(
+                'Confirm template builder', // ข้อความแนะนำหรือบอกวิธีการ หรือคำอธิบาย
+                array(
+                    
+                )
+        )
+    );
     }
+
+
+    
 
     // if (strpos($userMessage, "บัญชี") == true) {
     //     $actionBuilder = array(
