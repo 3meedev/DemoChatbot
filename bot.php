@@ -143,6 +143,15 @@ if ($userMessage != null) {
                         true
                     )
                 )
+            ),
+
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new ButtonComponentBuilder(
+                        new TextComponentBuilder("The quick brown fox jumps over the lazy dog",NULL,NULL,"3xl")
+                    )
+                )
             )
         );
 
