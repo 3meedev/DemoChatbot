@@ -150,27 +150,28 @@ if ($userMessage != null) {
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
         
-    } else if ($userMessage == "เรียกดูโปรโมชั่น") {        
-        $actionBuilder = array(
-            new MessageTemplateActionBuilder(
-                'เรียกดูโปรโมชั่น',
-                'เรียกดูโปรโมชั่น'
-            ),
-            new MessageTemplateActionBuilder(
-                'สมัครโปรโมชั่น',
-                'สมัครโปรโมชั่น'
-            )
-        );
-        $imageUrl = '';
-        $replyData = new TemplateMessageBuilder(
-            'เปิดบัญชี',
-            new ButtonTemplateBuilder(
+        if ($userMessage == "เรียกดูโปรโมชั่น") {        
+            $actionBuilder = array(
+                new MessageTemplateActionBuilder(
+                    'เรียกดูโปรโมชั่น',
+                    'เรียกดูโปรโมชั่น'
+                ),
+                new MessageTemplateActionBuilder(
+                    'สมัครโปรโมชั่น',
+                    'สมัครโปรโมชั่น'
+                )
+            );
+            $imageUrl = '';
+            $replyData = new TemplateMessageBuilder(
                 'เปิดบัญชี',
-                'กรุณาเลือกหัวข้อที่ต้องการ',
-                $imageUrl,
-                $actionBuilder
-            )
-        );
+                new ButtonTemplateBuilder(
+                    'เปิดบัญชี',
+                    'กรุณาเลือกหัวข้อที่ต้องการ',
+                    $imageUrl,
+                    $actionBuilder
+                )
+            );
+        }
     } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
