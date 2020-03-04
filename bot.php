@@ -151,23 +151,34 @@ if ($userMessage != null) {
 //         );
 
 //         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-$textReplyMessage = new BubbleContainerBuilder(
-    "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
-    NULL,NULL,
-    new BoxComponentBuilder(
-        "vertical",
-        array(
-            new ButtonComponentBuilder(
-                new TextComponentBuilder(
-                "Copa69 สวัสดีครับ", NULL, NULL, "md", NULL, NULL, true)                   
+$actionBuilder = array(
+            new MessageTemplateActionBuilder(
+                'รายละเอียดที่ 1',
+                'ข้อมูลที่ 1'
             ),
-                                           
-        ),
-        0,"md"
-    )
-);      
-
-$replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+            new MessageTemplateActionBuilder(
+                'รายละเอียดที่ 2',
+                'ข้อมูลที่ 2'
+            ),
+            new MessageTemplateActionBuilder(
+                'รายละเอียดที่ 3',
+                'ข้อมูลที่ 3'
+            ),
+            new UriTemplateActionBuilder(
+                'รายละเอียดเพิ่มเติม',
+                'https://www.google.com/?hl=th'
+            ),
+        );
+        $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
+        $replyData = new TemplateMessageBuilder(
+            'เปิดบัญชี',
+            new ButtonTemplateBuilder(
+                'เปิดบัญชี',
+                'กรุณาเลือกหัวข้อที่ต้องการ',
+                $imageUrl,
+                $actionBuilder
+            )
+        );
 
     }
 
