@@ -100,12 +100,61 @@ if (!is_null($events)) {
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
 
-    // $findme   = 'บัญชี';
-    // $pos = strpos($userMessage, "บัญชี");
-
     if ($userMessage == null) {
         $textReplyMessage = new BubbleContainerBuilder(
-            "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+"Copa69 สวัสดีครับ 
+
+สนใจสมัครสมาชิกขั้นต่ำ 200 บาท รับ
+โบนัส 30% จากยอดฝากครั้งแรกสูงสุด
+500 บาท หรือจะเลือกรับโปรโมชั่น
+สุดฮอตจากทางเว็บ เช่น
+
+1.หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท
+2.พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท
+3.ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท
+4.บุหรี่ไฟฟ้า DRAG สมัคร 1000 บาท
+5.โทรศัพท์จิ๋ว สมัคร 1000 บาท
+6.เสื้อบอล EURO สมัคร 500 บาท
+7.เสื้อฮูด Nike สมัคร 500 บาท
+8.Smart Watch สมัคร 500 บาท
+9.ลำโพง Bluetooth Mini สมัคร 500 บาท
+10.หูฟัง Bluetooth สมัคร 500 บาท
+11.ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท
+12.กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท
+13.Game Handle สมัคร 300 บาท
+14.สมัครฝาก 200 รับโบนัส 30 %
+
+เล่นได้ทุกอย่างในยูสเดียวบอล หวย มวย คาสิโน เกม ฝากอัตโนมัติ 30 วินาที ถอนไม่เกิน 1 นาทีทำเทิร์นเดียว 1.5 ก็สามารถถอนได้เลย ขั้นต่ำ 100 บาท
+", NULL, NULL, "md", NULL, NULL, true)
+                )
+            ),
+            
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new ButtonComponentBuilder(
+                        new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://www.google.com/?hl=th"),
+                        NULL,
+                        NULL,
+                        NULL,
+                        "primary"
+                    )
+                )
+            )
+        );
+
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+
+    } else if ($userMessage != null) {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
             NULL,
             NULL,
             new BoxComponentBuilder(
