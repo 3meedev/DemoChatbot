@@ -128,7 +128,7 @@ if (!is_null($events)) {
                     13.Game Handle สมัคร 300 บาท
                     14.สมัครฝาก200 รับโบนัส 30 %
                     เล่นได้ทุกอย่างในยูสเดียวบอล หวย มวย คาสิโน เกม ฝากอัตโนมัติ 30 วินาที ถอนไม่เกิน 1 นาทีทำเทิร์นเดียว 1.5 ก็สามารถถอนได้เลย ขั้นต่ำ 100 บาท
-                    ", NULL, NULL, NULL, "center", NULL, true)
+                    ", NULL, NULL, 0, "center", NULL, true)
                 )
             ),
             new BoxComponentBuilder(
