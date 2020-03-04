@@ -10,6 +10,7 @@ include 'vendor/autoload.php';
 
 
 include 'bot_settings.php';
+
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
@@ -17,7 +18,7 @@ use LINE\LINEBot\Event;
 use LINE\LINEBot\Event\BaseEvent;
 use LINE\LINEBot\Event\MessageEvent;
 use LINE\LINEBot\Event\AccountLinkEvent;
-use LINE\LINEBot\Event\MemberJoinEvent; 
+use LINE\LINEBot\Event\MemberJoinEvent;
 use LINE\LINEBot\MessageBuilder;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
@@ -27,7 +28,7 @@ use LINE\LINEBot\MessageBuilder\AudioMessageBuilder;
 use LINE\LINEBot\MessageBuilder\VideoMessageBuilder;
 use LINE\LINEBot\ImagemapActionBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder ;
+use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
 use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
 use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
@@ -95,81 +96,82 @@ $count = 0;
 $events = json_decode($content, true);
 
 
-    $replyToken = $events['events'][0]['replyToken'];
-    $typeMessage = $events['events'][0]['message']['type'];
-    $userMessage = $events['events'][0]['message']['text'];
-    $userMessage = strtolower($userMessage);
+$replyToken = $events['events'][0]['replyToken'];
+$typeMessage = $events['events'][0]['message']['type'];
+$userMessage = $events['events'][0]['message']['text'];
+$userMessage = strtolower($userMessage);
 
 if ($userMessage != null) {
-//         $textReplyMessage = new BubbleContainerBuilder(
-//             "ltr",
-//             NULL,
-//             NULL,
-//             new BoxComponentBuilder(
-//                 "horizontal",
-//                 array(
-//                     new TextComponentBuilder(
-// "Copa69 สวัสดีครับ 
+    if ($userMessage == "เรียกดูโปรโมชั่น") {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "Copa69 สวัสดีครับ 
 
-// สนใจสมัครสมาชิกขั้นต่ำ 200 บาท รับ
-// โบนัส 30% จากยอดฝากครั้งแรกสูงสุด
-// 500 บาท หรือจะเลือกรับโปรโมชั่น
-// สุดฮอตจากทางเว็บ เช่น
+สนใจสมัครสมาชิกขั้นต่ำ 200 บาท รับ
+โบนัส 30% จากยอดฝากครั้งแรกสูงสุด
+500 บาท หรือจะเลือกรับโปรโมชั่น
+สุดฮอตจากทางเว็บ เช่น
 
-// 1.หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท
-// 2.พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท
-// 3.ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท
-// 4.บุหรี่ไฟฟ้า DRAG สมัคร 1000 บาท
-// 5.โทรศัพท์จิ๋ว สมัคร 1000 บาท
-// 6.เสื้อบอล EURO สมัคร 500 บาท
-// 7.เสื้อฮูด Nike สมัคร 500 บาท
-// 8.Smart Watch สมัคร 500 บาท
-// 9.ลำโพง Bluetooth Mini สมัคร 500 บาท
-// 10.หูฟัง Bluetooth สมัคร 500 บาท
-// 11.ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท
-// 12.กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท
-// 13.Game Handle สมัคร 300 บาท
-// 14.สมัครฝาก 200 รับโบนัส 30 %
+1.หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท
+2.พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท
+3.ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท
+4.บุหรี่ไฟฟ้า DRAG สมัคร 1000 บาท
+5.โทรศัพท์จิ๋ว สมัคร 1000 บาท
+6.เสื้อบอล EURO สมัคร 500 บาท
+7.เสื้อฮูด Nike สมัคร 500 บาท
+8.Smart Watch สมัคร 500 บาท
+9.ลำโพง Bluetooth Mini สมัคร 500 บาท
+10.หูฟัง Bluetooth สมัคร 500 บาท
+11.ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท
+12.กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท
+13.Game Handle สมัคร 300 บาท
+14.สมัครฝาก 200 รับโบนัส 30 %
 
-// เล่นได้ทุกอย่างในยูสเดียวบอล หวย มวย คาสิโน เกม ฝากอัตโนมัติ 30 วินาที ถอนไม่เกิน 1 นาทีทำเทิร์นเดียว 1.5 ก็สามารถถอนได้เลย ขั้นต่ำ 100 บาท
-// ", NULL, NULL, "md", NULL, NULL, true)
-//                 )
-//             ),
-            
-//             new BoxComponentBuilder(
-//                 "horizontal",
-//                 array(
-//                     new ButtonComponentBuilder(
-//                         new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://www.google.com/?hl=th"),
-//                         NULL,
-//                         NULL,
-//                         NULL,
-//                         "primary"
-//                     )
-//                 )
-//             )
-//         );
+เล่นได้ทุกอย่างในยูสเดียวบอล หวย มวย คาสิโน เกม ฝากอัตโนมัติ 30 วินาที ถอนไม่เกิน 1 นาทีทำเทิร์นเดียว 1.5 ก็สามารถถอนได้เลย ขั้นต่ำ 100 บาท
+",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
+                    )
+                )
+            ),
 
-//         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-$actionBuilder = array(
-            new MessageTemplateActionBuilder(
-                'รายละเอียดที่ 1',
-                'ข้อมูลที่ 1'
-            ),
-            new MessageTemplateActionBuilder(
-                'รายละเอียดที่ 2',
-                'ข้อมูลที่ 2'
-            ),
-            new MessageTemplateActionBuilder(
-                'รายละเอียดที่ 3',
-                'ข้อมูลที่ 3'
-            ),
-            new UriTemplateActionBuilder(
-                'รายละเอียดเพิ่มเติม',
-                'https://www.google.com/?hl=th'
-            ),
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new ButtonComponentBuilder(
+                        new UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://www.google.com/?hl=th"),
+                        NULL,
+                        NULL,
+                        NULL,
+                        "primary"
+                    )
+                )
+            )
         );
-        $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
+
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    } else {
+        $actionBuilder = array(
+            new MessageTemplateActionBuilder(
+                'เรียกดูโปรโมชั่น',
+                'เรียกดูโปรโมชั่น'
+            ),
+            new MessageTemplateActionBuilder(
+                'สมัครโปรโมชั่น',
+                'สมัครโปรโมชั่น'
+            )
+        );
+        $imageUrl = '';
         $replyData = new TemplateMessageBuilder(
             'เปิดบัญชี',
             new ButtonTemplateBuilder(
@@ -179,42 +181,42 @@ $actionBuilder = array(
                 $actionBuilder
             )
         );
-
     }
+}
 
-    
 
 
-    // if (strpos($userMessage, "บัญชี") == true) {
-    //     $actionBuilder = array(
-    //         new MessageTemplateActionBuilder(
-    //             'รายละเอียดที่ 1',
-    //             'ข้อมูลที่ 1'
-    //         ),
-    //         new MessageTemplateActionBuilder(
-    //             'รายละเอียดที่ 2',
-    //             'ข้อมูลที่ 2'
-    //         ),
-    //         new MessageTemplateActionBuilder(
-    //             'รายละเอียดที่ 3',
-    //             'ข้อมูลที่ 3'
-    //         ),
-    //         new UriTemplateActionBuilder(
-    //             'รายละเอียดเพิ่มเติม',
-    //             'https://www.google.com/?hl=th'
-    //         ),
-    //     );
-    //     $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
-    //     $replyData = new TemplateMessageBuilder(
-    //         'เปิดบัญชี',
-    //         new ButtonTemplateBuilder(
-    //             'เปิดบัญชี',
-    //             'กรุณาเลือกหัวข้อที่ต้องการ',
-    //             $imageUrl,
-    //             $actionBuilder
-    //         )
-    //     );
-    // }
+
+// if (strpos($userMessage, "บัญชี") == true) {
+//     $actionBuilder = array(
+//         new MessageTemplateActionBuilder(
+//             'รายละเอียดที่ 1',
+//             'ข้อมูลที่ 1'
+//         ),
+//         new MessageTemplateActionBuilder(
+//             'รายละเอียดที่ 2',
+//             'ข้อมูลที่ 2'
+//         ),
+//         new MessageTemplateActionBuilder(
+//             'รายละเอียดที่ 3',
+//             'ข้อมูลที่ 3'
+//         ),
+//         new UriTemplateActionBuilder(
+//             'รายละเอียดเพิ่มเติม',
+//             'https://www.google.com/?hl=th'
+//         ),
+//     );
+//     $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
+//     $replyData = new TemplateMessageBuilder(
+//         'เปิดบัญชี',
+//         new ButtonTemplateBuilder(
+//             'เปิดบัญชี',
+//             'กรุณาเลือกหัวข้อที่ต้องการ',
+//             $imageUrl,
+//             $actionBuilder
+//         )
+//     );
+// }
 //     if (strpos($userMessage, "ปัญหา") == true) {
 //         $actionBuilder = array(
 //             new MessageTemplateActionBuilder(
