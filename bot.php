@@ -12,38 +12,15 @@ include 'vendor/autoload.php';
 include 'bot_settings.php';
 
 use LINE\LINEBot;
-use LINE\LINEBot\HTTPClient;
+
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
-//use LINE\LINEBot\Event;
-//use LINE\LINEBot\Event\BaseEvent;
-//use LINE\LINEBot\Event\MessageEvent;
-use LINE\LINEBot\MessageBuilder;
-use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-use LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
-use LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
-use LINE\LINEBot\MessageBuilder\LocationMessageBuilder;
-use LINE\LINEBot\MessageBuilder\AudioMessageBuilder;
-use LINE\LINEBot\MessageBuilder\VideoMessageBuilder;
-use LINE\LINEBot\ImagemapActionBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder ;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
-use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
-use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
-use LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
-use LINE\LINEBot\TemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\DatetimePickerTemplateActionBuilder;
+
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
+
 use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder;
+
 use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder;
-use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder;
 
 
 // ----------------------------------------------------------------------------------------------------- แบบ Template Message
@@ -68,16 +45,23 @@ if (!is_null($events)) {
     // $pos = strpos($userMessage, "บัญชี");
 
     if (strpos($userMessage, "บัญชี") == true) {
-        $replyData = new TemplateMessageBuilder('Confirm Template',
-        new ConfirmTemplateBuilder(
-                'Confirm template builder', // ข้อความแนะนำหรือบอกวิธีการ หรือคำอธิบาย
-                array(
-                    
-                )
-        )
-    );
+        $actionBuilder = array(
+            new UriTemplateActionBuilder(
+                'รายละเอียดเพิ่มเติม',
+                'https://www.google.com/?hl=th'
+            )
+        );
+        $imageUrl = 'https://lh3.googleusercontent.com/proxy/wn8c-FyKoyfCBsZ3uv5qVc79WzoqF3a8Kjy8P7SVLe_FPox9TQEdbYoEDP4Lac66hh4o2XIhLhP0vteCQOkZzeFgJId2h4NTtaDbiFHd48rLxGbbg0-PO_yw8gjdMIUyXCnf';
+        $replyData = new TemplateMessageBuilder(
+            'Copa69',
+            new ButtonTemplateBuilder(
+                'เปิดบัญชี',
+                'กรุณาเลือกหัวข้อที่ต้องการ',
+                $imageUrl,
+                $actionBuilder
+            )
+        );
     }
-
 
     
 
