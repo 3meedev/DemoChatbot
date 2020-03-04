@@ -179,61 +179,62 @@ if (!is_null($events)) {
     //         )
     //     );
     // }
-    if (strpos($userMessage, "ปัญหา") == true) {
-        $actionBuilder = array(
-            new MessageTemplateActionBuilder(
-                'ปัญหาที่ 1',
-                'รายละเอียดที่ 1'
-            ),
-            new MessageTemplateActionBuilder(
-                'ปัญหาที่ 2',
-                'รายละเอียดที่ 2'
-            ),
-            new MessageTemplateActionBuilder(
-                'ปัญหาที่ 3',
-                'รายละเอียดที่ 3'
-            ),
-            new UriTemplateActionBuilder(
-                'รายละเอียดเพิ่มเติม',
-                'https://www.google.com/?hl=th'
-            ),
-        );
-        $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
-        $replyData = new TemplateMessageBuilder(
-            'แจ้งปัญหา',
-            new ButtonTemplateBuilder(
-                'แจ้งปัญหา',
-                'กรุณาเลือกหัวข้อที่ต้องการ',
-                $imageUrl,
-                $actionBuilder
-            )
-        );
-    }
-    if ($userMessage == "รายละเอียดที่ 1") {
-        $actionBuilder = array(
-            new MessageTemplateActionBuilder(
-                'เมนูที่ 1',
-                'เมนูที่ 1'
-            ),
-            new MessageTemplateActionBuilder(
-                'เมนูที่ 2',
-                'เมนูที่ 2'
-            ),
-        );
-        $imageUrl = null;
-        $replyData = new TemplateMessageBuilder(
-            'รายละเอียดที่ 1',
-            new ButtonTemplateBuilder(
-                'รายละเอียดที่ 1',
-                'รายละเอียดของรายละเอียดที่ 1',
-                $imageUrl,
-                $actionBuilder
-            )
-        );
-    }
-}
+//     if (strpos($userMessage, "ปัญหา") == true) {
+//         $actionBuilder = array(
+//             new MessageTemplateActionBuilder(
+//                 'ปัญหาที่ 1',
+//                 'รายละเอียดที่ 1'
+//             ),
+//             new MessageTemplateActionBuilder(
+//                 'ปัญหาที่ 2',
+//                 'รายละเอียดที่ 2'
+//             ),
+//             new MessageTemplateActionBuilder(
+//                 'ปัญหาที่ 3',
+//                 'รายละเอียดที่ 3'
+//             ),
+//             new UriTemplateActionBuilder(
+//                 'รายละเอียดเพิ่มเติม',
+//                 'https://www.google.com/?hl=th'
+//             ),
+//         );
+//         $imageUrl = 'https://writerlisamason.com/wp-content/uploads/2019/02/4.jpg';
+//         $replyData = new TemplateMessageBuilder(
+//             'แจ้งปัญหา',
+//             new ButtonTemplateBuilder(
+//                 'แจ้งปัญหา',
+//                 'กรุณาเลือกหัวข้อที่ต้องการ',
+//                 $imageUrl,
+//                 $actionBuilder
+//             )
+//         );
+//     }
+//     if ($userMessage == "รายละเอียดที่ 1") {
+//         $actionBuilder = array(
+//             new MessageTemplateActionBuilder(
+//                 'เมนูที่ 1',
+//                 'เมนูที่ 1'
+//             ),
+//             new MessageTemplateActionBuilder(
+//                 'เมนูที่ 2',
+//                 'เมนูที่ 2'
+//             ),
+//         );
+//         $imageUrl = null;
+//         $replyData = new TemplateMessageBuilder(
+//             'รายละเอียดที่ 1',
+//             new ButtonTemplateBuilder(
+//                 'รายละเอียดที่ 1',
+//                 'รายละเอียดของรายละเอียดที่ 1',
+//                 $imageUrl,
+//                 $actionBuilder
+//             )
+//         );
+//     }
+// }
 
 $response = $bot->replyMessage($replyToken, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+}
