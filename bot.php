@@ -100,7 +100,7 @@ $events = json_decode($content, true);
     $userMessage = $events['events'][0]['message']['text'];
     $userMessage = strtolower($userMessage);
 
-    if ($userMessage == null) {
+    
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -152,7 +152,7 @@ $events = json_decode($content, true);
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 
-    } else if ($userMessage != null) {
+    if ($userMessage != null) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
