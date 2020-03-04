@@ -103,7 +103,7 @@ if (!is_null($events)) {
     // $findme   = 'บัญชี';
     // $pos = strpos($userMessage, "บัญชี");
 
-    if (strpos($userMessage, "บัญชี") == true) {
+    if ($userMessage == null) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
             NULL,
