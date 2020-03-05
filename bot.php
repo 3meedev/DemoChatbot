@@ -222,7 +222,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
      } else {
-        for ($i=0; $i < count($source); $i++) { 
+         foreach($source as $a) { 
         
             $textReplyMessage = new BubbleContainerBuilder(
                 "ltr",
@@ -232,7 +232,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                     "horizontal",
                     array(
                         new TextComponentBuilder(
-                            $source[$i],
+                            $a,
                             NULL,
                             NULL,
                             "md",
