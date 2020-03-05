@@ -264,9 +264,9 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
         );
         $imageUrl = '';
         $replyData = new TemplateMessageBuilder(
-            'เปิดบัญชี',
+            'เมนูหลัก',
             new ButtonTemplateBuilder(
-                'เปิดบัญชี',
+                'เมนูหลัก',
                 'กรุณาเลือกหัวข้อที่ต้องการ',
                 $imageUrl,
                 $actionBuilder
