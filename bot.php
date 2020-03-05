@@ -151,6 +151,10 @@ if ($userMessage != null) {
 
         );
         
+        
+                 
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
                 'เรียกดูโปรโมชั่น',
@@ -161,8 +165,6 @@ if ($userMessage != null) {
                 'สมัครโปรโมชั่น'
             )
         );
-                 
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
         $replyData1 = new TemplateMessageBuilder(
             'เปิดบัญชี',
             new ButtonTemplateBuilder(
