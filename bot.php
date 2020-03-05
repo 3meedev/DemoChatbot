@@ -222,7 +222,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
      } else {
-        for ($i=0; $i < strlen($source); $i++) { 
+        for ($i=0; $i < count($source); $i++) { 
         
             $textReplyMessage = new BubbleContainerBuilder(
                 "ltr",
