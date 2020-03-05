@@ -248,29 +248,33 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
             )
         );
     }
-}
- else if($userImage == null){
+} else if($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
-        NULL,NULL,
+        NULL,
+        NULL,
         new BoxComponentBuilder(
             "horizontal",
             array(
-                new TextComponentBuilder("สมัครเสร็จแจ้งสลีปพร้อมเลขยูส..",NULL,NULL,NULL,NULL,NULL,true)
-            )
-        ),
-        new BoxComponentBuilder(
-            "horizontal",
-            array(
-                new ButtonComponentBuilder(
-                    new UriTemplateActionBuilder("สมัครโปรโมชั่น","https://line.me/R/ti/p/%40519uqyhc"),
-                    NULL,NULL,NULL,"primary"
+                new TextComponentBuilder(
+                    "กรุณาแจ้งเลขยูสค่ะ..
+
+[ รูปแบบ USER_เลขยูสของคุณ ]",
+                    NULL,
+                    NULL,
+                    "md",
+                    NULL,
+                    NULL,
+                    true
                 )
             )
         )
+
+
     );
 
-$replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+
+    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
  }
 
 
