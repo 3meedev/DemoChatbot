@@ -233,7 +233,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                     "horizontal",
                     array(
                         new TextComponentBuilder(
-                            $a,
+                            "ds;klsdlhklsdsjl",
                             NULL,
                             NULL,
                             "md",
