@@ -250,7 +250,9 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-     } else if($userMessage == 13) {
+     }   
+     
+     else if(preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $userMessage)) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -259,7 +261,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ..",
+                        "fghfghgfhgfhgfh",
                         NULL,
                         NULL,
                         "md",
@@ -270,8 +272,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                 )
             ) 
     
-        );
-    
+        );    
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
      } else {
