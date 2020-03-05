@@ -252,7 +252,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
      }   
      
-     else if(preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $userMessage)) {
+     else if(preg_match("/^[0]{1}[0-9]{9}$/", $userMessage)) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
