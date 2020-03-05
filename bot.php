@@ -98,8 +98,9 @@ $events = json_decode($content, true);
 
 $replyToken = $events['events'][0]['replyToken'];
 $typeMessage = $events['events'][0]['message']['type'];
+$typeMessageImage = $events['events'][0]['image']['image'];
+$userImage = $events['events'][0]['image'];
 $userMessage = $events['events'][0]['message']['text'];
-$userMessage1 = $userMessage;
 $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
 
@@ -184,49 +185,47 @@ if ($userMessage != null) {
 
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-
-        if ($userMessage1 == "1") {
-            $replyData = new TemplateMessageBuilder(
-                'Confirm Template',
-                new ConfirmTemplateBuilder(
-                    'โปรโมชั่นที่ลูกค้าเลือก คือ
-    " หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท "
-    ยืนยันการสมัครใช่หรือไม่ ?',
-                    array(
-                        new MessageTemplateActionBuilder(
-                            'ใช่',
-                            'ใช่'
-                        ),
-                        new MessageTemplateActionBuilder(
-                            'ไม่',
-                            'ใม่'
-                        )
+    } else if ($userMessage == "1") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
                     )
                 )
-            );
-        } else if ($userMessage1 == "ใช่") {
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder("สมัครเสร็จแจ้งสลีปพร้อมเลขยูส..",NULL,NULL,NULL,NULL,NULL,true)
-                    )
-                ),
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new ButtonComponentBuilder(
-                            new UriTemplateActionBuilder("สมัครโปรโมชั่น","https://line.me/R/ti/p/%40519uqyhc"),
-                            NULL,NULL,NULL,"primary"
-                        )
+            )
+        );
+    } else if ($userMessage == "ใช่") {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder("สมัครเสร็จแจ้งสลีปพร้อมเลขยูส..",NULL,NULL,NULL,NULL,NULL,true)
+                )
+            ),
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new ButtonComponentBuilder(
+                        new UriTemplateActionBuilder("สมัครโปรโมชั่น","https://line.me/R/ti/p/%40519uqyhc"),
+                        NULL,NULL,NULL,"primary"
                     )
                 )
-            );
-     
-    $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
-        }
+            )
+        );
+ 
+$replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
@@ -250,7 +249,29 @@ if ($userMessage != null) {
         );
     }
 }
+ if($userImage == null){
+    $textReplyMessage = new BubbleContainerBuilder(
+        "ltr",
+        NULL,NULL,
+        new BoxComponentBuilder(
+            "horizontal",
+            array(
+                new TextComponentBuilder("สมัครเสร็จแจ้งสลีปพร้อมเลขยูส..",NULL,NULL,NULL,NULL,NULL,true)
+            )
+        ),
+        new BoxComponentBuilder(
+            "horizontal",
+            array(
+                new ButtonComponentBuilder(
+                    new UriTemplateActionBuilder("สมัครโปรโมชั่น","https://line.me/R/ti/p/%40519uqyhc"),
+                    NULL,NULL,NULL,"primary"
+                )
+            )
+        )
+    );
 
+$replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
+ }
 
 
 $response = $bot->replyMessage($replyToken, $replyData);
