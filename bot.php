@@ -99,10 +99,10 @@ $events = json_decode($content, true);
 $replyToken = $events['events'][0]['replyToken'];
 $typeMessage = $events['events'][0]['message']['type'];
 $userMessage = $events['events'][0]['message']['text'];
-$userID = $events['events'][0]['source']['userId'];
+
 $userMessage = strtolower($userMessage);
 
-$userId = $userID;
+
 $textPushMessage = 'สวัสดีครับ';    
 $textPushMessage1 = 'สวัสดีครับ';                 
 $messageData = new TextMessageBuilder($textPushMessage,$textPushMessage1);        
