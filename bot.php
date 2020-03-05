@@ -204,6 +204,28 @@ if ($userMessage != null) {
                 )
             )
         );
+    } else if (strpos($userMessage, "๊ยูส") == true) {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ..",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
+                    )
+                )
+            )
+
+        );
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
@@ -226,8 +248,7 @@ if ($userMessage != null) {
             )
         );
     }
-} 
-else if($userImage == null) {
+} else if ($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
@@ -254,31 +275,7 @@ else if($userImage == null) {
 
 
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
- } else if(strpos($userMessage, "๊ยูส") == true) {
-    $textReplyMessage = new BubbleContainerBuilder(
-        "ltr",
-        NULL,
-        NULL,
-        new BoxComponentBuilder(
-            "horizontal",
-            array(
-                new TextComponentBuilder(
-                    "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ..",
-                    NULL,
-                    NULL,
-                    "md",
-                    NULL,
-                    NULL,
-                    true
-                )
-            )
-        ) 
-
-    );
-
-
-    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
- }
+}
 
 
 $response = $bot->replyMessage($replyToken, $replyData);
