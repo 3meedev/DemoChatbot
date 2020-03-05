@@ -149,10 +149,9 @@ if ($userMessage != null) {
             )
 
 
-        );    
-        
+        );         
                  
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);  
+        
         
         $textReplyMessage1 = new BubbleContainerBuilder(
             "ltr",
@@ -201,7 +200,7 @@ if ($userMessage != null) {
         
                  
         $replyData1 = new FlexMessageBuilder("Flex", $textReplyMessage1);   
-
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);  
       
         
     } else {
