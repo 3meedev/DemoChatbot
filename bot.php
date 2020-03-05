@@ -105,7 +105,7 @@ $userMessage = strtolower($userMessage);
 
 
 if ($userMessage != null) {
-    if ($userMessage == "เรียกดูโปรโมชั่น") {
+    if ($userMessage == "เรียกดูโปรโมชั่น1") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -153,27 +153,7 @@ if ($userMessage != null) {
         
         
                  
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        
-        $actionBuilder = array(
-            new MessageTemplateActionBuilder(
-                'เรียกดูโปรโมชั่น',
-                'เรียกดูโปรโมชั่น'
-            ),
-            new MessageTemplateActionBuilder(
-                'สมัครโปรโมชั่น',
-                'สมัครโปรโมชั่น'
-            )
-        );
-        $replyData1 = new TemplateMessageBuilder(
-            'เปิดบัญชี',
-            new ButtonTemplateBuilder(
-                'เปิดบัญชี',
-                'กรุณาเลือกหัวข้อที่ต้องการ',
-                $imageUrl,
-                $actionBuilder
-            )
-        );       
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);            
         
     } else {
         $actionBuilder = array(
@@ -196,12 +176,13 @@ if ($userMessage != null) {
                 $actionBuilder
             )
         );
+        $userMessage = "เรียกดูโปรโมชั่น 1";
     }
 }
 
       
              
-$response = $bot->replyMessage($replyToken, $replyData, $replyData1);
+$response = $bot->replyMessage($replyToken, $replyData);
 
 
 
