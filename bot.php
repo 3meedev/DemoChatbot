@@ -221,7 +221,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
         );    
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-     } else if (strstr($a,"ที่อยู่") == true){
+     } else if (strstr($userMessage,"ที่อยู่") == true){
          foreach($source as $a) { 
             if(in_array($a,$provinc)){
                 $textReplyMessage = new BubbleContainerBuilder(
