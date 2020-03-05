@@ -250,6 +250,30 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+     } else if($userMessage == 13) {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ..",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
+                    )
+                )
+            ) 
+    
+        );
+    
+    
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
      } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
