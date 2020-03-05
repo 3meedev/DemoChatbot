@@ -254,7 +254,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
      
      else 
     //  if(preg_match_all("/^[0]{1}[0-9]{9}{10}/", $userMessage)) 
-     if(strstr($userMessage,in_array("irix", $os))){
+     if(strstr($userMessage,in_array("irix", $os)) == true){
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
