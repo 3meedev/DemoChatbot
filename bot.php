@@ -104,8 +104,8 @@ $userMessage = strtolower($userMessage);
 
 $userId = $userID;
 $textPushMessage = 'สวัสดีครับ';    
-$textPushMessage = 'สวัสดีครับ';                 
-$messageData = new TextMessageBuilder($textPushMessage);        
+$textPushMessage1 = 'สวัสดีครับ';                 
+$messageData = new TextMessageBuilder($textPushMessage,$textPushMessage1);        
              
 $response = $bot->pushMessage($userId,$messageData);
 
