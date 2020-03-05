@@ -259,7 +259,32 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                 new TextComponentBuilder(
                     "กรุณาแจ้งเลขยูสค่ะ..
 
-[ รูปแบบ USER_เลขยูสของคุณ ]",
+[ รูปแบบ : USER_เลขยูสของคุณ ]",
+                    NULL,
+                    NULL,
+                    "md",
+                    NULL,
+                    NULL,
+                    true
+                )
+            )
+        )
+
+
+    );
+
+
+    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+ } else if(strpos($userMessage,"USER_") == true) {
+    $textReplyMessage = new BubbleContainerBuilder(
+        "ltr",
+        NULL,
+        NULL,
+        new BoxComponentBuilder(
+            "horizontal",
+            array(
+                new TextComponentBuilder(
+                    "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ..",
                     NULL,
                     NULL,
                     "md",
