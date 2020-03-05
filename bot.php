@@ -159,14 +159,14 @@ $textReplyMessage = new CarouselContainerBuilder(
             "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
             NULL,NULL,
             new BoxComponentBuilder(
-                "horizontal",
+                "vertical ",
                 array(
                     new TextComponentBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
                     do eiusmod tempor incididunt ut labore et dolore magna aliqua.",NULL,NULL,NULL,NULL,NULL,true)
                 )
             ),
             new BoxComponentBuilder(
-                "horizontal",
+                "vertical ",
                 array(
                     new ButtonComponentBuilder(
                         new UriTemplateActionBuilder("GO","http://niik.in"),
@@ -179,13 +179,13 @@ $textReplyMessage = new CarouselContainerBuilder(
             "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
             NULL,NULL,
             new BoxComponentBuilder(
-                "horizontal",
+                "vertical ",
                 array(
                     new TextComponentBuilder("Hello, World!",NULL,NULL,NULL,NULL,NULL,true)
                 )
             ),
             new BoxComponentBuilder(
-                "horizontal",
+                "vertical ",
                 array(
                     new ButtonComponentBuilder(
                         new UriTemplateActionBuilder("GO","http://niik.in"),
