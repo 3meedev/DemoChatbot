@@ -146,24 +146,33 @@ if ($userMessage != null) {
                         true
                     )
                 )
-            ),
-            new BoxComponentBuilder(
-                "horizontal",
-                array(
-                    new ButtonComponentBuilder(
-                        new UriTemplateActionBuilder("GO", "http://niik.in"),
-                        NULL,
-                        NULL,
-                        NULL,
-                        "primary"
-                    )
-                )
             )
 
 
         );
                  
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+
+        $actionBuilder = array(
+            new MessageTemplateActionBuilder(
+                'เรียกดูโปรโมชั่น',
+                'เรียกดูโปรโมชั่น'
+            ),
+            new MessageTemplateActionBuilder(
+                'สมัครโปรโมชั่น',
+                'สมัครโปรโมชั่น'
+            )
+        );
+        $imageUrl = '';
+        $replyData = new TemplateMessageBuilder(
+            'เปิดบัญชี',
+            new ButtonTemplateBuilder(
+                'เปิดบัญชี',
+                'กรุณาเลือกหัวข้อที่ต้องการ',
+                $imageUrl,
+                $actionBuilder
+            )
+        );
     } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
