@@ -188,7 +188,7 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือกคือ
-                "หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท"',
+"หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท"',
                 array(
                     new MessageTemplateActionBuilder(
                         'Yes',
