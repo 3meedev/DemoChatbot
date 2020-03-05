@@ -151,38 +151,57 @@ if ($userMessage != null) {
             )
 
 
-        );    
-        
-                 
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
-        
+        );
+
+
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     } else if ($userMessage == "สมัครโปรโมชั่น") {
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,
-                NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder(
-                            "Copa69 สวัสดีค่ะ 
-สนใจโปรโมชั่นในกรอกหมายเลยโปรโมชั่นได้เลยค่ะ..",
-                            NULL,
-                            NULL,
-                            "md",
-                            NULL,
-                            NULL,
-                            true
-                        )
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "Copa69 สวัสดีค่ะ 
+
+สนใจโปรโมชั่นใหนกรอกหมายเลข
+โปรโมชั่นได้เลยค่ะ..",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
                     )
                 )
-    
-    
-            );    
-            
-                     
-            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);  
-    }else {
+            )
+
+
+        );
+
+
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    } else if ($userMessage == "1") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือกคือ
+                "หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท"',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'Yes',
+                        'Text Yes'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'No',
+                        'Text NO'
+                    )
+                )
+            )
+        );
+    } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
                 'เรียกดูโปรโมชั่น',
@@ -206,8 +225,8 @@ if ($userMessage != null) {
     }
 }
 
-      
-             
+
+
 $response = $bot->replyMessage($replyToken, $replyData);
 
 
