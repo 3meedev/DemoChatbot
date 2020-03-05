@@ -103,7 +103,8 @@ $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
 
 $userId = $userID;
-$textPushMessage = 'สวัสดีครับ';                
+$textPushMessage = 'สวัสดีครับ';    
+$textPushMessage = 'สวัสดีครับ';                 
 $messageData = new TextMessageBuilder($textPushMessage);        
              
 $response = $bot->pushMessage($userId,$messageData);
