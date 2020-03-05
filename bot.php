@@ -45,13 +45,13 @@ $userImage = $events['events'][0]['image'];
 $userMessage = $events['events'][0]['message']['text'];
 $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
-$source = explode(" ",$userMessage);
-$provinc = array("star","boy","car");
+$source = explode(" ", $userMessage);
+$provinc = array("star", "boy", "car");
 
 
 if ($userMessage != null) {
-    
-    if ($userMessage == "เรียกดูโปรโมชั่น") {        
+
+    if ($userMessage == "เรียกดูโปรโมชั่น") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -151,26 +151,30 @@ if ($userMessage != null) {
     } else if ($userMessage == "ใช่") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
-            NULL,NULL,
+            NULL,
+            NULL,
             new BoxComponentBuilder(
                 "horizontal",
                 array(
-                    new TextComponentBuilder("สมัครเสร็จแจ้งสลีปพร้อมเลขยูส..",NULL,NULL,NULL,NULL,NULL,true)
+                    new TextComponentBuilder("สมัครเสร็จแจ้งสลีปพร้อมเลขยูส..", NULL, NULL, NULL, NULL, NULL, true)
                 )
             ),
             new BoxComponentBuilder(
                 "horizontal",
                 array(
                     new ButtonComponentBuilder(
-                        new UriTemplateActionBuilder("สมัครโปรโมชั่น","https://line.me/R/ti/p/%40519uqyhc"),
-                        NULL,NULL,NULL,"primary"
+                        new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                        NULL,
+                        NULL,
+                        NULL,
+                        "primary"
                     )
                 )
             )
         );
- 
-$replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
-    } else if(strstr($userMessage, "user_") == true) {
+
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    } else if (strstr($userMessage, "user_") == true) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -188,17 +192,11 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                         true
                     )
                 )
-            ) 
-    
+            )
+
         );
-    
-    
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-     }   
-     
-     else 
-    //  if(preg_match_all("/^[0]{1}[0-9]{9}{10}/", $userMessage)) 
-     if(strstr($userMessage,$test) == true){
+    } else if (strstr($userMessage, "ที่อยู่") == true) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -207,7 +205,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "fghfghgfhgfhgfh",
+                        "ds;klsdlhklsdsjl",
                         NULL,
                         NULL,
                         "md",
@@ -216,45 +214,18 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
                         true
                     )
                 )
-            ) 
-    
-        );    
-    
+            )
+
+
+        );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-     } else if (strstr($userMessage,"ที่อยู่") == true){
-         foreach($source as $a) { 
-            if(in_array($a,$provinc)){
-                $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,
-                NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder(
-                            "ds;klsdlhklsdsjl",
-                            NULL,
-                            NULL,
-                            "md",
-                            NULL,
-                            NULL,
-                            true
-                        )
-                    )
-                )
-    
-    
-            );
-    
-    
-            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-            }
-            
-        
+        // foreach ($source as $a) {
+        //     if (in_array($a, $provinc)) {
+                
+        //     }
+        // }
     }
-    }
-} 
-else if($userImage == null) {
+} else if ($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
@@ -281,7 +252,7 @@ else if($userImage == null) {
 
 
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
- }
+}
 
 
 $response = $bot->replyMessage($replyToken, $replyData);
