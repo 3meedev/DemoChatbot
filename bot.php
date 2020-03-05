@@ -204,31 +204,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if(strpos($userMessage, "๊ยูส") == true) {
-        $textReplyMessage = new BubbleContainerBuilder(
-            "ltr",
-            NULL,
-            NULL,
-            new BoxComponentBuilder(
-                "horizontal",
-                array(
-                    new TextComponentBuilder(
-                        "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ..",
-                        NULL,
-                        NULL,
-                        "md",
-                        NULL,
-                        NULL,
-                        true
-                    )
-                )
-            ) 
-    
-        );
-    
-    
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-     } else {
+    } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
                 'เรียกดูโปรโมชั่น',
@@ -250,7 +226,8 @@ if ($userMessage != null) {
             )
         );
     }
-} else if($userImage == null) {
+} 
+else if($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
@@ -277,29 +254,32 @@ if ($userMessage != null) {
 
 
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
- } else if ($userMessage == "ใช่") {
+ } else if(strpos($userMessage, "๊ยูส") == true) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
-        NULL,NULL,
+        NULL,
+        NULL,
         new BoxComponentBuilder(
             "horizontal",
             array(
-                new TextComponentBuilder("สมัครเสร็จแจ้งสลีปพร้อมเลขยูส..",NULL,NULL,NULL,NULL,NULL,true)
-            )
-        ),
-        new BoxComponentBuilder(
-            "horizontal",
-            array(
-                new ButtonComponentBuilder(
-                    new UriTemplateActionBuilder("สมัครโปรโมชั่น","https://line.me/R/ti/p/%40519uqyhc"),
-                    NULL,NULL,NULL,"primary"
+                new TextComponentBuilder(
+                    "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ..",
+                    NULL,
+                    NULL,
+                    "md",
+                    NULL,
+                    NULL,
+                    true
                 )
             )
-        )
+        ) 
+
     );
 
-$replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
-}
+
+    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+ }
+
 
 $response = $bot->replyMessage($replyToken, $replyData);
 
@@ -307,4 +287,3 @@ $response = $bot->replyMessage($replyToken, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
- 
