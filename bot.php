@@ -154,7 +154,7 @@ if ($userMessage != null) {
                  
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);  
         
-        $textReplyMessage = new BubbleContainerBuilder(
+        $textReplyMessage1 = new BubbleContainerBuilder(
             "ltr",
             NULL,
             NULL,
@@ -200,7 +200,7 @@ if ($userMessage != null) {
         );    
         
                  
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);   
+        $replyData1 = new FlexMessageBuilder("Flex", $textReplyMessage1);   
 
       
         
@@ -230,7 +230,7 @@ if ($userMessage != null) {
 
       
              
-$response = $bot->replyMessage($replyToken, $replyData);
+$response = $bot->replyMessage($replyToken, $replyData, $replyData1);
 
 
 
