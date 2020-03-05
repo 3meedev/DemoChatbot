@@ -51,7 +51,7 @@ $provinc = array("star","boy","car");
 
 if ($userMessage != null) {
     for ($i=0; $i < strlen($source); $i++) { 
-        if(in_array($source[$i],$provinc) == true){
+        
             $textReplyMessage = new BubbleContainerBuilder(
                 "ltr",
                 NULL,
@@ -76,7 +76,7 @@ if ($userMessage != null) {
     
     
             $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        }
+        
     }
     if ($userMessage == "เรียกดูโปรโมชั่น") {        
         $textReplyMessage = new BubbleContainerBuilder(
