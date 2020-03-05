@@ -197,33 +197,32 @@ if ($userMessage != null) {
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     } else if (strstr($userMessage, "ที่อยู่") == true) {
-        $textReplyMessage = new BubbleContainerBuilder(
-            "ltr",
-            NULL,
-            NULL,
-            new BoxComponentBuilder(
-                "horizontal",
-                array(
-                    new TextComponentBuilder(
-                        "ds;klsdlhklsdsjl",
-                        NULL,
-                        NULL,
-                        "md",
-                        NULL,
-                        NULL,
-                        true
+        foreach ($source as $a) {
+            if (in_array($a, $provinc)) {
+                $textReplyMessage = new BubbleContainerBuilder(
+                    "ltr",
+                    NULL,
+                    NULL,
+                    new BoxComponentBuilder(
+                        "horizontal",
+                        array(
+                            new TextComponentBuilder(
+                                "ds;klsdlhklsdsjl",
+                                NULL,
+                                NULL,
+                                "md",
+                                NULL,
+                                NULL,
+                                true
+                            )
+                        )
                     )
-                )
-            )
 
 
-        );
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        // foreach ($source as $a) {
-        //     if (in_array($a, $provinc)) {
-                
-        //     }
-        // }
+                );
+                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+            }
+        }
     }
 } else if ($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
