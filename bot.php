@@ -104,7 +104,7 @@ $userMessage = $events['events'][0]['message']['text'];
 $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
 $os = array("dfgdfgdf","dfgdfgdfggfd","irix");
-
+$test = in_array("irix", $os) == true;
 
 if ($userMessage != null) {
     if ($userMessage == "เรียกดูโปรโมชั่น") {
@@ -254,7 +254,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
      
      else 
     //  if(preg_match_all("/^[0]{1}[0-9]{9}{10}/", $userMessage)) 
-     if(strstr($userMessage,in_array("irix", $os)) == true){
+     if(strstr($userMessage,$test) == true){
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
