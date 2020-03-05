@@ -204,7 +204,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strpos($userMessage, "๊ยูส") == true) {
+    } else if ($userMessag == "๊ยูส") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
