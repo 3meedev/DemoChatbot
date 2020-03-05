@@ -226,7 +226,7 @@ if ($userMessage != null) {
         );
  
 $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
-    } else if(strpos($userMessage,"๊user") == true) {
+    } else if(strpos($userMessage,"๊หมายเลขยูส_") == true) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
