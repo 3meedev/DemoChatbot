@@ -50,34 +50,7 @@ $provinc = array("star","boy","car");
 
 
 if ($userMessage != null) {
-    for ($i=0; $i < strlen($source); $i++) { 
-        
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,
-                NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder(
-                            $source[$i],
-                            NULL,
-                            NULL,
-                            "md",
-                            NULL,
-                            NULL,
-                            true
-                        )
-                    )
-                )
     
-    
-            );
-    
-    
-            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        
-    }
     if ($userMessage == "เรียกดูโปรโมชั่น") {        
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
@@ -249,26 +222,34 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
      } else {
-        $actionBuilder = array(
-            new MessageTemplateActionBuilder(
-                'เรียกดูโปรโมชั่น',
-                'เรียกดูโปรโมชั่น'
-            ),
-            new MessageTemplateActionBuilder(
-                'สมัครโปรโมชั่น',
-                'สมัครโปรโมชั่น'
-            )
-        );
-        $imageUrl = '';
-        $replyData = new TemplateMessageBuilder(
-            'เมนูหลัก',
-            new ButtonTemplateBuilder(
-                'เมนูหลัก',
-                'กรุณาเลือกหัวข้อที่ต้องการ',
-                $imageUrl,
-                $actionBuilder
-            )
-        );
+        for ($i=0; $i < strlen($source); $i++) { 
+        
+            $textReplyMessage = new BubbleContainerBuilder(
+                "ltr",
+                NULL,
+                NULL,
+                new BoxComponentBuilder(
+                    "horizontal",
+                    array(
+                        new TextComponentBuilder(
+                            $source[$i],
+                            NULL,
+                            NULL,
+                            "md",
+                            NULL,
+                            NULL,
+                            true
+                        )
+                    )
+                )
+    
+    
+            );
+    
+    
+            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        
+    }
     }
 } 
 else if($userImage == null) {
