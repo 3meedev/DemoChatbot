@@ -140,7 +140,7 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
-                
+
 " หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
@@ -162,7 +162,7 @@ if ($userMessage != null) {
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท 
+" พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -183,7 +183,7 @@ if ($userMessage != null) {
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท 
+" ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
