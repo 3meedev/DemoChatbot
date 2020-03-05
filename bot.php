@@ -222,9 +222,10 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
      } else {
+         
          foreach($source as $a) { 
-        
-            $textReplyMessage = new BubbleContainerBuilder(
+            if(in_array($a,$provinc)){
+                $textReplyMessage = new BubbleContainerBuilder(
                 "ltr",
                 NULL,
                 NULL,
@@ -248,6 +249,8 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
     
     
             $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+            }
+            
         
     }
     }
