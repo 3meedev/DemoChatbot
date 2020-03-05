@@ -249,7 +249,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
         );
     }
 }
- if($userImage == null){
+ else if($userImage == null){
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,NULL,
