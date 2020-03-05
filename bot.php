@@ -46,83 +46,13 @@ $userMessage = $events['events'][0]['message']['text'];
 $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
 $source = explode(" ", $userMessage);
-$provinc = array('กรุงเทพฯ',
-'กระบี่',
-'กาญจนบุรี',
-'กาฬสินธุ์',
-'กำแพงเพชร',
-'ขอนแก่น',
-'จันทบุรี',
-'ฉะเชิงเทรา',
-'ชลบุรี',
-'ชัยนาท',
-'ชัยภูมิ',
-'ชุมพร',
-'เชียงใหม่',
-'เชียงราย',
-'ตรัง',
-'ตราด',
-'ตาก',
-'นครนายก',
-'นครปฐม',
-'นครพนม',
-'นครราชสีมา',
-'นครศรีธรรมราช',
-'นครสวรรค์',
-'นนทบุรี',
-'นราธิวาส',
-'น่าน',
-'บึงกาฬ',
-'บุรีรัมย์',
-'ปทุมธานี',
-'ประจวบคีรีขันธ์',
-'ปราจีนบุรี',
-'ปัตตานี',
-'พระนครศรีอยุธยา',
-'พะเยา',
-'พังงา',
-'พัทลุง',
-'พิจิตร',
-'พิษณุโลก',
-'เพชรบุรี',
-'เพชรบูรณ์',
-'แพร่',
-'ภูเก็ต',
-'มหาสารคาม',
-'มุกดาหาร',
-'แม่ฮ่องสอน',
-'ยโสธร',
-'ยะลา',
-'ร้อยเอ็ด',
-'ระนอง',
-'ระยอง',
-'ราชบุรี',
-'ลพบุรี',
-'ลำปาง',
-'ลำพูน',
-'เลย',
-'ศรีสะเกษ',
-'สกลนคร',
-'สงขลา',
-'สตูล',
-'สมุทรปราการ',
-'สมุทรสงคราม',
-'สมุทรสาคร',
-'สระแก้ว',
-'สระบุรี',
-'สิงห์บุรี',
-'สุโขทัย',
-'สุพรรณบุรี',
-'สุราษฎร์ธานี',
-'สุรินทร์',
-'หนองคาย',
-'หนองบัวลำภู',
-'อ่างทอง',
-'อำนาจเจริญ',
-'อุดรธานี',
-'อุตรดิตถ์',
-'อุทัยธานี',
-'อุบลราชธานี',);
+$provinc = array(
+    'กรุงเทพฯ',
+    'กระบี่', 'กาญจนบุรี', 'กาฬสินธุ์', 'กำแพงเพชร', 'ขอนแก่น', 'จันทบุรี', 'ฉะเชิงเทรา', 'ชลบุรี', 'ชัยนาท', 'ชัยภูมิ', 'ชุมพร', 'เชียงใหม่', 'เชียงราย', 'ตรัง', 'ตราด', 'ตาก', 'นครนายก', 'นครปฐม', 'นครพนม', 'นครราชสีมา', 'นครศรีธรรมราช', 'นครสวรรค์', 'นนทบุรี',
+    'นราธิวาส', 'น่าน', 'บึงกาฬ', 'บุรีรัมย์', 'ปทุมธานี', 'ประจวบคีรีขันธ์', 'ปราจีนบุรี', 'ปัตตานี', 'พระนครศรีอยุธยา', 'พะเยา', 'พังงา', 'พัทลุง', 'พิจิตร', 'พิษณุโลก', 'เพชรบุรี', 'เพชรบูรณ์', 'แพร่', 'ภูเก็ต', 'มหาสารคาม', 'มุกดาหาร', 'แม่ฮ่องสอน', 'ยโสธร', 'ยะลา',
+    'ร้อยเอ็ด', 'ระนอง', 'ระยอง', 'ราชบุรี', 'ลพบุรี', 'ลำปาง', 'ลำพูน', 'เลย', 'ศรีสะเกษ', 'สกลนคร', 'สงขลา', 'สตูล', 'สมุทรปราการ', 'สมุทรสงคราม', 'สมุทรสาคร', 'สระแก้ว', 'สระบุรี', 'สิงห์บุรี', 'สุโขทัย', 'สุพรรณบุรี', 'สุราษฎร์ธานี', 'สุรินทร์', 'หนองคาย', 'หนองบัวลำภู',
+    'อ่างทอง', 'อำนาจเจริญ', 'อุดรธานี', 'อุตรดิตถ์', 'อุทัยธานี', 'อุบลราชธานี'
+);
 
 
 if ($userMessage != null) {
@@ -224,6 +154,253 @@ if ($userMessage != null) {
                 )
             )
         );
+    } else if ($userMessage == "2") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" พาวเวอร์แบ๊ง ELOOP E-12 สมัคร1000 บาท 
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "3") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" ลำโพง BLUETOOTH IRON MAN สมัคร1000 บาท 
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "4") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" บุหรี่ไฟฟ้า DRAG สมัคร1000 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "5") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" โทรศัพท์จิ๋ว สมัคร 1000 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "6") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" เสื้อบอล EURO สมัคร 500 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "7") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" เสื้อฮูด Nike สมัคร 500 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "8") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" Smart Watch สมัคร500 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "9") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" ลำโพง Bluetooth Mini สมัคร 500 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "10") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" หูฟัง Bluetooth สมัคร 500 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "11") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "12") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "13") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" Game Handle สมัคร 300 บาท "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
+    } else if ($userMessage == "14") {
+        $replyData = new TemplateMessageBuilder(
+            'Confirm Template',
+            new ConfirmTemplateBuilder(
+                'โปรโมชั่นที่ลูกค้าเลือก คือ
+" สมัครฝาก200 รับโบนัส 30 % "
+ยืนยันการสมัครใช่หรือไม่ ?',
+                array(
+                    new MessageTemplateActionBuilder(
+                        'ใช่',
+                        'ใช่'
+                    ),
+                    new MessageTemplateActionBuilder(
+                        'ไม่',
+                        'ใม่'
+                    )
+                )
+            )
+        );
     } else if ($userMessage == "ใช่") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
@@ -273,6 +450,33 @@ if ($userMessage != null) {
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     } else if (strstr($userMessage, "ที่อยู่") == true) {
+        foreach ($source as $a) {
+            if (in_array($a, $provinc)) {
+                $textReplyMessage = new BubbleContainerBuilder(
+                    "ltr",
+                    NULL,
+                    NULL,
+                    new BoxComponentBuilder(
+                        "horizontal",
+                        array(
+                            new TextComponentBuilder(
+                                "ds;klsdlhklsdsjl",
+                                NULL,
+                                NULL,
+                                "md",
+                                NULL,
+                                NULL,
+                                true
+                            )
+                        )
+                    )
+
+
+                );
+                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+            }
+        }
+    } else if (strstr($userMessage, "ที่อยู่") != true) {
         foreach ($source as $a) {
             if (in_array($a, $provinc)) {
                 $textReplyMessage = new BubbleContainerBuilder(
