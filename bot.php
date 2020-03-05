@@ -194,9 +194,9 @@ if ($userMessage != null) {
 
       
              
-$response = $bot->pushMessage($replyToken,$userId,$messageData,$replyData);
+$response = $bot->pushMessage($userId,$messageData);
 
-// $response = $bot->replyMessage($replyToken, $replyData);
+$response = $bot->replyMessage($replyToken, $replyData);
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
