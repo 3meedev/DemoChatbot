@@ -99,6 +99,7 @@ $events = json_decode($content, true);
 $replyToken = $events['events'][0]['replyToken'];
 $typeMessage = $events['events'][0]['message']['type'];
 $userMessage = $events['events'][0]['message']['text'];
+$userMessage1 = $userMessage;
 $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
 
@@ -184,7 +185,7 @@ if ($userMessage != null) {
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 
-        if ($userMessage == "1") {
+        if ($userMessage1 == "1") {
             $replyData = new TemplateMessageBuilder(
                 'Confirm Template',
                 new ConfirmTemplateBuilder(
@@ -203,7 +204,7 @@ if ($userMessage != null) {
                     )
                 )
             );
-        } else if ($userMessage == "ใช่") {
+        } else if ($userMessage1 == "ใช่") {
             $textReplyMessage = new BubbleContainerBuilder(
                 "ltr",
                 NULL,NULL,
