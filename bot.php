@@ -154,13 +154,35 @@ if ($userMessage != null) {
         );    
         
                  
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);  
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
         
-        
-
-      
-        
-    } else {
+    } else if ($userMessage == "สมัครโปรโมชั่น") {
+            $textReplyMessage = new BubbleContainerBuilder(
+                "ltr",
+                NULL,
+                NULL,
+                new BoxComponentBuilder(
+                    "horizontal",
+                    array(
+                        new TextComponentBuilder(
+                            "Copa69 สวัสดีค่ะ 
+สนใจโปรโมชั่นในกรอกหมายเลยโปรโมชั่นได้เลยค่ะ..",
+                            NULL,
+                            NULL,
+                            "md",
+                            NULL,
+                            NULL,
+                            true
+                        )
+                    )
+                )
+    
+    
+            );    
+            
+                     
+            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);  
+    }else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
                 'เรียกดูโปรโมชั่น',
