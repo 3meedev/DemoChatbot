@@ -150,9 +150,7 @@ if ($userMessage != null) {
 
 
         );
-                 
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-
+        
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
                 'เรียกดูโปรโมชั่น',
@@ -163,8 +161,9 @@ if ($userMessage != null) {
                 'สมัครโปรโมชั่น'
             )
         );
-        $imageUrl = '';
-        $replyData = new TemplateMessageBuilder(
+                 
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        $replyData1 = new TemplateMessageBuilder(
             'เปิดบัญชี',
             new ButtonTemplateBuilder(
                 'เปิดบัญชี',
@@ -172,7 +171,8 @@ if ($userMessage != null) {
                 $imageUrl,
                 $actionBuilder
             )
-        );
+        );       
+        
     } else {
         $actionBuilder = array(
             new MessageTemplateActionBuilder(
@@ -199,7 +199,7 @@ if ($userMessage != null) {
 
       
              
-$response = $bot->replyMessage($replyToken, $replyData);
+$response = $bot->replyMessage($replyToken, $replyData, $replyData1);
 
 
 
