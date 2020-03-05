@@ -105,7 +105,7 @@ $userMessage = strtolower($userMessage);
 
 
 if ($userMessage != null) {
-    if ($userMessage == "เรียกดูโปรโมชั่น1") {
+    if ($userMessage == "เรียกดูโปรโมชั่น 1") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
