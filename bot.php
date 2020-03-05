@@ -162,11 +162,7 @@ if ($userMessage != null) {
 
 
         );
-        $userId = $userID;
-        $textPushMessage = 'สวัสดีครับ';    
-        $textPushMessage1 = 'สวัสดีครับ';     
-
-        $messageData = new TextMessageBuilder($textPushMessage,$textPushMessage1);    
+                 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     } else {
         $actionBuilder = array(
@@ -194,9 +190,9 @@ if ($userMessage != null) {
 
       
              
-$response = $bot->pushMessage($userId,$messageData) && $bot->replyMessage($replyToken, $replyData);
+$response = $bot->replyMessage($replyToken, $replyData);
 
-// $response = $bot->replyMessage($replyToken, $replyData);
+
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
