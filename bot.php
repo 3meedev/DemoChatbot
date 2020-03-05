@@ -103,7 +103,7 @@ $userImage = $events['events'][0]['image'];
 $userMessage = $events['events'][0]['message']['text'];
 $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
-$os = array("dfgdfgdf","dfgdfgdfggfd","Irix");
+$os = array("dfgdfgdf","dfgdfgdfggfd","irix");
 
 
 if ($userMessage != null) {
@@ -254,7 +254,7 @@ $replyData = new FlexMessageBuilder("Flex",$textReplyMessage);
      
      else 
     //  if(preg_match_all("/^[0]{1}[0-9]{9}{10}/", $userMessage)) 
-     if(strstr($userMessage,in_array("Irix", $os))){
+     if(strstr($userMessage,in_array("irix", $os))){
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
