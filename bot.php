@@ -140,7 +140,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+                
 " หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -159,7 +161,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
-" พาวเวอร์แบ๊ง ELOOP E-12 สมัคร1000 บาท 
+
+" พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท 
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -178,7 +182,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
-" ลำโพง BLUETOOTH IRON MAN สมัคร1000 บาท 
+
+" ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท 
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -197,7 +203,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
-" บุหรี่ไฟฟ้า DRAG สมัคร1000 บาท "
+
+" บุหรี่ไฟฟ้า DRAG สมัคร 1000 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -216,7 +224,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " โทรศัพท์จิ๋ว สมัคร 1000 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -235,7 +245,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " เสื้อบอล EURO สมัคร 500 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -254,7 +266,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " เสื้อฮูด Nike สมัคร 500 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -273,7 +287,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
-" Smart Watch สมัคร500 บาท "
+
+" Smart Watch สมัคร 500 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -292,7 +308,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " ลำโพง Bluetooth Mini สมัคร 500 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -311,7 +329,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " หูฟัง Bluetooth สมัคร 500 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -330,7 +350,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -349,7 +371,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -368,7 +392,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " Game Handle สมัคร 300 บาท "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
@@ -387,7 +413,9 @@ if ($userMessage != null) {
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
+
 " สมัครฝาก200 รับโบนัส 30 % "
+
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
                     new MessageTemplateActionBuilder(
