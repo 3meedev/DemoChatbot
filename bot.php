@@ -118,8 +118,7 @@ if ($userMessage != null) {
                     new TextComponentBuilder(
                         "Copa69 สวัสดีค่ะ 
 
-สนใจโปรโมชั่นใหนกรอกหมายเลข
-โปรโมชั่นได้เลยค่ะ..",
+สนใจโปรโมชั่นใหนพิมพ์ 'สินค้า[หมายเลขสินค้า]'",
                         NULL,
                         NULL,
                         "md",
@@ -135,7 +134,7 @@ if ($userMessage != null) {
 
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if ($userMessage == "1") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"1") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -156,7 +155,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "2") {
+    } else if ($userMessage == "สินค้า 2") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -177,7 +176,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "3") {
+    } else if ($userMessage == "สินค้า 3") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -198,7 +197,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "4") {
+    } else if ($userMessage == "สินค้า 4") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -219,7 +218,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "5") {
+    } else if ($userMessage == "สินค้า 5") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -240,7 +239,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "6") {
+    } else if ($userMessage == "สินค้า 6") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -261,7 +260,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "7") {
+    } else if ($userMessage == "สินค้า 7") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -282,7 +281,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "8") {
+    } else if ($userMessage == "สินค้า 8") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -303,7 +302,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "9") {
+    } else if ($userMessage == "สินค้า 9") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -324,7 +323,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "10") {
+    } else if ($userMessage == "สินค้า 10") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -345,7 +344,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "11") {
+    } else if ($userMessage == "สินค้า 11") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -366,7 +365,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "12") {
+    } else if ($userMessage == "สินค้า 12") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -387,7 +386,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "13") {
+    } else if ($userMessage == "สินค้า 13") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -408,7 +407,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "14") {
+    } else if ($userMessage == "สินค้า 14") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -504,35 +503,7 @@ if ($userMessage != null) {
                 $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
             }
         }
-    } else if (strstr($userMessage, "ที่อยู่") != true) {
-        foreach ($source as $a) {
-            if (in_array($a, $provinc)) {
-                $textReplyMessage = new BubbleContainerBuilder(
-                    "ltr",
-                    NULL,
-                    NULL,
-                    new BoxComponentBuilder(
-                        "horizontal",
-                        array(
-                            new TextComponentBuilder(
-                                "ds;klsdlhklsdsjl",
-                                NULL,
-                                NULL,
-                                "md",
-                                NULL,
-                                NULL,
-                                true
-                            )
-                        )
-                    )
-
-
-                );
-                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-            }
-        }
-    }
-} else if ($userImage == null) {
+    } else if ($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
@@ -560,7 +531,7 @@ if ($userMessage != null) {
 
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 }
-
+}
 
 $response = $bot->replyMessage($replyToken, $replyData);
 
