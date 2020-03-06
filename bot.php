@@ -492,8 +492,7 @@ if ($userMessage != null) {
                     new TextComponentBuilder(
                         "กรุณากรอกที่อยู่ด้วยค่ะ
 
-[ รูปแบบ : ที่อยู่................. ]
-[ ตัวอย่าง : ที่อยู่ 159 หมู่2 ตำบล อำเภอ จังหวัด ]
+[ ตัวอย่าง : ที่อยู่ 159 หมู่2 ตำบล อำเภอ จังหวัด รหัสไปรษณีย์]
 
 *** กรุณากรอกจังหวัดเพื่อง่ายต่อการจัดส่ง",
                         NULL,
@@ -508,7 +507,7 @@ if ($userMessage != null) {
 
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if (strstr($userMessage, "ที่อยู่") == true) {
+    } else if ($userMessage == $provinc) {
         foreach ($source as $a) {
             if (in_array($a, $provinc)) {
                 $textReplyMessage = new BubbleContainerBuilder(
