@@ -137,7 +137,7 @@ if ($userMessage != null) {
 
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"1") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:1") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -158,7 +158,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"2") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:2") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -179,7 +179,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"3") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:3") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -200,7 +200,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"4") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:4") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -221,7 +221,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"5") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:5") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -242,7 +242,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"6") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:6") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -263,7 +263,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"7") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:7") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -284,7 +284,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"8") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:8") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -305,7 +305,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"9") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:9") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -326,7 +326,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"10") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:10") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -347,7 +347,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"11") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:11") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -368,7 +368,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"12") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:12") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -389,7 +389,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"13") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:13") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -410,7 +410,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"14") == true) {
+    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:14") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
