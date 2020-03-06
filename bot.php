@@ -118,9 +118,10 @@ if ($userMessage != null) {
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "Copa69 สวัสดีค่ะ 
+                        "สนใจโปรโมชั่นใหนพิมพ์ 
 
-สนใจโปรโมชั่นใหนพิมพ์ 'สินค้า[หมายเลขสินค้า]'",
+[ รูปแบบ : สินค้า:หมายเลขสินค้า ] 
+[ ตัวอย่าง : สินค้า:2 ]",
                         NULL,
                         NULL,
                         "md",
@@ -537,7 +538,9 @@ if ($userMessage != null) {
                 new TextComponentBuilder(
                     "กรุณาแจ้งเลขยูสค่ะ..
 
-[ รูปแบบ : user_เลขยูสของคุณ ]",
+[ รูปแบบ : user_เลขยูสของคุณ ]
+[ ตัวอย่าง : user_svr96654248 ]",
+
                     NULL,
                     NULL,
                     "md",
