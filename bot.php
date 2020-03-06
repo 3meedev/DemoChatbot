@@ -508,9 +508,7 @@ TWS "
 
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if (strstr($userMessage,"ที่อยู่") == true) {
-        foreach ($source as $a) {
-            if (in_array($a, $provinc)) {
+    } else if (strstr($userMessage,"ที่อยู่") == true) {       
                 $textReplyMessage = new BubbleContainerBuilder(
                     "ltr",
                     NULL,
@@ -532,9 +530,7 @@ TWS "
 
 
                 );
-                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-            }
-        } 
+                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
     } else {
             $actionBuilder = array(
                 new MessageTemplateActionBuilder(
