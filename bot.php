@@ -136,7 +136,7 @@ if ($userMessage != null) {
 
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if ($userMessage == "โปร 1" && $userMessage == "โปร1" && $userMessage == "โปรโมชั่น1" && $userMessage == "โปรโมชั่น 1") {
+    } else if ($userMessage == "โปร 1" || $userMessage == "โปร1" || $userMessage == "โปรโมชั่น1" || $userMessage == "โปรโมชั่น 1") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -157,7 +157,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 2" && $userMessage == "โปร2" && $userMessage == "โปรโมชั่น2" && $userMessage == "โปรโมชั่น 2") {
+    } else if ($userMessage == "โปร 2" || $userMessage == "โปร2" || $userMessage == "โปรโมชั่น2" || $userMessage == "โปรโมชั่น 2") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -178,7 +178,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 3" && $userMessage == "โปร3" && $userMessage == "โปรโมชั่น3" && $userMessage == "โปรโมชั่น 3") {
+    } else if ($userMessage == "โปร 3" || $userMessage == "โปร3" || $userMessage == "โปรโมชั่น3" || $userMessage == "โปรโมชั่น 3") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -199,7 +199,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 4" && $userMessage == "โปร4" && $userMessage == "โปรโมชั่น4" && $userMessage == "โปรโมชั่น 4") {
+    } else if ($userMessage == "โปร 4" || $userMessage == "โปร4" || $userMessage == "โปรโมชั่น4" || $userMessage == "โปรโมชั่น 4") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -220,7 +220,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 5" && $userMessage == "โปร5" && $userMessage == "โปรโมชั่น5" && $userMessage == "โปรโมชั่น 5") {
+    } else if ($userMessage == "โปร 5" || $userMessage == "โปร5" || $userMessage == "โปรโมชั่น5" || $userMessage == "โปรโมชั่น 5") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -241,7 +241,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 6" && $userMessage == "โปร6" && $userMessage == "โปรโมชั่น6" && $userMessage == "โปรโมชั่น 6") {
+    } else if ($userMessage == "โปร 6" || $userMessage == "โปร6" || $userMessage == "โปรโมชั่น6" || $userMessage == "โปรโมชั่น 6") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -262,7 +262,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 7" && $userMessage == "โปร7" && $userMessage == "โปรโมชั่น7" && $userMessage == "โปรโมชั่น 7") {
+    } else if ($userMessage == "โปร 7" || $userMessage == "โปร7" || $userMessage == "โปรโมชั่น7" || $userMessage == "โปรโมชั่น 7") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -283,7 +283,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 8" && $userMessage == "โปร8" && $userMessage == "โปรโมชั่น8" && $userMessage == "โปรโมชั่น 8") {
+    } else if ($userMessage == "โปร 8" || $userMessage == "โปร8" || $userMessage == "โปรโมชั่น8" || $userMessage == "โปรโมชั่น 8") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -304,7 +304,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 9" && $userMessage == "โปร9" && $userMessage == "โปรโมชั่น9" && $userMessage == "โปรโมชั่น 9") {
+    } else if ($userMessage == "โปร 9" || $userMessage == "โปร9" || $userMessage == "โปรโมชั่น9" || $userMessage == "โปรโมชั่น 9") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -325,7 +325,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 10" && $userMessage == "โปร10" && $userMessage == "โปรโมชั่น10" && $userMessage == "โปรโมชั่น 10") {
+    } else if ($userMessage == "โปร 10" || $userMessage == "โปร10" || $userMessage == "โปรโมชั่น10" || $userMessage == "โปรโมชั่น 10") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -346,7 +346,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 11" && $userMessage == "โปร11" && $userMessage == "โปรโมชั่น11" && $userMessage == "โปรโมชั่น 11") {
+    } else if ($userMessage == "โปร 11" || $userMessage == "โปร11" || $userMessage == "โปรโมชั่น11" || $userMessage == "โปรโมชั่น 11") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -367,7 +367,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 12" && $userMessage == "โปร12" && $userMessage == "โปรโมชั่น12" && $userMessage == "โปรโมชั่น 12") {
+    } else if ($userMessage == "โปร 12" || $userMessage == "โปร12" || $userMessage == "โปรโมชั่น12" || $userMessage == "โปรโมชั่น 12") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -388,7 +388,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 13" && $userMessage == "โปร13" && $userMessage == "โปรโมชั่น13" && $userMessage == "โปรโมชั่น 13") {
+    } else if ($userMessage == "โปร 13" || $userMessage == "โปร13" || $userMessage == "โปรโมชั่น13" || $userMessage == "โปรโมชั่น 13") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -409,7 +409,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "โปร 14" && $userMessage == "โปร14" && $userMessage == "โปรโมชั่น14" && $userMessage == "โปรโมชั่น 14") {
+    } else if ($userMessage == "โปร 14" || $userMessage == "โปร14" || $userMessage == "โปรโมชั่น14" || $userMessage == "โปรโมชั่น 14") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
