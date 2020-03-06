@@ -466,12 +466,35 @@ if ($userMessage != null) {
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "ขอชื่อ ที่อยู่ เบอร์โทรลูกค้าด้วยค่ะ
+                        "ขอชื่อ-นามสกุล เบอร์โทรลูกค้าด้วยค่ะ
 
-[ รูปแบบ : ชื่อ.. ที่อยู่.. เบอร์โทร.. ]
-[ ตัวอย่าง : ชื่อนายกอ ที่อยู่ 125 
-หมู่บ้าน.. ถนน.. ตำบล อำเภอ จังหวัด 
-เบอร์โทร 0859658965 ]
+[ รูปแบบ : ชื่อ.. เบอร์โทร.. ]
+[ ตัวอย่าง : ชื่อนายกอ เบอร์โทร 0859658965 ]",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
+                    )
+                )
+            )
+
+        );
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    } else if (strstr($userMessage, "ชื่อ") == true || strstr($userMessage, "เบอร์") == true) {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "กรุณาหรอกที่อยู่
+
+[ รูปแบบ : ที่อยู่........... ]
+[ ตัวอย่าง : ที่อยู่ 159 หมู่2 ตำบล อำเภอ จังหวัด ]
 
 *** กรุณากรอกจังหวัดเพื่อง่ายต่อการจัดส่ง",
                         NULL,
