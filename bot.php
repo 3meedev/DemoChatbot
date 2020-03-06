@@ -158,7 +158,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 2") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"2") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -179,7 +179,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 3") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"3") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -200,7 +200,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 4") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"4") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -221,7 +221,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 5") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"5") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -242,7 +242,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 6") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"6") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -263,7 +263,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 7") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"7") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -284,7 +284,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 8") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"8") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -305,7 +305,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 9") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"9") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -326,7 +326,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 10") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"10") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -347,7 +347,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 11") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"11") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -368,7 +368,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 12") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"12") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -389,7 +389,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 13") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"13") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -410,7 +410,7 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if ($userMessage == "สินค้า 14") {
+    } else if (strstr($userMessage,"สินค้า") == true && strstr($userMessage,"14") == true) {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
@@ -491,9 +491,9 @@ if ($userMessage != null) {
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "กรุณาหรอกที่อยู่
+                        "กรุณากรอกที่อยู่
 
-[ รูปแบบ : ที่อยู่........... ]
+[ รูปแบบ : ที่อยู่................. ]
 [ ตัวอย่าง : ที่อยู่ 159 หมู่2 ตำบล อำเภอ จังหวัด ]
 
 *** กรุณากรอกจังหวัดเพื่อง่ายต่อการจัดส่ง",
