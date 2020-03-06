@@ -531,7 +531,30 @@ TWS "
 
                 );
                 $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
-    } else {
+    } else if (strstr($userMessage,"ท") == true && strstr($userMessage,"อ") == true && strstr($userMessage,"ย") == true) {       
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "ขอบคุณค่ะ เดี๋ยวทางเราจะดำเนินการส่งของตามที่อยู่นี้นะคะ..1",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
+                    )
+                )
+            )
+
+
+        );
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
+} else {
             $actionBuilder = array(
                 new MessageTemplateActionBuilder(
                     'รายละเอียดโปรโมชั่น',
