@@ -493,7 +493,7 @@ if ($userMessage != null) {
                         "horizontal",
                         array(
                             new TextComponentBuilder(
-                                "ds;klsdlhklsdsjl",
+                                "ขอบคุณครับ เดี๋ยวทางเราจะดำเนินการส่งของตามที่อยู่นี้นะครับ..",
                                 NULL,
                                 NULL,
                                 "md",
