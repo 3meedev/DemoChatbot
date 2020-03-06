@@ -23,6 +23,8 @@ use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
+use LINE\LINEBot\TemplateActionBuilder\DatetimePickerTemplateActionBuilder;
+use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 
 
 // ----------------------------------------------------------------------------------------------------- แบบ Template Message
@@ -502,8 +504,29 @@ if ($userMessage != null) {
                 );
                 $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
             }
+        } 
+    } else {
+            $actionBuilder = array(
+                new MessageTemplateActionBuilder(
+                    'รายละเอียดโปรโมชั่น',
+                    'เรียกดูโปรโมชั่น' 
+                ), 
+                new MessageTemplateActionBuilder(
+                    'สมัครโปรโมชั่น',
+                    'สมัครโปรโมชั่น'
+                )             
+            );
+            $imageUrl = '';
+            $replyData = new TemplateMessageBuilder('Button Template',
+                new ButtonTemplateBuilder(
+                        'เมนูหลัก',
+                        'กรุณาเลือกหัวข้อที่ต้องการ..',
+                        $imageUrl,
+                        $actionBuilder
+                )
+            );              
         }
-    } else if ($userImage == null) {
+    } else if ($userImage != null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
@@ -531,7 +554,7 @@ if ($userMessage != null) {
 
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 }
-}
+
 
 $response = $bot->replyMessage($replyToken, $replyData);
 
