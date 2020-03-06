@@ -68,10 +68,10 @@ if ($userMessage != null) {
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "Copa69 สวัสดีครับ 
+                        "โปรโมชั่นยอดนิยม
 
 สนใจสมัครสมาชิกขั้นต่ำ 200 บาท รับ
-โบนัส 30% จากยอดฝากครั้งแรกสูงสุด
+โบนัส 30% จากยอดฝากครั้งแรก สูงสุด
 500 บาท หรือจะเลือกรับโปรโมชั่น
 สุดฮอตจากทางเว็บ เช่น
 
@@ -89,8 +89,6 @@ if ($userMessage != null) {
 12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
 13. สมัคร 300 บาท ได้รับ Game Handle 
 14. สมัครฝาก 200 รับโบนัส 30 %
-
-เล่นได้ทุกอย่างในยูสเดียวบอล หวย มวย คาสิโน เกม ฝากอัตโนมัติ 30 วินาที ถอนไม่เกิน 1 นาทีทำเทิร์นเดียว 1.5 ก็สามารถถอนได้เลย ขั้นต่ำ 100 บาท
 
 **สนใจสมัครโปรโมชั้น คลิก 'สมัครโปรโมชั่น' หรือพิมพ์ 'สมัครโปรโมชั่น'
 ",
@@ -508,7 +506,7 @@ if ($userMessage != null) {
 
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if ($userMessage == $provinc) {
+    } else if ($userMessage == "ที่อยู่") {
         foreach ($source as $a) {
             if (in_array($a, $provinc)) {
                 $textReplyMessage = new BubbleContainerBuilder(
