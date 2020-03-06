@@ -526,7 +526,7 @@ if ($userMessage != null) {
                 )
             );              
         }
-    } else if ($userImage != null) {
+    } else if ($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
