@@ -467,8 +467,9 @@ if ($userMessage != null) {
                     new TextComponentBuilder(
                         "ขอชื่อ-นามสกุล เบอร์โทรลูกค้าด้วยค่ะ
 
-[ รูปแบบ : ชื่อ.. เบอร์โทร.. ]
-[ ตัวอย่าง : ชื่อนายกอ เบอร์โทร 0859658965 ]",
+***กรุณากรอกคำนำหน้าชื่อ นาย,นางสาว
+
+[ ตัวอย่าง : นายกอ เบอร์โทร 0859658965 ]",
                         NULL,
                         NULL,
                         "md",
@@ -481,7 +482,7 @@ if ($userMessage != null) {
 
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if (strstr($userMessage, "ชื่อ") == true || strstr($userMessage, "เบอร์") == true) {
+    } else if (strstr($userMessage, "นาย") == true || strstr($userMessage, "นางสาว") == true || strstr($userMessage, "เบอร์") == true) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -492,9 +493,9 @@ if ($userMessage != null) {
                     new TextComponentBuilder(
                         "กรุณากรอกที่อยู่ด้วยค่ะ
 
-[ ตัวอย่าง : ที่อยู่ 159 หมู่2 ตำบล อำเภอ จังหวัด รหัสไปรษณีย์]
+*** กรุณากรอกจังหวัดและนำหน้าประโยคด้วย 'ที่อยู่' เพื่อง่ายต่อการจัดส่ง
 
-*** กรุณากรอกจังหวัดเพื่อง่ายต่อการจัดส่ง",
+[ ตัวอย่าง : ที่อยู่ 159 หมู่2 ตำบล อำเภอ จังหวัด รหัสไปรษณีย์]",
                         NULL,
                         NULL,
                         "md",
