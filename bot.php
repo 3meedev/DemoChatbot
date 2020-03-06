@@ -75,20 +75,20 @@ if ($userMessage != null) {
 500 บาท หรือจะเลือกรับโปรโมชั่น
 สุดฮอตจากทางเว็บ เช่น
 
-1.หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท
-2.พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท
-3.ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท
-4.บุหรี่ไฟฟ้า DRAG สมัคร 1000 บาท
-5.โทรศัพท์จิ๋ว สมัคร 1000 บาท
-6.เสื้อบอล EURO สมัคร 500 บาท
-7.เสื้อฮูด Nike สมัคร 500 บาท
-8.Smart Watch สมัคร 500 บาท
-9.ลำโพง Bluetooth Mini สมัคร 500 บาท
-10.หูฟัง Bluetooth สมัคร 500 บาท
-11.ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท
-12.กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท
-13.Game Handle สมัคร 300 บาท
-14.สมัครฝาก 200 รับโบนัส 30 %
+โปร 1 สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
+โปร 2 สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
+โปร 3 สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
+โปร 4 สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
+โปร 5 สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
+โปร 6 สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
+โปร 7 สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
+โปร 8 สมัคร 500 บาท ได้รับ Smart Watch 
+โปร 9 สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
+โปร 10 สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
+โปร 11 สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
+โปร 12 สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
+โปร 13 สมัคร 300 บาท ได้รับ Game Handle 
+โปร 14 สมัครฝาก 200 รับโบนัส 30 %
 
 เล่นได้ทุกอย่างในยูสเดียวบอล หวย มวย คาสิโน เกม ฝากอัตโนมัติ 30 วินาที ถอนไม่เกิน 1 นาทีทำเทิร์นเดียว 1.5 ก็สามารถถอนได้เลย ขั้นต่ำ 100 บาท
 
@@ -109,7 +109,7 @@ if ($userMessage != null) {
 
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if ($userMessage == "สมัครโปรโมชั่น") {
+    } else if ($userMessage == "สมัครโปรโมชั่น" || $userMessage == "สนใจ" || strstr($userMessage,"โปร") == true || strstr($userMessage,"โปรโมชั่น") == true) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -118,10 +118,9 @@ if ($userMessage != null) {
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "สนใจโปรโมชั่นใหนพิมพ์ 
+                        "สนใจโปรโมชั่นใหนพิมพ์ 'โปร' พร้อมหมายเลขโปรโมชั่นที่ต้องการ
 
-[ รูปแบบ : สินค้า:หมายเลขสินค้า ] 
-[ ตัวอย่าง : สินค้า:2 ]",
+[ ตัวอย่าง : โปร2 ]",
                         NULL,
                         NULL,
                         "md",
@@ -137,13 +136,13 @@ if ($userMessage != null) {
 
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:1") {
+    } else if ($userMessage == "โปร 1" && $userMessage == "โปร1" && $userMessage == "โปรโมชั่น1" && $userMessage == "โปรโมชั่น 1") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS สมัคร 1000 บาท "
+" สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -158,13 +157,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:2") {
+    } else if ($userMessage == "โปร 2" && $userMessage == "โปร2" && $userMessage == "โปรโมชั่น2" && $userMessage == "โปรโมชั่น 2") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" พาวเวอร์แบ๊ง ELOOP E-12 สมัคร 1000 บาท "
+" สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12  "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -179,13 +178,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:3") {
+    } else if ($userMessage == "โปร 3" && $userMessage == "โปร3" && $userMessage == "โปรโมชั่น3" && $userMessage == "โปรโมชั่น 3") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" ลำโพง BLUETOOTH IRON MAN สมัคร 1000 บาท "
+" สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -200,13 +199,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:4") {
+    } else if ($userMessage == "โปร 4" && $userMessage == "โปร4" && $userMessage == "โปรโมชั่น4" && $userMessage == "โปรโมชั่น 4") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" บุหรี่ไฟฟ้า DRAG สมัคร 1000 บาท "
+" สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -221,13 +220,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:5") {
+    } else if ($userMessage == "โปร 5" && $userMessage == "โปร5" && $userMessage == "โปรโมชั่น5" && $userMessage == "โปรโมชั่น 5") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" โทรศัพท์จิ๋ว สมัคร 1000 บาท "
+" สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -242,13 +241,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:6") {
+    } else if ($userMessage == "โปร 6" && $userMessage == "โปร6" && $userMessage == "โปรโมชั่น6" && $userMessage == "โปรโมชั่น 6") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" เสื้อบอล EURO สมัคร 500 บาท "
+" สมัคร 500 บาท ได้รับ เสื้อบอล EURO "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -263,13 +262,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:7") {
+    } else if ($userMessage == "โปร 7" && $userMessage == "โปร7" && $userMessage == "โปรโมชั่น7" && $userMessage == "โปรโมชั่น 7") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" เสื้อฮูด Nike สมัคร 500 บาท "
+" สมัคร 500 บาท ได้รับ เสื้อฮูด Nike "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -284,13 +283,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:8") {
+    } else if ($userMessage == "โปร 8" && $userMessage == "โปร8" && $userMessage == "โปรโมชั่น8" && $userMessage == "โปรโมชั่น 8") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" Smart Watch สมัคร 500 บาท "
+" สมัคร 500 บาท ได้รับ Smart Watch "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -305,13 +304,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:9") {
+    } else if ($userMessage == "โปร 9" && $userMessage == "โปร9" && $userMessage == "โปรโมชั่น9" && $userMessage == "โปรโมชั่น 9") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" ลำโพง Bluetooth Mini สมัคร 500 บาท "
+" สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -326,13 +325,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:10") {
+    } else if ($userMessage == "โปร 10" && $userMessage == "โปร10" && $userMessage == "โปรโมชั่น10" && $userMessage == "โปรโมชั่น 10") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" หูฟัง Bluetooth สมัคร 500 บาท "
+" สมัคร 500 บาท ได้รับ หูฟัง Bluetooth "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -347,13 +346,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:11") {
+    } else if ($userMessage == "โปร 11" && $userMessage == "โปร11" && $userMessage == "โปรโมชั่น11" && $userMessage == "โปรโมชั่น 11") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" ลำโพงสโมสรฟุตบอลโลก สมัคร 300 บาท "
+" สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -368,13 +367,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:12") {
+    } else if ($userMessage == "โปร 12" && $userMessage == "โปร12" && $userMessage == "โปรโมชั่น12" && $userMessage == "โปรโมชั่น 12") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก สมัคร 300 บาท "
+" สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -389,13 +388,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:13") {
+    } else if ($userMessage == "โปร 13" && $userMessage == "โปร13" && $userMessage == "โปรโมชั่น13" && $userMessage == "โปรโมชั่น 13") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" Game Handle สมัคร 300 บาท "
+" สมัคร 300 บาท ได้รับ Game Handle "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
@@ -410,13 +409,13 @@ if ($userMessage != null) {
                 )
             )
         );
-    } else if (strstr($userMessage,"สินค้า") == true && $userMessage == "สินค้า:14") {
+    } else if ($userMessage == "โปร 14" && $userMessage == "โปร14" && $userMessage == "โปรโมชั่น14" && $userMessage == "โปรโมชั่น 14") {
         $replyData = new TemplateMessageBuilder(
             'Confirm Template',
             new ConfirmTemplateBuilder(
                 'โปรโมชั่นที่ลูกค้าเลือก คือ
 
-" สมัครฝาก200 รับโบนัส 30 % "
+" สมัครฝาก 200 รับโบนัส 30 % "
 
 ยืนยันการสมัครใช่หรือไม่ ?',
                 array(
