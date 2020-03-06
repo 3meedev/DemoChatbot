@@ -456,7 +456,7 @@ TWS "
         );
 
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if (strstr($userMessage, "user_") == true) {
+    } else if (strstr($userMessage, "user_") == true || strstr($userMessage, "User_") == true) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -482,7 +482,7 @@ TWS "
 
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } else if (strstr($userMessage, "นาย") == true || strstr($userMessage, "นางสาว") == true || strstr($userMessage, "เบอร์") == true) {
+    } else if (strstr($userMessage, "นาย") == true || strstr($userMessage, "นางสาว") == true || strstr($userMessage, "เบอร์") == true || strstr($userMessage, "นาง") == true || strstr($userMessage, "เบอร์โทร") == true) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -508,55 +508,32 @@ TWS "
 
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    } 
-    // else if (strstr($userMessage,"ที่อยู่") == true) {       
-    //             $textReplyMessage = new BubbleContainerBuilder(
-    //                 "ltr",
-    //                 NULL,
-    //                 NULL,
-    //                 new BoxComponentBuilder(
-    //                     "horizontal",
-    //                     array(
-    //                         new TextComponentBuilder(
-    //                             "ขอบคุณค่ะ เดี๋ยวทางเราจะดำเนินการส่งของตามที่อยู่นี้นะคะ..",
-    //                             NULL,
-    //                             NULL,
-    //                             "md",
-    //                             NULL,
-    //                             NULL,
-    //                             true
-    //                         )
-    //                     )
-    //                 )
-
-
-    //             );
-    //             $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
-    // } 
-    else if (strstr($userMessage,"ท") == true && strstr($userMessage,"อ") == true && strstr($userMessage,"ย") == true) {       
-        $textReplyMessage = new BubbleContainerBuilder(
-            "ltr",
-            NULL,
-            NULL,
-            new BoxComponentBuilder(
-                "horizontal",
-                array(
-                    new TextComponentBuilder(
-                        "ขอบคุณค่ะ เดี๋ยวทางเราจะดำเนินการส่งของตามที่อยู่นี้นะคะ..",
-                        NULL,
-                        NULL,
-                        "md",
-                        NULL,
-                        NULL,
-                        true
+    }     else if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true
+    || strstr($userMessage,"จังหวัด") == true || strstr($userMessage,"จ.") == true) {       
+                $textReplyMessage = new BubbleContainerBuilder(
+                    "ltr",
+                    NULL,
+                    NULL,
+                    new BoxComponentBuilder(
+                        "horizontal",
+                        array(
+                            new TextComponentBuilder(
+                                "ขอบคุณค่ะ เดี๋ยวทางเราจะดำเนินการส่งของตามที่อยู่นี้นะคะ..",
+                                NULL,
+                                NULL,
+                                "md",
+                                NULL,
+                                NULL,
+                                true
+                            )
+                        )
                     )
-                )
-            )
 
 
-        );
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
-} else {
+                );
+                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
+    } 
+    else {
             $actionBuilder = array(
                 new MessageTemplateActionBuilder(
                     'รายละเอียดโปรโมชั่น',
