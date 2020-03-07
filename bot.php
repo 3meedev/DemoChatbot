@@ -83,6 +83,31 @@ switch ($userMessage) {
     
     
             $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        } else if($userMessage == "ข้อ1") {
+            $textReplyMessage = new BubbleContainerBuilder(
+                "ltr",
+                NULL,
+                NULL,
+                new BoxComponentBuilder(
+                    "horizontal",
+                    array(
+                        new TextComponentBuilder(
+                            "ใหน",
+                            NULL,
+                            NULL,
+                            "md",
+                            NULL,
+                            NULL,
+                            true
+                        )
+                    )
+                )
+    
+    
+            );
+    
+    
+            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
         }
         
     break;
@@ -97,6 +122,31 @@ switch ($userMessage) {
                     array(
                         new TextComponentBuilder(
                             "ต้องการ",
+                            NULL,
+                            NULL,
+                            "md",
+                            NULL,
+                            NULL,
+                            true
+                        )
+                    )
+                )
+    
+    
+            );
+    
+    
+            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        } else if($userMessage == "ข้อ1") {
+            $textReplyMessage = new BubbleContainerBuilder(
+                "ltr",
+                NULL,
+                NULL,
+                new BoxComponentBuilder(
+                    "horizontal",
+                    array(
+                        new TextComponentBuilder(
+                            "ต้อง",
                             NULL,
                             NULL,
                             "md",
