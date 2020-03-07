@@ -211,7 +211,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textToRecmomend = new BubbleContainerBuilder(
+$textToRecommend = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
