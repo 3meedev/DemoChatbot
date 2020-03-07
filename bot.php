@@ -62,10 +62,26 @@ switch ($eventType) {
         break;
     case 'postback':
         $eventPostback = true;
-        break;    
+        break;
+    
     case 'follow':
         $eventFollow = true;
-        break;    
+        break;
+    case 'unfollow':
+        $eventUnfollow = true;
+        break;
+    case 'beacon':
+        $eventBeacon = true;
+        break;
+    case 'accountLink':
+        $eventAccountLink = true;
+        break;
+    case 'memberJoined':
+        $eventMemberJoined = true;
+        break;
+    case 'memberLeft':
+        $eventMemberLeft = true;
+        break;
 }
 
 if ($eventObj->isUserEvent()) {
