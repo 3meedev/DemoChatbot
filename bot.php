@@ -56,6 +56,39 @@ $userMessage = strtolower($userMessage);
 //     'อ่างทอง', 'อำนาจเจริญ', 'อุดรธานี', 'อุตรดิตถ์', 'อุทัยธานี', 'อุบลราชธานี'
 // );
 
+$textReplyMessage = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+                    โปรโมชั่น
+___________________________________
+
+พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. มีโปรโมชั่นอะไรบ้าง
+2. ถ้ารับโปรโมชั่น ต้องทำเทิร์นเท่าไหร่
+3. ถ้าไม่รับโบนัส จะต้องทำเทิร์นมั้ย
+4. มีเครดิตฟรีมั้ย
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
 // ----------------------------------------------------------------------------------------- MainMenu
 
 if ($userMessage != null) {
@@ -119,74 +152,10 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
 // ----------------------------------------------------------------------------------------- MainMenu
 // ----------------------------------------------------------------------------------------- Promotion
 
-if (strstr($userMessage,"q") == true && strstr($userMessage,"1") == true) {
-    $textReplyMessage = new BubbleContainerBuilder(
-        "ltr",
-        NULL,
-        NULL,
-        new BoxComponentBuilder(
-            "horizontal",
-            array(
-                new TextComponentBuilder(
-                    "
-                        โปรโมชั่น
-___________________________________
-
-พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
-___________________________________
-
-หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-1. มีโปรโมชั่นอะไรบ้าง
-2. ถ้ารับโปรโมชั่น ต้องทำเทิร์นเท่าไหร่
-3. ถ้าไม่รับโบนัส จะต้องทำเทิร์นมั้ย
-4. มีเครดิตฟรีมั้ย
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                    NULL,
-                    NULL,
-                    "md",
-                    NULL,
-                    NULL,
-                    true
-                )
-            )
-        )
-    );
+if (strstr($userMessage,"q") == true && strstr($userMessage,"1") == true) {    
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 }
 if (strstr($userMessage,"Q") == true && strstr($userMessage,"1") == true) {
-    $textReplyMessage = new BubbleContainerBuilder(
-        "ltr",
-        NULL,
-        NULL,
-        new BoxComponentBuilder(
-            "horizontal",
-            array(
-                new TextComponentBuilder(
-                    "
-                        โปรโมชั่น
-___________________________________
-
-พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
-___________________________________
-
-หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-1. มีโปรโมชั่นอะไรบ้าง
-2. ถ้ารับโปรโมชั่น ต้องทำเทิร์นเท่าไหร่
-3. ถ้าไม่รับโบนัส จะต้องทำเทิร์นมั้ย
-4. มีเครดิตฟรีมั้ย
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                    NULL,
-                    NULL,
-                    "md",
-                    NULL,
-                    NULL,
-                    true
-                )
-            )
-        )
-    );
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 }
 if (strstr($userMessage,"p") == true && strstr($userMessage,"1") == true) {
