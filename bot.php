@@ -481,7 +481,7 @@ ___________________________________
 หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
 1. ฝาก/ถอนขั้นต่ำเท่าไหร่
 2. ครั้งต่อไปฝาก/ถอนยังไง
-3. ฝาก/ถอน จำกัดครั้งมั้ย ถอนได้เร็วมั้ย
+3. ฝาก/ถอนจำกัดครั้งมั้บ ถอนได้เร็วมั้ย
 4. ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย
 5. โอนเงินเสร็จแล้วทำไงต่อ
 ___________________________________
@@ -563,8 +563,8 @@ $textDeposit3 = new BubbleContainerBuilder(
                 "ฝาก/ถอน จำกัดครั้งมั้ย ถอนได้เร็วมั้ย ?
 ___________________________________
 
-ฝากถอนผ่านหน้าเว็บไม่จำกัดจำนวนครั้ง
-ฝากถอนภายใน 5 วินาที
+ฝากถอนผ่านหน้าเว็บไม่จำกัดจำนวน
+ครั้งฝากถอนภายใน 5 วินาที
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -633,6 +633,132 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
+$textToRegister = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        การสมัคร
+
+พิมพ์ u ตามด้วยหัวข้อที่ต้องการ เช่น u1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. เช้คได้ไหมว่าเคยสมัครไปหรือยัง
+2. ถ้าเคยสมัครแล้ว แต่จะใช้บันชีแฟน
+สมัครอีกได้ไหม (แฟนนามสกุลเดียวกัน)
+3. เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "เช้คได้ไหมว่าเคยสมัครไปหรือยัง ?
+___________________________________
+
+ส่งข้อมูลให้แอดมินตรวจสอบได้เลยนะคะ
+ถ้าเคยเป็นสมาชิกแล้วแอดมินจะแจ้งเลข
+ยูสให้คะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textRegister2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ถ้าเคยสมัครแล้ว แต่จะใช้บันชีแฟน
+สมัครอีกได้ไหม (แฟนนามสกุลเดียวกัน) ?
+___________________________________
+
+รอแอดมินตรวจสอบสักครู่นะคะ เสร็จ
+ได้คะพี่ขอแค่ชื่อคนสมัครกับชื่อบัญชี
+ที่ใช้โอนตรงกันและถ้าชื่อที่เคยสมัคร
+แล้วจะสมัครอีกไม่ได้ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย ?
+___________________________________
+
+ไม่ได้ค่ะพี่เพราะ 1 ชื่อสามารถสมัคร
+ได้แค่ 1 ยูสเซอร์เท่านั้นค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
 
 // ----------------------------------------------------------------------------------------- TextAll
 // ----------------------------------------------------------------------------------------- MainMenu
@@ -827,9 +953,34 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     }
 
     // ----------------------------------------------------------------------------------------- Deposit
+    // ----------------------------------------------------------------------------------------- Register
 
+    if (strstr($userMessage, "q") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToRegister);
+    }
+    if (strstr($userMessage, "Q") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToRegister);
+    }
+    if (strstr($userMessage, "u") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister1);
+    }
+    if (strstr($userMessage, "U") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister1);
+    }
+    if (strstr($userMessage, "u") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister2);
+    }
+    if (strstr($userMessage, "U") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister2);
+    }
+    if (strstr($userMessage, "u") == true && strstr($userMessage, "3") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister3);
+    }
+    if (strstr($userMessage, "U") == true && strstr($userMessage, "3") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister3);
+    }
 
-
+    // ----------------------------------------------------------------------------------------- Register
 
 
 
