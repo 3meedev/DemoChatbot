@@ -215,8 +215,7 @@ $textToRecommend = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "
-                        คำแนะนำ
+                "                        คำแนะนำ
 
 พิมพ์ r ตามด้วยหัวข้อที่ต้องการ เช่น r1
 ___________________________________
@@ -298,15 +297,14 @@ $textToGroup = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "
-                        กลุ่ม/สูตร
+                "                        กลุ่ม/สูตร
 
 พิมพ์ g ตามด้วยหัวข้อที่ต้องการ เช่น g1
 ___________________________________
 
 หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-1. มีสูตรโกงบาคาร่าให้ไหม
-2. มีกลุ่มวิเคราะบอลด้วยไหม
+1. มีสูตรโกงบาคาร่าให้มั้ย
+2. มีกลุ่มวิเคราะบอลด้วยมั้ย
 3. เล่นบาคาร่ายังไง
 4. แทงบอลยังไง
 ___________________________________
@@ -331,7 +329,7 @@ $textGroup1 = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "ถ้าชวนเพื่อนมาสมัครพี่จะได้อะไรมั้ย ?
+                "มีสูตรโกงบาคาร่าให้มั้ย ?
 ___________________________________
 
 มีค่ะ แจ้งยูส+สลิปการโอน นะคะ
@@ -367,19 +365,29 @@ $textGroup2 = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "ถ้าชวนเพื่อนมาสมัครพี่จะได้อะไรมั้ย ?
+                "มีกลุ่มวิเคราะบอลด้วยมั้ย ?
 ___________________________________
 
-ทางเรามีโปรโมชั่นชวนเพื่อนให้คะ
-___________________________________
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+กลุ่มวิเคราะบอล คลิ้กเข้าลิ้งเลยนะคะ
+___________________________________",
                 NULL,
                 NULL,
-                "md",
+                NULL,
                 NULL,
                 NULL,
                 true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("วิเคราะห์บอล", "https://line.me/ti/g2/fbDC6OmeUzJua6pFerS7"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
             )
         )
     )
@@ -393,19 +401,29 @@ $textGroup3 = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "ถ้าชวนเพื่อนมาสมัครพี่จะได้อะไรมั้ย ?
+                "เล่นบาคาร่ายังไง ?
 ___________________________________
 
-ทางเรามีโปรโมชั่นชวนเพื่อนให้คะ
-___________________________________
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+คลิกลิ้งเพื่อเข้าดูวิธีเข้าเล่นบาคาร่าค่ะ
+___________________________________",
                 NULL,
                 NULL,
-                "md",
+                NULL,
                 NULL,
                 NULL,
                 true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("การเล่นบาคาร่า", "https://youtu.be/8O8M8R2Kffg"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
             )
         )
     )
@@ -419,23 +437,35 @@ $textGroup4 = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "ถ้าชวนเพื่อนมาสมัครพี่จะได้อะไรมั้ย ?
+                "แทงบอลยังไง ?
 ___________________________________
 
-ทางเรามีโปรโมชั่นชวนเพื่อนให้คะ
-___________________________________
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+คลิกลิ้งเพื่อดูการใช้งานและวิธีแทงหวย+บอล
+___________________________________",
                 NULL,
                 NULL,
-                "md",
+                NULL,
                 NULL,
                 NULL,
                 true
             )
         )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("การเล่นบอล/หวย", "https://www.youtube.com/channel/UC0j3s6
+                xKcdOX9OFP05W82Bg"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
     )
 );
+
 
 // ----------------------------------------------------------------------------------------- TextAll
 // ----------------------------------------------------------------------------------------- MainMenu
