@@ -66,7 +66,10 @@ if($userMessage != null) {
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "ต้องการสอบถามหัวข้อใหน",
+                        "มีปัญหาหรือต้องการสอบถามหัวข้อใหน
+พิมพ์ 'q' จามด้วยหัวข้อนั้น เช่น
+มีปัญหาหรือต้องการสอบถามเกี่ยวกับ
+โปรโมชั่นจะได้รูปแบบการพิมพ์คือ 'q1'",
                         NULL,
                         NULL,
                         "md",
@@ -102,30 +105,6 @@ if($userMessage != null) {
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     }
 }    
-if($userMessage == null) {
-    if($userMessage == "สอบถาม"){
-        $textReplyMessage = new BubbleContainerBuilder(
-            "ltr",
-            NULL,
-            NULL,
-            new BoxComponentBuilder(
-                "horizontal",
-                array(
-                    new TextComponentBuilder(
-                        "ต้องการสอบถามหัวข้อใหน",
-                        NULL,
-                        NULL,
-                        "md",
-                        NULL,
-                        NULL,
-                        true
-                    )
-                )
-            )
-        );   
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    }
-}
             
        
    
