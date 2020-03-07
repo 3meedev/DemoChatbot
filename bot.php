@@ -189,7 +189,52 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     );
     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 }
-if ($userMessage == "p" && $userMessage == "1" || $userMessage == "P" && $userMessage == "1") {
+if (strstr($userMessage,"p") == true && strstr($userMessage,"1") == true) {
+    $textReplyMessage = new BubbleContainerBuilder(
+        "ltr",
+        NULL,
+        NULL,
+        new BoxComponentBuilder(
+            "horizontal",
+            array(
+                new TextComponentBuilder(
+                    "
+
+มีโปรโมชั่นอะไรบ้าง
+___________________________________
+
+ตอนนี้มีโปรโมชั่น 30% จากยอดฝาก หรือ
+เลือกรับโปรโมชัั่นพร้อมของแถม เช่น
+
+1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
+2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
+3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
+4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
+5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
+6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
+7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
+8. สมัคร 500 บาท ได้รับ Smart Watch 
+9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
+10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
+11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
+12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
+13. สมัคร 300 บาท ได้รับ Game Handle 
+14. สมัครฝาก 200 รับโบนัส 30 %
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                    NULL,
+                    NULL,
+                    "md",
+                    NULL,
+                    NULL,
+                    true
+                )
+            )
+        )
+    );
+    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+}
+if (strstr($userMessage,"P") == true && strstr($userMessage,"1") == true) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
         NULL,
