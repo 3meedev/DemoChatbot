@@ -136,37 +136,6 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         )
     )
 );
-$postback1 = new PostbackTemplateActionBuilder(
-    'ย้อนกลับ',
-    http_build_query(array(
-        'action'=>'buy',
-        'item'=>100
-    )),
-     'กลับเมนูสอบถาม'
-);  
-$postback2 = new PostbackTemplateActionBuilder(
-    'เมนูสมัคร',
-    http_build_query(array(
-        'action'=>'buy',
-        'item'=>100
-    )),
-     'สมัคร'
-); 
-$postback3 = new PostbackTemplateActionBuilder(
-    'เมนูติดต่อ',
-    http_build_query(array(
-        'action'=>'buy',
-        'item'=>100
-    )),
-     'ติดต่อ'
-);                           
-$quickReply = new QuickReplyMessageBuilder(
-    array(         
-        new QuickReplyButtonBuilder($postback1), 
-        new QuickReplyButtonBuilder($postback2),
-        new QuickReplyButtonBuilder($postback3),                                   
-    )
-);   
 
 $textPromotion1 = new BubbleContainerBuilder(
     "ltr",
@@ -1053,7 +1022,7 @@ if (!is_null($events)) {
     // ----------------------------------------------------------------------------------------- MainMenu
 
 if ($userMessage != null) {
-    if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "กลับเมนูสอบถาม") {
+    if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -1085,8 +1054,23 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                     )
                 )
             )
-        );          
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        );
+        $postback1 = new PostbackTemplateActionBuilder(
+            'กลับไปหน้าเมนู',
+            http_build_query(array(
+                'action'=>'buy',
+                'item'=>100
+            )),
+             'Buy'
+        );                            
+        $quickReply = new QuickReplyMessageBuilder(
+            array(                                    
+                // new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('Camera')),
+                // new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('Camera roll')),
+                new QuickReplyButtonBuilder($postback),                                    
+            )
+        );     
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
     if ($userMessage == "สมัคร") {
         $textReplyMessage = new BubbleContainerBuilder(
@@ -1114,11 +1098,11 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     // ----------------------------------------------------------------------------------------- MainMenu
     // ----------------------------------------------------------------------------------------- Promotion
 
-    if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {        
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
+    if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToPromotion);
     }
     if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
+        $replyData = new FlexMessageBuilder("Flex", $textToPromotion);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "1") == true) {
         $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
