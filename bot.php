@@ -2049,10 +2049,10 @@ if(!is_null($events)){
                                 )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
                                  'Buy'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                             );
-                            $txtMsg = new MessageTemplateActionBuilder(
-                                'ข้อความภาษาไทย',// ข้อความแสดงในปุ่ม
-                                'thai' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                            );
+                            // $txtMsg = new MessageTemplateActionBuilder(
+                            //     'ข้อความภาษาไทย',// ข้อความแสดงในปุ่ม
+                            //     'thai' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            // );
                             // $datetimePicker = new DatetimePickerTemplateActionBuilder(
                             //     'Datetime Picker', // ข้อความแสดงในปุ่ม
                             //     http_build_query(array(
