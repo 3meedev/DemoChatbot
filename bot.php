@@ -89,15 +89,15 @@ $eventMemberLeft = NULL;
 //         break;
 // }
 
-// if ($eventObj->isUserEvent()) {
-//     $userId = $eventObj->getUserId();
-//     $sourceType = "USER";
-// }
+if ($eventObj->isUserEvent()) {
+    $userId = $eventObj->getUserId();
+    $sourceType = "USER";
+}
 
-// $sourceId = $eventObj->getEventSourceId();
+$sourceId = $eventObj->getEventSourceId();
 
-// if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)) {
-//     $replyToken = $eventObj->getReplyToken();}
+if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)) {
+    $replyToken = $eventObj->getReplyToken();}
 
 if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
