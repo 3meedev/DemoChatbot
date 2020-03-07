@@ -1055,8 +1055,8 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 )
             )
         );
-        $postback1 = new PostbackTemplateActionBuilder(
-            'กลับไปหน้าเมนู',
+        $postback = new PostbackTemplateActionBuilder(
+            'Postback',
             http_build_query(array(
                 'action'=>'buy',
                 'item'=>100
