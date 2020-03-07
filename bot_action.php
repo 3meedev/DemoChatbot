@@ -41,38 +41,6 @@ use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
 use LINE\LINEBot\TemplateActionBuilder\CameraRollTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\CameraTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\LocationTemplateActionBuilder;
-use LINE\LINEBot\RichMenuBuilder;
-use LINE\LINEBot\RichMenuBuilder\RichMenuSizeBuilder;
-use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBuilder;
-use LINE\LINEBot\RichMenuBuilder\RichMenuAreaBoundsBuilder;
-use LINE\LINEBot\Constant\Flex\ComponentIconSize;
-use LINE\LINEBot\Constant\Flex\ComponentImageSize;
-use LINE\LINEBot\Constant\Flex\ComponentImageAspectRatio;
-use LINE\LINEBot\Constant\Flex\ComponentImageAspectMode;
-use LINE\LINEBot\Constant\Flex\ComponentFontSize;
-use LINE\LINEBot\Constant\Flex\ComponentFontWeight;
-use LINE\LINEBot\Constant\Flex\ComponentMargin;
-use LINE\LINEBot\Constant\Flex\ComponentSpacing;
-use LINE\LINEBot\Constant\Flex\ComponentButtonStyle;
-use LINE\LINEBot\Constant\Flex\ComponentButtonHeight;
-use LINE\LINEBot\Constant\Flex\ComponentSpaceSize;
-use LINE\LINEBot\Constant\Flex\ComponentGravity;
-use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\BubbleStylesBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\BlockStyleBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ImageComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SpacerComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\FillerComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SeparatorComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
- 
-// ไฟล์ฟังก์ชั่นสำหรับแปลง xml เป็น flex 
-require_once("flex_gen.php");
  
 // ส่วนของการทำงาน
 if(!is_null($events)){
@@ -159,59 +127,10 @@ if(!is_null($events)){
         parse_str($eventObj->getPostbackData(),$dataPostback);
         // ดึงค่า params กรณีมีค่า params
         $paramPostback = $eventObj->getPostbackParams();
-         
-        $moreResult = "";
-        if(isset($dataPostback['action']) && $dataPostback['action']=="more_richmenu"){
-            $respRichMenu = $bot->linkRichMenu($userId,$dataPostback['richmenuid']);
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }       
-        if(isset($dataPostback['action']) && $dataPostback['action']=="back_richmenu"){
-            $respRichMenu = $bot->unlinkRichMenu($userId);
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }               
-         
-        if(isset($dataPostback['action']) && $dataPostback['action']=="delete_richmenu"){
-            $respRichMenu = $bot->deleteRichMenu($dataPostback['richMenuId']);
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }
-        if(isset($dataPostback['action']) && $dataPostback['action']=="get_richmenu"){
-            $respRichMenu = $bot->getRichMenu($dataPostback['richMenuId']);
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }
-        if(isset($dataPostback['action']) && $dataPostback['action']=="s_default_richmenu"){
-            $respRichMenu = $httpClient->post("https://api.line.me/v2/bot/user/all/richmenu/".$dataPostback['richMenuId'],array());
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }       
-        if(isset($dataPostback['action']) && $dataPostback['action']=="c_default_richmenu"){
-            $respRichMenu = $httpClient->delete("https://api.line.me/v2/bot/user/all/richmenu");
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }           
-        if(isset($dataPostback['action']) && $dataPostback['action']=="g_default_richmenu"){
-            $respRichMenu = $httpClient->get("https://api.line.me/v2/bot/user/all/richmenu");
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }           
-        if(isset($dataPostback['action']) && $dataPostback['action']=="upload_richmenu"){
-            $richMenuImg = str_replace('Rich Menu ','',$dataPostback['richMenuName']);
-            if(!file_exists("rich-menu/rich-menu-0".$richMenuImg.".png")){
-                $richMenuImg = substr(str_replace('Rich Menu ','',$dataPostback['richMenuName']),0,1);
-            }
-            $respRichMenu = $bot->uploadRichMenuImage($dataPostback['richMenuId'],"rich-menu/rich-menu-0".$richMenuImg.".png","image/png");
-            $moreResult = $respRichMenu->getRawBody();
-            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-        }                   
-         
         // ทดสอบแสดงข้อความที่เกิดจาก Postaback Event
-        $textReplyMessage = "ข้อความจาก Postback Event Data : DataPostback = ";        
+        $textReplyMessage = "ข้อความจาก Postback Event Data = ";        
         $textReplyMessage.= json_encode($dataPostback);
-        $textReplyMessage.= " ParamPostback = ".json_encode($paramPostback);
-        $textReplyMessage.= " RsponseMore = ".$moreResult;
+        $textReplyMessage.= json_encode($paramPostback);
         $replyData = new TextMessageBuilder($textReplyMessage);     
     }
     // ถ้าเป้น Message Event 
@@ -310,245 +229,9 @@ if(!is_null($events)){
             case 'text':  // ถ้าเป็นข้อความ
                 $userMessage = strtolower($userMessage); // แปลงเป็นตัวเล็ก สำหรับทดสอบ
                 switch ($userMessage) {
-                        case "fl": // ส่วนทดสอบโต้ตอบข้อควมม flex
-                            $textReplyMessage = new BubbleContainerBuilder(
-                                "ltr",NULL,NULL,
-                                new BoxComponentBuilder(
-                                    "vertical",
-                                    array(
-                                        new TextComponentBuilder("hello"),
-                                        new TextComponentBuilder("world")
-                                    )
-                                )
-                            );
-                            $replyData = new FlexMessageBuilder("This is a Flex Message",$textReplyMessage);                                                                
-                            break;
-                        case (preg_match('/^cr-/',$userMessage) ? true : false):
-                            $paramRichMenu = explode(">",$userMessage);
-                            if(!isset($paramRichMenu) || !is_array($paramRichMenu) || count($paramRichMenu)<3){
-                                exit;
-                            }
-                            $patternSet = $paramRichMenu[0];
-                            $numberID = $paramRichMenu[1];
-                            $actionSet = $paramRichMenu[2];
-                            $actionArr_prepare = array();
-                            if(isset($actionSet)){
-                                $actionArr_prepare = explode(")",$actionSet);
-                                array_pop($actionArr_prepare);
-                            }
-                            $imgTypePattern = str_replace("cr-","",$patternSet);
-                            $areaBound_arr = array(
-                                "a"=>array(0,0,833,843),
-                                "b"=>array(833,0,833,843),
- 
-                                "c"=>array(1666,0,834,843),
-                                "d"=>array(0,843,833,843),
-                                "e"=>array(833,843,833,843),
-                                "f"=>array(1666,843,834,843),
-                                "g"=>array(0,0,1250,843),
-                                "h"=>array(1250,0,1250,843),
-                                "i"=>array(0,843,1250,843),
-                                "j"=>array(1250,843,1250,843),
-                                "k"=>array(0,0,2500,843),
-                                "l"=>array(0,0,1666,1686),
-                                "m"=>array(0,843,2500,843),
-                                "n"=>array(0,0,1250,1686),
-                                "o"=>array(1250,0,1250,1686),
-                                "p"=>array(0,0,2500,1686)
-                            );
-                            $imgTypePatternArea_arr = array(
-                                "1"=>array("a","b","c","d","e","f"),
-                                "2"=>array("g","h","i","j"),
-                                "3"=>array("k","d","e","f"),
-                                "4"=>array("l","c","f"),
-                                "5"=>array("k","m"),
-                                "6"=>array("n","o"),
-                                "7"=>array("p")
-                            );
-                             
-                            function makeFRM($imgType){
-                                global $areaBound_arr,$imgTypePatternArea_arr,$actionSet,$actionArr_prepare;
-                                $dataArr = array();
-                                $Area_arr = $imgTypePatternArea_arr[$imgType];
-                                for($i=1;$i<=count($imgTypePatternArea_arr[$imgType]);$i++){                                 
-                                    if(preg_match('/^p\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new PostbackTemplateActionBuilder('p',$data);
-                                    }elseif(preg_match('/^m\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new MessageTemplateActionBuilder('m',$data);                                   
-                                    }elseif(preg_match('/^u\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new UriTemplateActionBuilder('u',$data);   
-                                    }elseif(preg_match('/^c\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new UriTemplateActionBuilder('u',"line://nv/camera/");     
-                                    }elseif(preg_match('/^cs\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new UriTemplateActionBuilder('u',"line://nv/cameraRoll/single/");  
-                                    }elseif(preg_match('/^cm\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new UriTemplateActionBuilder('u',"line://nv/cameraRoll/multi/");                                                       
-                                    }elseif(preg_match('/^l\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new UriTemplateActionBuilder('u',"line://nv/location");                                                                                                            
-                                    }elseif(preg_match('/^d\(/',$actionArr_prepare[$i-1])){
-                                        list($ac,$data) = explode("(",$actionArr_prepare[$i-1]);
-                                        $actionVal = new DatetimePickerTemplateActionBuilder('d',$data,'datetime');
-                                    }elseif(preg_match('/^n\(/',$actionArr_prepare[$i-1])){
-                                        $actionVal = NULL;
-                                        continue;
-                                    }else{
-                                        $actionVal = NULL;
-                                        continue;
-                                    }
-                                    $patternLetter = $Area_arr[$i-1];
-                                    array_push($dataArr,
-                                            new RichMenuAreaBuilder(
-                                                new RichMenuAreaBoundsBuilder(...$areaBound_arr[$patternLetter]),$actionVal
-                                            )                   
-                                    );
-                                }
-                                return $dataArr;                        
-                            }
-//                          $arrayRichMenu = makeFRM();
-                            // $sizeBuilder, $selected, $name, $chatBarText, $areaBuilders // 1686, 843.  // 2500
-                            // ($x, $y, $width, $height)
-                            $_idRichMenu = $imgTypePattern."-".$numberID;
-                            $respRichMenu = $bot->createRichMenu(
-                                new RichMenuBuilder(
-                                    new RichMenuSizeBuilder(1686,2500),true,"Rich Menu $_idRichMenu",
-                                    "เมนู",
-                                    makeFRM($imgTypePattern)
-                                )
-                            );
-                            // ทำอื่นๆ 
-                            $textReplyMessage = " การสร้าง Rich Menu ".$respRichMenu->getRawBody()." Res = ".json_encode($dataArr);
-                            $replyData = new TextMessageBuilder($textReplyMessage);                                     
-                            break;                              
-                        case "gr-":
-                            $respRichMenu = $httpClient->get("https://api.line.me/v2/bot/user/all/richmenu");
-                            $result = json_decode($respRichMenu->getRawBody(),TRUE);     
-                            $defaultRichMenu = (isset($result['richMenuId']))?$result['richMenuId']:NULL;
-     
-                            $respRichMenu = $bot->getRichMenuList();
-                            $result = json_decode($respRichMenu->getRawBody(),TRUE);                                 
-                            // สร้างตัวแปร สำหรับเก็บ rich menu แต่ละรายการไว้ในแต่ละคอลัมน์
-                            $columnTemplate = array();
-                            foreach($result['richmenus'] as $itemRichMenu){
-                                $_txtShow = ($itemRichMenu['richMenuId']==$defaultRichMenu)?"ยกเลิก":"กำหนดเป็น";
-                                $_action = ($itemRichMenu['richMenuId']==$defaultRichMenu)?"c_default_richmenu":"s_default_richmenu";
-                                $imgRichLayout = substr(str_replace('Rich Menu ','',$itemRichMenu['name']),0,1);
-                                array_push($columnTemplate, 
-                                    new CarouselColumnTemplateBuilder(
-                                            $itemRichMenu['name'], // ชื่อ rich menu
-                                            'เลือกการจัดการ',
-                                            'https://www.example.com/linebot/rich-menu/rich-menu-pattern-0'.$imgRichLayout.'.png', // ไม่แสดงรูป มีมี url รูป
-                                            array(                                      
-                                                new PostbackTemplateActionBuilder(
-                                                    $_txtShow.' Default', // ข้อความแสดงในปุ่ม
-                                                    http_build_query(array(
-                                                        'action'=>$_action,          
-                                                        'richMenuName'=>$itemRichMenu['name'],                    
-                                                        'richMenuId'=>$itemRichMenu['richMenuId']
-                                                    )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                                    'กำหนด Default Rich Menu'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                                                ),          
-                                                new PostbackTemplateActionBuilder(
-                                                    'แสดงที่ Default', // ข้อความแสดงในปุ่ม
-                                                    http_build_query(array(
-                                                        'action'=>'g_default_richmenu',      
-                                                        'richMenuName'=>$itemRichMenu['name'],            
-                                                        'richMenuId'=>$itemRichMenu['richMenuId']
-                                                    )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                                    'แสดง Default Rich Menu'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                                                ),                                                                                          
-                                                new PostbackTemplateActionBuilder(
-                                                    'อัพโหลดรูป Rich Menu นี้', // ข้อความแสดงในปุ่ม
-                                                    http_build_query(array(
-                                                        'action'=>'upload_richmenu',         
-                                                        'richMenuName'=>$itemRichMenu['name'],                    
-                                                        'richMenuId'=>$itemRichMenu['richMenuId']
-                                                    )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                                    'อัพโหลดรูป Rich Menu'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                                                )                       
-                                            )       
-                                    )   // end CarouselColumnTemplateBuilder            
-                                ); // end array push function
-                            }   // end foreach                      
-                             
-                            // ใช้ Carousel Template วนลูปแสดงรายการ rich menu ที่ได้สร้างไว้
-                            $replyData = new TemplateMessageBuilder('Carousel',
-                                new CarouselTemplateBuilder(
-                                    $columnTemplate
-                                )
-                            );                                          
-                            break;      
-                        case "gr2-":
-                            $respRichMenu = $bot->getRichMenuList();
-                            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
-                                 
-                            // สร้างตัวแปร สำหรับเก็บ rich menu แต่ละรายการไว้ในแต่ละคอลัมน์
-                            $columnTemplate = array();
-                            foreach($result['richmenus'] as $itemRichMenu){
-                                $imgRichLayout = substr(str_replace('Rich Menu ','',$itemRichMenu['name']),0,1);                                
-                                array_push($columnTemplate, 
-                                    new CarouselColumnTemplateBuilder(
-                                            $itemRichMenu['name'], // ชื่อ rich menu
-                                            'เลือกการจัดการ',
-                                            'https://www.example.com/linebot/rich-menu/rich-menu-pattern-0'.$imgRichLayout.'.png', // ไม่แสดงรูป มีมี url รูป
-                                            array(
-                                                new PostbackTemplateActionBuilder(
-                                                    'รายละเอียด Rich Menu', // ข้อความแสดงในปุ่ม
-                                                    http_build_query(array(
-                                                        'action'=>'get_richmenu',        
-                                                        'richMenuName'=>$itemRichMenu['name'],                        
-                                                        'richMenuId'=>$itemRichMenu['richMenuId']
-                                                    )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                                    'ข้อมูล Rich Menu'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                                                ),                                                                                                                              
-                                                new PostbackTemplateActionBuilder(
-                                                    'ลบ Rich Menu นี้', // ข้อความแสดงในปุ่ม
-                                                    http_build_query(array(
-                                                        'action'=>'delete_richmenu',         
-                                                        'richMenuName'=>$itemRichMenu['name'],                    
-                                                        'richMenuId'=>$itemRichMenu['richMenuId']
-                                                    )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                                    'ลบ Rich Menu'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                                                ),              
-                                                new PostbackTemplateActionBuilder(
-                                                    'อัพโหลดรูป Rich Menu นี้', // ข้อความแสดงในปุ่ม
-                                                    http_build_query(array(
-                                                        'action'=>'upload_richmenu',         
-                                                        'richMenuName'=>$itemRichMenu['name'],                    
-                                                        'richMenuId'=>$itemRichMenu['richMenuId']
-                                                    )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
-                                                    'อัพโหลดรูป Rich Menu'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                                                )                       
-                                            )       
-                                    )   // end CarouselColumnTemplateBuilder            
-                                ); // end array push function
-                            }   // end foreach                      
-                             
-                            // ใช้ Carousel Template วนลูปแสดงรายการ rich menu ที่ได้สร้างไว้
-                            $replyData = new TemplateMessageBuilder('Carousel',
-                                new CarouselTemplateBuilder(
-                                    $columnTemplate
-                                )
-                            );                                          
-                            break;                                                              
                         case "ot":
                             // ทำอื่นๆ 
                             break;
-                        case "l": // เงื่อนไขทดสอบถ้ามีใครพิมพ์ L ใน GROUP / ROOM แล้วให้ bot ออกจาก GROUP / ROOM
-                                $sourceId = $eventObj->getEventSourceId();
-                                if($eventObj->isGroupEvent()){
-                                    $bot->leaveGroup($sourceId);
-                                }
-                                if($eventObj->isRoomEvent()){
-                                    $bot->leaveRoom($sourceId);  
-                                }                                                                                         
-                            break;                          
                         case "qr":
                             $postback = new PostbackTemplateActionBuilder(
                                 'Postback', // ข้อความแสดงในปุ่ม
@@ -559,7 +242,6 @@ if(!is_null($events)){
                                  'Buy'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                             );
                             $txtMsg = new MessageTemplateActionBuilder(
- 
                                 'ข้อความภาษาไทย',// ข้อความแสดงในปุ่ม
                                 'thai' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                             );
@@ -574,12 +256,12 @@ if(!is_null($events)){
                                 substr_replace(date("Y-m-d H:i",strtotime("+5 day")),'T',10,1), //วันที่ เวลา มากสุดที่เลือกได้
                                 substr_replace(date("Y-m-d H:i"),'T',10,1) //วันที่ เวลา น้อยสุดที่เลือกได้
                             );
-                             
+ 
                             $quickReply = new QuickReplyMessageBuilder(
                                 array(
-                                    new QuickReplyButtonBuilder(new LocationTemplateActionBuilder('เลือกตำแหน่ง')),
-                                    new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('ถ่ายรูป')),
-                                    new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('เลือกรูปภาพ')),
+                                    new QuickReplyButtonBuilder(new LocationTemplateActionBuilder('Location')),
+                                    new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('Camera')),
+                                    new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('Camera roll')),
                                     new QuickReplyButtonBuilder($postback),
                                     new QuickReplyButtonBuilder($datetimePicker),
                                     new QuickReplyButtonBuilder(
