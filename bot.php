@@ -1933,7 +1933,7 @@ if(!is_null($events)){
     //         $FileSize = $eventObj->getFileSize();
     //     }               
         
-
+}
 $response = $bot->replyMessage($replyToken,$replyData);
 if ($response->isSucceeded()) {
     echo 'Succeeded!';
@@ -1943,4 +1943,3 @@ if ($response->isSucceeded()) {
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
-}
