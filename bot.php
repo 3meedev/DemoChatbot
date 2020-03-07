@@ -104,6 +104,19 @@ if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)
 }
 
 // ----------------------------------------------------------------------------------------- TextAll
+$postback = new PostbackTemplateActionBuilder(
+    'Postback',
+    http_build_query(array(
+        'action'=>'buy',
+        'item'=>100
+    )),
+     'Buy'
+);                            
+$quickReply = new QuickReplyMessageBuilder(
+    array(                 
+        new QuickReplyButtonBuilder($postback),                                    
+    )
+);     
 
 $textToPromotion = new BubbleContainerBuilder(
     "ltr",
@@ -1054,22 +1067,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                     )
                 )
             )
-        );
-        $postback = new PostbackTemplateActionBuilder(
-            'Postback',
-            http_build_query(array(
-                'action'=>'buy',
-                'item'=>100
-            )),
-             'Buy'
-        );                            
-        $quickReply = new QuickReplyMessageBuilder(
-            array(                                    
-                // new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('Camera')),
-                // new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('Camera roll')),
-                new QuickReplyButtonBuilder($postback),                                    
-            )
-        );     
+        );        
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
     if ($userMessage == "สมัคร") {
