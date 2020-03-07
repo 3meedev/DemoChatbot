@@ -884,7 +884,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textAccount2 = new BubbleContainerBuilder(
+$textWebsite1 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -913,7 +913,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textAccount1 = new BubbleContainerBuilder(
+$textWebsite2 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
