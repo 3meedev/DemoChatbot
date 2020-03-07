@@ -1068,7 +1068,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 )
             )
         );        
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     }
     if ($userMessage == "สมัคร") {
         $textReplyMessage = new BubbleContainerBuilder(
@@ -1097,10 +1097,10 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     // ----------------------------------------------------------------------------------------- Promotion
 
     if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textToPromotion);
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
-    if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textToPromotion);
+    if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {        
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "1") == true) {
         $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
