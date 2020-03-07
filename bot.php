@@ -349,7 +349,7 @@ ___________________________________",
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("สูตรบาคาร่า", ""),
+                new UriTemplateActionBuilder("สูตรบาคาร่า", "https://www.google.com/?hl=th"),
                 NULL,
                 NULL,
                 NULL,
