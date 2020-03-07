@@ -1863,6 +1863,7 @@ if(is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft))
 // }
 
 if(!is_null($events)){ 
+    $userMessage = strtolower($userMessage);
     if(!is_null($eventFollow)){
         $textReplyMessage = "ขอบคุณที่เป็นเพื่อน และติดตามเรา";        
         $replyData = new TextMessageBuilder($textReplyMessage);                 
