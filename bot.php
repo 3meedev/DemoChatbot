@@ -181,908 +181,908 @@ if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)
 
 // ----------------------------------------------------------------------------------------- TextAll
 
-// $textToPromotion = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "                        โปรโมชั่น
-
-// พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
-// ___________________________________
-
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. มีโปรโมชั่นอะไรบ้าง
-// 2. ถ้ารับโปรโมชั่น ต้องทำเทิร์นเท่าไหร่
-// 3. ถ้าไม่รับโบนัส จะต้องทำเทิร์นมั้ย
-// 4. มีเครดิตฟรีมั้ย
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textPromotion1 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "มีโปรโมชั่นอะไรบ้าง ?
-// ___________________________________
-
-// ตอนนี้มีโปรโมชั่น 30% จากยอดฝาก 
-// หรือเลือกรับโปรโมชัั่นพร้อมของแถม 
-
-// 1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
-// 2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
-// 3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
-// 4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
-// 5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
-// 6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
-// 7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
-// 8. สมัคร 500 บาท ได้รับ Smart Watch 
-// 9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
-// 10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
-// 11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
-// 12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
-// 13. สมัคร 300 บาท ได้รับ Game Handle 
-// 14. สมัครฝาก 200 รับโบนัส 30 %
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textPromotion2 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ถ้ารับโปรโมชั่นต้องทำเทิร์นเท่าไหร่ ?
-// ___________________________________
-
-// ทุกโปรทำเทิร์น 1.5 ค่ะ เช่น ฝาก200 
-// (ต้องมียอดเล่นได้หรือเสียประมาณ 
-// 300) ก็ถอนได้แล้วค่ะ เล่นได้ทุก
-// อย่าง เช่น คาสิโน เกมส์ แทง บอล
-// อื่นๆ เป็นต้นค่ะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textPromotion3 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ถ้าไม่รับโบนัสจะต้องทำเทิร์นมั้ย ?
-// ___________________________________
-
-// ถ้าไม่รับโบนัสก้ทำเทริน 1.5 เหมือนกันคะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textPromotion4 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "มีเครดิตฟรีมั้ย ?
-// ___________________________________
-
-// เงินที่สมัครสามารถนำไปเล่นในเว็บได้
-// เลยและได้ของแถมด้วยนะคะ 
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textToRecommend = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "                        คำแนะนำ
-
-// พิมพ์ r ตามด้วยหัวข้อที่ต้องการ เช่น r1
-// ___________________________________
-
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. ใส่คนแนะนำว่าอะไร
-// 2. ถ้าชวนเพื่อนมาสมัครจะได้อะไรมั้ย
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textRecommend1 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ใส่คนแนะนำว่าอะไร ?
-// ___________________________________
-
-// SL99 แนะนำให้สมัครคะ 
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textRecommend2 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ถ้าชวนเพื่อนมาสมัครพี่จะได้อะไรมั้ย ?
-// ___________________________________
-
-// ทางเรามีโปรโมชั่นชวนเพื่อนให้คะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textToGroup = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "                        กลุ่ม/สูตร
-
-// พิมพ์ g ตามด้วยหัวข้อที่ต้องการ เช่น g1
-// ___________________________________
-
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. มีสูตรโกงบาคาร่าให้มั้ย
-// 2. มีกลุ่มวิเคราะบอลด้วยมั้ย
-// 3. เล่นบาคาร่ายังไง
-// 4. แทงบอลยังไง
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textGroup1 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "มีสูตรโกงบาคาร่าให้มั้ย ?
-// ___________________________________
-
-// มีค่ะ แจ้งยูส+สลิปการโอน นะคะ
-// ___________________________________",
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     ),
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new ButtonComponentBuilder(
-//                 new UriTemplateActionBuilder("สูตรบาคาร่า", "https://www.google.com/?hl=th"),
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 "primary"
-//             )
-//         )
-//     )
-// );
-
-// $textGroup2 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "มีกลุ่มวิเคราะบอลด้วยมั้ย ?
-// ___________________________________
-
-// กลุ่มวิเคราะบอล คลิ้กเข้าลิ้งเลยนะคะ
-// ___________________________________",
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     ),
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new ButtonComponentBuilder(
-//                 new UriTemplateActionBuilder("วิเคราะห์บอล", "https://line.me/ti/g2/fbDC6OmeUzJua6pFerS7"),
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 "primary"
-//             )
-//         )
-//     )
-// );
-
-// $textGroup3 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "เล่นบาคาร่ายังไง ?
-// ___________________________________
-
-// คลิกลิ้งเพื่อเข้าดูวิธีเข้าเล่นบาคาร่าค่ะ
-// ___________________________________",
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     ),
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new ButtonComponentBuilder(
-//                 new UriTemplateActionBuilder("การเล่นบาคาร่า", "https://youtu.be/8O8M8R2Kffg"),
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 "primary"
-//             )
-//         )
-//     )
-// );
-
-// $textGroup4 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "แทงบอลยังไง ?
-// ___________________________________
-
-// คลิกลิ้งเพื่อดูการใช้งานและวิธีแทงหวย+บอล
-// ___________________________________",
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     ),
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new ButtonComponentBuilder(
-//                 new UriTemplateActionBuilder("การเล่นบอล/หวย", "https://www.youtube.com/channel/UC0j3s6xKcdOX9OFP05W82Bg"),
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 "primary"
-//             )
-//         )
-//     )
-// );
-
-// $textToDeposit = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "                        ฝาก/ถอน
-
-// พิมพ์ d ตามด้วยหัวข้อที่ต้องการ เช่น d1
-// ___________________________________
-
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. ฝาก/ถอนขั้นต่ำเท่าไหร่
-// 2. ครั้งต่อไปฝาก/ถอนยังไง
-// 3. ฝาก/ถอนจำกัดครั้งมั้บ ถอนได้เร็วมั้ย
-// 4. ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย
-// 5. โอนเงินเสร็จแล้วทำไงต่อ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textDeposit1 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ฝาก/ถอนขั้นต่ำเท่าไหร่ ?
-// ___________________________________
-
-// หลังจากสมัครเป็นสมาชิกแล้วฝาก/ถอน
-// ขั้นต่ำ 100 บาท ค่ะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textDeposit2 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ครั้งต่อไปฝาก/ถอนยังไง ?
-// ___________________________________
-
-// ฝาก/ถอนสามารถทำรายการผ่านหน้า
-// เว็บได้เลยค่ะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textDeposit3 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ฝาก/ถอน จำกัดครั้งมั้ย ถอนได้เร็วมั้ย ?
-// ___________________________________
-
-// ฝากถอนผ่านหน้าเว็บไม่จำกัดจำนวน
-// ครั้งฝากถอนภายใน 5 วินาที
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textDeposit4 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย ?
-// ___________________________________
-
-// ไม่ได้ค่ะ ต้องมียอดเล่นให้ครบเทริน
-// ถึงถอนออกได้ค่ะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textDeposit5 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "โอนเงินเสร็จแล้วทำไงต่อ ?
-// ___________________________________
-
-// รอแอดมินตรวจสอบสักครู่นะคะ เสร็จ
-// แล้วแอดมินจะส่งเลขยูสเวอร์ให้คะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textToRegister = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "                        การสมัคร
-
-// พิมพ์ u ตามด้วยหัวข้อที่ต้องการ เช่น u1
-// ___________________________________
-
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. เช้คได้ไหมว่าเคยสมัครไปหรือยัง
-// 2. ถ้าเคยสมัครแล้ว แต่จะใช้บันชีแฟน
-// สมัครอีกได้ไหม (แฟนนามสกุลเดียวกัน)
-// 3. เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textRegister1 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "เช้คได้ไหมว่าเคยสมัครไปหรือยัง ?
-// ___________________________________
-
-// ส่งข้อมูลให้แอดมินตรวจสอบได้เลยนะ
-// คะถ้าเคยเป็นสมาชิกแล้วแอดมินจะแจ้ง
-// เลขยูสให้คะ
-// ___________________________________",
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     ),
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new ButtonComponentBuilder(
-//                 new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 "primary"
-//             )
-//         )
-//     )
-// );
-
-// $textRegister2 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ถ้าเคยสมัครแล้ว แต่จะใช้บัญชีแฟน
-// สมัครอีกได้ไหม 
-// (แฟนนามสกุลเดียวกัน) ?
-// ___________________________________
-
-// รอแอดมินตรวจสอบสักครู่นะคะ เสร็จ
-// ได้คะพี่ขอแค่ชื่อคนสมัครกับชื่อบัญชี
-// ที่ใช้โอนตรงกันและถ้าชื่อที่เคยสมัคร
-// แล้วจะสมัครอีกไม่ได้ค่ะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textRegister3 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย ?
-// ___________________________________
-
-// ไม่ได้ค่ะเพราะ 1 ชื่อสามารถสมัคร
-// ได้แค่ 1 ยูสเซอร์เท่านั้นค่ะ
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textToAccount = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "                        บัญชีผู้ใช้
-
-// พิมพ์ a ตามด้วยหัวข้อที่ต้องการ เช่น a1
-// ___________________________________
-
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. ลืมเลขบันชีต้องทำยังไง
-// 2. ทำไมทำรายการฝากไม่ได้สักที 
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textAccount1 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ลืมเลขบันชีต้องทำยังไง ?
-// ___________________________________
-
-// คลิกลิ้งติดต่อขอเลขบัญชีกับแอดมินได้เลยค่ะ
-// ___________________________________",
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     ),
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new ButtonComponentBuilder(
-//                 new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 "primary"
-//             )
-//         )
-//     )
-// );
-
-// $textAccount2 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ทำไมทำรายการฝากไม่ได้สักที ?
-// ___________________________________
-
-// กรอกข้อมูลให้ถูกต้องนะคะ ชื่อบัญชี
-// ที่โอน เวลา และยอดเงิน 
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textToWebsite = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "                        เกี่ยวกับเว็บไซต์
-
-// พิมพ์ w ตามด้วยหัวข้อที่ต้องการ เช่น w1
-// ___________________________________
-
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. ในเว็บมีอะไรให้เล่นบ้าง
-// 2. เข้าเล่นยังไง
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textWebsite1 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "ในเว็บมีอะไรให้เล่นบ้าง ?
-// ___________________________________
-
-// ในเว็บมี บอล มวย หวย บาส ไก่ชน 
-// กีฬาให้แทงมี บาคาล่าเซ็กซี่ ไฮโล  
-// และคาสิโนสดต่าง เกม  สลอต รูเลท
-// ให้เล่น 
-// ___________________________________
-
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                 NULL,
-//                 NULL,
-//                 "md",
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     )
-// );
-
-// $textWebsite2 = new BubbleContainerBuilder(
-//     "ltr",
-//     NULL,
-//     NULL,
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new TextComponentBuilder(
-//                 "เข้าเล่นยังไง ?
-// ___________________________________
-
-// คลิกลิ้งเพื่อเข้าหน้าเว็บได้เลยค่ะ
-// ___________________________________",
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 true
-//             )
-//         )
-//     ),
-//     new BoxComponentBuilder(
-//         "horizontal",
-//         array(
-//             new ButtonComponentBuilder(
-//                 new UriTemplateActionBuilder("เข้าสู่เว็บไซต์", " https://www.copa69.com/"),
-//                 NULL,
-//                 NULL,
-//                 NULL,
-//                 "primary"
-//             )
-//         )
-//     )
-// );
-
-
-
-// // ----------------------------------------------------------------------------------------- TextAll
+$textToPromotion = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        โปรโมชั่น
+
+พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. มีโปรโมชั่นอะไรบ้าง
+2. ถ้ารับโปรโมชั่น ต้องทำเทิร์นเท่าไหร่
+3. ถ้าไม่รับโบนัส จะต้องทำเทิร์นมั้ย
+4. มีเครดิตฟรีมั้ย
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textPromotion1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "มีโปรโมชั่นอะไรบ้าง ?
+___________________________________
+
+ตอนนี้มีโปรโมชั่น 30% จากยอดฝาก 
+หรือเลือกรับโปรโมชัั่นพร้อมของแถม 
+
+1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
+2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
+3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
+4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
+5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
+6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
+7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
+8. สมัคร 500 บาท ได้รับ Smart Watch 
+9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
+10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
+11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
+12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
+13. สมัคร 300 บาท ได้รับ Game Handle 
+14. สมัครฝาก 200 รับโบนัส 30 %
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textPromotion2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ถ้ารับโปรโมชั่นต้องทำเทิร์นเท่าไหร่ ?
+___________________________________
+
+ทุกโปรทำเทิร์น 1.5 ค่ะ เช่น ฝาก200 
+(ต้องมียอดเล่นได้หรือเสียประมาณ 
+300) ก็ถอนได้แล้วค่ะ เล่นได้ทุก
+อย่าง เช่น คาสิโน เกมส์ แทง บอล
+อื่นๆ เป็นต้นค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textPromotion3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ถ้าไม่รับโบนัสจะต้องทำเทิร์นมั้ย ?
+___________________________________
+
+ถ้าไม่รับโบนัสก้ทำเทริน 1.5 เหมือนกันคะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textPromotion4 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "มีเครดิตฟรีมั้ย ?
+___________________________________
+
+เงินที่สมัครสามารถนำไปเล่นในเว็บได้
+เลยและได้ของแถมด้วยนะคะ 
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textToRecommend = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        คำแนะนำ
+
+พิมพ์ r ตามด้วยหัวข้อที่ต้องการ เช่น r1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ใส่คนแนะนำว่าอะไร
+2. ถ้าชวนเพื่อนมาสมัครจะได้อะไรมั้ย
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRecommend1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ใส่คนแนะนำว่าอะไร ?
+___________________________________
+
+SL99 แนะนำให้สมัครคะ 
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRecommend2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ถ้าชวนเพื่อนมาสมัครพี่จะได้อะไรมั้ย ?
+___________________________________
+
+ทางเรามีโปรโมชั่นชวนเพื่อนให้คะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textToGroup = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        กลุ่ม/สูตร
+
+พิมพ์ g ตามด้วยหัวข้อที่ต้องการ เช่น g1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. มีสูตรโกงบาคาร่าให้มั้ย
+2. มีกลุ่มวิเคราะบอลด้วยมั้ย
+3. เล่นบาคาร่ายังไง
+4. แทงบอลยังไง
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textGroup1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "มีสูตรโกงบาคาร่าให้มั้ย ?
+___________________________________
+
+มีค่ะ แจ้งยูส+สลิปการโอน นะคะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สูตรบาคาร่า", "https://www.google.com/?hl=th"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textGroup2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "มีกลุ่มวิเคราะบอลด้วยมั้ย ?
+___________________________________
+
+กลุ่มวิเคราะบอล คลิ้กเข้าลิ้งเลยนะคะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("วิเคราะห์บอล", "https://line.me/ti/g2/fbDC6OmeUzJua6pFerS7"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textGroup3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "เล่นบาคาร่ายังไง ?
+___________________________________
+
+คลิกลิ้งเพื่อเข้าดูวิธีเข้าเล่นบาคาร่าค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("การเล่นบาคาร่า", "https://youtu.be/8O8M8R2Kffg"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textGroup4 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "แทงบอลยังไง ?
+___________________________________
+
+คลิกลิ้งเพื่อดูการใช้งานและวิธีแทงหวย+บอล
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("การเล่นบอล/หวย", "https://www.youtube.com/channel/UC0j3s6xKcdOX9OFP05W82Bg"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textToDeposit = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        ฝาก/ถอน
+
+พิมพ์ d ตามด้วยหัวข้อที่ต้องการ เช่น d1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ฝาก/ถอนขั้นต่ำเท่าไหร่
+2. ครั้งต่อไปฝาก/ถอนยังไง
+3. ฝาก/ถอนจำกัดครั้งมั้บ ถอนได้เร็วมั้ย
+4. ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย
+5. โอนเงินเสร็จแล้วทำไงต่อ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ฝาก/ถอนขั้นต่ำเท่าไหร่ ?
+___________________________________
+
+หลังจากสมัครเป็นสมาชิกแล้วฝาก/ถอน
+ขั้นต่ำ 100 บาท ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ครั้งต่อไปฝาก/ถอนยังไง ?
+___________________________________
+
+ฝาก/ถอนสามารถทำรายการผ่านหน้า
+เว็บได้เลยค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ฝาก/ถอน จำกัดครั้งมั้ย ถอนได้เร็วมั้ย ?
+___________________________________
+
+ฝากถอนผ่านหน้าเว็บไม่จำกัดจำนวน
+ครั้งฝากถอนภายใน 5 วินาที
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit4 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย ?
+___________________________________
+
+ไม่ได้ค่ะ ต้องมียอดเล่นให้ครบเทริน
+ถึงถอนออกได้ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit5 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โอนเงินเสร็จแล้วทำไงต่อ ?
+___________________________________
+
+รอแอดมินตรวจสอบสักครู่นะคะ เสร็จ
+แล้วแอดมินจะส่งเลขยูสเวอร์ให้คะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textToRegister = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        การสมัคร
+
+พิมพ์ u ตามด้วยหัวข้อที่ต้องการ เช่น u1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. เช้คได้ไหมว่าเคยสมัครไปหรือยัง
+2. ถ้าเคยสมัครแล้ว แต่จะใช้บันชีแฟน
+สมัครอีกได้ไหม (แฟนนามสกุลเดียวกัน)
+3. เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "เช้คได้ไหมว่าเคยสมัครไปหรือยัง ?
+___________________________________
+
+ส่งข้อมูลให้แอดมินตรวจสอบได้เลยนะ
+คะถ้าเคยเป็นสมาชิกแล้วแอดมินจะแจ้ง
+เลขยูสให้คะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textRegister2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ถ้าเคยสมัครแล้ว แต่จะใช้บัญชีแฟน
+สมัครอีกได้ไหม 
+(แฟนนามสกุลเดียวกัน) ?
+___________________________________
+
+รอแอดมินตรวจสอบสักครู่นะคะ เสร็จ
+ได้คะพี่ขอแค่ชื่อคนสมัครกับชื่อบัญชี
+ที่ใช้โอนตรงกันและถ้าชื่อที่เคยสมัคร
+แล้วจะสมัครอีกไม่ได้ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย ?
+___________________________________
+
+ไม่ได้ค่ะเพราะ 1 ชื่อสามารถสมัคร
+ได้แค่ 1 ยูสเซอร์เท่านั้นค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textToAccount = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        บัญชีผู้ใช้
+
+พิมพ์ a ตามด้วยหัวข้อที่ต้องการ เช่น a1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ลืมเลขบันชีต้องทำยังไง
+2. ทำไมทำรายการฝากไม่ได้สักที 
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textAccount1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ลืมเลขบันชีต้องทำยังไง ?
+___________________________________
+
+คลิกลิ้งติดต่อขอเลขบัญชีกับแอดมินได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textAccount2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ทำไมทำรายการฝากไม่ได้สักที ?
+___________________________________
+
+กรอกข้อมูลให้ถูกต้องนะคะ ชื่อบัญชี
+ที่โอน เวลา และยอดเงิน 
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textToWebsite = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        เกี่ยวกับเว็บไซต์
+
+พิมพ์ w ตามด้วยหัวข้อที่ต้องการ เช่น w1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ในเว็บมีอะไรให้เล่นบ้าง
+2. เข้าเล่นยังไง
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textWebsite1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ในเว็บมีอะไรให้เล่นบ้าง ?
+___________________________________
+
+ในเว็บมี บอล มวย หวย บาส ไก่ชน 
+กีฬาให้แทงมี บาคาล่าเซ็กซี่ ไฮโล  
+และคาสิโนสดต่าง เกม  สลอต รูเลท
+ให้เล่น 
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textWebsite2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "เข้าเล่นยังไง ?
+___________________________________
+
+คลิกลิ้งเพื่อเข้าหน้าเว็บได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("เข้าสู่เว็บไซต์", " https://www.copa69.com/"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+
+
+// ----------------------------------------------------------------------------------------- TextAll
 // // ----------------------------------------------------------------------------------------- MainMenu
 
 // if ($userMessage != null) {
@@ -1946,7 +1946,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
 
-
+// --------------------------------------------------------------------------------------------------------------
 
     $response = $bot->replyMessage($replyToken, $replyData);
     if ($response->isSucceeded()) {
