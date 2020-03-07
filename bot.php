@@ -1068,7 +1068,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 )
             )
         );        
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
     if ($userMessage == "สมัคร") {
         $textReplyMessage = new BubbleContainerBuilder(
