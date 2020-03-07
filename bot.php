@@ -1948,8 +1948,26 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 )
             )
         );
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        $postback = new PostbackTemplateActionBuilder(
+            'Postback',
+            http_build_query(array(
+                'action'=>'buy',
+                'item'=>100
+            )),
+             'Buy'
+        );                            
+        $quickReply = new QuickReplyMessageBuilder(
+            array(                                    
+                new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('Camera')),
+                new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('Camera roll')),
+                new QuickReplyButtonBuilder($postback),                                    
+            )
+        );        
+        $replyData = new TextMessageBuilder($textReplyMessage,$quickReply);          
     }
+
+
+
     $response = $bot->replyMessage($replyToken, $replyData);
     if ($response->isSucceeded()) {
         echo 'Succeeded!';
