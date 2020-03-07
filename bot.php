@@ -1964,13 +1964,13 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             )
         );
 
-        $replyData1 = new TextMessageBuilder($quickReply);  
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        // $replyData1 = new TextMessageBuilder($quickReply);  
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage,$quickReply);
     }
 
 
 
-    $response = $bot->replyMessage($replyToken, $replyData, $replyData1);
+    $response = $bot->replyMessage($replyToken, $replyData);
     if ($response->isSucceeded()) {
         echo 'Succeeded!';
         return;
