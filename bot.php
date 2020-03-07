@@ -676,9 +676,9 @@ $textRegister1 = new BubbleContainerBuilder(
                 "เช้คได้ไหมว่าเคยสมัครไปหรือยัง ?
 ___________________________________
 
-ส่งข้อมูลให้แอดมินตรวจสอบได้เลยนะคะ
-ถ้าเคยเป็นสมาชิกแล้วแอดมินจะแจ้งเลข
-ยูสให้คะ
+ส่งข้อมูลให้แอดมินตรวจสอบได้เลยนะ
+คะถ้าเคยเป็นสมาชิกแล้วแอดมินจะแจ้ง
+เลขยูสให้คะ
 ___________________________________",
                 NULL,
                 NULL,
@@ -711,8 +711,9 @@ $textRegister2 = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "ถ้าเคยสมัครแล้ว แต่จะใช้บันชีแฟน
-สมัครอีกได้ไหม (แฟนนามสกุลเดียวกัน) ?
+                "ถ้าเคยสมัครแล้ว แต่จะใช้บัญชีแฟน
+สมัครอีกได้ไหม 
+(แฟนนามสกุลเดียวกัน) ?
 ___________________________________
 
 รอแอดมินตรวจสอบสักครู่นะคะ เสร็จ
@@ -744,8 +745,101 @@ $textRegister3 = new BubbleContainerBuilder(
                 "เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย ?
 ___________________________________
 
-ไม่ได้ค่ะพี่เพราะ 1 ชื่อสามารถสมัคร
+ไม่ได้ค่ะเพราะ 1 ชื่อสามารถสมัคร
 ได้แค่ 1 ยูสเซอร์เท่านั้นค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textToAccount = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        บัญชีผู้ใช้
+
+พิมพ์ a ตามด้วยหัวข้อที่ต้องการ เช่น a1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ลืมเลขบันชีต้องทำยังไง
+2. ทำไมทำรายการฝากไม่ได้สักที 
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textAccount1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ลืมเลขบันชีต้องทำยังไง ?
+___________________________________
+
+คลิกลิ้งติดต่อขอเลขบัญชีกับแอดมินได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+$textAccount2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ทำไมทำรายการฝากไม่ได้สักที ?
+___________________________________
+
+กรอกข้อมูลให้ถูกต้องนะคะ ชื่อบัญชี
+ที่โอน เวลา และยอดเงิน 
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -981,6 +1075,28 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     }
 
     // ----------------------------------------------------------------------------------------- Register
+    // ----------------------------------------------------------------------------------------- Account
+
+    if (strstr($userMessage, "q") == true && strstr($userMessage, "6") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToAccount);
+    }
+    if (strstr($userMessage, "Q") == true && strstr($userMessage, "6") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToAccount);
+    }
+    if (strstr($userMessage, "a") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textAccount1);
+    }
+    if (strstr($userMessage, "A") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textAccount1);
+    }
+    if (strstr($userMessage, "a") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textAccount2);
+    }
+    if (strstr($userMessage, "A") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textAccount2);
+    }
+
+    // ----------------------------------------------------------------------------------------- Account
 
 
 
