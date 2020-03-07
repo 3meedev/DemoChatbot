@@ -56,38 +56,17 @@ $eventAccountLink = NULL;
 $eventMemberJoined = NULL;
 $eventMemberLeft = NULL;
 
-// switch ($eventType) {
-//     case 'message':
-//         $eventMessage = true;
-//         break;
-//     case 'postback':
-//         $eventPostback = true;
-//         break;
-//     case 'join':
-//         $eventJoin = true;
-//         break;
-//     case 'leave':
-//         $eventLeave = true;
-//         break;
-//     case 'follow':
-//         $eventFollow = true;
-//         break;
-//     case 'unfollow':
-//         $eventUnfollow = true;
-//         break;
-//     case 'beacon':
-//         $eventBeacon = true;
-//         break;
-//     case 'accountLink':
-//         $eventAccountLink = true;
-//         break;
-//     case 'memberJoined':
-//         $eventMemberJoined = true;
-//         break;
-//     case 'memberLeft':
-//         $eventMemberLeft = true;
-//         break;
-// }
+switch ($eventType) {
+    case 'message':
+        $eventMessage = true;
+        break;
+    case 'postback':
+        $eventPostback = true;
+        break;    
+    case 'follow':
+        $eventFollow = true;
+        break;    
+}
 
 if ($eventObj->isUserEvent()) {
     $userId = $eventObj->getUserId();
