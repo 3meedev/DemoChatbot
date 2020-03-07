@@ -335,9 +335,7 @@ $textGroup1 = new BubbleContainerBuilder(
 ___________________________________
 
 มีค่ะ แจ้งยูส+สลิปการโอน นะคะ
-___________________________________
-                
-                ",
+___________________________________",
                 NULL,
                 NULL,
                 NULL,
@@ -351,7 +349,7 @@ ___________________________________
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("GO", "http://niik.in"),
+                new UriTemplateActionBuilder("สูตรบาคาร่า", ""),
                 NULL,
                 NULL,
                 NULL,
