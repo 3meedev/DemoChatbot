@@ -104,19 +104,7 @@ if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)
 }
 
 // ----------------------------------------------------------------------------------------- TextAll
-$postback = new PostbackTemplateActionBuilder(
-    'Postback',
-    http_build_query(array(
-        'action'=>'buy',
-        'item'=>100
-    )),
-     'Buy'
-);                            
-$quickReply = new QuickReplyMessageBuilder(
-    array(                 
-        new QuickReplyButtonBuilder($postback),                                    
-    )
-);     
+
 
 $textToPromotion = new BubbleContainerBuilder(
     "ltr",
@@ -1068,7 +1056,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 )
             )
         );        
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     }
     if ($userMessage == "สมัคร") {
         $textReplyMessage = new BubbleContainerBuilder(
@@ -1097,6 +1085,19 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     // ----------------------------------------------------------------------------------------- Promotion
 
     if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {
+        $postback = new PostbackTemplateActionBuilder(
+            'ย้อนกลับ',
+            http_build_query(array(
+                'action'=>'buy',
+                'item'=>100
+            )),
+             'ย้อนกลับ'
+        );                            
+        $quickReply = new QuickReplyMessageBuilder(
+            array(                 
+                new QuickReplyButtonBuilder($postback),                                    
+            )
+        );    
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
     if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {        
