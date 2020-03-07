@@ -65,10 +65,10 @@ $textToPromotion = new BubbleContainerBuilder(
 ___________________________________
 
 หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-1. มีโปรโมชั่นอะไรบ้าง ?
-2. ถ้ารับโปรโมชั่น ต้องทำเทิร์นเท่าไหร่ ?
-3. ถ้าไม่รับโบนัส จะต้องทำเทิร์นมั้ย ?
-4. มีเครดิตฟรีมั้ย ?
+1. มีโปรโมชั่นอะไรบ้าง
+2. ถ้ารับโปรโมชั่น ต้องทำเทิร์นเท่าไหร่
+3. ถ้าไม่รับโบนัส จะต้องทำเทิร์นมั้ย
+4. มีเครดิตฟรีมั้ย
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -196,9 +196,92 @@ $textPromotion4 = new BubbleContainerBuilder(
 มีเครดิตฟรีมั้ย ?
 ___________________________________
 
-เงินที่สมัครสามารถนำไปเล่นในเว็บได้เลย
-และได้ของแถมด้วยนะคะ 
+เงินที่สมัครสามารถนำไปเล่นในเว็บได้
+เลยและได้ของแถมด้วยนะคะ 
+___________________________________
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
 
+$textToRecmomend = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+                        แนะนำ
+
+พิมพ์ r ตามด้วยหัวข้อที่ต้องการ เช่น r1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ใส่คนแนะนำว่าอะไร
+2. ถ้าชวนเพื่อนมาสมัครจะได้อะไรมั้ย
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRecommend1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+ใส่คนแนะนำว่าอะไร ?
+___________________________________
+
+SL99 แนะนำให้สมัครคะ 
+___________________________________
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRecommend2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+ถ้าชวนเพื่อนมาสมัครพี่จะได้อะไรมั้ย ?
+___________________________________
+
+ทางเรามีโปรโมชั่นชวนเพื่อนให้คะ
+___________________________________
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
                 NULL,
                 NULL,
@@ -308,6 +391,28 @@ if (strstr($userMessage,"P") == true && strstr($userMessage,"4") == true) {
 }
 
 // ----------------------------------------------------------------------------------------- Promotion
+// ----------------------------------------------------------------------------------------- Recommend
+
+if (strstr($userMessage,"q") == true && strstr($userMessage,"2") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textToRecommend);
+}
+if (strstr($userMessage,"Q") == true && strstr($userMessage,"2") == true) {
+    $replyData = new FlexMessageBuilder("Flex", $textToRecommend);
+}
+if (strstr($userMessage,"r") == true && strstr($userMessage,"1") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textRecommend1);
+}
+if (strstr($userMessage,"R") == true && strstr($userMessage,"1") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textRecommend1);
+}
+if (strstr($userMessage,"r") == true && strstr($userMessage,"2") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textRecommend2);
+}
+if (strstr($userMessage,"R") == true && strstr($userMessage,"2") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textRecommend2);
+}
+
+// ----------------------------------------------------------------------------------------- Recommend
 
 
 
