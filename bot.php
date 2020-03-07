@@ -14,13 +14,13 @@ include 'bot_settings.php';
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
 use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
 use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
 use LINE\LINEBot\TemplateActionBuilder\CameraRollTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\CameraTemplateActionBuilder;
 use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
@@ -105,17 +105,13 @@ if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)
 
 // ----------------------------------------------------------------------------------------- QuickReply
 
-$postback = new PostbackTemplateActionBuilder(
+$textBackQuestion = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
-    http_build_query(array(
-        'action'=>'buy',
-        'item'=>100
-    )),
-     'ย้อนกลับเมนูสอบถาม'
+    'ย้อนกลับเมนูสอบถาม'
 );                            
 $quickReply = new QuickReplyMessageBuilder(
     array(                 
-        new QuickReplyButtonBuilder($postback),                                    
+        new QuickReplyButtonBuilder($textBackQuestion),                                    
     )
 ); 
 
