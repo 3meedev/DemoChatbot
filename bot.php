@@ -1053,7 +1053,7 @@ if (!is_null($events)) {
     // ----------------------------------------------------------------------------------------- MainMenu
 
 if ($userMessage != null) {
-    if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q") {
+    if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "กลับเมนูสอบถาม") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
