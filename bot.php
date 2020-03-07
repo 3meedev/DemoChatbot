@@ -1962,8 +1962,10 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('Camera roll')),
                 new QuickReplyButtonBuilder($postback),                                    
             )
-        );        
-        $replyData = new TextMessageBuilder($textReplyMessage,$quickReply);          
+        );
+
+        $replyData = new TextMessageBuilder($quickReply);  
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     }
 
 
