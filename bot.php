@@ -854,6 +854,103 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
+$textToAccount = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        เกี่ยวกับเว็บไซต์
+
+พิมพ์ w ตามด้วยหัวข้อที่ต้องการ เช่น w1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ในเว็บมีอะไรให้เล่นบ้าง
+2. เข้าเล่นยังไง
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textAccount2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ในเว็บมีอะไรให้เล่นบ้าง ?
+___________________________________
+
+ในเว็บมี บอล มวย หวย บาส ไก่ชน 
+กีฬาให้แทงมี บาคาล่าเซ็กซี่ ไฮโล  
+และคาสิโนสดต่าง เกม  สลอต รูเลท
+ให้เล่น 
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textAccount1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "เข้าเล่นยังไง ?
+___________________________________
+
+คลิกลิ้งเพื่อเข้าหน้าเว็บได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("เข้าสู่เว็บไซต์", " https://www.copa69.com/"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+
+
 // ----------------------------------------------------------------------------------------- TextAll
 // ----------------------------------------------------------------------------------------- MainMenu
 
@@ -1097,6 +1194,28 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     }
 
     // ----------------------------------------------------------------------------------------- Account
+    // ----------------------------------------------------------------------------------------- Website
+
+    if (strstr($userMessage, "q") == true && strstr($userMessage, "7") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToWebsite);
+    }
+    if (strstr($userMessage, "Q") == true && strstr($userMessage, "7") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToWebsite);
+    }
+    if (strstr($userMessage, "w") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textWebsite1);
+    }
+    if (strstr($userMessage, "W") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textWebsite1);
+    }
+    if (strstr($userMessage, "w") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textWebsite2);
+    }
+    if (strstr($userMessage, "W") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textWebsite2);
+    }
+
+    // ----------------------------------------------------------------------------------------- Website
 
 
 
