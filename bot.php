@@ -455,7 +455,7 @@ ___________________________________",
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("การเล่นบอล", "https://youtu.be/8O8M8R2Kffg"),
+                new UriTemplateActionBuilder("การเล่นบอล", "https://www.youtu.be/channel/UC0j3s6xKcdOX9OFP05W82Bg"),
                 NULL,
                 NULL,
                 NULL,
