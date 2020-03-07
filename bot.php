@@ -103,6 +103,23 @@ if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)
     $replyToken = $eventObj->getReplyToken();
 }
 
+// ----------------------------------------------------------------------------------------- QuickReply
+
+$postback = new PostbackTemplateActionBuilder(
+    'ย้อนกลับ',
+    http_build_query(array(
+        'action'=>'buy',
+        'item'=>100
+    )),
+     'ย้อนกลับเมนูสอบถาม'
+);                            
+$quickReply = new QuickReplyMessageBuilder(
+    array(                 
+        new QuickReplyButtonBuilder($postback),                                    
+    )
+); 
+
+// ----------------------------------------------------------------------------------------- QuickReply
 // ----------------------------------------------------------------------------------------- TextAll
 
 
@@ -1023,7 +1040,7 @@ if (!is_null($events)) {
     // ----------------------------------------------------------------------------------------- MainMenu
 
 if ($userMessage != null) {
-    if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q") {
+    if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม" ) {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -1084,24 +1101,11 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     // ----------------------------------------------------------------------------------------- MainMenu
     // ----------------------------------------------------------------------------------------- Promotion
 
-    if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {
-        $postback = new PostbackTemplateActionBuilder(
-            'ย้อนกลับ',
-            http_build_query(array(
-                'action'=>'buy',
-                'item'=>100
-            )),
-             'ย้อนกลับ'
-        );                            
-        $quickReply = new QuickReplyMessageBuilder(
-            array(                 
-                new QuickReplyButtonBuilder($postback),                                    
-            )
-        );    
+    if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {           
         $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReply);
     }
     if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {        
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
+        $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReply);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "1") == true) {
         $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
