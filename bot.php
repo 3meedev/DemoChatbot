@@ -1895,6 +1895,9 @@ if (!is_null($events)) {
             $userMessage = $eventObj->getText();
         }
     }
+    // ----------------------------------------------------------------------------------------- MainMenu
+
+if ($userMessage != null) {
     if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
@@ -1931,20 +1934,45 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         $postback = new PostbackTemplateActionBuilder(
             'Postback',
             http_build_query(array(
-                'action' => 'buy',
-                'item' => 100
+                'action'=>'buy',
+                'item'=>100
             )),
-            'Buy'
-        );
+             'Buy'
+        );                            
         $quickReply = new QuickReplyMessageBuilder(
-            array(
+            array(                                    
                 new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('Camera')),
                 new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('Camera roll')),
-                new QuickReplyButtonBuilder($postback),
+                new QuickReplyButtonBuilder($postback),                                    
             )
-        );
+        );     
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
     }
+    if ($userMessage == "สมัคร") {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "ต้องการ",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
+                    )
+                )
+            )
+        );
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    }
+
+    // ----------------------------------------------------------------------------------------- MainMenu
+}
 
 // --------------------------------------------------------------------------------------------------------------
 
