@@ -508,7 +508,7 @@ TWS "
 
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-    }     else if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true
+    } else if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true
     || strstr($userMessage,"จังหวัด") == true || strstr($userMessage,"จ.") == true) {       
                 $textReplyMessage = new BubbleContainerBuilder(
                     "ltr",
@@ -533,27 +533,27 @@ TWS "
                 );
                 $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);       
     } 
-    else {
-            $actionBuilder = array(
-                new MessageTemplateActionBuilder(
-                    'รายละเอียดโปรโมชั่น',
-                    'เรียกดูโปรโมชั่น' 
-                ), 
-                new MessageTemplateActionBuilder(
-                    'สมัครโปรโมชั่น',
-                    'สมัครโปรโมชั่น'
-                )             
-            );
-            $imageUrl = '';
-            $replyData = new TemplateMessageBuilder('Button Template',
-                new ButtonTemplateBuilder(
-                        'เมนูหลัก',
-                        'กรุณาเลือกหัวข้อที่ต้องการ..',
-                        $imageUrl,
-                        $actionBuilder
-                )
-            );              
-        }
+    // else {
+    //         $actionBuilder = array(
+    //             new MessageTemplateActionBuilder(
+    //                 'รายละเอียดโปรโมชั่น',
+    //                 'เรียกดูโปรโมชั่น' 
+    //             ), 
+    //             new MessageTemplateActionBuilder(
+    //                 'สมัครโปรโมชั่น',
+    //                 'สมัครโปรโมชั่น'
+    //             )             
+    //         );
+    //         $imageUrl = '';
+    //         $replyData = new TemplateMessageBuilder('Button Template',
+    //             new ButtonTemplateBuilder(
+    //                     'เมนูหลัก',
+    //                     'กรุณาเลือกหัวข้อที่ต้องการ..',
+    //                     $imageUrl,
+    //                     $actionBuilder
+    //             )
+    //         );              
+    //     }
     } else if ($userImage == null) {
     $textReplyMessage = new BubbleContainerBuilder(
         "ltr",
