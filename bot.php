@@ -47,14 +47,8 @@ $userImage = $events['events'][0]['image'];
 $userMessage = $events['events'][0]['message']['text'];
 $userID = $events['events'][0]['source']['userId'];
 $userMessage = strtolower($userMessage);
-// $source = explode(" ", $userMessage);
-// $provinc = array(
-//     'กรุงเทพฯ','กรุงเทพ','กรุงเทพมหานคร','กทม','กทม.','กรุงเทพมหานครฯ',
-//     'กระบี่', 'กาญจนบุรี', 'กาฬสินธุ์', 'กำแพงเพชร', 'ขอนแก่น', 'จันทบุรี', 'ฉะเชิงเทรา', 'ชลบุรี', 'ชัยนาท', 'ชัยภูมิ', 'ชุมพร', 'เชียงใหม่', 'เชียงราย', 'ตรัง', 'ตราด', 'ตาก', 'นครนายก', 'นครปฐม', 'นครพนม', 'นครราชสีมา', 'นครศรีธรรมราช', 'นครสวรรค์', 'นนทบุรี',
-//     'นราธิวาส', 'น่าน', 'บึงกาฬ', 'บุรีรัมย์', 'ปทุมธานี', 'ประจวบคีรีขันธ์', 'ปราจีนบุรี', 'ปัตตานี', 'พระนครศรีอยุธยา', 'พะเยา', 'พังงา', 'พัทลุง', 'พิจิตร', 'พิษณุโลก', 'เพชรบุรี', 'เพชรบูรณ์', 'แพร่', 'ภูเก็ต', 'มหาสารคาม', 'มุกดาหาร', 'แม่ฮ่องสอน', 'ยโสธร', 'ยะลา',
-//     'ร้อยเอ็ด', 'ระนอง', 'ระยอง', 'ราชบุรี', 'ลพบุรี', 'ลำปาง', 'ลำพูน', 'เลย', 'ศรีสะเกษ', 'สกลนคร', 'สงขลา', 'สตูล', 'สมุทรปราการ', 'สมุทรสงคราม', 'สมุทรสาคร', 'สระแก้ว', 'สระบุรี', 'สิงห์บุรี', 'สุโขทัย', 'สุพรรณบุรี', 'สุราษฎร์ธานี', 'สุรินทร์', 'หนองคาย', 'หนองบัวลำภู',
-//     'อ่างทอง', 'อำนาจเจริญ', 'อุดรธานี', 'อุตรดิตถ์', 'อุทัยธานี', 'อุบลราชธานี'
-// );
+
+// ----------------------------------------------------------------------------------------- TextAll
 
 $textToPromotion = new BubbleContainerBuilder(
     "ltr",
@@ -65,7 +59,7 @@ $textToPromotion = new BubbleContainerBuilder(
         array(
             new TextComponentBuilder(
                 "
-                    โปรโมชั่น
+                        โปรโมชั่น
 ___________________________________
 
 พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
@@ -89,6 +83,135 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
+$textPromotion1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+
+มีโปรโมชั่นอะไรบ้าง
+___________________________________
+
+ตอนนี้มีโปรโมชั่น 30% จากยอดฝาก 
+หรือเลือกรับโปรโมชัั่นพร้อมของแถม 
+
+1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
+2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
+3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
+4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
+5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
+6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
+7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
+8. สมัคร 500 บาท ได้รับ Smart Watch 
+9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
+10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
+11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
+12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
+13. สมัคร 300 บาท ได้รับ Game Handle 
+14. สมัครฝาก 200 รับโบนัส 30 %
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textPromotion2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+
+ถ้ารับโปรโมชั่นต้องทำเทิร์นเท่าไหร่
+___________________________________
+
+ทุกโปรทำเทิร์น 1.5 ค่ะ เช่น ฝาก200 ( ต้อง
+มียอดเล่นได้ หรือเสียประมาณ 300 ) ก็ถอนได้
+แล้วค่ะ เล่นได้ทุกอย่าง เช่น คาสิโน เกมส์ แทง 
+บอล อื่นๆ เป็นต้นค่ะ
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textPromotion3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+
+ถ้าไม่รับโบนัสจะต้องทำเทิร์นมั้ย
+___________________________________
+
+ถ้าไม่รับโบนัสก้ทำเทริน 1.5 เหมือนกันคะ
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textPromotion4 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "
+
+มีเครดิตฟรีมั้ย
+___________________________________
+
+เงินที่สมัครสามารถนำไปเล่นในเว็บได้เลยและได้
+ของแถมด้วยนะคะ 
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+// ----------------------------------------------------------------------------------------- TextAll
 // ----------------------------------------------------------------------------------------- MainMenu
 
 if ($userMessage != null) {
@@ -158,95 +281,29 @@ if (strstr($userMessage,"q") == true && strstr($userMessage,"1") == true) {
 if (strstr($userMessage,"Q") == true && strstr($userMessage,"1") == true) {
     $replyData = new FlexMessageBuilder("Flex", $textToPromotion);
 }
-if (strstr($userMessage,"p") == true && strstr($userMessage,"1") == true) {
-    $textReplyMessage = new BubbleContainerBuilder(
-        "ltr",
-        NULL,
-        NULL,
-        new BoxComponentBuilder(
-            "horizontal",
-            array(
-                new TextComponentBuilder(
-                    "
-
-มีโปรโมชั่นอะไรบ้าง
-___________________________________
-
-ตอนนี้มีโปรโมชั่น 30% จากยอดฝาก หรือ
-เลือกรับโปรโมชัั่นพร้อมของแถม เช่น
-
-1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
-2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
-3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
-4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
-5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
-6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
-7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
-8. สมัคร 500 บาท ได้รับ Smart Watch 
-9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
-10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
-11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
-12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
-13. สมัคร 300 บาท ได้รับ Game Handle 
-14. สมัครฝาก 200 รับโบนัส 30 %
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                    NULL,
-                    NULL,
-                    "md",
-                    NULL,
-                    NULL,
-                    true
-                )
-            )
-        )
-    );
-    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+if (strstr($userMessage,"p") == true && strstr($userMessage,"1") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
 }
-if (strstr($userMessage,"P") == true && strstr($userMessage,"1") == true) {
-    $textReplyMessage = new BubbleContainerBuilder(
-        "ltr",
-        NULL,
-        NULL,
-        new BoxComponentBuilder(
-            "horizontal",
-            array(
-                new TextComponentBuilder(
-                    "
-
-มีโปรโมชั่นอะไรบ้าง
-___________________________________
-
-ตอนนี้มีโปรโมชั่น 30% จากยอดฝาก หรือ
-เลือกรับโปรโมชัั่นพร้อมของแถม เช่น
-
-1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
-2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
-3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
-4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
-5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
-6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
-7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
-8. สมัคร 500 บาท ได้รับ Smart Watch 
-9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
-10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
-11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
-12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
-13. สมัคร 300 บาท ได้รับ Game Handle 
-14. สมัครฝาก 200 รับโบนัส 30 %
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                    NULL,
-                    NULL,
-                    "md",
-                    NULL,
-                    NULL,
-                    true
-                )
-            )
-        )
-    );
-    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+if (strstr($userMessage,"P") == true && strstr($userMessage,"1") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
+}
+if (strstr($userMessage,"p") == true && strstr($userMessage,"2") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion2);
+}
+if (strstr($userMessage,"P") == true && strstr($userMessage,"2") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion2);
+}
+if (strstr($userMessage,"p") == true && strstr($userMessage,"3") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion3);
+}
+if (strstr($userMessage,"P") == true && strstr($userMessage,"3") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion3);
+}
+if (strstr($userMessage,"p") == true && strstr($userMessage,"4") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion4);
+}
+if (strstr($userMessage,"P") == true && strstr($userMessage,"4") == true) {    
+    $replyData = new FlexMessageBuilder("Flex", $textPromotion4);
 }
 
 // ----------------------------------------------------------------------------------------- Promotion
