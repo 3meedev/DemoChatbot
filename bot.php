@@ -1098,7 +1098,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 new QuickReplyButtonBuilder($postback),                                    
             )
         );    
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     }
     if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {        
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReply);
