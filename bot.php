@@ -56,116 +56,83 @@ $userMessage = strtolower($userMessage);
 //     'อ่างทอง', 'อำนาจเจริญ', 'อุดรธานี', 'อุตรดิตถ์', 'อุทัยธานี', 'อุบลราชธานี'
 // );
 
-switch ($userMessage) {
-    case "สอบถาม":
-        if($userMessage != null) {
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,
-                NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder(
-                            "ต้องการสอบถามหัวข้อใหน",
-                            NULL,
-                            NULL,
-                            "md",
-                            NULL,
-                            NULL,
-                            true
-                        )
+if($userMessage != null) {
+    if($userMessage == "สอบถาม"){
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "ต้องการสอบถามหัวข้อใหน",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
                     )
                 )
-    
-    
-            );
-    
-    
-            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        } else if($userMessage == "ข้อ1") {
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,
-                NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder(
-                            "ใหน",
-                            NULL,
-                            NULL,
-                            "md",
-                            NULL,
-                            NULL,
-                            true
-                        )
+            )
+        );   
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    }
+    if($userMessage == "สมัคร") {
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "ต้องการ",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
                     )
                 )
-    
-    
-            );
-    
-    
-            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        }
-        
-    break;
-    case "สมัคร":
-        if($userMessage != null) {
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,
-                NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder(
-                            "ต้องการ",
-                            NULL,
-                            NULL,
-                            "md",
-                            NULL,
-                            NULL,
-                            true
-                        )
+            )
+        );
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    }
+}    
+if($userMessage == null) {
+    if($userMessage == "สอบถาม"){
+        $textReplyMessage = new BubbleContainerBuilder(
+            "ltr",
+            NULL,
+            NULL,
+            new BoxComponentBuilder(
+                "horizontal",
+                array(
+                    new TextComponentBuilder(
+                        "ต้องการสอบถามหัวข้อใหน",
+                        NULL,
+                        NULL,
+                        "md",
+                        NULL,
+                        NULL,
+                        true
                     )
                 )
-    
-    
-            );
-    
-    
-            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        } else if($userMessage == "ข้อ1") {
-            $textReplyMessage = new BubbleContainerBuilder(
-                "ltr",
-                NULL,
-                NULL,
-                new BoxComponentBuilder(
-                    "horizontal",
-                    array(
-                        new TextComponentBuilder(
-                            "ต้อง",
-                            NULL,
-                            NULL,
-                            "md",
-                            NULL,
-                            NULL,
-                            true
-                        )
-                    )
-                )
-    
-    
-            );
-    
-    
-            $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
-        }
-        
-    break;
+            )
+        );   
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+    }
 }
+            
+       
+   
+        
+            
+        
+
 
 // if ($userMessage != null) {
 
