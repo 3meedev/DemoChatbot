@@ -2071,20 +2071,20 @@ if(!is_null($events)){
                                     new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('Camera')),
                                     new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('Camera roll')),
                                     new QuickReplyButtonBuilder($postback),
-                                    new QuickReplyButtonBuilder($datetimePicker),
-                                    new QuickReplyButtonBuilder(
-                                        $txtMsg,
-                                        "https://www.ninenik.com/images/ninenik_page_logo.png"
-                                    ),
+                                    // new QuickReplyButtonBuilder($datetimePicker),
+                                    // new QuickReplyButtonBuilder(
+                                    //     $txtMsg,
+                                    //     "https://www.ninenik.com/images/ninenik_page_logo.png"
+                                    // ),
                                 )
                             );
                             $textReplyMessage = "ส่งพร้อม quick reply ";
                             $replyData = new TextMessageBuilder($textReplyMessage,$quickReply);                             
                             break;                                                                         
-                    // default:
-                    //     $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
-                    //     $replyData = new TextMessageBuilder($textReplyMessage);         
-                    //     break;                                      
+                    default:
+                        $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
+                        $replyData = new TextMessageBuilder($textReplyMessage);         
+                        break;                                      
                 }
                 break;                                                  
             default:
