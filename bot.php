@@ -455,11 +455,179 @@ ___________________________________",
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("การเล่นบอล", "https://www.youtube.com/channel/UC0j3s6xKcdOX9OFP05W82Bg"),
+                new UriTemplateActionBuilder("การเล่นบอล/หวย", "https://www.youtube.com/channel/UC0j3s6xKcdOX9OFP05W82Bg"),
                 NULL,
                 NULL,
                 NULL,
                 "primary"
+            )
+        )
+    )
+);
+
+$textToDeposit = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "                        ฝาก/ถอน
+
+พิมพ์ d ตามด้วยหัวข้อที่ต้องการ เช่น d1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. ฝาก/ถอนขั้นต่ำเท่าไหร่
+2. ครั้งต่อไปฝาก/ถอนยังไง
+3. ฝาก/ถอน จำกัดครั้งมั้ย ถอนได้เร็วมั้ย
+4. ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย
+5. โอนเงินเสร็จแล้วทำไงต่อ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ฝาก/ถอนขั้นต่ำเท่าไหร่ ?
+___________________________________
+
+หลังจากสมัครเป็นสมาชิกแล้วฝาก/ถอน
+ขั้นต่ำ 100 บาท ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ครั้งต่อไปฝาก/ถอนยังไง ?
+___________________________________
+
+ฝาก/ถอนสามารถทำรายการผ่านหน้า
+เว็บได้เลยค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ฝาก/ถอน จำกัดครั้งมั้ย ถอนได้เร็วมั้ย ?
+___________________________________
+
+ฝากถอนผ่านหน้าเว็บไม่จำกัดจำนวนครั้ง
+ฝากถอนภายใน 5 วินาที
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit4 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย ?
+___________________________________
+
+ไม่ได้ค่ะ ต้องมียอดเล่นให้ครบเทริน
+ถึงถอนออกได้ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDeposit5 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โอนเงินเสร็จแล้วทำไงต่อ ?
+___________________________________
+
+รอแอดมินตรวจสอบสักครู่นะคะ เสร็จ
+แล้วแอดมินจะส่งเลขยูสเวอร์ให้คะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
             )
         )
     )
@@ -619,6 +787,46 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     }
 
     // ----------------------------------------------------------------------------------------- Group
+    // ----------------------------------------------------------------------------------------- Deposit
+
+    if (strstr($userMessage, "q") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToDeposit);
+    }
+    if (strstr($userMessage, "Q") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textToDeposit);
+    }
+    if (strstr($userMessage, "d") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit1);
+    }
+    if (strstr($userMessage, "D") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit1);
+    }
+    if (strstr($userMessage, "d") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit2);
+    }
+    if (strstr($userMessage, "D") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit2);
+    }
+    if (strstr($userMessage, "d") == true && strstr($userMessage, "3") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit3);
+    }
+    if (strstr($userMessage, "D") == true && strstr($userMessage, "3") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit3);
+    }
+    if (strstr($userMessage, "d") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit4);
+    }
+    if (strstr($userMessage, "D") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit4);
+    }
+    if (strstr($userMessage, "d") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit5);
+    }
+    if (strstr($userMessage, "D") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDeposit5);
+    }
+
+    // ----------------------------------------------------------------------------------------- Deposit
 
 
 
