@@ -56,8 +56,10 @@ $userMessage = strtolower($userMessage);
 //     'อ่างทอง', 'อำนาจเจริญ', 'อุดรธานี', 'อุตรดิตถ์', 'อุทัยธานี', 'อุบลราชธานี'
 // );
 
-if($userMessage != null) {
-    if($userMessage == "สอบถาม"){
+// ----------------------------------------------------------------------------------------- MainMenu
+
+if ($userMessage != null) {
+    if ($userMessage == "สอบถาม") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -78,7 +80,7 @@ ___________________________________
 6. บัญชีผู้ใช้
 7. เกี่ยวกับเว็บไซต์
 
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ..",
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
                         NULL,
                         NULL,
                         "md",
@@ -88,10 +90,10 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ..",
                     )
                 )
             )
-        );   
+        );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     }
-    if($userMessage == "สมัคร") {
+    if ($userMessage == "สมัคร") {
         $textReplyMessage = new BubbleContainerBuilder(
             "ltr",
             NULL,
@@ -113,13 +115,56 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ..",
         );
         $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
     }
-}    
-            
-       
-   
-        
-            
-        
+
+// ----------------------------------------------------------------------------------------- MainMenu
+// ----------------------------------------------------------------------------------------- Promotion
+
+if ($userMessage == "q1") {
+    $textReplyMessage = new BubbleContainerBuilder(
+        "ltr",
+        NULL,
+        NULL,
+        new BoxComponentBuilder(
+            "horizontal",
+            array(
+                new TextComponentBuilder(
+                    "
+              โปรโมชั่น
+___________________________________
+
+พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
+___________________________________
+
+หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+1. โปรโมชั่น
+2. คำแนะนำ
+3. กลุ่ม/สูตร
+4. ฝาก/ถอน
+5. การสมัครสมาชิก
+6. บัญชีผู้ใช้
+7. เกี่ยวกับเว็บไซต์
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                    NULL,
+                    NULL,
+                    "md",
+                    NULL,
+                    NULL,
+                    true
+                )
+            )
+        )
+    );
+    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+}
+
+// ----------------------------------------------------------------------------------------- Promotion
+
+
+
+
+
+
 
 
 // if ($userMessage != null) {
@@ -650,6 +695,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ..",
 //     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
 // }
 
+}
 
 $response = $bot->replyMessage($replyToken, $replyData);
 
