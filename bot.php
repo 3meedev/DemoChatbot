@@ -870,6 +870,10 @@ ___________________________________
 2. ถ้าเคยสมัครแล้ว แต่จะใช้บันชีแฟน
 สมัครอีกได้ไหม (แฟนนามสกุลเดียวกัน)
 3. เคยสมัครสมาชิกแล้วสมัครใหม่ได้มั้ย
+4. สมัครง่ายมั้ย
+5. สมัครขั้นต่ำเท่าไหร่
+6. สมัครยังไง
+7. สมัคร 100 ได้ไหม
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -966,6 +970,114 @@ ___________________________________
 
 ไม่ได้ค่ะเพราะ 1 ชื่อสามารถสมัคร
 ได้แค่ 1 ยูสเซอร์เท่านั้นค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister4 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "สมัครง่ายมั้ย ?
+___________________________________
+
+สมัครง่าย เล่นง่าย เล่นในมือถือได้
+ฝากถอนเงินได้ 24 ชม. เลยนะคะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister5 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "สมัครขั้นต่ำเท่าไหร่ ?
+___________________________________
+
+เปิดยูสฝากครั้งแรก 200 บาท ค่ะ
+ฝากครั้งต่อไป 100 บาท ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister6 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "สมัครยังไง ?
+___________________________________
+
+คลิกเมนูสมัครเพื่อสมัครสมาชิกค่ะ
+สมัครสมาชิกขั้นต่ำ 200 บาท 
+ได้รับโบโบนัสเพิ่ม 30% ค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textRegister7 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "สมัคร100ได้มั้ย ?
+___________________________________
+
+ได้คะ แต่ว่าจะไม่ได้รับโบนัส30%นะคะ
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -1416,6 +1528,30 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     if (strstr($userMessage, "U") == true && strstr($userMessage, "3") == true) {
         $replyData = new FlexMessageBuilder("Flex", $textRegister3, $quickReplySubRegister);
     }
+    if (strstr($userMessage, "u") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
+    }
+    if (strstr($userMessage, "U") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
+    }
+    if (strstr($userMessage, "u") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
+    }
+    if (strstr($userMessage, "U") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
+    }
+    if (strstr($userMessage, "u") == true && strstr($userMessage, "6") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
+    }
+    if (strstr($userMessage, "U") == true && strstr($userMessage, "6") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
+    }
+    if (strstr($userMessage, "u") == true && strstr($userMessage, "7") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
+    }
+    if (strstr($userMessage, "U") == true && strstr($userMessage, "7") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
+    }  
 
     // ----------------------------------------------------------------------------------------- Register
     // ----------------------------------------------------------------------------------------- Account
