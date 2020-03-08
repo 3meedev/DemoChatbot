@@ -125,6 +125,26 @@ $quickReplyPromotion = new QuickReplyMessageBuilder(
     )
 ); 
 
+$textBackPromotion = new MessageTemplateActionBuilder(
+    'ย้อนกลับ',
+    'ย้อนกลับเมนูโปรโมชั่น'
+);    
+$textReplyToRegister = new MessageTemplateActionBuilder(
+    'สมัคร',
+    'สมัคร'
+); 
+$textReplyToContact = new MessageTemplateActionBuilder(
+    'ติดต่อ',
+    'ติดต่อ'
+);                         
+$quickReplySubPromotion = new QuickReplyMessageBuilder(
+    array(                 
+        new QuickReplyButtonBuilder($textBackPromotion),
+        new QuickReplyButtonBuilder($textReplyToRegister),  
+        new QuickReplyButtonBuilder($textReplyToContact),                                    
+    )
+); 
+
 // ----------------------------------------------------------------------------------------- QuickReply
 // ----------------------------------------------------------------------------------------- TextAll
 
@@ -1114,28 +1134,28 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "1") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
     }
     if (strstr($userMessage, "P") == true && strstr($userMessage, "1") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "2") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion2);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
     }
     if (strstr($userMessage, "P") == true && strstr($userMessage, "2") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion2);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "3") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion3);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
     }
     if (strstr($userMessage, "P") == true && strstr($userMessage, "3") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion3);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "4") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion4);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
     }
     if (strstr($userMessage, "P") == true && strstr($userMessage, "4") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textPromotion4);
+        $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
     }
 
     // ----------------------------------------------------------------------------------------- Promotion
