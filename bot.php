@@ -1081,7 +1081,7 @@ $textToWebsite = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                      เกี่ยวกับเว็บไซต์
+                "                        เกี่ยวกับเว็บไซต์
 
 พิมพ์ w ตามด้วยหัวข้อที่ต้องการ เช่น w1
 ___________________________________
@@ -1158,7 +1158,7 @@ ___________________________________",
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("เข้าสู่เว็บไซต์", "https://www.google.com/"),
+                new UriTemplateActionBuilder("เข้าสู่เว็บไซต์", " https://www.copa69.com/"),
                 NULL,
                 NULL,
                 NULL,
