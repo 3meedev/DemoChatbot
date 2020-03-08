@@ -121,7 +121,7 @@ $quickReplyPromotion = new QuickReplyMessageBuilder(
     array(                 
         new QuickReplyButtonBuilder($textBackQuestion),
         new QuickReplyButtonBuilder($textReplyToRegister),  
-        new QuickReplyButtonBuilder($textReplyToContact)                                    
+        new QuickReplyButtonBuilder($textReplyToContact),                                    
     )
 ); 
 
@@ -1111,7 +1111,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
     }
     if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {        
-        $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReply);
+        $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
     }
     if (strstr($userMessage, "p") == true && strstr($userMessage, "1") == true) {
         $replyData = new FlexMessageBuilder("Flex", $textPromotion1);
