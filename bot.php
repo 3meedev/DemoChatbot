@@ -109,17 +109,19 @@ $textBackQuestion = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
     'ย้อนกลับเมนูสอบถาม'
 );    
-$textBackQuestion = new MessageTemplateActionBuilder(
+$textReplyToRegister = new MessageTemplateActionBuilder(
     'สมัคร',
     'สมัคร'
 ); 
-$textBackQuestion = new MessageTemplateActionBuilder(
+$textReplyToContact = new MessageTemplateActionBuilder(
     'ติดต่อ',
     'ติดต่อ'
 );                         
-$quickReply = new QuickReplyMessageBuilder(
+$quickReplyPromotion = new QuickReplyMessageBuilder(
     array(                 
-        new QuickReplyButtonBuilder($textBackQuestion),                                    
+        new QuickReplyButtonBuilder($textBackQuestion),
+        new QuickReplyButtonBuilder($textReplyToRegister),  
+        new QuickReplyButtonBuilder($textReplyToContact)                                    
     )
 ); 
 
@@ -1106,7 +1108,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     // ----------------------------------------------------------------------------------------- Promotion
 
     if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {           
-        $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReply);
+        $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
     }
     if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {        
         $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReply);
