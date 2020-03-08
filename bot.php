@@ -153,6 +153,10 @@ $textBackWebsite = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
     'เกี่ยวกับเว็บไซต์'
 );   
+$textReplyUser = new MessageTemplateActionBuilder(
+    'แจ้งเลขยูส',
+    'แจ้งเลขยูส'
+);   
 
 $quickReplyMain = new QuickReplyMessageBuilder(
     array(         
@@ -277,8 +281,8 @@ $quickReplySubWebsite = new QuickReplyMessageBuilder(
 $quickReplyBackRegister = new QuickReplyMessageBuilder(
     array(                 
         new QuickReplyButtonBuilder($textReplyBackRegister),
-        new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('กล้องถ่ายรูป')),
-        new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('คลังรูปภาพ')),                         
+        new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('แนบสลิป')),
+        new QuickReplyButtonBuilder($textReplyUser),                       
     )
 ); 
 
