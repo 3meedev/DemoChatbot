@@ -270,6 +270,14 @@ $quickReplySubWebsite = new QuickReplyMessageBuilder(
         new QuickReplyButtonBuilder($textReplyToContact),                                    
     )
 ); 
+$quickReplyBackRegister = new QuickReplyMessageBuilder(
+    array(                 
+        new QuickReplyButtonBuilder($textReplyToRegister),
+        new QuickReplyButtonBuilder($textReplyToQuestion),  
+        new QuickReplyButtonBuilder($textReplyToRegister),  
+        new QuickReplyButtonBuilder($textReplyToContact),                                    
+    )
+); 
 
 // ----------------------------------------------------------------------------------------- QuickReply
 // ----------------------------------------------------------------------------------------- TextAll
@@ -1297,8 +1305,8 @@ $textDetailPromotion1 = new BubbleContainerBuilder(
                 "โปรโมชั่นที่ลูกค้าเลือก คือ
 ___________________________________
 
-สมัคร 1000 บาท ได้รับหูฟังบลูทูธ TRUT WIRELESS 5.0 
-TWS 
+สมัคร 1000 บาท ได้รับหูฟังบลูทูธ
+TRUT WIRELESS 5.0 TWS 
 
 คลิกลิ้งเพื่อสมัครได้เลยค่ะ
 ___________________________________",
@@ -1705,8 +1713,8 @@ $textDetailPromotion12 = new BubbleContainerBuilder(
                 "โปรโมชั่นที่ลูกค้าเลือก คือ
 ___________________________________
 
-สมัคร 300 บาท ได้รับกระเป๋าสะพายข้างลายสโมสรฟุตบอล
-โลก 
+สมัคร 300 บาท ได้รับกระเป๋าสะพาย
+ข้างลายสโมสรฟุตบอลโลก 
 
 คลิกลิ้งเพื่อสมัครได้เลยค่ะ
 ___________________________________",
@@ -2156,88 +2164,88 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     // ----------------------------------------------------------------------------------------- DetailPromotion
 
     if (strstr($userMessage, "s") == true && strstr($userMessage, "1") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "1") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "2") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "2") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "3") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "3") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "4") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "4") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "5") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "5") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "6") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "6") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "7") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "7") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "8") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "8") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "s") == true && strstr($userMessage, "9") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "9") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
     }  
     if (strstr($userMessage, "s") == true && strstr($userMessage, "10") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "10") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
     }  
     if (strstr($userMessage, "s") == true && strstr($userMessage, "11") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "11") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
     }  
     if (strstr($userMessage, "s") == true && strstr($userMessage, "12") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "12") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
     }  
     if (strstr($userMessage, "s") == true && strstr($userMessage, "13") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "13") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
     }  
     if (strstr($userMessage, "s") == true && strstr($userMessage, "14") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
     }
     if (strstr($userMessage, "S") == true && strstr($userMessage, "14") == true) {
-        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplySubWebsite);
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
     }      
     
 
