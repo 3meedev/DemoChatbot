@@ -108,7 +108,15 @@ if (is_null($eventLeave) && is_null($eventUnfollow) && is_null($eventMemberLeft)
 $textBackQuestion = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
     'ย้อนกลับเมนูสอบถาม'
-);                            
+);    
+$textBackQuestion = new MessageTemplateActionBuilder(
+    'สมัคร',
+    'สมัคร'
+); 
+$textBackQuestion = new MessageTemplateActionBuilder(
+    'ติดต่อ',
+    'ติดต่อ'
+);                         
 $quickReply = new QuickReplyMessageBuilder(
     array(                 
         new QuickReplyButtonBuilder($textBackQuestion),                                    
