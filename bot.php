@@ -149,8 +149,14 @@ $textBackWebsite = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
     'เกี่ยวกับเว็บไซต์'
 );   
-    
 
+$quickReplyMain = new QuickReplyMessageBuilder(
+    array(         
+        new QuickReplyButtonBuilder($textReplyToQuestion),  
+        new QuickReplyButtonBuilder($textReplyToRegister),  
+        new QuickReplyButtonBuilder($textReplyToContact),                                    
+    )
+);
 $quickReplyPromotion = new QuickReplyMessageBuilder(
     array(                 
         new QuickReplyButtonBuilder($textBackQuestion),
@@ -1331,7 +1337,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 )
             )
         );        
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
     }
     if ($userMessage == "สมัคร") {
         $textReplyMessage = new BubbleContainerBuilder(
@@ -1342,7 +1348,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "พิมพ์ a ตามด้วยโปรที่ต้องการ เช่น a1
+                        "พิมพ์ a ตามด้วยหัวข้อที่ต้องการ เช่น a1
 ___________________________________
 
 หัวข้อโปรโมชั่นต่างๆของทางเรา
@@ -1373,7 +1379,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 )
             )
         );
-        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage);
+        $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
     }
 
     // ----------------------------------------------------------------------------------------- MainMenu
