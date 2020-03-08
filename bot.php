@@ -1158,7 +1158,7 @@ ___________________________________",
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("เข้าสู่เว็บไซต์", " https://www.copa69.com"),
+                new UriTemplateActionBuilder("เข้าสู่เว็บไซต์", "www.copa69.com"),
                 NULL,
                 NULL,
                 NULL,
