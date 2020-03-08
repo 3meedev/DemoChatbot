@@ -1286,7 +1286,530 @@ ___________________________________",
     )
 );
 
-if (!is_null($events)) {
+$textDetailPromotion1 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 1000 บาท ได้รับหูฟังบลูทูธ TRUT WIRELESS 5.0 
+TWS 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion2 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 1000 บาท ได้รับพาวเวอร์แบ๊ง ELOOP E-12 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion3 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 1000 บาท ได้รับลำโพง BLUETOOTH IRON MAN 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion4 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion5 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 1000 บาท ได้รับโทรศัพท์จิ๋ว 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion6 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 500 บาท ได้รับเสื้อบอล EURO 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion7 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 500 บาท ได้รับเสื้อฮูด Nike 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion8 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 500 บาท ได้รับSmart Watch
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion9 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 500 บาท ได้รับลำโพง Bluetooth Mini
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion10 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 500 บาท ได้รับหูฟัง Bluetooth 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion11 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 300 บาท ได้รับลำโพงสโมสรฟุตบอลโลก
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion12 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 300 บาท ได้รับกระเป๋าสะพายข้างลายสโมสรฟุตบอล
+โลก 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion13 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัคร 300 บาท ได้รับGame Handle 
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+$textDetailPromotion14 = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "โปรโมชั่นที่ลูกค้าเลือก คือ
+___________________________________
+
+สมัครฝาก 200 รับโบนัส 30%
+
+คลิกลิ้งเพื่อสมัครได้เลยค่ะ
+___________________________________",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("สมัครโปรโมชั่น", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
+
+// ----------------------------------------------------------------------------------------- TextAll
+
+    if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
     if (!is_null($eventFollow)) {
         $textReplyMessage = "Copa69 สวัสดีค่ะ";
@@ -1300,7 +1823,7 @@ if (!is_null($events)) {
         }
     }
 
-    // ----------------------------------------------------------------------------------------- TextAll
+    
     // ----------------------------------------------------------------------------------------- MainMenu
 
 if ($userMessage != null) {
@@ -1630,6 +2153,95 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     }
 
     // ----------------------------------------------------------------------------------------- Website
+    // ----------------------------------------------------------------------------------------- DetailPromotion
+
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "1") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "2") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "3") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "3") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "4") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "5") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "6") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "6") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "7") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "7") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "8") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "8") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "9") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "9") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplySubWebsite);
+    }  
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "10") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "10") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplySubWebsite);
+    }  
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "11") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "11") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplySubWebsite);
+    }  
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "12") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "12") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplySubWebsite);
+    }  
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "13") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "13") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplySubWebsite);
+    }  
+    if (strstr($userMessage, "s") == true && strstr($userMessage, "14") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplySubWebsite);
+    }
+    if (strstr($userMessage, "S") == true && strstr($userMessage, "14") == true) {
+        $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplySubWebsite);
+    }      
+    
+
+    // ----------------------------------------------------------------------------------------- DetailPromotion
 }
 
     // ----------------------------------------------------------------------------------------- Respone
