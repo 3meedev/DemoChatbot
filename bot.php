@@ -113,6 +113,10 @@ $textReplyToRegister = new MessageTemplateActionBuilder(
     'สมัคร',
     'สมัคร'
 ); 
+$textReplyBackRegister = new MessageTemplateActionBuilder(
+    'ย้อนกลับ',
+    'สมัคร'
+); 
 $textReplyToContact = new MessageTemplateActionBuilder(
     'ติดต่อ',
     'ติดต่อ'
@@ -272,7 +276,7 @@ $quickReplySubWebsite = new QuickReplyMessageBuilder(
 ); 
 $quickReplyBackRegister = new QuickReplyMessageBuilder(
     array(                 
-        new QuickReplyButtonBuilder($textReplyToRegister),
+        new QuickReplyButtonBuilder($textReplyBackRegister),
         new QuickReplyButtonBuilder($textReplyToQuestion),  
         new QuickReplyButtonBuilder($textReplyToRegister),  
         new QuickReplyButtonBuilder($textReplyToContact),                                    
@@ -1879,7 +1883,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 "horizontal",
                 array(
                     new TextComponentBuilder(
-                        "พิมพ์ a ตามด้วยหัวข้อที่ต้องการ เช่น a1
+                        "พิมพ์ s ตามด้วยหัวข้อที่ต้องการ เช่น s1
 ___________________________________
 
 หัวข้อโปรโมชั่นต่างๆของทางเรา
