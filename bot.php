@@ -277,9 +277,8 @@ $quickReplySubWebsite = new QuickReplyMessageBuilder(
 $quickReplyBackRegister = new QuickReplyMessageBuilder(
     array(                 
         new QuickReplyButtonBuilder($textReplyBackRegister),
-        new QuickReplyButtonBuilder($textReplyToQuestion),  
-        new QuickReplyButtonBuilder($textReplyToRegister),  
-        new QuickReplyButtonBuilder($textReplyToContact),                                    
+        new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('กล้องถ่ายรูป')),
+        new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('คลังรูปภาพ')),                         
     )
 ); 
 
