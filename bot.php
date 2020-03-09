@@ -1877,7 +1877,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
 );
 
 // ----------------------------------------------------------------------------------------- TextAll
-
+if($typeMessage == "text") {
 if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
     if (!is_null($eventFollow)) {
@@ -1891,7 +1891,7 @@ if (!is_null($events)) {
             $userMessage = $eventObj->getText();
         }
         if ($typeMessage == 'image') {
-            $userImage = $eventObj->getImage();
+           
         }
     }
 
@@ -2313,11 +2313,15 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         }
 
 
-        // ----------------------------------------------------------------------------------------- DetailPromotion        
-        if($userImage != null){
-            $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
-        }
+        // ----------------------------------------------------------------------------------------- DetailPromotion      
+        
     }
+} else{
+    // กรณีทดสอบเงื่อนไขอื่นๆ ผู้ใช้ไม่ได้ส่งเป็นข้อความ
+    $textReplyMessage = 'สวัสดีครับ คุณ '.$typeMessage;         
+    $replyData = new TextMessageBuilder($textReplyMessage);         
+}
+
 
     // ----------------------------------------------------------------------------------------- Respone
 
