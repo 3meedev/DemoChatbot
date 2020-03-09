@@ -2524,7 +2524,9 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if (strstr($userMessage, "S") == true && strstr($userMessage, "14") == true) {
                 $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
             }
-
+            else {
+                $replyData = new FlexMessageBuilder("Flex", $textNotKeyword);
+            }
 
             // ----------------------------------------------------------------------------------------- DetailPromotion 
 }              
@@ -2546,9 +2548,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if(strstr($userMessage,"เพิ่มเติม") == true){
                 $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
             }
-            else {
-                $replyData = new FlexMessageBuilder("Flex", $textNotKeyword);
-            }
+            
 // ----------------------------------------------------------------------------------------- Image
     
     } else {
