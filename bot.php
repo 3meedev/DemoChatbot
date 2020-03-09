@@ -169,7 +169,7 @@ $textBackToAddress = new MessageTemplateActionBuilder(
 );
 $textEditAddress = new MessageTemplateActionBuilder(
     'แก้ไขที่อยู่',
-    'ที่อยู่'
+    'ย้อนกลับที่อยู่'
 );
 
 $quickReplyMain = new QuickReplyMessageBuilder(
@@ -1955,10 +1955,7 @@ $textToAddress = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "กรุณากรอกที่อยู่เพื่อจัดส่งสินค้า
-___________________________________
-
-กรุณากรอกที่อยู่เพื่อทางเราจะทำ
+                "กรุณากรอกที่อยู่เพื่อทางเราจะทำ
 การจัดส่งสินค้า โดยลูกค้าเลือกที่
 จะกรอกหรือไม่กรอกก็ได้ค่ะ
 ___________________________________
@@ -2031,9 +2028,9 @@ $textDetailUser = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "กรุณากรอก ชื่อและเบอร์โทร
+                "กรอกชื่อและเบอร์โทรเพื่อติดต่อ
 *** กรุณานำหน้าประโยคด้วย ติดต่อ
-ตัวอย่าง: ติดต่อ กอไก่ วันดี 089XXXXXXX
+ตัวอย่าง: ติดต่อ กอ ดี 089XXXXXXX
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -2495,7 +2492,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if($userMessage == "ไม่ต้องการ"){
                 $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
             }
-            if($userMessage == "ต้องการ" || $userMessage == "ที่อยู่"){
+            if($userMessage == "ต้องการ" || $userMessage == "ย้อนกลับที่อยู่"){
                 $replyData = new FlexMessageBuilder("Flex", $textAddress, $quickReplyAddress);
             }
             if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true || strstr($userMessage,"จังหวัด") == true || strstr($userMessage,"จ.") == true) {
