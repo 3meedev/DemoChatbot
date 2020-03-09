@@ -2344,7 +2344,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         
     }
 } else{              
-    $replyData = new TextMessageBuilder($textGetUser);         
+    $replyData = new FlexMessageBuilder("Flex", $textGetUser);         
 }
 
 
