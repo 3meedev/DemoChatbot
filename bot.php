@@ -265,7 +265,7 @@ $quickReplySubAccount = new QuickReplyMessageBuilder(
         new QuickReplyButtonBuilder($textBackAccount),
         new QuickReplyButtonBuilder($textReplyToQuestion),
         new QuickReplyButtonBuilder($textReplyToRegister),
-        new QuickReplyButtonBuilder($textReplyToContact),
+        new QuickReplyButtonBuilder($textReplyToContact)
     )
 );
 $quickReplySubWebsite = new QuickReplyMessageBuilder(
@@ -273,14 +273,19 @@ $quickReplySubWebsite = new QuickReplyMessageBuilder(
         new QuickReplyButtonBuilder($textBackWebsite),
         new QuickReplyButtonBuilder($textReplyToQuestion),
         new QuickReplyButtonBuilder($textReplyToRegister),
-        new QuickReplyButtonBuilder($textReplyToContact),
+        new QuickReplyButtonBuilder($textReplyToContact)
     )
 );
 $quickReplyBackRegister = new QuickReplyMessageBuilder(
     array(
         new QuickReplyButtonBuilder($textReplyBackRegister),
         new QuickReplyButtonBuilder(new CameraTemplateActionBuilder('กล้องถ่ายรูป')),
-        new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('คลังรูปภาพ')),
+        new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('คลังรูปภาพ'))
+    )
+);
+$quickReplyEditSlip = new QuickReplyMessageBuilder(
+    array(  
+        new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('แนบสลิปใหม่'))
     )
 );
 
@@ -2344,7 +2349,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         
     }
 } else{              
-    $replyData = new FlexMessageBuilder("Flex", $textGetUser);         
+    $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
 }
 
 
