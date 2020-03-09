@@ -156,7 +156,7 @@ $textAddress = new MessageTemplateActionBuilder(
     'ต้องการ'
 );
 $textNotAddress = new MessageTemplateActionBuilder(
-    'ไม่ต้องการกรอกที่อยู่',
+    'ไม่ต้องการ',
     'ไม่ต้องการ'
 );
 $textEditUser= new MessageTemplateActionBuilder(
@@ -1951,6 +1951,56 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
+$textNotAddress = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
+___________________________________",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textToAddress = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "___________________________________
+
+กรุณากรอกที่อยู่ให้ครบถ้วนสมบูรณ์
+*** กรุณานำหน้าประโยคด้วย 'ที่อยู่'
+
+ตัวอย่าง ที่อยู่ 148 หมู่1 ต.ตำบล
+อ.อำเภอ จ.จังหวัด 16589
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
 // ----------------------------------------------------------------------------------------- TextAll
 
 if (!is_null($events)) {
@@ -2394,6 +2444,12 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             }
             if(strstr($userMessage, "User_") == true || strstr($userMessage, "user_") == true || strstr($userMessage, "USER_") == true|| strstr($userMessage, "User") == true || strstr($userMessage, "USER") == true || strstr($userMessage, "user") == true) {
                 $replyData = new FlexMessageBuilder("Flex", $textToAddress, $quickReplyUser);
+            }
+            if($userMessage == "ไม่ต้องการ"){
+                $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
+            }
+            if($userMessage == "ต้องการ"){
+                $replyData = new FlexMessageBuilder("Flex", $textAddress);
             }
 // ----------------------------------------------------------------------------------------- Image
 
