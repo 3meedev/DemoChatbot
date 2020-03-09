@@ -2239,7 +2239,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 // ----------------------------------------------------------------------------------------- MainMenu
                 // ----------------------------------------------------------------------------------------- Promotion
 
-                else if (startsWith("$userMessage","q")) {
+                else if (startsWith($userMessage,"q") && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
                 } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
