@@ -1877,7 +1877,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
 );
 
 // ----------------------------------------------------------------------------------------- TextAll
-if($typeMessage == "text") {
+
 if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
     if (!is_null($eventFollow)) {
@@ -1897,7 +1897,7 @@ if (!is_null($events)) {
 
 
     // ----------------------------------------------------------------------------------------- MainMenu
-
+if($typeMessage == "text") {
     if ($userMessage != null) {
         if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
             $textReplyMessage = new BubbleContainerBuilder(
@@ -2316,8 +2316,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         // ----------------------------------------------------------------------------------------- DetailPromotion      
         
     }
-} else{
-    // กรณีทดสอบเงื่อนไขอื่นๆ ผู้ใช้ไม่ได้ส่งเป็นข้อความ
+} else{    
     $textReplyMessage = 'สวัสดีครับ คุณ '.$typeMessage;         
     $replyData = new TextMessageBuilder($textReplyMessage);         
 }
