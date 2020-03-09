@@ -2492,7 +2492,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if($userMessage == "ไม่ต้องการ"){
                 $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
             }
-            if($userMessage == "ต้องการ" || $userMessage == "ย้อนกลับที่อยู่"){
+            if($userMessage == "ต้องการ" || $userMessage == "ย้อนกลับAddress"){
                 $replyData = new FlexMessageBuilder("Flex", $textAddress, $quickReplyAddress);
             }
             if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true || strstr($userMessage,"จังหวัด") == true || strstr($userMessage,"จ.") == true) {
