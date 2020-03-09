@@ -2067,6 +2067,28 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         )
     )
 );
+$textNotKeyword = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "คุณพิมพ์ไม่ตรง Keyword ที่ค้องการค่ะ
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
 
 // ----------------------------------------------------------------------------------------- TextAll
 
@@ -2524,9 +2546,11 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if(strstr($userMessage,"เพิ่มเติม") == true){
                 $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
             }
+            else {
+                $replyData = new FlexMessageBuilder("Flex", $textNotKeyword);
+            }
 // ----------------------------------------------------------------------------------------- Image
-
-        
+    
     } else {
         $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
     }
