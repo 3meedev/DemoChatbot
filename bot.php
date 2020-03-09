@@ -159,9 +159,13 @@ $textNotAddress = new MessageTemplateActionBuilder(
     'ไม่ต้องการ',
     'ไม่ต้องการ'
 );
-$textEditUser= new MessageTemplateActionBuilder(
+$textEditUser = new MessageTemplateActionBuilder(
     'แก้ไขหมายเลขยูส',
     'แจ้งเลขยูส'
+);
+$textBackToAddress = new MessageTemplateActionBuilder(
+    'ย้อนกลับ',
+    'BAddress'
 );
 
 $quickReplyMain = new QuickReplyMessageBuilder(
@@ -301,6 +305,14 @@ $quickReplyUser = new QuickReplyMessageBuilder(
         new QuickReplyButtonBuilder($textAddress),
         new QuickReplyButtonBuilder($textNotAddress),
         new QuickReplyButtonBuilder($textEditUser),
+    )
+);
+$quickReplyAddress = new QuickReplyMessageBuilder(
+    array(
+        new QuickReplyButtonBuilder($textBackToAddress),
+        new QuickReplyButtonBuilder($textReplyToQuestion),
+        new QuickReplyButtonBuilder($textReplyToRegister),
+        new QuickReplyButtonBuilder($textReplyToContact)
     )
 );
 
@@ -2442,14 +2454,14 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if(strstr($userMessage, "แจ้งเลขยูส") == true){
                 $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
             }
-            if(strstr($userMessage, "User_") == true || strstr($userMessage, "user_") == true || strstr($userMessage, "USER_") == true|| strstr($userMessage, "User") == true || strstr($userMessage, "USER") == true || strstr($userMessage, "user") == true) {
+            if(strstr($userMessage, "User_") == true || strstr($userMessage, "user_") == true || strstr($userMessage, "USER_") == true|| strstr($userMessage, "User") == true || strstr($userMessage, "USER") == true || strstr($userMessage, "user") == true || $userMessage == "BAddress") {
                 $replyData = new FlexMessageBuilder("Flex", $textToAddress, $quickReplyUser);
             }
             if($userMessage == "ไม่ต้องการ"){
                 $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
             }
             if($userMessage == "ต้องการ"){
-                $replyData = new FlexMessageBuilder("Flex", $textAddress);
+                $replyData = new FlexMessageBuilder("Flex", $textAddress, $quickReplyAddress);
             }
 // ----------------------------------------------------------------------------------------- Image
 
