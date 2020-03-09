@@ -2589,13 +2589,13 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             else {
                 $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
             }
-}             
+             
 // ----------------------------------------------------------------------------------------- Image
   
     } else {
         $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
     }
-
+}
 // ----------------------------------------------------------------------------------------- Image
 // ----------------------------------------------------------------------------------------- Respone
 
