@@ -2029,8 +2029,31 @@ $textDetailUser = new BubbleContainerBuilder(
         array(
             new TextComponentBuilder(
                 "กรอกชื่อและเบอร์โทรเพื่อติดต่อ
-*** กรุณานำหน้าประโยคด้วย ติดต่อ
-ตัวอย่าง: ติดต่อ กอ ดี 089XXXXXXX
+*** กรุณานำหน้าประโยคด้วย เพิ่มเติม
+ตัวอย่าง: เพิ่มเติม กอ ดี 089XXXXXXX
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+$textSendAddress = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "ขอบคุณค่ะ เดี๋ยวทางเราจะดำเนินการ
+ส่งของตามที่อยู่นี้นะคะ..
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -2498,7 +2521,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true || strstr($userMessage,"จังหวัด") == true || strstr($userMessage,"จ.") == true) {
                 $replyData = new FlexMessageBuilder("Flex", $textDetailUser, $quickReplyDetailUser);
             }
-            if(strstr($userMessage,"ติดต่อ") == true){
+            if(strstr($userMessage,"เพิ่มเติม") == true){
                 $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
             }
 // ----------------------------------------------------------------------------------------- Image
