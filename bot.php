@@ -340,7 +340,7 @@ $textToPromotion = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                        โปรโมชั่น
+                "โปรโมชั่น
 
 พิมพ์ p ตามด้วยหัวข้อที่ต้องการ เช่น p1
 ___________________________________
@@ -497,7 +497,7 @@ $textToRecommend = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                        คำแนะนำ
+                "คำแนะนำ
 
 พิมพ์ r ตามด้วยหัวข้อที่ต้องการ เช่น r1
 ___________________________________
@@ -579,7 +579,7 @@ $textToGroup = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                        กลุ่ม/สูตร
+                "กลุ่ม/สูตร
 
 พิมพ์ g ตามด้วยหัวข้อที่ต้องการ เช่น g1
 ___________________________________
@@ -755,7 +755,7 @@ $textToDeposit = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                        ฝาก/ถอน
+                "ฝาก/ถอน
 
 พิมพ์ d ตามด้วยหัวข้อที่ต้องการ เช่น d1
 ___________________________________
@@ -923,7 +923,7 @@ $textToRegister = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                        การสมัคร
+                "การสมัคร
 
 พิมพ์ u ตามด้วยหัวข้อที่ต้องการ เช่น u1
 ___________________________________
@@ -1163,7 +1163,7 @@ $textToAccount = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                        บัญชีผู้ใช้
+                "บัญชีผู้ใช้
 
 พิมพ์ a ตามด้วยหัวข้อที่ต้องการ เช่น a1
 ___________________________________
@@ -1256,7 +1256,7 @@ $textToWebsite = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "                        เกี่ยวกับเว็บไซต์
+                "เกี่ยวกับเว็บไซต์
 
 พิมพ์ w ตามด้วยหัวข้อที่ต้องการ เช่น w1
 ___________________________________
@@ -2075,7 +2075,7 @@ $textNotKeyword = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "คุณพิมพ์ไม่ตรง Keyword ที่ค้องการค่ะ
+                "คุณพิมพ์ไม่ตรง Keyword ที่ต้องการค่ะ
 กรุณาเลือกหัวข้อที่ต้องการและทำตาม
 ขั้นตอนค่ะ
 ___________________________________
@@ -2134,7 +2134,7 @@ if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
     if (!is_null($eventFollow)) {
         $textReplyMessage = "Copa69 สวัสดีค่ะ";
-        $replyData = new TextMessageBuilder($textReplyMessage);
+        $replyData = new TextMessageBuilder($textReplyMessage, $quickReplyMain);
     }
     if (!is_null($eventMessage)) {
         $typeMessage = $eventObj->getMessageType();
