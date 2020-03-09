@@ -1876,6 +1876,33 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
+$textGetUser = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "กรุณากรอกหมายเลข User
+___________________________________
+
+ตัวอย่าง user_หมายเลขยูสของลูกค้า
+เช่น user_sa894567415
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
 // ----------------------------------------------------------------------------------------- TextAll
 
 if (!is_null($events)) {
@@ -2316,9 +2343,8 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         // ----------------------------------------------------------------------------------------- DetailPromotion      
         
     }
-} else{    
-    $textReplyMessage = 'สวัสดีครับ คุณ '.$typeMessage;         
-    $replyData = new TextMessageBuilder($textReplyMessage);         
+} else{              
+    $replyData = new TextMessageBuilder($textGetUser);         
 }
 
 
