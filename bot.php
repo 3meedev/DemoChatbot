@@ -2148,18 +2148,19 @@ if (!is_null($events)) {
 
 
     // ----------------------------------------------------------------------------------------- MainMenu
-    if ($typeMessage == "text") {
-        if ($userMessage != null) {
-            if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                $textReplyMessage = new BubbleContainerBuilder(
-                    "ltr",
-                    NULL,
-                    NULL,
-                    new BoxComponentBuilder(
-                        "horizontal",
-                        array(
-                            new TextComponentBuilder(
-                                "พิมพ์ q ตามด้วยหัวข้อที่ต้องการ เช่น q1
+    switch ($typeMessage) {
+        case "text":
+            if ($userMessage != null) {
+                if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
+                    $textReplyMessage = new BubbleContainerBuilder(
+                        "ltr",
+                        NULL,
+                        NULL,
+                        new BoxComponentBuilder(
+                            "horizontal",
+                            array(
+                                new TextComponentBuilder(
+                                    "พิมพ์ q ตามด้วยหัวข้อที่ต้องการ เช่น q1
 ___________________________________
 
 หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
@@ -2173,28 +2174,27 @@ ___________________________________
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                                NULL,
-                                NULL,
-                                "md",
-                                NULL,
-                                NULL,
-                                true
+                                    NULL,
+                                    NULL,
+                                    "md",
+                                    NULL,
+                                    NULL,
+                                    true
+                                )
                             )
                         )
-                    )
-                );
-                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
-            }
-            else if ($userMessage == "สมัคร") {
-                $textReplyMessage = new BubbleContainerBuilder(
-                    "ltr",
-                    NULL,
-                    NULL,
-                    new BoxComponentBuilder(
-                        "horizontal",
-                        array(
-                            new TextComponentBuilder(
-                                "พิมพ์ s ตามด้วยหัวข้อที่ต้องการ เช่น s1
+                    );
+                    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
+                } else if ($userMessage == "สมัคร") {
+                    $textReplyMessage = new BubbleContainerBuilder(
+                        "ltr",
+                        NULL,
+                        NULL,
+                        new BoxComponentBuilder(
+                            "horizontal",
+                            array(
+                                new TextComponentBuilder(
+                                    "พิมพ์ s ตามด้วยหัวข้อที่ต้องการ เช่น s1
 ___________________________________
 
 หัวข้อโปรโมชั่นต่างๆของทางเรา
@@ -2215,389 +2215,293 @@ ___________________________________
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                                NULL,
-                                NULL,
-                                "md",
-                                NULL,
-                                NULL,
-                                true
+                                    NULL,
+                                    NULL,
+                                    "md",
+                                    NULL,
+                                    NULL,
+                                    true
+                                )
                             )
                         )
-                    )
-                );
-                $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
-            }
-            else if ($userMessage == "ติดต่อ") {                
-                $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
+                    );
+                    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
+                } else if ($userMessage == "ติดต่อ") {
+                    $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
+                }
+
+                // ----------------------------------------------------------------------------------------- MainMenu
+                // ----------------------------------------------------------------------------------------- Promotion
+
+                else if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
+                } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
+                } else if ($userMessage == "โปรโมชั่น") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
+                } else if (strstr($userMessage, "p") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
+                } else if (strstr($userMessage, "P") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
+                } else if (strstr($userMessage, "p") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
+                } else if (strstr($userMessage, "P") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
+                } else if (strstr($userMessage, "p") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
+                } else if (strstr($userMessage, "P") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
+                } else if (strstr($userMessage, "p") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
+                } else if (strstr($userMessage, "P") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
+                }
+
+                // ----------------------------------------------------------------------------------------- Promotion
+                // ----------------------------------------------------------------------------------------- Recommend
+
+                else if (strstr($userMessage, "q") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
+                } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
+                } else if ($userMessage == "คำแนะนำ") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
+                } else if (strstr($userMessage, "r") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRecommend1, $quickReplySubRecommend);
+                } else if (strstr($userMessage, "R") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRecommend1, $quickReplySubRecommend);
+                } else if (strstr($userMessage, "r") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRecommend2, $quickReplySubRecommend);
+                } else if (strstr($userMessage, "R") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRecommend2, $quickReplySubRecommend);
+                }
+
+                // ----------------------------------------------------------------------------------------- Recommend
+                // ----------------------------------------------------------------------------------------- Group
+
+                else if (strstr($userMessage, "q") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
+                } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
+                } else if ($userMessage == "กลุ่ม/สูตร") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
+                } else if (strstr($userMessage, "g") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup1, $quickReplySubGroup);
+                } else if (strstr($userMessage, "G") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup1, $quickReplySubGroup);
+                } else if (strstr($userMessage, "g") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup2, $quickReplySubGroup);
+                } else if (strstr($userMessage, "G") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup2, $quickReplySubGroup);
+                } else if (strstr($userMessage, "g") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup3, $quickReplySubGroup);
+                } else if (strstr($userMessage, "G") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup3, $quickReplySubGroup);
+                } else if (strstr($userMessage, "g") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup4, $quickReplySubGroup);
+                } else if (strstr($userMessage, "G") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGroup4, $quickReplySubGroup);
+                }
+
+                // ----------------------------------------------------------------------------------------- Group
+                // ----------------------------------------------------------------------------------------- Deposit
+
+                else if (strstr($userMessage, "q") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
+                } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
+                } else if ($userMessage == "ฝาก/ถอน") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
+                } else if (strstr($userMessage, "d") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit1, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "D") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit1, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "d") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit2, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "D") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit2, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "d") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit3, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "D") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit3, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "d") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit4, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "D") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit4, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "d") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit5, $quickReplySubDeposit);
+                } else if (strstr($userMessage, "D") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDeposit5, $quickReplySubDeposit);
+                }
+
+                // ----------------------------------------------------------------------------------------- Deposit
+                // ----------------------------------------------------------------------------------------- Register
+
+                else if (strstr($userMessage, "q") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
+                } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
+                } else if ($userMessage == "การสมัครสมาชิก") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
+                } else if (strstr($userMessage, "u") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister1, $quickReplySubRegister);
+                } else if (strstr($userMessage, "U") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister1, $quickReplySubRegister);
+                } else if (strstr($userMessage, "u") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister2, $quickReplySubRegister);
+                } else if (strstr($userMessage, "U") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister2, $quickReplySubRegister);
+                } else if (strstr($userMessage, "u") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister3, $quickReplySubRegister);
+                } else if (strstr($userMessage, "U") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister3, $quickReplySubRegister);
+                } else if (strstr($userMessage, "u") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
+                } else if (strstr($userMessage, "U") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
+                } else if (strstr($userMessage, "u") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
+                } else if (strstr($userMessage, "U") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
+                } else if (strstr($userMessage, "u") == true && strstr($userMessage, "6") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
+                } else if (strstr($userMessage, "U") == true && strstr($userMessage, "6") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
+                } else if (strstr($userMessage, "u") == true && strstr($userMessage, "7") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
+                } else if (strstr($userMessage, "U") == true && strstr($userMessage, "7") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
+                }
+
+                // ----------------------------------------------------------------------------------------- Register
+                // ----------------------------------------------------------------------------------------- Account
+
+                else if (strstr($userMessage, "q") == true && strstr($userMessage, "6") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
+                } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "6") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
+                } else if ($userMessage == "บัญชีผู้ใช้") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
+                } else if (strstr($userMessage, "a") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textAccount1, $quickReplySubAccount);
+                } else if (strstr($userMessage, "A") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textAccount1, $quickReplySubAccount);
+                } else if (strstr($userMessage, "a") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textAccount2, $quickReplySubAccount);
+                } else if (strstr($userMessage, "A") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textAccount2, $quickReplySubAccount);
+                }
+
+                // ----------------------------------------------------------------------------------------- Account
+                // ----------------------------------------------------------------------------------------- Website
+
+                else if (strstr($userMessage, "q") == true && strstr($userMessage, "7") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
+                } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "7") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
+                } else if ($userMessage == "เกี่ยวกับเว็บไซต์") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
+                } else if (strstr($userMessage, "w") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
+                } else if (strstr($userMessage, "W") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
+                } else if (strstr($userMessage, "w") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textWebsite2, $quickReplySubWebsite);
+                } else if (strstr($userMessage, "W") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textWebsite2, $quickReplySubWebsite);
+                }
+
+                // ----------------------------------------------------------------------------------------- Website
+                // ----------------------------------------------------------------------------------------- DetailPromotion
+
+                else if (strstr($userMessage, "s") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "1") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "2") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "3") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "4") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "5") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "6") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "6") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "7") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "7") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "8") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "8") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "9") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "9") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "10") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "10") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "11") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "11") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "12") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "12") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "13") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "13") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "s") == true && strstr($userMessage, "14") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
+                } else if (strstr($userMessage, "S") == true && strstr($userMessage, "14") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
+                }
+
+                // ----------------------------------------------------------------------------------------- DetailPromotion 
+
+                else if (strstr($userMessage, "แจ้งเลขยูส") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
+                } else if (strstr($userMessage, "User_") == true || strstr($userMessage, "user_") == true || strstr($userMessage, "USER_") == true || strstr($userMessage, "User") == true || strstr($userMessage, "USER") == true || strstr($userMessage, "user") == true || $userMessage == "BAddress") {
+                    $replyData = new FlexMessageBuilder("Flex", $textToAddress, $quickReplyUser);
+                } else if ($userMessage == "ไม่ต้องการ") {
+                    $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
+                } else if ($userMessage == "ต้องการ" || $userMessage == "ย้อนกลับAddress") {
+                    $replyData = new FlexMessageBuilder("Flex", $textAddress, $quickReplyAddress);
+                } else if (strstr($userMessage, "ที่อยู่") == true || strstr($userMessage, "อำเภอ") == true || strstr($userMessage, "อ.") == true || strstr($userMessage, "ตำบล") == true || strstr($userMessage, "ต.") == true || strstr($userMessage, "จังหวัด") == true || strstr($userMessage, "จ.") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textDetailUser, $quickReplyDetailUser);
+                } else if (strstr($userMessage, "เพิ่มเติม") == true) {
+                    $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
+                } else {
+                    $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
+                }
+                break;
             }
 
-            // ----------------------------------------------------------------------------------------- MainMenu
-            // ----------------------------------------------------------------------------------------- Promotion
-
-            else if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
-            }
-            else if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
-            }
-            else if ($userMessage == "โปรโมชั่น") {
-                $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
-            }
-            else if (strstr($userMessage, "p") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
-            }
-            else if (strstr($userMessage, "P") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
-            }
-            else if (strstr($userMessage, "p") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
-            }
-            else if (strstr($userMessage, "P") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
-            }
-            else if (strstr($userMessage, "p") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
-            }
-            else if (strstr($userMessage, "P") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
-            }
-            else if (strstr($userMessage, "p") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
-            }
-            else if (strstr($userMessage, "P") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
-            }
-
-            // ----------------------------------------------------------------------------------------- Promotion
-            // ----------------------------------------------------------------------------------------- Recommend
-
-            else if (strstr($userMessage, "q") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
-            }
-            else if (strstr($userMessage, "Q") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
-            }
-            else if ($userMessage == "คำแนะนำ") {
-                $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
-            }
-            else if (strstr($userMessage, "r") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRecommend1, $quickReplySubRecommend);
-            }
-            else if (strstr($userMessage, "R") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRecommend1, $quickReplySubRecommend);
-            }
-            else if (strstr($userMessage, "r") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRecommend2, $quickReplySubRecommend);
-            }
-            else if (strstr($userMessage, "R") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRecommend2, $quickReplySubRecommend);
-            }
-
-            // ----------------------------------------------------------------------------------------- Recommend
-            // ----------------------------------------------------------------------------------------- Group
-
-            else if (strstr($userMessage, "q") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
-            }
-            else if (strstr($userMessage, "Q") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
-            }
-            else if ($userMessage == "กลุ่ม/สูตร") {
-                $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
-            }
-            else if (strstr($userMessage, "g") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup1, $quickReplySubGroup);
-            }
-            else if (strstr($userMessage, "G") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup1, $quickReplySubGroup);
-            }
-            else if (strstr($userMessage, "g") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup2, $quickReplySubGroup);
-            }
-            else if (strstr($userMessage, "G") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup2, $quickReplySubGroup);
-            }
-            else if (strstr($userMessage, "g") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup3, $quickReplySubGroup);
-            }
-            else if (strstr($userMessage, "G") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup3, $quickReplySubGroup);
-            }
-            else if (strstr($userMessage, "g") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup4, $quickReplySubGroup);
-            }
-            else if (strstr($userMessage, "G") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textGroup4, $quickReplySubGroup);
-            }
-
-            // ----------------------------------------------------------------------------------------- Group
-            // ----------------------------------------------------------------------------------------- Deposit
-
-            else if (strstr($userMessage, "q") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
-            }
-            else if (strstr($userMessage, "Q") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
-            }
-            else if ($userMessage == "ฝาก/ถอน") {
-                $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
-            }
-            else if (strstr($userMessage, "d") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit1, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "D") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit1, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "d") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit2, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "D") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit2, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "d") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit3, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "D") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit3, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "d") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit4, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "D") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit4, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "d") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit5, $quickReplySubDeposit);
-            }
-            else if (strstr($userMessage, "D") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDeposit5, $quickReplySubDeposit);
-            }
-
-            // ----------------------------------------------------------------------------------------- Deposit
-            // ----------------------------------------------------------------------------------------- Register
-
-            else if (strstr($userMessage, "q") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
-            }
-            else if (strstr($userMessage, "Q") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
-            }
-            else if ($userMessage == "การสมัครสมาชิก") {
-                $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
-            }
-            else if (strstr($userMessage, "u") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister1, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "U") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister1, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "u") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister2, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "U") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister2, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "u") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister3, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "U") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister3, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "u") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "U") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "u") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "U") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "u") == true && strstr($userMessage, "6") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "U") == true && strstr($userMessage, "6") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "u") == true && strstr($userMessage, "7") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
-            }
-            else if (strstr($userMessage, "U") == true && strstr($userMessage, "7") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
-            }
-
-            // ----------------------------------------------------------------------------------------- Register
-            // ----------------------------------------------------------------------------------------- Account
-
-            else if (strstr($userMessage, "q") == true && strstr($userMessage, "6") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
-            }
-            else if (strstr($userMessage, "Q") == true && strstr($userMessage, "6") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
-            }
-            else if ($userMessage == "บัญชีผู้ใช้") {
-                $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
-            }
-            else if (strstr($userMessage, "a") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textAccount1, $quickReplySubAccount);
-            }
-            else if (strstr($userMessage, "A") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textAccount1, $quickReplySubAccount);
-            }
-            else if (strstr($userMessage, "a") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textAccount2, $quickReplySubAccount);
-            }
-            else if (strstr($userMessage, "A") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textAccount2, $quickReplySubAccount);
-            }
-
-            // ----------------------------------------------------------------------------------------- Account
-            // ----------------------------------------------------------------------------------------- Website
-
-            else if (strstr($userMessage, "q") == true && strstr($userMessage, "7") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
-            }
-            else if (strstr($userMessage, "Q") == true && strstr($userMessage, "7") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
-            }
-            else if ($userMessage == "เกี่ยวกับเว็บไซต์") {
-                $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
-            }
-            else if (strstr($userMessage, "w") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
-            }
-            else if (strstr($userMessage, "W") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
-            }
-            else if (strstr($userMessage, "w") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textWebsite2, $quickReplySubWebsite);
-            }
-            else if (strstr($userMessage, "W") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textWebsite2, $quickReplySubWebsite);
-            }
-
-            // ----------------------------------------------------------------------------------------- Website
-            // ----------------------------------------------------------------------------------------- DetailPromotion
-
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "1") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "2") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "3") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "4") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "5") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "6") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "6") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "7") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "7") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "8") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "8") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "9") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "9") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "10") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "10") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "11") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "11") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "12") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "12") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "13") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "13") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "s") == true && strstr($userMessage, "14") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
-            }
-            else if (strstr($userMessage, "S") == true && strstr($userMessage, "14") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
-            }           
-
-            // ----------------------------------------------------------------------------------------- DetailPromotion 
-             
-            else if(strstr($userMessage, "แจ้งเลขยูส") == true){
+            // ----------------------------------------------------------------------------------------- Image
+        default:
+            if (!is_null($replyData)) {
+            } else {
                 $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
             }
-            else if(strstr($userMessage, "User_") == true || strstr($userMessage, "user_") == true || strstr($userMessage, "USER_") == true|| strstr($userMessage, "User") == true || strstr($userMessage, "USER") == true || strstr($userMessage, "user") == true || $userMessage == "BAddress") {
-                $replyData = new FlexMessageBuilder("Flex", $textToAddress, $quickReplyUser);
-            }
-            else if($userMessage == "ไม่ต้องการ"){
-                $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
-            }
-            else if($userMessage == "ต้องการ" || $userMessage == "ย้อนกลับAddress"){
-                $replyData = new FlexMessageBuilder("Flex", $textAddress, $quickReplyAddress);
-            }
-            else if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true || strstr($userMessage,"จังหวัด") == true || strstr($userMessage,"จ.") == true) {
-                $replyData = new FlexMessageBuilder("Flex", $textDetailUser, $quickReplyDetailUser);
-            }
-            else if(strstr($userMessage,"เพิ่มเติม") == true){
-                $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
-            }
-            else {
-                $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
-            }
-             
-// ----------------------------------------------------------------------------------------- Image
-  
-    } else {
-        $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
+            break;
     }
-}
-// ----------------------------------------------------------------------------------------- Image
-// ----------------------------------------------------------------------------------------- Respone
+    // ----------------------------------------------------------------------------------------- Image
+    // ----------------------------------------------------------------------------------------- Respone
 
     $response = $bot->replyMessage($replyToken, $replyData);
     if ($response->isSucceeded()) {
@@ -2607,6 +2511,5 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     // Failed
     echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
-// ----------------------------------------------------------------------------------------- Respone
-}  
-
+    // ----------------------------------------------------------------------------------------- Respone
+}
