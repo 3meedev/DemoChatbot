@@ -57,6 +57,12 @@ $eventAccountLink = NULL;
 $eventMemberJoined = NULL;
 $eventMemberLeft = NULL;
 
+function startsWith ($string, $startString) 
+{ 
+    $len = strlen($startString); 
+    return (substr($string, 0, $len) === $startString); 
+}
+
 switch ($eventType) {
     case 'message':
         $eventMessage = true;
@@ -2233,7 +2239,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 // ----------------------------------------------------------------------------------------- MainMenu
                 // ----------------------------------------------------------------------------------------- Promotion
 
-                else if (strstr($userMessage, "q") == true && strstr($userMessage, "1") == true) {
+                else if (startsWith("$userMessage","q")) {
                     $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
                 } else if (strstr($userMessage, "Q") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
