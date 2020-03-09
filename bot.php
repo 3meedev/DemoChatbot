@@ -301,7 +301,7 @@ $quickReplyBackRegister = new QuickReplyMessageBuilder(
 );
 $quickReplyEditSlip = new QuickReplyMessageBuilder(
     array(
-        new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('แนบสลิปใหม่'))
+        new QuickReplyButtonBuilder(new CameraRollTemplateActionBuilder('แก้ไขสลิป'))
     )
 );
 $quickReplyUser = new QuickReplyMessageBuilder(
