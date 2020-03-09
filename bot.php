@@ -2076,8 +2076,8 @@ $textNotKeyword = new BubbleContainerBuilder(
         array(
             new TextComponentBuilder(
                 "คุณพิมพ์ไม่ตรง Keyword ที่ค้องการค่ะ
-กรุณาเลือกหัวข้อที่ต้องการและทำ
-ตามขั้นตอนค่ะ
+กรุณาเลือกหัวข้อที่ต้องการและทำตาม
+ขั้นตอนค่ะ
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -2548,7 +2548,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
             }
             else {
-                $replyData = new FlexMessageBuilder("Flex", $textNotKeyword);
+                $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
             }
 }             
 // ----------------------------------------------------------------------------------------- Image
