@@ -2076,6 +2076,8 @@ $textNotKeyword = new BubbleContainerBuilder(
         array(
             new TextComponentBuilder(
                 "คุณพิมพ์ไม่ตรง Keyword ที่ค้องการค่ะ
+กรุณาเลือกหัวข้อที่ต้องการและ
+ทำตามขั้นตอนค่ะ
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -2529,7 +2531,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             }
 
             // ----------------------------------------------------------------------------------------- DetailPromotion 
-}              
+             
             if(strstr($userMessage, "แจ้งเลขยูส") == true){
                 $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
             }
@@ -2548,9 +2550,9 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if(strstr($userMessage,"เพิ่มเติม") == true){
                 $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
             }
-            
+}             
 // ----------------------------------------------------------------------------------------- Image
-    
+}    
     } else {
         $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
     }
@@ -2565,7 +2567,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     }
     // Failed
     echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-}
+
 // ----------------------------------------------------------------------------------------- Respone
 
 
