@@ -2091,6 +2091,42 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         )
     )
 );
+$textContact = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "หากมีข้อสงสัยนอกเหนือจากที่กล่าว
+มาลูกค้าสามารถติดต่อกับ Admin ได้โดยตรงค่ะ
+
+ตลิกที่ลิ้งเพื่อติดต่อ Admin
+___________________________________
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                NULL,
+                true
+            )
+        )
+    ),
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new ButtonComponentBuilder(
+                new UriTemplateActionBuilder("ติดต่อ Admin", "https://line.me/R/ti/p/%40519uqyhc"),
+                NULL,
+                NULL,
+                NULL,
+                "primary"
+            )
+        )
+    )
+);
 
 // ----------------------------------------------------------------------------------------- TextAll
 
@@ -2190,6 +2226,9 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                     )
                 );
                 $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
+            }
+            else if ($userMessage == "ติดต่อ") {                
+                $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
             }
 
             // ----------------------------------------------------------------------------------------- MainMenu
