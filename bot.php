@@ -169,7 +169,7 @@ $textBackToAddress = new MessageTemplateActionBuilder(
 );
 $textEditAddress = new MessageTemplateActionBuilder(
     'แก้ไขที่อยู่',
-    'ย้อนกลับที่อยู่'
+    'ย้อนกลับAddress'
 );
 
 $quickReplyMain = new QuickReplyMessageBuilder(
