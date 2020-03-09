@@ -2389,13 +2389,16 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
 
             // ----------------------------------------------------------------------------------------- DetailPromotion 
 }              
+            if(strstr($userMessage, "แจ้งเลขยูส") == true){
+                $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
+            }
             if(strstr($userMessage, "User_") == true || strstr($userMessage, "user_") == true || strstr($userMessage, "USER_") == true|| strstr($userMessage, "User") == true || strstr($userMessage, "USER") == true || strstr($userMessage, "user") == true) {
                 $replyData = new FlexMessageBuilder("Flex", $textToAddress, $quickReplyUser);
             }
 // ----------------------------------------------------------------------------------------- Image
 
         
-    } else if(strstr($userMessage, "แจ้งเลขยูส") == true){
+    } else {
         $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
     }
 
