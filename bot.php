@@ -167,6 +167,10 @@ $textBackToAddress = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
     'BAddress'
 );
+$textEditAddress = new MessageTemplateActionBuilder(
+    'แก้ไขที่อยู่',
+    'ที่อยู่'
+);
 
 $quickReplyMain = new QuickReplyMessageBuilder(
     array(
@@ -310,6 +314,14 @@ $quickReplyUser = new QuickReplyMessageBuilder(
 $quickReplyAddress = new QuickReplyMessageBuilder(
     array(
         new QuickReplyButtonBuilder($textBackToAddress),
+        new QuickReplyButtonBuilder($textReplyToQuestion),
+        new QuickReplyButtonBuilder($textReplyToRegister),
+        new QuickReplyButtonBuilder($textReplyToContact)
+    )
+);
+$quickReplyDetailUser = new QuickReplyMessageBuilder(
+    array(
+        new QuickReplyButtonBuilder($textEditAddress),
         new QuickReplyButtonBuilder($textReplyToQuestion),
         new QuickReplyButtonBuilder($textReplyToRegister),
         new QuickReplyButtonBuilder($textReplyToContact)
@@ -1992,13 +2004,36 @@ $textAddress = new BubbleContainerBuilder(
         "horizontal",
         array(
             new TextComponentBuilder(
-                "___________________________________
-
-กรุณากรอกที่อยู่ให้ครบถ้วนสมบูรณ์
+                "กรุณากรอกที่อยู่ให้ครบถ้วนสมบูรณ์
 *** กรุณานำหน้าประโยคด้วย ที่อยู่
 
 ตัวอย่าง: ที่อยู่ 148 หมู่1 ต.ตำบล
 อ.อำเภอ จ.จังหวัด 16589
+___________________________________
+
+Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                NULL,
+                NULL,
+                "md",
+                NULL,
+                NULL,
+                true
+            )
+        )
+    )
+);
+
+$textDetailUser = new BubbleContainerBuilder(
+    "ltr",
+    NULL,
+    NULL,
+    new BoxComponentBuilder(
+        "horizontal",
+        array(
+            new TextComponentBuilder(
+                "กรุณากรอก ชื่อและเบอร์โทร
+*** กรุณานำหน้าประโยคด้วย ติดต่อ
+ตัวอย่าง: ติดต่อ กอไก่ วันดี 089XXXXXXX
 ___________________________________
 
 Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
@@ -2460,8 +2495,14 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
             if($userMessage == "ไม่ต้องการ"){
                 $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
             }
-            if($userMessage == "ต้องการ"){
+            if($userMessage == "ต้องการ" || $userMessage == "ที่อยู่"){
                 $replyData = new FlexMessageBuilder("Flex", $textAddress, $quickReplyAddress);
+            }
+            if (strstr($userMessage,"ที่อยู่") == true || strstr($userMessage,"อำเภอ") == true || strstr($userMessage,"อ.") == true || strstr($userMessage,"ตำบล") == true || strstr($userMessage,"ต.") == true || strstr($userMessage,"จังหวัด") == true || strstr($userMessage,"จ.") == true) {
+                $replyData = new FlexMessageBuilder("Flex", $textDetailUser, $quickReplyDetailUser);
+            }
+            if(strstr($userMessage,"ติดต่อ") == true){
+                $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
             }
 // ----------------------------------------------------------------------------------------- Image
 
