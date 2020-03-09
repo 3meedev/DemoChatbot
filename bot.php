@@ -41,13 +41,11 @@ $eventType = $eventObj->getType();
 
 
 $userId = NULL;
-
 $sourceId = NULL;
 $sourceType = NULL;
-
 $replyToken = NULL;
 $replyData = NULL;
-
+$userImage = null;
 $eventMessage = NULL;
 $eventPostback = NULL;
 $eventJoin = NULL;
@@ -1892,6 +1890,9 @@ if (!is_null($events)) {
         if ($typeMessage == 'text') {
             $userMessage = $eventObj->getText();
         }
+        if ($typeMessage == 'image') {
+            $userImage = $eventObj->getImage();
+        }
     }
 
 
@@ -2312,8 +2313,8 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
         }
 
 
-        // ----------------------------------------------------------------------------------------- DetailPromotion
-        if ($typeMessage == 'image') {
+        // ----------------------------------------------------------------------------------------- DetailPromotion        
+        if($userImage != null){
             $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
         }
     }
