@@ -979,7 +979,7 @@ ___________________________________",
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
+                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://line.me/R/ti/p/%40519uqyhc"),
                 NULL,
                 NULL,
                 NULL,
@@ -1211,7 +1211,7 @@ ___________________________________",
         "horizontal",
         array(
             new ButtonComponentBuilder(
-                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://www.google.com/"),
+                new UriTemplateActionBuilder("ติดต่อแอดมิน", "https://line.me/R/ti/p/%40519uqyhc"),
                 NULL,
                 NULL,
                 NULL,
