@@ -784,7 +784,7 @@ ___________________________________
 หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
 1. ฝาก/ถอนขั้นต่ำเท่าไหร่
 2. ครั้งต่อไปฝาก/ถอนยังไง
-3. ฝาก/ถอนจำกัดครั้งมั้บ ถอนได้เร็วมั้ย
+3. ฝาก/ถอนจำกัดครั้งมั้ย ถอนได้เร็วมั้ย
 4. ถ้าฝากไปแล้วไม่เล่นถอนได้เลยมั้ย
 5. โอนเงินเสร็จแล้วทำไงต่อ
 ___________________________________
@@ -2173,7 +2173,7 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7a6fV.png';
+                    $imageMapUrl = 'https://uppic.cc/d/6njt';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
