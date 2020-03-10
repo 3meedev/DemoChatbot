@@ -2420,7 +2420,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 // ----------------------------------------------------------------------------------------- Website
                 // ----------------------------------------------------------------------------------------- DetailPromotion
 
-                else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "1") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "1") == true) || strstr($userMessage, "s1") || strstr($userMessage, "S1")) {
+                else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "s1") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "S1") == true) || strstr($userMessage, "s1") || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
                 } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "2") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "2") == true) || strstr($userMessage, "s2") || strstr($userMessage, "S2")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
