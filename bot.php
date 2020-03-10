@@ -2177,7 +2177,7 @@ if (!is_null($events)) {
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
-                        new BaseSizeBuilder(800, 1040),
+                        new BaseSizeBuilder(400, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'โปรโมชั่น',
