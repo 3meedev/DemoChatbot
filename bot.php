@@ -2173,7 +2173,7 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7bnUJ.png';
+                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7HwBP.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
@@ -2182,36 +2182,7 @@ if (!is_null($events)) {
                             new ImagemapMessageActionBuilder(
                                 'โปรโมชั่น',
                                 new AreaBuilder(9, 214, 511, 138)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'แนะนำ',
-                                new AreaBuilder(527, 213, 503, 138)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'กลุ่ม/สูตร',
-                                new AreaBuilder(8, 358, 511, 143)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'ฝาก/ถอน',
-                                new AreaBuilder(528, 358, 501, 145)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'สมัครสมาชิก',
-                                new AreaBuilder(10, 510, 507, 142)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'บัญชีผู้ใช้',
-                                new AreaBuilder(527, 510, 502, 144)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'เกี่ยวกับเว็บไซต์',
-                                new AreaBuilder(9, 661, 509, 129)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'ย้อนกลับ',
-                                new AreaBuilder(527, 660, 504, 132)
-                            ),
-                            
+                            ),                         
                         )
                     );
 //                     $textReplyMessage = new BubbleContainerBuilder(
@@ -2248,48 +2219,72 @@ if (!is_null($events)) {
 //                     );
 //                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "สมัคร") {
-                    $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",
-                        NULL,
-                        NULL,
-                        new BoxComponentBuilder(
-                            "horizontal",
-                            array(
-                                new TextComponentBuilder(
-                                    "พิมพ์ s ตามด้วยหัวข้อที่ต้องการ เช่น s1
-___________________________________
-
-หัวข้อโปรโมชั่นต่างๆของทางเรา
-1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
-2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
-3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
-4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
-5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
-6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
-7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
-8. สมัคร 500 บาท ได้รับ Smart Watch 
-9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
-10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
-11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
-12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
-13. สมัคร 300 บาท ได้รับ Game Handle 
-14. สมัครฝาก 200 รับโบนัส 30 %
-___________________________________
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                                    NULL,
-                                    NULL,
-                                    "md",
-                                    NULL,
-                                    NULL,
-                                    true
-                                )
-                            )
+                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Hc7l.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageMapUrl,
+                        'test',
+                        new BaseSizeBuilder(800, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'โปรโมชั่น',
+                                new AreaBuilder(9, 214, 511, 138)
+                            ),                         
                         )
                     );
-                    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
+//                     $textReplyMessage = new BubbleContainerBuilder(
+//                         "ltr",
+//                         NULL,
+//                         NULL,
+//                         new BoxComponentBuilder(
+//                             "horizontal",
+//                             array(
+//                                 new TextComponentBuilder(
+//                                     "พิมพ์ s ตามด้วยหัวข้อที่ต้องการ เช่น s1
+// ___________________________________
+
+// หัวข้อโปรโมชั่นต่างๆของทางเรา
+// 1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
+// 2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
+// 3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
+// 4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
+// 5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
+// 6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
+// 7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
+// 8. สมัคร 500 บาท ได้รับ Smart Watch 
+// 9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
+// 10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
+// 11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
+// 12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
+// 13. สมัคร 300 บาท ได้รับ Game Handle 
+// 14. สมัครฝาก 200 รับโบนัส 30 %
+// ___________________________________
+
+// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+//                                     NULL,
+//                                     NULL,
+//                                     "md",
+//                                     NULL,
+//                                     NULL,
+//                                     true
+//                                 )
+//                             )
+//                         )
+//                     );
+//                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "ติดต่อ") {
-                    $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
+                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Hi2v.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageMapUrl,
+                        'test',
+                        new BaseSizeBuilder(800, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'โปรโมชั่น',
+                                new AreaBuilder(9, 214, 511, 138)
+                            ),                         
+                        )
+                    );
+                    // $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
                 }
 
                 // ----------------------------------------------------------------------------------------- MainMenu
