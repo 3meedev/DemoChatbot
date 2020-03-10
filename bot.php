@@ -2502,9 +2502,10 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                     $replyData = new FlexMessageBuilder("Flex", $textDetailUser, $quickReplyDetailUser);
                 } else if (strstr($userMessage, "เพิ่มเติม") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
-                } else {
-                    $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
-                }
+                } 
+                // else {
+                //     $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
+                // }
                 break;
             }
 
