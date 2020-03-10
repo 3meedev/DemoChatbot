@@ -25,6 +25,11 @@ use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
+use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
+use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder ;
+use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
+use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
+use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
 
 $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
 $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
@@ -2354,7 +2359,30 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 // ----------------------------------------------------------------------------------------- Register
 
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "5") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
+                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7ZI0D.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageMapUrl,
+                        'This is Imagemap',
+                        new BaseSizeBuilder(699, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'test 1',
+                                new AreaBuilder(4, 2, 527, 343)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'test 2',
+                                new AreaBuilder(5, 360, 519, 336)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'test 3',
+                                new AreaBuilder(536, 4, 499, 347)
+                            ),
+                            new ImagemapUriActionBuilder(
+                                'http://www.google.com',
+                                new AreaBuilder(534, 358, 502, 337)
+                            )
+                        )
+                    );
                 } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "5") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
                 } else if ($userMessage == "การสมัครสมาชิก") {
@@ -2430,7 +2458,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 // ----------------------------------------------------------------------------------------- Website
                 // ----------------------------------------------------------------------------------------- DetailPromotion
 
-                else if ((startsWith($userMessage, "s") == true && endsWith($userMessage, "1") == true) || (startsWith($userMessage, "S") == true && endsWith($userMessage, "S1") == true)) {
+                else if ((startsWith($userMessage, "s") == true && endsWith($userMessage, "s1") == true) || (startsWith($userMessage, "S") == true && endsWith($userMessage, "S1") == true)) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
                 } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "2") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "2") == true) || strstr($userMessage, "s2") || strstr($userMessage, "S2")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
