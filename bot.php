@@ -2173,7 +2173,7 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Ucqn.png';
+                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7bnUJ.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
@@ -2181,31 +2181,35 @@ if (!is_null($events)) {
                         array(
                             new ImagemapMessageActionBuilder(
                                 'โปรโมชั่น',
-                                new AreaBuilder(60, 221, 424, 77)
+                                new AreaBuilder(9, 214, 511, 138)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'แนะนำ',
-                                new AreaBuilder(548, 221, 424, 80)
+                                new AreaBuilder(527, 213, 503, 138)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'กลุ่ม/สูตร',
-                                new AreaBuilder(61, 369, 423, 78)
+                                new AreaBuilder(8, 358, 511, 143)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'ฝาก/ถอน',
-                                new AreaBuilder(548, 370, 423, 75)
+                                new AreaBuilder(528, 358, 501, 145)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'สมัครสมาชิก',
-                                new AreaBuilder(64, 516, 419, 76)
+                                new AreaBuilder(10, 510, 507, 142)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'บัญชีผู้ใช้',
-                                new AreaBuilder(550, 517, 420, 71)
+                                new AreaBuilder(527, 510, 502, 144)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'เกี่ยวกับเว็บไซต์',
-                                new AreaBuilder(66, 654, 420, 74)
+                                new AreaBuilder(9, 661, 509, 129)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ย้อนกลับ',
+                                new AreaBuilder(527, 660, 504, 132)
                             ),
                             
                         )
