@@ -63,6 +63,16 @@ function startsWith($string, $startString)
     return (substr($string, 0, $len) === $startString);
 }
 
+function endsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    if ($length == 0) {
+        return true;
+    }
+
+    return (substr($haystack, -$length) === $needle);
+}
+
 switch ($eventType) {
     case 'message':
         $eventMessage = true;
@@ -2420,7 +2430,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 // ----------------------------------------------------------------------------------------- Website
                 // ----------------------------------------------------------------------------------------- DetailPromotion
 
-                else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "s1") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "S1") == true) || strstr($userMessage, "s1") || strstr($userMessage, "S1")) {
+                else if ((startsWith($userMessage, "s") == true && endsWith($userMessage, "1") == true) || (startsWith($userMessage, "S") == true && endsWith($userMessage, "S1") == true)) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
                 } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "2") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "2") == true) || strstr($userMessage, "s2") || strstr($userMessage, "S2")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
