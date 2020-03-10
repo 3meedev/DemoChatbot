@@ -27,9 +27,9 @@ use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
 use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder ;
-use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
+use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
+use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
 
 $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
 $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
@@ -2173,39 +2173,76 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $textReplyMessage = new BubbleContainerBuilder(
-                        "ltr",
-                        NULL,
-                        NULL,
-                        new BoxComponentBuilder(
-                            "horizontal",
-                            array(
-                                new TextComponentBuilder(
-                                    "พิมพ์ q ตามด้วยหัวข้อที่ต้องการ เช่น q1
-___________________________________
-
-หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-1. โปรโมชั่น
-2. คำแนะนำ
-3. กลุ่ม/สูตร
-4. ฝาก/ถอน
-5. การสมัครสมาชิก
-6. บัญชีผู้ใช้
-7. เกี่ยวกับเว็บไซต์
-___________________________________
-
-Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-                                    NULL,
-                                    NULL,
-                                    "md",
-                                    NULL,
-                                    NULL,
-                                    true
-                                )
-                            )
+                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Ucqn.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageMapUrl,
+                        'test',
+                        new BaseSizeBuilder(800, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'โปรโมชั่น',
+                                new AreaBuilder(60, 221, 424, 77)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'แนะนำ',
+                                new AreaBuilder(548, 221, 424, 80)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'กลุ่ม/สูตร',
+                                new AreaBuilder(61, 369, 423, 78)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ฝาก/ถอน',
+                                new AreaBuilder(548, 370, 423, 75)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัครสมาชิก',
+                                new AreaBuilder(64, 516, 419, 76)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'บัญชีผู้ใช้',
+                                new AreaBuilder(550, 517, 420, 71)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'เกี่ยวกับเว็บไซต์',
+                                new AreaBuilder(66, 654, 420, 74)
+                            ),
+                            
                         )
                     );
-                    $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
+//                     $textReplyMessage = new BubbleContainerBuilder(
+//                         "ltr",
+//                         NULL,
+//                         NULL,
+//                         new BoxComponentBuilder(
+//                             "horizontal",
+//                             array(
+//                                 new TextComponentBuilder(
+//                                     "พิมพ์ q ตามด้วยหัวข้อที่ต้องการ เช่น q1
+// ___________________________________
+
+// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+// 1. โปรโมชั่น
+// 2. คำแนะนำ
+// 3. กลุ่ม/สูตร
+// 4. ฝาก/ถอน
+// 5. การสมัครสมาชิก
+// 6. บัญชีผู้ใช้
+// 7. เกี่ยวกับเว็บไซต์
+// ___________________________________
+
+// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+//                                     NULL,
+//                                     NULL,
+//                                     "md",
+//                                     NULL,
+//                                     NULL,
+//                                     true
+//                                 )
+//                             )
+//                         )
+//                     );
+//                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "สมัคร") {
                     $textReplyMessage = new BubbleContainerBuilder(
                         "ltr",
@@ -2357,32 +2394,9 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
 
                 // ----------------------------------------------------------------------------------------- Deposit
                 // ----------------------------------------------------------------------------------------- Register
-
+                
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "5") == true) {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7ZI0D.png';
-                    $replyData = new ImagemapMessageBuilder(
-                        $imageMapUrl,
-                        'test',
-                        new BaseSizeBuilder(800, 1040),
-                        array(
-                            new ImagemapMessageActionBuilder(
-                                'test 1',
-                                new AreaBuilder(4, 2, 527, 343)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'test 2',
-                                new AreaBuilder(5, 360, 519, 336)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'test 3',
-                                new AreaBuilder(536, 4, 499, 347)
-                            ),
-                            new ImagemapUriActionBuilder(
-                                'http://www.google.com',
-                                new AreaBuilder(534, 358, 502, 337)
-                            )
-                        )
-                    );
+                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
                 } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "5") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
                 } else if ($userMessage == "การสมัครสมาชิก") {
@@ -2502,10 +2516,9 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                     $replyData = new FlexMessageBuilder("Flex", $textDetailUser, $quickReplyDetailUser);
                 } else if (strstr($userMessage, "เพิ่มเติม") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textSendAddress, $quickReplyMain);
-                } 
-                // else {
-                //     $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
-                // }
+                } else {
+                    $replyData = new FlexMessageBuilder("Flex", $textNotKeyword, $quickReplyMain);
+                }
                 break;
             }
 
