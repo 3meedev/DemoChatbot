@@ -2420,61 +2420,63 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                 // ----------------------------------------------------------------------------------------- Website
                 // ----------------------------------------------------------------------------------------- DetailPromotion
 
-                else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "1") == true) || strstr($userMessage, "s1")) {
+                else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "1") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "1") == true) || strstr($userMessage, "s1") || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "2") == true) {
+                }
+                //  else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "1") == true) || strstr($userMessage, "S1")) {
+                //     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
+                // } 
+                else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "2") == true) || strstr($userMessage, "s2")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "2") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "2") == true) || strstr($userMessage, "S2")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "3") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "3") == true) || strstr($userMessage, "s3")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "3") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "3") == true) || strstr($userMessage, "S3")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "4") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "4") == true) || strstr($userMessage, "s4")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "4") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "4") == true) || strstr($userMessage, "S4")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "5") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "5") == true) || strstr($userMessage, "s5")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "5") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "5") == true) || strstr($userMessage, "S5")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "6") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "6") == true) || strstr($userMessage, "s6")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "6") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "6") == true) || strstr($userMessage, "S6")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "7") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "7") == true) || strstr($userMessage, "s7")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "7") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "7") == true) || strstr($userMessage, "S7")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "8") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "8") == true) || strstr($userMessage, "s8")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "8") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "8") == true) || strstr($userMessage, "S8")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "9") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "9") == true) || strstr($userMessage, "s1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "9") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "9") == true) || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "10") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "10") == true) || strstr($userMessage, "s1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "10") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "10") == true) || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "11") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "11") == true) || strstr($userMessage, "s1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "11") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "11") == true) || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "12") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "12") == true) || strstr($userMessage, "s1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "12") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "12") == true) || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "13") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "13") == true) || strstr($userMessage, "s1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "13") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "13") == true) || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "s") == true && strstr($userMessage, "14") == true) {
+                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "14") == true) || strstr($userMessage, "s1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
-                } else if (startsWith($userMessage, "S") == true && strstr($userMessage, "14") == true) {
+                } else if ((startsWith($userMessage, "S") == true && strstr($userMessage, "14") == true) || strstr($userMessage, "S1")) {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
                 }
 
