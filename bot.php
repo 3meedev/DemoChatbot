@@ -2173,7 +2173,7 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://uppic.cc/d/6njt';
+                    $imageMapUrl = 'https://uppic.cc/v/6njt';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
