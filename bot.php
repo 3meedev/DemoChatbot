@@ -2362,8 +2362,8 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
                     $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7ZI0D.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
-                        'This is Imagemap',
-                        new BaseSizeBuilder(699, 1040),
+                        'test',
+                        new BaseSizeBuilder(800, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'test 1',
