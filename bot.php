@@ -2173,7 +2173,7 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7HwBP.png';
+                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7a6fV.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
