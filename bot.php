@@ -2466,7 +2466,7 @@ if (!is_null($events)) {
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
                     $imageMain = 'https://www.pic2free.com/uploads/20200311/bf0e649d858459a457b3e8e7c37d548a950da50d.png';
-                    $Main = new ImagemapMessageBuilder(
+                    $replyData = new ImagemapMessageBuilder(
                         $imageMain,
                         'test',
                         new BaseSizeBuilder(500, 1040),
