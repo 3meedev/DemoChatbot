@@ -2232,7 +2232,7 @@ if (!is_null($events)) {
                     //                     );
                     //                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "สมัคร") {
-                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/0b7f5142377531e59b5339e53164337d461d5914.png';
+                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/ab4364db41db57f34d4a0aa0b22573946da8a6c4.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,9+
                         'test',
