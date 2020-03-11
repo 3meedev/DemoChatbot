@@ -2165,35 +2165,35 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(800, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'โปรโมชั่น',
                                 new AreaBuilder(7, 208, 509, 139)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำแนะนำ',
                                 new AreaBuilder(522, 208, 512, 135)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'กลุ่ม',
                                 new AreaBuilder(4, 350, 512, 134)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'dfg',
+                                'ฝาก',
                                 new AreaBuilder(522, 349, 511, 137)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fdg',
+                                'สมาชิก',
                                 new AreaBuilder(5, 491, 511, 134)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fdg',
+                                'บัญชี',
                                 new AreaBuilder(521, 489, 514, 139)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fdg',
+                                'เว็บ',
                                 new AreaBuilder(7, 631, 510, 139)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fdg',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(524, 633, 509, 133)
                             ),
                         )
