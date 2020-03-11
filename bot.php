@@ -2384,28 +2384,20 @@ if (!is_null($events)) {
                             ),
                         )
                     );
-                } else if (startsWith($userMessage, "p") == true && strstr($userMessage, "1") == true) {
+                } else if ($userMessage == "คำถาม:โปรโมชั่น1") {
                     $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
-                } else if (startsWith($userMessage, "P") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
-                } else if (startsWith($userMessage, "p") == true && strstr($userMessage, "2") == true) {
+                }else if ($userMessage == "คำถาม:โปรโมชั่น2") {
                     $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
-                } else if (startsWith($userMessage, "P") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textPromotion2, $quickReplySubPromotion);
-                } else if (startsWith($userMessage, "p") == true && strstr($userMessage, "3") == true) {
+                }else if ($userMessage == "คำถาม:โปรโมชั่น3") {
                     $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
-                } else if (startsWith($userMessage, "P") == true && strstr($userMessage, "3") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textPromotion3, $quickReplySubPromotion);
-                } else if (startsWith($userMessage, "p") == true && strstr($userMessage, "4") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
-                } else if (startsWith($userMessage, "P") == true && strstr($userMessage, "4") == true) {
+                }else if ($userMessage == "คำถาม:โปรโมชั่น4") {
                     $replyData = new FlexMessageBuilder("Flex", $textPromotion4, $quickReplySubPromotion);
                 }
 
                 // ----------------------------------------------------------------------------------------- Promotion
                 // ----------------------------------------------------------------------------------------- Recommend
 
-                else if (startsWith($userMessage, "q") == true && strstr($userMessage, "2") == true) {
+                else if ($userMessage == "คำแนะนำ") {
                     $imageRecommend = 'https://www.pic2free.com/uploads/20200311/9d45060816145cff9ddf6c2bfd7ae9972fca71da.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageRecommend,
@@ -2413,37 +2405,33 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'คำถาม:คำแนะนำ1',
                                 new AreaBuilder(5, 146, 511, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำถาม:คำแนะนำ2',
                                 new AreaBuilder(524, 145, 510, 104)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'ย้อนกลับQuestion',
                                 new AreaBuilder(8, 258, 508, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(255, 259, 510, 104)
                             ),
                         )
                     );
-                } else if (startsWith($userMessage, "r") == true && strstr($userMessage, "1") == true) {
+                } else if ($userMessage == "คำถาม:คำแนะนำ1") {
                     $replyData = new FlexMessageBuilder("Flex", $textRecommend1, $quickReplySubRecommend);
-                } else if (startsWith($userMessage, "R") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRecommend1, $quickReplySubRecommend);
-                } else if (startsWith($userMessage, "r") == true && strstr($userMessage, "2") == true) {
+                } else if ($userMessage == "คำถาม:คำแนะนำ2") {
                     $replyData = new FlexMessageBuilder("Flex", $textRecommend2, $quickReplySubRecommend);
-                } else if (startsWith($userMessage, "R") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRecommend2, $quickReplySubRecommend);
-                }
+                } 
 
                 // ----------------------------------------------------------------------------------------- Recommend
                 // ----------------------------------------------------------------------------------------- Group
 
-                else if (startsWith($userMessage, "q") == true && strstr($userMessage, "3") == true) {
+                else if ($userMessage == "กลุ่ม") {
                     $imageGroup = 'https://www.pic2free.com/uploads/20200311/2ef615a9e4074c39eeb4dd0002e34113d260a7f6.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageGroup,
@@ -2451,53 +2439,44 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'คำถาม:กลุ่ม1',
                                 new AreaBuilder(6, 146, 510, 107)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำถาม:กลุ่ม2',
                                 new AreaBuilder(523, 146, 511, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'คำถาม:กลุ่ม3',
                                 new AreaBuilder(5, 259, 510, 106)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'คำถาม:กลุ่ม4',
                                 new AreaBuilder(522, 256, 514, 104)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับQuestion',
                                 new AreaBuilder(4, 371, 512, 106)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(523, 371, 510, 104)
                             ),
                         )
                     );
-                } else if (startsWith($userMessage, "g") == true && strstr($userMessage, "1") == true) {
+                } else if ($userMessage == "คำถาม:กลุ่ม1") {
                     $replyData = new FlexMessageBuilder("Flex", $textGroup1, $quickReplySubGroup);
-                } else if (startsWith($userMessage, "G") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textGroup1, $quickReplySubGroup);
-                } else if (startsWith($userMessage, "g") == true && strstr($userMessage, "2") == true) {
+                } else if ($userMessage == "คำถาม:กลุ่ม2") {
                     $replyData = new FlexMessageBuilder("Flex", $textGroup2, $quickReplySubGroup);
-                } else if (startsWith($userMessage, "G") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textGroup2, $quickReplySubGroup);
-                } else if (startsWith($userMessage, "g") == true && strstr($userMessage, "3") == true) {
+                } else if ($userMessage == "คำถาม:กลุ่ม3") {
                     $replyData = new FlexMessageBuilder("Flex", $textGroup3, $quickReplySubGroup);
-                } else if (startsWith($userMessage, "G") == true && strstr($userMessage, "3") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textGroup3, $quickReplySubGroup);
-                } else if (startsWith($userMessage, "g") == true && strstr($userMessage, "4") == true) {
+                } else if ($userMessage == "คำถาม:กลุ่ม4") {
                     $replyData = new FlexMessageBuilder("Flex", $textGroup4, $quickReplySubGroup);
-                } else if (startsWith($userMessage, "G") == true && strstr($userMessage, "4") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textGroup4, $quickReplySubGroup);
-                }
-
+                } 
                 // ----------------------------------------------------------------------------------------- Group
                 // ----------------------------------------------------------------------------------------- Deposit
 
-                else if (startsWith($userMessage, "q") == true && strstr($userMessage, "4") == true) {
+                else if ($userMessage == "ฝาก") {
                     $imageDeposit = 'https://www.pic2free.com/uploads/20200311/aa0511085a9d1fb2a5cbe58cf308cef4e3b25fe0.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageDeposit,
@@ -2505,57 +2484,47 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'คำถาม:ฝาก1',
                                 new AreaBuilder(5, 146, 512, 107)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำถาม:ฝาก2',
                                 new AreaBuilder(520, 145, 514, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'คำถาม:ฝาก3',
                                 new AreaBuilder(4, 258, 512, 108)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'คำถาม:ฝาก4',
                                 new AreaBuilder(521, 257, 511, 106)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับQuestion',
                                 new AreaBuilder(5, 370, 510, 108)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(522, 371, 509, 105)
                             ),
                         )
                     );
-                } else if (startsWith($userMessage, "d") == true && strstr($userMessage, "1") == true) {
+                } else if ($userMessage == "คำถาม:ฝาก1") {
                     $replyData = new FlexMessageBuilder("Flex", $textDeposit1, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "D") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textDeposit1, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "d") == true && strstr($userMessage, "2") == true) {
+                } else if ($userMessage == "คำถาม:ฝาก2") {
                     $replyData = new FlexMessageBuilder("Flex", $textDeposit2, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "D") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textDeposit2, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "d") == true && strstr($userMessage, "3") == true) {
+                } else if ($userMessage == "คำถาม:ฝาก3") {
                     $replyData = new FlexMessageBuilder("Flex", $textDeposit3, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "D") == true && strstr($userMessage, "3") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textDeposit3, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "d") == true && strstr($userMessage, "4") == true) {
+                } else if ($userMessage == "คำถาม:ฝาก4") {
                     $replyData = new FlexMessageBuilder("Flex", $textDeposit4, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "D") == true && strstr($userMessage, "4") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textDeposit4, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "d") == true && strstr($userMessage, "5") == true) {
+                } else if ($userMessage == "คำถาม:ฝาก5") {
                     $replyData = new FlexMessageBuilder("Flex", $textDeposit5, $quickReplySubDeposit);
-                } else if (startsWith($userMessage, "D") == true && strstr($userMessage, "5") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textDeposit5, $quickReplySubDeposit);
-                }
+                } 
 
                 // ----------------------------------------------------------------------------------------- Deposit
                 // ----------------------------------------------------------------------------------------- Register
 
-                else if (startsWith($userMessage, "q") == true && strstr($userMessage, "5") == true) {
+                else if ($userMessage == "สมาชิก") {
                     $imageRegister = 'https://www.pic2free.com/uploads/20200311/af16afa250024297d2bf2c12e300bdd36637d1e2.png';
 
                     $replyData = new ImagemapMessageBuilder(
@@ -2564,73 +2533,59 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'คำถาม:สมาชิก1',
                                 new AreaBuilder(5, 145, 512, 109)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำถาม:สมาชิก2',
                                 new AreaBuilder(520, 147, 514, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'คำถาม:สมาชิก3',
                                 new AreaBuilder(5, 259, 511, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'คำถาม:สมาชิก4',
                                 new AreaBuilder(520, 259, 514, 104)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'คำถาม:สมาชิก5',
                                 new AreaBuilder(5, 371, 511, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'คำถาม:สมาชิก6',
                                 new AreaBuilder(522, 369, 512, 106)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'คำถาม:สมาชิก7',
                                 new AreaBuilder(6, 484, 509, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับQuestion',
                                 new AreaBuilder(521, 483, 511, 105)
                             ),
                         )
                     );
-                } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "1") == true) {
+                } else if ($userMessage == "คำถาม:สมาชิก1") {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister1, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRegister1, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "2") == true) {
+                } else if ($userMessage == "คำถาม:สมาชิก2") {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister2, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRegister2, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "3") == true) {
+                } else if ($userMessage == "คำถาม:สมาชิก3") {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister3, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "3") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRegister3, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "4") == true) {
+                } else if ($userMessage == "คำถาม:สมาชิก4") {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "4") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRegister4, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "5") == true) {
+                } else if ($userMessage == "คำถาม:สมาชิก5") {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "5") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRegister5, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "6") == true) {
+                } else if ($userMessage == "คำถาม:สมาชิก6") {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "6") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRegister6, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "7") == true) {
+                } else if ($userMessage == "คำถาม:สมาชิก7") {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
-                } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "7") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textRegister7, $quickReplySubRegister);
-                }
+                } 
 
                 // ----------------------------------------------------------------------------------------- Register
                 // ----------------------------------------------------------------------------------------- Account
 
-                else if (startsWith($userMessage, "q") == true && strstr($userMessage, "6") == true) {
+                else if ($userMessage == "บัญชี") {
                     $imageAccount = 'https://www.pic2free.com/uploads/20200311/49668c2cca3199378b55cb85518433c4c8471dd4.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageAccount,
@@ -2638,37 +2593,33 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'คำถาม:บัญชี1',
                                 new AreaBuilder(5, 144, 511, 108)
                             ), 
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำถาม:บัญชี2',
                                 new AreaBuilder(521, 143, 512, 110)
                             ),  
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'ย้อนกลับQuestion',
                                 new AreaBuilder(4, 257, 514, 106)
                             ),      
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(521, 259, 511, 104)
                             ),                       
                         )
                     );
-                } else if (startsWith($userMessage, "a") == true && strstr($userMessage, "1") == true) {
+                } else if ($userMessage == "คำถาม:บัญชี1") {
                     $replyData = new FlexMessageBuilder("Flex", $textAccount1, $quickReplySubAccount);
-                } else if (startsWith($userMessage, "A") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textAccount1, $quickReplySubAccount);
-                } else if (startsWith($userMessage, "a") == true && strstr($userMessage, "2") == true) {
+                } else if ($userMessage == "คำถาม:บัญชี2") {
                     $replyData = new FlexMessageBuilder("Flex", $textAccount2, $quickReplySubAccount);
-                } else if (startsWith($userMessage, "A") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textAccount2, $quickReplySubAccount);
-                }
+                } 
 
                 // ----------------------------------------------------------------------------------------- Account
                 // ----------------------------------------------------------------------------------------- Website
 
-                else if (startsWith($userMessage, "q") == true && strstr($userMessage, "7") == true) {
+                else if ($userMessage == "เว็บ") {
                     $imageWebsite = 'https://www.pic2free.com/uploads/20200311/2fcf0179ea43c6c6b65bdf5243bbff146cb5e303.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageWebsite,
@@ -2676,63 +2627,59 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'คำถาม:เว็บ1',
                                 new AreaBuilder(4, 145, 512, 108)
                             ), 
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำถาม:เว็บ2',
                                 new AreaBuilder(521, 145, 513, 108)
                             ),  
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'ย้อนกลับQuestion',
                                 new AreaBuilder(4, 259, 513, 107)
                             ),      
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(520,257 ,513 ,106 )
                             ),                       
                         )
                     );
-                } else if (startsWith($userMessage, "w") == true && strstr($userMessage, "1") == true) {
+                } else if ($userMessage == "คำถาม:เว็บ1") {
                     $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
-                } else if (startsWith($userMessage, "W") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
-                } else if (startsWith($userMessage, "w") == true && strstr($userMessage, "2") == true) {
+                } else if ($userMessage == "คำถาม:เว็บ2") {
                     $replyData = new FlexMessageBuilder("Flex", $textWebsite2, $quickReplySubWebsite);
-                } else if (startsWith($userMessage, "W") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textWebsite2, $quickReplySubWebsite);
-                }
+                } 
 
                 // ----------------------------------------------------------------------------------------- Website
                 // ----------------------------------------------------------------------------------------- DetailPromotion
 
-                else if ((startsWith($userMessage, "s") == true && endsWith($userMessage, "s1") == true) || (startsWith($userMessage, "S") == true && endsWith($userMessage, "S1") == true)) {
+                else if ($userMessage == "โปร1") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion1, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "2") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "2") == true) || strstr($userMessage, "s2") || strstr($userMessage, "S2")) {
+                } else if ($userMessage == "โปร2") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion2, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "3") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "3") == true) || strstr($userMessage, "s3") || strstr($userMessage, "S3")) {
+                } else if ($userMessage == "โปร3") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion3, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "4") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "4") == true) || strstr($userMessage, "s4") || strstr($userMessage, "S4")) {
+                } else if ($userMessage == "โปร4") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion4, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "5") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "5") == true) || strstr($userMessage, "s5") || strstr($userMessage, "S5")) {
+                } else if ($userMessage == "โปร5") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion5, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "6") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "6") == true) || strstr($userMessage, "s6") || strstr($userMessage, "S6")) {
+                } else if ($userMessage == "โปร6") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion6, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "7") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "7") == true) || strstr($userMessage, "s7") || strstr($userMessage, "S7")) {
+                } else if ($userMessage == "โปร7") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion7, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "8") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "8") == true) || strstr($userMessage, "s8") || strstr($userMessage, "S8")) {
+                } else if ($userMessage == "โปร8") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion8, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "9") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "9") == true) || strstr($userMessage, "s9") || strstr($userMessage, "S9")) {
+                } else if ($userMessage == "โปร9") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion9, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "10") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "10") == true) || strstr($userMessage, "s10") || strstr($userMessage, "S10")) {
+                } else if ($userMessage == "โปร10") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion10, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "11") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "11") == true) || strstr($userMessage, "s11") || strstr($userMessage, "S11")) {
+                } else if ($userMessage == "โปร11") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion11, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "12") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "12") == true) || strstr($userMessage, "s12") || strstr($userMessage, "S12")) {
+                } else if ($userMessage == "โปร12") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion12, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "13") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "13") == true) || strstr($userMessage, "s13") || strstr($userMessage, "S13")) {
+                } else if ($userMessage == "โปร13") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion13, $quickReplyBackRegister);
-                } else if ((startsWith($userMessage, "s") == true && strstr($userMessage, "14") == true) || (startsWith($userMessage, "S") == true && strstr($userMessage, "14") == true) || strstr($userMessage, "s14") || strstr($userMessage, "S14")) {
+                } else if ($userMessage == "โปร14") {
                     $replyData = new FlexMessageBuilder("Flex", $textDetailPromotion14, $quickReplyBackRegister);
                 }
 
