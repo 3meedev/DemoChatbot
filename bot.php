@@ -2158,9 +2158,9 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageQuestion = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
+                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
                     $replyData = new ImagemapMessageBuilder(
-                        $imageQuestion,
+                        $imageMapUrl,
                         'test',
                         new BaseSizeBuilder(500, 1040),
                         array(
@@ -2232,9 +2232,9 @@ if (!is_null($events)) {
                     //                     );
                     //                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "สมัคร") {
-                    $imageAddMember = 'https://www.pic2free.com/uploads/20200311/16e1f155109fc1b347e3511dce1af2d002448ce6.png';
+                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/16e1f155109fc1b347e3511dce1af2d002448ce6.png';
                     $replyData = new ImagemapMessageBuilder(
-                        $imageAddMember,
+                        $imageMapUrl,
                         'test',
                         new BaseSizeBuilder(500, 1040),
                         array(
