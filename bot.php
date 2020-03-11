@@ -394,7 +394,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textPromotion2 = new BubbleContainerBuilder(
+$textPromotion3 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -424,7 +424,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textPromotion3 = new BubbleContainerBuilder(
+$textPromotion2 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -2402,7 +2402,7 @@ if (!is_null($events)) {
                     $replyData = new ImagemapMessageBuilder(
                         $imageRecommend,
                         'test',
-                        new BaseSizeBuilder(500, 1040),
+                        new BaseSizeBuilder(400, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:คำแนะนำ1',
@@ -2590,7 +2590,7 @@ if (!is_null($events)) {
                     $replyData = new ImagemapMessageBuilder(
                         $imageAccount,
                         'test',
-                        new BaseSizeBuilder(500, 1040),
+                        new BaseSizeBuilder(400, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:บัญชี1',
@@ -2624,7 +2624,7 @@ if (!is_null($events)) {
                     $replyData = new ImagemapMessageBuilder(
                         $imageWebsite,
                         'test',
-                        new BaseSizeBuilder(500, 1040),
+                        new BaseSizeBuilder(400, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:เว็บ1',
