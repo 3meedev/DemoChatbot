@@ -2295,11 +2295,11 @@ if (!is_null($events)) {
                                 new AreaBuilder(522, 638, 509, 77)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ย้อนกลับ',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(10, 720, 509, 78)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'เมนูหลัก',
+                                'ย้อนกลับMain',
                                 new AreaBuilder(521, 721, 508, 75)
                             ),
                         )
@@ -2344,20 +2344,8 @@ if (!is_null($events)) {
                     //                         )
                     //                     );
                     //                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
-                } else if ($userMessage == "ติดต่อ") {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Hi2v.png';
-                    $replyData = new ImagemapMessageBuilder(
-                        $imageMapUrl,
-                        'test',
-                        new BaseSizeBuilder(800, 1040),
-                        array(
-                            new ImagemapMessageActionBuilder(
-                                'โปรโมชั่น',
-                                new AreaBuilder(9, 214, 511, 138)
-                            ),
-                        )
-                    );
-                    // $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
+                } else if ($userMessage == "ติดต่อ") {                   
+                    $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
                 }
 
                 // ----------------------------------------------------------------------------------------- MainMenu
