@@ -2121,7 +2121,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
 if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
     if (!is_null($eventFollow)) {
-        $imageMain = 'https://www.pic2free.com/uploads/20200311/bf0e649d858459a457b3e8e7c37d548a950da50d.png';
+        $imageMain = 'https://www.pic2free.com/uploads/20200311/0f2a99163fd6712f73d04da793c78d13e13e6f7a.png';
         $replyData = new ImagemapMessageBuilder(
             $imageMain,
             'test',
@@ -2232,7 +2232,7 @@ if (!is_null($events)) {
                     //                     );
                     //                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "สมัคร") {
-                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/16e1f155109fc1b347e3511dce1af2d002448ce6.png';
+                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/a2138a53e9b49508e067b51a81f4acd623f26c13.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
@@ -2525,7 +2525,7 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Register
 
                 else if ($userMessage == "สมาชิก") {
-                    $imageRegister = 'https://www.pic2free.com/uploads/20200311/af16afa250024297d2bf2c12e300bdd36637d1e2.png';
+                    $imageRegister = 'https://www.pic2free.com/uploads/20200311/f660861d050ff2a1fe4aa8077b71aad6b18e463f.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageRegister,
                         'test',
