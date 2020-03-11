@@ -2177,23 +2177,23 @@ if (!is_null($events)) {
                                 new AreaBuilder(4, 350, 512, 134)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'fgh',
                                 new AreaBuilder(522, 349, 511, 137)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'fgh',
                                 new AreaBuilder(5, 491, 511, 134)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'fgh',
                                 new AreaBuilder(521, 489, 514, 139)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'fgh',
                                 new AreaBuilder(7, 631, 510, 139)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'fgh',
                                 new AreaBuilder(524, 633, 509, 133)
                             ),
                         )
