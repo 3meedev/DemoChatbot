@@ -26,7 +26,7 @@ use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
 use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
 use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder ;
+use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
 use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
 use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
@@ -351,331 +351,6 @@ $quickReplyDetailUser = new QuickReplyMessageBuilder(
 
 // ----------------------------------------------------------------------------------------- QuickReply
 // ----------------------------------------------------------------------------------------- TextAll
-
-
-
-$imageQuestion = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
-$imageAddMember = 'https://www.pic2free.com/uploads/20200311/16e1f155109fc1b347e3511dce1af2d002448ce6.png';
-$imagePromotion = 'https://www.pic2free.com/uploads/20200311/45304216249fa2fb524de64b0446ce3592d9f7ce.png';
-$imageGroup = 'https://www.pic2free.com/uploads/20200311/2ef615a9e4074c39eeb4dd0002e34113d260a7f6.png';
-$imageDeposit = 'https://www.pic2free.com/uploads/20200311/aa0511085a9d1fb2a5cbe58cf308cef4e3b25fe0.png';
-$imageRegister = 'https://www.pic2free.com/uploads/20200311/af16afa250024297d2bf2c12e300bdd36637d1e2.png';
-$imageRecommend = 'https://www.pic2free.com/uploads/20200311/9d45060816145cff9ddf6c2bfd7ae9972fca71da.png';
-$imageAccount = 'https://www.pic2free.com/uploads/20200311/49668c2cca3199378b55cb85518433c4c8471dd4.png';
-$imageWebsite = 'https://www.pic2free.com/uploads/20200311/2fcf0179ea43c6c6b65bdf5243bbff146cb5e303.png';
-
-
-$Question = new ImagemapMessageBuilder(
-    $imageQuestion,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(7, 208, 509, 139)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(522, 208, 512, 135)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(4, 350, 512, 134)
-        ),  
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(522,349 ,511 ,137 )
-        ), 
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(5,491 ,511 ,134 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(521,489 ,514 ,139 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(7,631 ,510 ,139 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(524,633 ,509 ,133 )
-        ),                            
-    )
-);
-
-$AddMember = new ImagemapMessageBuilder(
-    $imageAddMember,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(10, 153, 508, 76)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(521, 153, 507, 75)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(9, 233, 509, 78)
-        ), 
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(522,235 ,508 ,75)
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(11,313 ,506 ,75 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(523,314 ,507 ,76 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(9,396 ,507 ,77 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(521,395 ,507 ,77 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(8,474 ,510 ,82 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(522,477 ,509 ,74 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(8,557 ,508 ,75 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(523,555 ,506 ,79 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(9,638 ,507 ,77 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(522,638 ,509 ,77 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(10,720 ,509 ,78 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(521,721 ,508 ,75 )
-        ),                            
-    )
-);
-
-$Promotion = new ImagemapMessageBuilder(
-    $imagePromotion,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(5, 144, 511, 110)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(522, 145, 511, 107)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(4, 257, 512, 109)
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(521,256 ,513 ,107 )
-        ),                          
-    )
-);
-
-$Group = new ImagemapMessageBuilder(
-    $imageGroup,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(6, 146, 510, 107)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(523, 146, 511, 105)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(5, 259, 510, 106)
-        ),     
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(522,256 ,514 ,104 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(4,371 ,512 ,106 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(523,371 ,510 ,104 )
-        ),                        
-    )
-);
-
-$Deposit = new ImagemapMessageBuilder(
-    $imageDeposit,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(5, 146, 512, 107)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(520, 145, 514, 105)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(4, 258, 512, 108)
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(521,257 ,511 ,106 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(5,370 ,510 ,108 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(522,371 ,509 ,105 )
-        ),                          
-    )
-);
-
-$Register = new ImagemapMessageBuilder(
-    $imagRegister,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(5, 145, 512, 109)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(520, 147, 514, 105)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(5, 259, 511, 105)
-        ),      
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(520,259 ,514 ,104 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(5,371 ,511 ,105 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(522,369 ,512 ,106 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(6,484 ,509 ,105 )
-        ),   
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(521,483 ,511 ,105 )
-        ),                       
-    )
-);
-
-$Recommend = new ImagemapMessageBuilder(
-    $imageRecommend,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(5, 146, 511, 105)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(524, 145, 510, 104)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(8, 258, 508, 105)
-        ),       
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(255,259 ,510 ,104 )
-        ),                      
-    )
-);
-
-$Account = new ImagemapMessageBuilder(
-    $imageAccount,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(5, 144, 511, 108)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(521, 143, 512, 110)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(4, 257, 514, 106)
-        ),      
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(521, 259, 511, 104)
-        ),                       
-    )
-);
-
-$Website = new ImagemapMessageBuilder(
-    $imageWebsite,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(4, 145, 512, 108)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(521, 145, 513, 108)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(4, 259, 513, 107)
-        ),      
-        new ImagemapMessageActionBuilder(
-            '',
-            new AreaBuilder(520,257 ,513 ,106 )
-        ),                       
-    )
-);
 
 $textPromotion1 = new BubbleContainerBuilder(
     "ltr",
@@ -2446,8 +2121,26 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
 if (!is_null($events)) {
     $userMessage = strtolower($userMessage);
     if (!is_null($eventFollow)) {
-        $textReplyMessage = "Copa69 สวัสดีค่ะ";
-        $replyData = new TextMessageBuilder($textReplyMessage, $quickReplyMain);
+        $imageMain = 'https://www.pic2free.com/uploads/20200311/bf0e649d858459a457b3e8e7c37d548a950da50d.png';
+        $replyData = new ImagemapMessageBuilder(
+            $imageMain,
+            'test',
+            new BaseSizeBuilder(500, 1040),
+            array(
+                new ImagemapMessageActionBuilder(
+                    'สอบถาม',
+                    new AreaBuilder(4, 113, 337, 281)
+                ),
+                new ImagemapMessageActionBuilder(
+                    'สมัคร',
+                    new AreaBuilder(348, 112, 340, 283)
+                ),
+                new ImagemapMessageActionBuilder(
+                    'ติดต่อ',
+                    new AreaBuilder(693, 111, 338, 283)
+                ),
+            )
+        );
     }
     if (!is_null($eventMessage)) {
         $typeMessage = $eventObj->getMessageType();
@@ -2465,112 +2158,192 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMain = 'https://www.pic2free.com/uploads/20200311/bf0e649d858459a457b3e8e7c37d548a950da50d.png';
+                    $imageQuestion = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
                     $replyData = new ImagemapMessageBuilder(
-                        $imageMain,
+                        $imageQuestion,
                         'test',
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'สอบถาม',
-                                new AreaBuilder(4, 113, 337, 281)
-                            ), 
+                                new AreaBuilder(7, 208, 509, 139)
+                            ),
                             new ImagemapMessageActionBuilder(
                                 'สมัคร',
-                                new AreaBuilder(348, 112, 340, 283)
-                            ),  
+                                new AreaBuilder(522, 208, 512, 135)
+                            ),
                             new ImagemapMessageActionBuilder(
                                 'ติดต่อ',
-                                new AreaBuilder(693, 111, 338, 283)
-                            ),                          
+                                new AreaBuilder(4, 350, 512, 134)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(522, 349, 511, 137)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(5, 491, 511, 134)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(521, 489, 514, 139)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(7, 631, 510, 139)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(524, 633, 509, 133)
+                            ),
                         )
                     );
-//                     $textReplyMessage = new BubbleContainerBuilder(
-//                         "ltr",
-//                         NULL,
-//                         NULL,
-//                         new BoxComponentBuilder(
-//                             "horizontal",
-//                             array(
-//                                 new TextComponentBuilder(
-//                                     "พิมพ์ q ตามด้วยหัวข้อที่ต้องการ เช่น q1
-// ___________________________________
+                    //                     $textReplyMessage = new BubbleContainerBuilder(
+                    //                         "ltr",
+                    //                         NULL,
+                    //                         NULL,
+                    //                         new BoxComponentBuilder(
+                    //                             "horizontal",
+                    //                             array(
+                    //                                 new TextComponentBuilder(
+                    //                                     "พิมพ์ q ตามด้วยหัวข้อที่ต้องการ เช่น q1
+                    // ___________________________________
 
-// หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
-// 1. โปรโมชั่น
-// 2. คำแนะนำ
-// 3. กลุ่ม/สูตร
-// 4. ฝาก/ถอน
-// 5. การสมัครสมาชิก
-// 6. บัญชีผู้ใช้
-// 7. เกี่ยวกับเว็บไซต์
-// ___________________________________
+                    // หัวข้อปัญหาหรือเรื่องที่ต้องการสอบถาม
+                    // 1. โปรโมชั่น
+                    // 2. คำแนะนำ
+                    // 3. กลุ่ม/สูตร
+                    // 4. ฝาก/ถอน
+                    // 5. การสมัครสมาชิก
+                    // 6. บัญชีผู้ใช้
+                    // 7. เกี่ยวกับเว็บไซต์
+                    // ___________________________________
 
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                                     NULL,
-//                                     NULL,
-//                                     "md",
-//                                     NULL,
-//                                     NULL,
-//                                     true
-//                                 )
-//                             )
-//                         )
-//                     );
-//                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
+                    // Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                    //                                     NULL,
+                    //                                     NULL,
+                    //                                     "md",
+                    //                                     NULL,
+                    //                                     NULL,
+                    //                                     true
+                    //                                 )
+                    //                             )
+                    //                         )
+                    //                     );
+                    //                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "สมัคร") {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Hc7l.png';
+                    $imageAddMember = 'https://www.pic2free.com/uploads/20200311/16e1f155109fc1b347e3511dce1af2d002448ce6.png';
                     $replyData = new ImagemapMessageBuilder(
-                        $imageMapUrl,
+                        $imageAddMember,
                         'test',
-                        new BaseSizeBuilder(800, 1040),
+                        new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'โปรโมชั่น',
-                                new AreaBuilder(9, 214, 511, 138)
-                            ),                         
+                                'สอบถาม',
+                                new AreaBuilder(10, 153, 508, 76)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(521, 153, 507, 75)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(9, 233, 509, 78)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(522, 235, 508, 75)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(11, 313, 506, 75)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(523, 314, 507, 76)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(9, 396, 507, 77)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(521, 395, 507, 77)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(8, 474, 510, 82)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(522, 477, 509, 74)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(8, 557, 508, 75)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(523, 555, 506, 79)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(9, 638, 507, 77)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(522, 638, 509, 77)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(10, 720, 509, 78)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(521, 721, 508, 75)
+                            ),
                         )
                     );
-//                     $textReplyMessage = new BubbleContainerBuilder(
-//                         "ltr",
-//                         NULL,
-//                         NULL,
-//                         new BoxComponentBuilder(
-//                             "horizontal",
-//                             array(
-//                                 new TextComponentBuilder(
-//                                     "พิมพ์ s ตามด้วยหัวข้อที่ต้องการ เช่น s1
-// ___________________________________
+                    //                     $textReplyMessage = new BubbleContainerBuilder(
+                    //                         "ltr",
+                    //                         NULL,
+                    //                         NULL,
+                    //                         new BoxComponentBuilder(
+                    //                             "horizontal",
+                    //                             array(
+                    //                                 new TextComponentBuilder(
+                    //                                     "พิมพ์ s ตามด้วยหัวข้อที่ต้องการ เช่น s1
+                    // ___________________________________
 
-// หัวข้อโปรโมชั่นต่างๆของทางเรา
-// 1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
-// 2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
-// 3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
-// 4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
-// 5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
-// 6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
-// 7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
-// 8. สมัคร 500 บาท ได้รับ Smart Watch 
-// 9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
-// 10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
-// 11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
-// 12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
-// 13. สมัคร 300 บาท ได้รับ Game Handle 
-// 14. สมัครฝาก 200 รับโบนัส 30 %
-// ___________________________________
+                    // หัวข้อโปรโมชั่นต่างๆของทางเรา
+                    // 1. สมัคร 1000 บาท ได้รับ หูฟังบลูทูธ TRUT WIRELESS 5.0 TWS 
+                    // 2. สมัคร 1000 บาท ได้รับ พาวเวอร์แบ๊ง ELOOP E-12 
+                    // 3. สมัคร 1000 บาท ได้รับ ลำโพง BLUETOOTH IRON MAN
+                    // 4. สมัคร 1000 บาท ได้รับ บุหรี่ไฟฟ้า DRAG 
+                    // 5. สมัคร 1000 บาท ได้รับ โทรศัพท์จิ๋ว 
+                    // 6. สมัคร 500 บาท ได้รับ เสื้อบอล EURO 
+                    // 7. สมัคร 500 บาท ได้รับ เสื้อฮูด Nike 
+                    // 8. สมัคร 500 บาท ได้รับ Smart Watch 
+                    // 9. สมัคร 500 บาท ได้รับ ลำโพง Bluetooth Mini 
+                    // 10. สมัคร 500 บาท ได้รับ หูฟัง Bluetooth 
+                    // 11. สมัคร 300 บาท ได้รับ ลำโพงสโมสรฟุตบอลโลก 
+                    // 12. สมัคร 300 บาท ได้รับ กระเป๋าสะพายข้างลายสโมสรฟุตบอลโลก 
+                    // 13. สมัคร 300 บาท ได้รับ Game Handle 
+                    // 14. สมัครฝาก 200 รับโบนัส 30 %
+                    // ___________________________________
 
-// Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
-//                                     NULL,
-//                                     NULL,
-//                                     "md",
-//                                     NULL,
-//                                     NULL,
-//                                     true
-//                                 )
-//                             )
-//                         )
-//                     );
-//                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
+                    // Copa69 ขอขอบคุณที่ใช้บริการค่ะ....",
+                    //                                     NULL,
+                    //                                     NULL,
+                    //                                     "md",
+                    //                                     NULL,
+                    //                                     NULL,
+                    //                                     true
+                    //                                 )
+                    //                             )
+                    //                         )
+                    //                     );
+                    //                     $replyData = new FlexMessageBuilder("Flex", $textReplyMessage, $quickReplyMain);
                 } else if ($userMessage == "ติดต่อ") {
                     $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Hi2v.png';
                     $replyData = new ImagemapMessageBuilder(
@@ -2581,7 +2354,7 @@ if (!is_null($events)) {
                             new ImagemapMessageActionBuilder(
                                 'โปรโมชั่น',
                                 new AreaBuilder(9, 214, 511, 138)
-                            ),                         
+                            ),
                         )
                     );
                     // $replyData = new FlexMessageBuilder("Flex", $textContact, $quickReplyMain);
@@ -2591,11 +2364,30 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Promotion
 
                 else if (startsWith($userMessage, "q") && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
-                } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "1") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
-                } else if ($userMessage == "โปรโมชั่น") {
-                    $replyData = new FlexMessageBuilder("Flex", $textToPromotion, $quickReplyPromotion);
+                    $imagePromotion = 'https://www.pic2free.com/uploads/20200311/45304216249fa2fb524de64b0446ce3592d9f7ce.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imagePromotion,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(5, 144, 511, 110)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(522, 145, 511, 107)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(4, 257, 512, 109)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(521, 256, 513, 107)
+                            ),
+                        )
+                    );
                 } else if (startsWith($userMessage, "p") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textPromotion1, $quickReplySubPromotion);
                 } else if (startsWith($userMessage, "P") == true && strstr($userMessage, "1") == true) {
@@ -2618,11 +2410,30 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Recommend
 
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
-                } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "2") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
-                } else if ($userMessage == "คำแนะนำ") {
-                    $replyData = new FlexMessageBuilder("Flex", $textToRecommend, $quickReplyRecommend);
+                    $imageRecommend = 'https://www.pic2free.com/uploads/20200311/9d45060816145cff9ddf6c2bfd7ae9972fca71da.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageRecommend,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(5, 146, 511, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(524, 145, 510, 104)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(8, 258, 508, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(255, 259, 510, 104)
+                            ),
+                        )
+                    );
                 } else if (startsWith($userMessage, "r") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textRecommend1, $quickReplySubRecommend);
                 } else if (startsWith($userMessage, "R") == true && strstr($userMessage, "1") == true) {
@@ -2637,11 +2448,38 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Group
 
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "3") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
-                } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "3") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
-                } else if ($userMessage == "กลุ่ม/สูตร") {
-                    $replyData = new FlexMessageBuilder("Flex", $textToGroup, $quickReplyGroup);
+                    $imageGroup = 'https://www.pic2free.com/uploads/20200311/2ef615a9e4074c39eeb4dd0002e34113d260a7f6.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageGroup,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(6, 146, 510, 107)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(523, 146, 511, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(5, 259, 510, 106)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(522, 256, 514, 104)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(4, 371, 512, 106)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(523, 371, 510, 104)
+                            ),
+                        )
+                    );
                 } else if (startsWith($userMessage, "g") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textGroup1, $quickReplySubGroup);
                 } else if (startsWith($userMessage, "G") == true && strstr($userMessage, "1") == true) {
@@ -2664,11 +2502,38 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Deposit
 
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "4") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
-                } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "4") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
-                } else if ($userMessage == "ฝาก/ถอน") {
-                    $replyData = new FlexMessageBuilder("Flex", $textToDeposit, $quickReplyDeposit);
+                    $imageDeposit = 'https://www.pic2free.com/uploads/20200311/aa0511085a9d1fb2a5cbe58cf308cef4e3b25fe0.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageDeposit,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(5, 146, 512, 107)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(520, 145, 514, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(4, 258, 512, 108)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(521, 257, 511, 106)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(5, 370, 510, 108)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(522, 371, 509, 105)
+                            ),
+                        )
+                    );
                 } else if (startsWith($userMessage, "d") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textDeposit1, $quickReplySubDeposit);
                 } else if (startsWith($userMessage, "D") == true && strstr($userMessage, "1") == true) {
@@ -2693,13 +2558,49 @@ if (!is_null($events)) {
 
                 // ----------------------------------------------------------------------------------------- Deposit
                 // ----------------------------------------------------------------------------------------- Register
-                
+
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "5") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
-                } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "5") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
-                } else if ($userMessage == "การสมัครสมาชิก") {
-                    $replyData = new FlexMessageBuilder("Flex", $textToRegister, $quickReplyRegister);
+                    $imageRegister = 'https://www.pic2free.com/uploads/20200311/af16afa250024297d2bf2c12e300bdd36637d1e2.png';
+
+                    $replyData = new ImagemapMessageBuilder(
+                        $imagRegister,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(5, 145, 512, 109)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(520, 147, 514, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(5, 259, 511, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(520, 259, 514, 104)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(5, 371, 511, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(522, 369, 512, 106)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(6, 484, 509, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(521, 483, 511, 105)
+                            ),
+                        )
+                    );
                 } else if (startsWith($userMessage, "u") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textRegister1, $quickReplySubRegister);
                 } else if (startsWith($userMessage, "U") == true && strstr($userMessage, "1") == true) {
@@ -2734,11 +2635,30 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Account
 
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "6") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
-                } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "6") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
-                } else if ($userMessage == "บัญชีผู้ใช้") {
-                    $replyData = new FlexMessageBuilder("Flex", $textToAccount, $quickReplyAccount);
+                    $imageAccount = 'https://www.pic2free.com/uploads/20200311/49668c2cca3199378b55cb85518433c4c8471dd4.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageAccount,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(5, 144, 511, 108)
+                            ), 
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(521, 143, 512, 110)
+                            ),  
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(4, 257, 514, 106)
+                            ),      
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(521, 259, 511, 104)
+                            ),                       
+                        )
+                    );
                 } else if (startsWith($userMessage, "a") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textAccount1, $quickReplySubAccount);
                 } else if (startsWith($userMessage, "A") == true && strstr($userMessage, "1") == true) {
@@ -2753,11 +2673,30 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Website
 
                 else if (startsWith($userMessage, "q") == true && strstr($userMessage, "7") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
-                } else if (startsWith($userMessage, "Q") == true && strstr($userMessage, "7") == true) {
-                    $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
-                } else if ($userMessage == "เกี่ยวกับเว็บไซต์") {
-                    $replyData = new FlexMessageBuilder("Flex", $textToWebsite, $quickReplyWebsite);
+                    $imageWebsite = 'https://www.pic2free.com/uploads/20200311/2fcf0179ea43c6c6b65bdf5243bbff146cb5e303.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageWebsite,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(4, 145, 512, 108)
+                            ), 
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(521, 145, 513, 108)
+                            ),  
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(4, 259, 513, 107)
+                            ),      
+                            new ImagemapMessageActionBuilder(
+                                '',
+                                new AreaBuilder(520,257 ,513 ,106 )
+                            ),                       
+                        )
+                    );
                 } else if (startsWith($userMessage, "w") == true && strstr($userMessage, "1") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
                 } else if (startsWith($userMessage, "W") == true && strstr($userMessage, "1") == true) {
