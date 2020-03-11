@@ -2158,11 +2158,11 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://sv1.picz.in.th/images/2020/03/10/Q7Hi2v.png';
+                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
-                        new BaseSizeBuilder(500, 1040),
+                        new BaseSizeBuilder(800, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'สอบถาม',
@@ -2177,23 +2177,23 @@ if (!is_null($events)) {
                                 new AreaBuilder(4, 350, 512, 134)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fgh',
+                                'dfg',
                                 new AreaBuilder(522, 349, 511, 137)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fgh',
+                                'fdg',
                                 new AreaBuilder(5, 491, 511, 134)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fgh',
+                                'fdg',
                                 new AreaBuilder(521, 489, 514, 139)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fgh',
+                                'fdg',
                                 new AreaBuilder(7, 631, 510, 139)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'fgh',
+                                'fdg',
                                 new AreaBuilder(524, 633, 509, 133)
                             ),
                         )
