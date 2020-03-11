@@ -353,36 +353,17 @@ $quickReplyDetailUser = new QuickReplyMessageBuilder(
 // ----------------------------------------------------------------------------------------- TextAll
 
 
-$imageMain = '';
-$imageQuestion = '';
-$imageAddMember = '';
-$imagePromotion = '';
-$imageGroup = '';
-$imageDeposit = '';
-$imageRegister = '';
-$imageRecommend = '';
-$imageAccount = '';
-$imageWebsite = '';
+$imageMain = 'https://www.pic2free.com/uploads/20200311/bf0e649d858459a457b3e8e7c37d548a950da50d.png';
+$imageQuestion = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
+$imageAddMember = 'https://www.pic2free.com/uploads/20200311/16e1f155109fc1b347e3511dce1af2d002448ce6.png';
+$imagePromotion = 'https://www.pic2free.com/uploads/20200311/45304216249fa2fb524de64b0446ce3592d9f7ce.png';
+$imageGroup = 'https://www.pic2free.com/uploads/20200311/2ef615a9e4074c39eeb4dd0002e34113d260a7f6.png';
+$imageDeposit = 'https://www.pic2free.com/uploads/20200311/aa0511085a9d1fb2a5cbe58cf308cef4e3b25fe0.png';
+$imageRegister = 'https://www.pic2free.com/uploads/20200311/af16afa250024297d2bf2c12e300bdd36637d1e2.png';
+$imageRecommend = 'https://www.pic2free.com/uploads/20200311/9d45060816145cff9ddf6c2bfd7ae9972fca71da.png';
+$imageAccount = 'https://www.pic2free.com/uploads/20200311/49668c2cca3199378b55cb85518433c4c8471dd4.png';
+$imageWebsite = 'https://www.pic2free.com/uploads/20200311/2fcf0179ea43c6c6b65bdf5243bbff146cb5e303.png';
 
-$Main = new ImagemapMessageBuilder(
-    $imageMain,
-    'test',
-    new BaseSizeBuilder(500, 1040),
-    array(
-        new ImagemapMessageActionBuilder(
-            'สอบถาม',
-            new AreaBuilder(4, 113, 337, 281)
-        ), 
-        new ImagemapMessageActionBuilder(
-            'สมัคร',
-            new AreaBuilder(348, 112, 340, 283)
-        ),  
-        new ImagemapMessageActionBuilder(
-            'ติดต่อ',
-            new AreaBuilder(693, 111, 338, 283)
-        ),                          
-    )
-);
 
 $Question = new ImagemapMessageBuilder(
     $imageQuestion,
@@ -2484,16 +2465,23 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/6ce0bbb1dc0af30d20fa47212ded998f8a77c95d.jpg';
-                    $replyData = new ImagemapMessageBuilder(
-                        $imageMapUrl,
+                    $Main = new ImagemapMessageBuilder(
+                        $imageMain,
                         'test',
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'โปรโมชั่น',
-                                new AreaBuilder(9, 214, 511, 138)
-                            ),                         
+                                'สอบถาม',
+                                new AreaBuilder(4, 113, 337, 281)
+                            ), 
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(348, 112, 340, 283)
+                            ),  
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(693, 111, 338, 283)
+                            ),                          
                         )
                     );
 //                     $textReplyMessage = new BubbleContainerBuilder(
