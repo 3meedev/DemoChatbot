@@ -2351,7 +2351,7 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- MainMenu
                 // ----------------------------------------------------------------------------------------- Promotion
 
-                else if (startsWith($userMessage, "q") && strstr($userMessage, "1") == true) {
+                else if ($userMessage == "โปรโมชั่น") {
                     $imagePromotion = 'https://www.pic2free.com/uploads/20200311/45304216249fa2fb524de64b0446ce3592d9f7ce.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imagePromotion,
@@ -2359,19 +2359,27 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'คำถาม:โปรโมชั่น1',
                                 new AreaBuilder(5, 144, 511, 110)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'คำถาม:โปรโมชั่น2',
                                 new AreaBuilder(522, 145, 511, 107)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'คำถาม:โปรโมชั่น3',
                                 new AreaBuilder(4, 257, 512, 109)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'คำถาม:โปรโมชั่น4',
+                                new AreaBuilder(521, 256, 513, 107)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ย้อนกลับQuestion',
+                                new AreaBuilder(4, 257, 512, 109)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ย้อนกลับMain',
                                 new AreaBuilder(521, 256, 513, 107)
                             ),
                         )
