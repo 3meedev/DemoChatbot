@@ -2525,35 +2525,43 @@ if (!is_null($events)) {
                 // ----------------------------------------------------------------------------------------- Register
 
                 else if ($userMessage == "สมาชิก") {
-                    $imageDeposit = 'https://www.pic2free.com/uploads/20200311/aa0511085a9d1fb2a5cbe58cf308cef4e3b25fe0.png';
+                    $imageRegister = 'https://www.pic2free.com/uploads/20200311/af16afa250024297d2bf2c12e300bdd36637d1e2.png';
                     $replyData = new ImagemapMessageBuilder(
-                        $imageDeposit,
+                        $imageRegister,
                         'test',
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'คำถาม:ฝาก1',
-                                new AreaBuilder(5, 146, 512, 107)
+                                'คำถาม:สมาชิก1',
+                                new AreaBuilder(5, 145, 512, 109)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'คำถาม:ฝาก2',
-                                new AreaBuilder(520, 145, 514, 105)
+                                'คำถาม:สมาชิก2',
+                                new AreaBuilder(520, 147, 514, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'คำถาม:ฝาก3',
-                                new AreaBuilder(4, 258, 512, 108)
+                                'คำถาม:สมาชิก3',
+                                new AreaBuilder(5, 259, 511, 105)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'คำถาม:ฝาก4',
-                                new AreaBuilder(521, 257, 511, 106)
+                                'คำถาม:สมาชิก4',
+                                new AreaBuilder(520, 259, 514, 104)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'คำถาม:สมาชิก5',
+                                new AreaBuilder(5, 371, 511, 105)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'คำถาม:สมาชิก6',
+                                new AreaBuilder(522, 369, 512, 106)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'คำถาม:สมาชิก7',
+                                new AreaBuilder(6, 484, 509, 105)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'ย้อนกลับQuestion',
-                                new AreaBuilder(5, 370, 510, 108)
-                            ),
-                            new ImagemapMessageActionBuilder(
-                                'ย้อนกลับMain',
-                                new AreaBuilder(522, 371, 509, 105)
+                                new AreaBuilder(521, 483, 511, 105)
                             ),
                         )
                     );
