@@ -353,7 +353,7 @@ $quickReplyDetailUser = new QuickReplyMessageBuilder(
 // ----------------------------------------------------------------------------------------- TextAll
 
 
-$imageMain = 'https://www.pic2free.com/uploads/20200311/bf0e649d858459a457b3e8e7c37d548a950da50d.png';
+
 $imageQuestion = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
 $imageAddMember = 'https://www.pic2free.com/uploads/20200311/16e1f155109fc1b347e3511dce1af2d002448ce6.png';
 $imagePromotion = 'https://www.pic2free.com/uploads/20200311/45304216249fa2fb524de64b0446ce3592d9f7ce.png';
@@ -2465,6 +2465,7 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
+                    $imageMain = 'https://www.pic2free.com/uploads/20200311/bf0e649d858459a457b3e8e7c37d548a950da50d.png';
                     $Main = new ImagemapMessageBuilder(
                         $imageMain,
                         'test',
