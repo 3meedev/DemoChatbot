@@ -2529,7 +2529,7 @@ if (!is_null($events)) {
                     $replyData = new ImagemapMessageBuilder(
                         $imageRegister,
                         'test',
-                        new BaseSizeBuilder(500, 1040),
+                        new BaseSizeBuilder(620, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:สมาชิก1',
