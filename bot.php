@@ -2484,7 +2484,7 @@ if (!is_null($events)) {
         case "text":
             if ($userMessage != null) {
                 if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
-                    $imageMapUrl = 'https://www.pic2free.com/photo.php?s=1hnflp0o';
+                    $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/6ce0bbb1dc0af30d20fa47212ded998f8a77c95d.jpg';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
                         'test',
