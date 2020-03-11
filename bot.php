@@ -2239,67 +2239,67 @@ if (!is_null($events)) {
                         new BaseSizeBuilder(500, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
-                                'สอบถาม',
+                                'โปร1',
                                 new AreaBuilder(10, 153, 508, 76)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'สมัคร',
+                                'โปร2',
                                 new AreaBuilder(521, 153, 507, 75)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ติดต่อ',
+                                'โปร3',
                                 new AreaBuilder(9, 233, 509, 78)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร4',
                                 new AreaBuilder(522, 235, 508, 75)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร5',
                                 new AreaBuilder(11, 313, 506, 75)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร6',
                                 new AreaBuilder(523, 314, 507, 76)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร7',
                                 new AreaBuilder(9, 396, 507, 77)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร8',
                                 new AreaBuilder(521, 395, 507, 77)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร9',
                                 new AreaBuilder(8, 474, 510, 82)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร10',
                                 new AreaBuilder(522, 477, 509, 74)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร11',
                                 new AreaBuilder(8, 557, 508, 75)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร12',
                                 new AreaBuilder(523, 555, 506, 79)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร13',
                                 new AreaBuilder(9, 638, 507, 77)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'โปร14',
                                 new AreaBuilder(522, 638, 509, 77)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'ย้อนกลับ',
                                 new AreaBuilder(10, 720, 509, 78)
                             ),
                             new ImagemapMessageActionBuilder(
-                                '',
+                                'เมนูหลัก',
                                 new AreaBuilder(521, 721, 508, 75)
                             ),
                         )
