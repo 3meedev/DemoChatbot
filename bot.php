@@ -627,7 +627,7 @@ ___________________________________",
     )
 );
 
-$textGroup2 = new BubbleContainerBuilder(
+$textGroup3 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -663,7 +663,7 @@ ___________________________________",
     )
 );
 
-$textGroup3 = new BubbleContainerBuilder(
+$textGroup2 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
