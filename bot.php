@@ -2356,27 +2356,27 @@ if (!is_null($events)) {
                         array(
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:โปรโมชั่น1',
-                                new AreaBuilder(5, 144, 511, 110)
+                                new AreaBuilder(5, 145, 513, 109)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:โปรโมชั่น2',
-                                new AreaBuilder(522, 145, 511, 107)
+                                new AreaBuilder(522, 148, 511, 102)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:โปรโมชั่น3',
-                                new AreaBuilder(4, 257, 512, 109)
+                                new AreaBuilder(5, 257, 511, 108)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'คำถาม:โปรโมชั่น4',
-                                new AreaBuilder(521, 256, 513, 107)
+                                new AreaBuilder(522, 256, 509, 107)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'ย้อนกลับQuestion',
-                                new AreaBuilder(4, 257, 512, 109)
+                                new AreaBuilder(5, 370, 513, 108)
                             ),
                             new ImagemapMessageActionBuilder(
                                 'ย้อนกลับMain',
-                                new AreaBuilder(521, 256, 513, 107)
+                                new AreaBuilder(524, 370, 509, 108)
                             ),
                         )
                     );
