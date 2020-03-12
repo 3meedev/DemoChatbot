@@ -2522,7 +2522,7 @@ if (!is_null($events)) {
                                 new AreaBuilder(5, 370, 510, 108)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ย้อนกลับMain',
+                                'ย้อนกลับQuestion',
                                 new AreaBuilder(522, 371, 509, 105)
                             ),
                         )
