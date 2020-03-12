@@ -2157,7 +2157,7 @@ if (!is_null($events)) {
     switch ($typeMessage) {
         case "text":
             if ($userMessage != null) {
-                if($userMessage == "ย้อนกลับ") {
+                if($userMessage == "ย้อนกลับMain") {
                     $imageMain = 'https://www.pic2free.com/uploads/20200311/0f2a99163fd6712f73d04da793c78d13e13e6f7a.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMain,
@@ -2179,7 +2179,7 @@ if (!is_null($events)) {
                         )
                     );
                 }                
-                if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับQuestion") {
+                else if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับQuestion") {
                     $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
