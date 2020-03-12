@@ -977,7 +977,7 @@ ___________________________________",
     )
 );
 
-$textRegister2 = new BubbleContainerBuilder(
+$textRegister3 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -1008,7 +1008,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textRegister3 = new BubbleContainerBuilder(
+$textRegister5 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -1035,7 +1035,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textRegister4 = new BubbleContainerBuilder(
+$textRegister2 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -1062,7 +1062,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textRegister5 = new BubbleContainerBuilder(
+$textRegister4 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
