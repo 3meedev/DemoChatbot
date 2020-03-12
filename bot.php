@@ -2704,7 +2704,7 @@ if (!is_null($events)) {
 
                 else if (strstr($userMessage, "แจ้งเลขยูส") == true) {
                     $replyData = new FlexMessageBuilder("Flex", $textGetUser, $quickReplyEditSlip);
-                } else if (strstr($userMessage, "x") == true || strstr($userMessage, "X") == true || $userMessage == "BAddress") {
+                } else if (strstr($userMessage, "user_") == true || strstr($userMessage, "User_") == true  || strstr($userMessage, "USER_") == true || $userMessage == "BAddress") {
                     $replyData = new FlexMessageBuilder("Flex", $textToAddress, $quickReplyUser);
                 } else if ($userMessage == "ไม่ต้องการ") {
                     $replyData = new FlexMessageBuilder("Flex", $textNotAddress, $quickReplyMain);
