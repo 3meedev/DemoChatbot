@@ -795,7 +795,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textDeposit2 = new BubbleContainerBuilder(
+$textDeposit3 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -822,7 +822,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textDeposit3 = new BubbleContainerBuilder(
+$textDeposit5 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -849,7 +849,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textDeposit4 = new BubbleContainerBuilder(
+$textDeposit2 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -876,7 +876,7 @@ Copa69 ขอขอบคุณที่ใช้บริการค่ะ....
     )
 );
 
-$textDeposit5 = new BubbleContainerBuilder(
+$textDeposit4 = new BubbleContainerBuilder(
     "ltr",
     NULL,
     NULL,
@@ -2496,7 +2496,7 @@ if (!is_null($events)) {
                                 new AreaBuilder(521, 257, 511, 106)
                             ),
                             new ImagemapMessageActionBuilder(
-                                'ย้อนกลับQuestion',
+                                'คำถาม:ฝาก5',
                                 new AreaBuilder(5, 370, 510, 108)
                             ),
                             new ImagemapMessageActionBuilder(
