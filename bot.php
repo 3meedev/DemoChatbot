@@ -2157,7 +2157,30 @@ if (!is_null($events)) {
     switch ($typeMessage) {
         case "text":
             if ($userMessage != null) {
-                if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับเมนูสอบถาม") {
+                if($userMessage == "ย้อนกลับMain") {
+                    $imageMain = 'https://www.pic2free.com/uploads/20200311/0f2a99163fd6712f73d04da793c78d13e13e6f7a.png';
+                    $replyData = new ImagemapMessageBuilder(
+                        $imageMain,
+                        'test',
+                        new BaseSizeBuilder(500, 1040),
+                        array(
+                            new ImagemapMessageActionBuilder(
+                                'สอบถาม',
+                                new AreaBuilder(4, 113, 337, 281)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'สมัคร',
+                                new AreaBuilder(348, 112, 340, 283)
+                            ),
+                            new ImagemapMessageActionBuilder(
+                                'ติดต่อ',
+                                new AreaBuilder(693, 111, 338, 283)
+                            ),
+                        )
+                    );
+                }
+                }
+                if ($userMessage == "สอบถาม" || $userMessage == "q" || $userMessage == "Q" || $userMessage == "ย้อนกลับQuestion") {
                     $imageMapUrl = 'https://www.pic2free.com/uploads/20200311/57f1378aadbe36e2d659f634c71d9cb9cfebe0b1.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMapUrl,
@@ -2637,7 +2660,7 @@ if (!is_null($events)) {
                                 'ย้อนกลับMain',
                                 new AreaBuilder(520,257 ,513 ,106 )
                             ),                       
-                        ),$quickReplySubWebsite
+                        )
                     );
                 } else if ($userMessage == "คำถาม:เว็บ1") {
                     $replyData = new FlexMessageBuilder("Flex", $textWebsite1, $quickReplySubWebsite);
