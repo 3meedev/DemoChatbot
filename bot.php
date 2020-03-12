@@ -154,23 +154,23 @@ $textBackRecommend = new MessageTemplateActionBuilder(
 );
 $textBackGroup = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
-    'กลุ่ม/สูตร'
+    'กลุ่ม'
 );
 $textBackDeposit = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
-    'ฝาก/ถอน'
+    'ฝาก'
 );
 $textBackRegister = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
-    'การสมัครสมาชิก'
+    'สมาชิก'
 );
 $textBackAccount = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
-    'บัญชีผู้ใช้'
+    'บัญชี'
 );
 $textBackWebsite = new MessageTemplateActionBuilder(
     'ย้อนกลับ',
-    'เกี่ยวกับเว็บไซต์'
+    'เว็บ'
 );
 $textAddress = new MessageTemplateActionBuilder(
     'กรอกที่อยู่',
