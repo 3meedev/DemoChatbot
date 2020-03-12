@@ -2157,7 +2157,7 @@ if (!is_null($events)) {
     switch ($typeMessage) {
         case "text":
             if ($userMessage != null) {
-                if($userMessage == "ย้อนกลับMain") {
+                if($userMessage == "ย้อนกลับ") {
                     $imageMain = 'https://www.pic2free.com/uploads/20200311/0f2a99163fd6712f73d04da793c78d13e13e6f7a.png';
                     $replyData = new ImagemapMessageBuilder(
                         $imageMain,
