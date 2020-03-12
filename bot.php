@@ -2125,7 +2125,7 @@ if (!is_null($events)) {
         $replyData = new ImagemapMessageBuilder(
             $imageMain,
             'test',
-            new BaseSizeBuilder(500, 1040),
+            new BaseSizeBuilder(400, 1040),
             array(
                 new ImagemapMessageActionBuilder(
                     'สอบถาม',
@@ -2162,7 +2162,7 @@ if (!is_null($events)) {
                     $replyData = new ImagemapMessageBuilder(
                         $imageMain,
                         'test',
-                        new BaseSizeBuilder(500, 1040),
+                        new BaseSizeBuilder(400, 1040),
                         array(
                             new ImagemapMessageActionBuilder(
                                 'สอบถาม',
@@ -2320,7 +2320,7 @@ if (!is_null($events)) {
                                 'ย้อนกลับMain',
                                 new AreaBuilder(11, 1859, 1018, 111)
                             ),                            
-                        )
+                        ), $quickReplyMain
                     );
                     //                     $textReplyMessage = new BubbleContainerBuilder(
                     //                         "ltr",
